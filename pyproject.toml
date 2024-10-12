@@ -5,7 +5,9 @@ description = "Synchronize group assignments between an Outline document and Aut
 authors = [
     {name = "Mix", email = "32300164+mnixry@users.noreply.github.com"},
 ]
-dependencies = []
+dependencies = [
+    "fastapi[standard]>=0.115.2",
+]
 requires-python = ">=3.12"
 readme = "README.md"
 license = {text = "AGPL-3.0-only"}
@@ -17,3 +19,8 @@ build-backend = "pdm.backend"
 
 [tool.pdm]
 distribution = true
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "ruff>=0.6.9",
+]
