@@ -20,5 +20,7 @@
     "python.analysis.diagnosticMode": "workspace",
     "cSpell.words": [
         "fastapi",
+        "OASYNC",
+        "pydantic"
     ],
 }
