@@ -43,6 +43,7 @@ ignore = ["packages/**/*"]
 typeCheckingMode = "standard"
 
 [tool.ruff]
+extend-exclude = ["packages/**/*"]
 lint.select = [
     "E",     # pycodestyle errors
     "W",     # pycodestyle warnings
