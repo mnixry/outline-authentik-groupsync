@@ -1,8 +1,10 @@
 import asyncio
 import hashlib
 import hmac
+import logging
 import re
 import time
+from contextlib import asynccontextmanager
 from itertools import count
 
 import authentik_openapi
@@ -12,12 +14,30 @@ from fastapi.exceptions import HTTPException
 from starlette.status import HTTP_400_BAD_REQUEST
 
 from .models import OutlineSignInEvent
-from .utils import AkClientDepend, OutlineClientDepend, SettingsDepend
+from .utils import (
+    AkClientDepend,
+    OutlineClientDepend,
+    SettingsDepend,
+    settings_dependency,
+)
 
-app = FastAPI()
+logger = logging.getLogger(__name__)
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    settings_dependency()
+    logger.debug("Outline sync service started")
+    yield
+
+
+app = FastAPI(lifespan=lifespan)
 
 
 async def check_webhook_signature(request: Request, settings: SettingsDepend):
+    if settings.skip_signature_check:
+        logger.warning("Signature check will be skipped")
+        return
     signature = request.headers.get("outline-signature")
     if not signature:
         raise HTTPException(

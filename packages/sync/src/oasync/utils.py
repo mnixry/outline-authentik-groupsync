@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     )
 
     timedelta_seconds: int = 60
+    skip_signature_check: bool = False
 
     outline_host: HttpUrl
     outline_api_key: str
