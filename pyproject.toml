@@ -11,6 +11,7 @@ dev = [
 ]
 
 [tool.pdm.scripts]
+dev = "uvicorn oasync:app --reload --port 8000 --log-level debug"
 openapi = { composite = [
     "openapi-authentik",
     "openapi-outline",
@@ -30,11 +31,12 @@ openapi-fix-export = """sed -i \
     ${PDM_PROJECT_ROOT}/packages/authentik/authentik_openapi/__init__.py"""
 
 [tool.pyright]
-ignore = ["packages/**/*"]
+ignore = ["packages/authentik/**/*", "packages/outline/**/*"]
+extraPaths = ["packages/authentik", "packages/outline"]
 typeCheckingMode = "standard"
 
 [tool.ruff]
-extend-exclude = ["packages/**/*"]
+extend-exclude = ["packages/authentik/**/*", "packages/outline/**/*"]
 lint.select = [
     "E",     # pycodestyle errors
     "W",     # pycodestyle warnings
