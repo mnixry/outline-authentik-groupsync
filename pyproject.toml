@@ -1,0 +1,67 @@
+[project]
+dependencies = []
+requires-python = ">=3.12"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "ruff>=0.6.9",
+    "-e file:///${PROJECT_ROOT}/packages/authentik",
+    "-e file:///${PROJECT_ROOT}/packages/outline",
+    "-e file:///${PROJECT_ROOT}/packages/sync",
+]
+
+[tool.pdm.scripts]
+openapi = { composite = [
+    "openapi-authentik",
+    "openapi-outline",
+    "openapi-fix-export",
+] }
+openapi-authentik = """openapi-generator generate -i \
+    "https://id.customers.goauthentik.io/api/v3/schema/" -g python \
+    -o ${PDM_PROJECT_ROOT}/packages/authentik \
+    --package-name authentik_openapi --library asyncio"""
+openapi-outline = """openapi-generator generate -i \
+    "https://github.com/outline/openapi/raw/refs/heads/main/spec3.yml" -g python \
+    -o ${PDM_PROJECT_ROOT}/packages/outline \
+    --package-name outline_openapi --library asyncio"""
+openapi-fix-export = """sed -i \
+    '/from [^ ]* import [^ ,]*$/!b;/ as /!s/\\(from [^ ]* import \\)\\([^ ,]*\\)/\\1\\2 as \\2/' \
+    ${PDM_PROJECT_ROOT}/packages/outline/outline_openapi/__init__.py \
+    ${PDM_PROJECT_ROOT}/packages/authentik/authentik_openapi/__init__.py"""
+
+[tool.pyright]
+ignore = ["packages/**/*"]
+typeCheckingMode = "standard"
+
+[tool.ruff]
+extend-exclude = ["packages/**/*"]
+lint.select = [
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "A",     # flake8-builtins
+    "ASYNC", # flake8-async
+    "B",     # flake8-bugbear
+    "C4",    # flake8-comprehensions
+    "G",     # flake8-logging-format
+    "LOG",   # flake8-logging
+    "PT",    # flake8-pytest-style
+    "PYI",   # flake8-pyi
+    "Q",     # flake8-quotes
+    "RSE",   # flake8-raise
+    "SIM",   # flake8-simplify
+    "SLF",   # flake8-self
+    "T10",   # flake8-debugger
+    "T20",   # flake8-print
+    "F",     # Pyflakes
+    "TRY",   # tryceratops
+    "I",     # isort
+    "UP",    # pyupgrade
+    "C90",   # complexity
+    "N",     # naming
+    "RUF",   # Ruff-specific rules
+]
+lint.ignore = [
+    "B008",   # Do not perform calls in argument defaults
+    "TRY003", # Avoid specifying long messages outside the exception class
+]
+target-version = "py312"
