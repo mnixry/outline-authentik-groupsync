@@ -10,7 +10,13 @@ from itertools import count
 import authentik_openapi
 import outline_openapi
 from fastapi import Depends, FastAPI, Request
-from fastapi.exceptions import HTTPException
+from fastapi.exception_handlers import (
+    http_exception_handler as fastapi_http_exception_handler,
+)
+from fastapi.exception_handlers import (
+    request_validation_exception_handler as fastapi_request_validation_exception_handler,  # noqa
+)
+from fastapi.exceptions import HTTPException, RequestValidationError
 from starlette.status import HTTP_400_BAD_REQUEST
 
 from .models import OutlineSignInEvent
@@ -34,6 +40,18 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 
+@app.exception_handler(HTTPException)
+async def http_exception_handler(request, exc):
+    logger.warning("captured http exception raised: %s", exc)
+    return await fastapi_http_exception_handler(request, exc)
+
+
+@app.exception_handler(RequestValidationError)
+async def request_validation_exception_handler(request, exc):
+    logger.warning("captured validation exception raised: %s", exc)
+    return await fastapi_request_validation_exception_handler(request, exc)
+
+
 async def check_webhook_signature(request: Request, settings: SettingsDepend):
     if settings.skip_signature_check:
         logger.warning("Signature check will be skipped")
@@ -49,7 +67,7 @@ async def check_webhook_signature(request: Request, settings: SettingsDepend):
             status_code=HTTP_400_BAD_REQUEST, detail="Invalid signature format"
         )
     timestamp, signature = matched.groups()
-    if abs(time.time() * 1000 - int(timestamp)) > settings.timedelta_seconds:
+    if abs(time.time() * 1000 - int(timestamp)) > settings.timedelta_seconds * 1000:
         raise HTTPException(
             status_code=HTTP_400_BAD_REQUEST, detail="Expired signature"
         )
@@ -80,6 +98,8 @@ async def webhook(
     outline_client: OutlineClientDepend,
     ak_client: AkClientDepend,
 ):
+    logger.info("Received event: %s, start processing", event)
+
     users_api = outline_openapi.UsersApi(outline_client)
     user_info = await users_api.users_info_post(
         outline_openapi.UsersInfoPostRequest(id=str(event.payload.id))

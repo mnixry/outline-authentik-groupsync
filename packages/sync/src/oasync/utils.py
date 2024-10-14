@@ -1,5 +1,6 @@
 from functools import lru_cache
 from typing import Annotated
+from urllib.parse import urljoin
 
 import authentik_openapi
 import outline_openapi
@@ -41,7 +42,7 @@ SettingsDepend = Annotated[
 
 async def outline_client_dependency(settings: SettingsDepend):
     configuration = outline_openapi.Configuration(
-        host=settings.outline_host,
+        host=urljoin(str(settings.outline_host), "api"),
         access_token=settings.outline_api_key,
     )
     async with outline_openapi.ApiClient(
@@ -58,7 +59,7 @@ OutlineClientDepend = Annotated[
 
 async def ak_client_dependency(settings: SettingsDepend):
     configuration = authentik_openapi.Configuration(
-        host=settings.ak_host,
+        host=urljoin(str(settings.ak_host), "api/v3"),
         access_token=settings.ak_api_key,
     )
     async with authentik_openapi.ApiClient(

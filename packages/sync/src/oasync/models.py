@@ -2,11 +2,17 @@ import datetime
 import uuid
 from typing import Generic, Literal, TypeVar
 
-from pydantic import AliasPath, BaseModel, ConfigDict, Field, alias_generators
+from pydantic import (
+    AliasPath,
+    BaseModel,
+    ConfigDict,
+    Field,
+    alias_generators,
+)
 
 
 class OutlineBaseModel(BaseModel):
-    model_config = ConfigDict(alias_generator=alias_generators.to_snake)
+    model_config = ConfigDict(alias_generator=alias_generators.to_camel)
 
 
 class UserSignInPayload(OutlineBaseModel):
