@@ -21,12 +21,26 @@ build-backend = "pdm.backend"
 [tool.pdm]
 distribution = true
 
+[tool.pdm.scripts]
+openapi-authentik = """openapi-generator generate -i \
+    "https://id.customers.goauthentik.io/api/v3/schema/" -g python \
+    -o ${PDM_PROJECT_ROOT}/packages/authentik \
+    --package-name authentik_openapi --library asyncio"""
+openapi-outline = """openapi-generator generate -i \
+    "https://github.com/outline/openapi/raw/refs/heads/main/spec3.yml" -g python \
+    -o ${PDM_PROJECT_ROOT}/packages/outline \
+    --package-name outline_openapi --library asyncio"""
+openapi-fix-export = """sed -i \
+    '/from [^ ]* import [^ ,]*$/!b;/ as /!s/\\(from [^ ]* import \\)\\([^ ,]*\\)/\\1\\2 as \\2/' \
+    ${PDM_PROJECT_ROOT}/packages/outline/outline_openapi/__init__.py \
+    ${PDM_PROJECT_ROOT}/packages/authentik/authentik_openapi/__init__.py"""
+
 [tool.pdm.dev-dependencies]
 dev = ["ruff>=0.6.9"]
 
 [tool.pyright]
+ignore = ["packages/**/*"]
 typeCheckingMode = "standard"
-exclude = ["packages/**/*"]
 
 [tool.ruff]
 lint.select = [
