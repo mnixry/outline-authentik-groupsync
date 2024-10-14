@@ -18,10 +18,13 @@ class Settings(BaseSettings):
     outline_host: HttpUrl
     outline_api_key: str
     outline_webhook_secret: bytes
+    outline_default_role: outline_openapi.UserRole = outline_openapi.UserRole.MEMBER
+    outline_pagination_limit: int = 100
 
     ak_host: HttpUrl
     ak_api_key: str
-    ak_group_attribute: str = "app.getoutline.com/group_id"
+    ak_group_attribute: str | None = "app.getoutline.com/group_id"
+    ak_admin_group: str | None = None
 
 
 @lru_cache
