@@ -18,7 +18,7 @@ openapi = { composite = [
     "openapi-fix-export",
 ] }
 openapi-authentik = """openapi-generator generate -i \
-    "https://id.customers.goauthentik.io/api/v3/schema/" -g python \
+    "https://github.com/goauthentik/authentik/raw/refs/heads/main/schema.yml" -g python \
     -o ${PDM_PROJECT_ROOT}/packages/authentik \
     --package-name authentik_openapi --library asyncio"""
 openapi-outline = """openapi-generator generate -i \
