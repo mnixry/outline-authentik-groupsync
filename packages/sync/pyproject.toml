@@ -22,6 +22,11 @@ build-backend = "pdm.backend"
 distribution = true
 
 [tool.pdm.scripts]
+openapi = { composite = [
+    "openapi-authentik",
+    "openapi-outline",
+    "openapi-fix-export",
+] }
 openapi-authentik = """openapi-generator generate -i \
     "https://id.customers.goauthentik.io/api/v3/schema/" -g python \
     -o ${PDM_PROJECT_ROOT}/packages/authentik \
