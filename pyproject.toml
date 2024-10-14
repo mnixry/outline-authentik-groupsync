@@ -2,17 +2,17 @@
 name = "oasync"
 version = "0.1.0"
 description = "Synchronize group assignments between an Outline document and Authentik using Outline webhooks."
-authors = [
-    {name = "Mix", email = "32300164+mnixry@users.noreply.github.com"},
-]
+authors = [{ name = "Mix", email = "32300164+mnixry@users.noreply.github.com" }]
 dependencies = [
     "fastapi[standard]>=0.115.2",
     "pydantic-settings>=2.5.2",
-    "httpx[http2]>=0.27.2",
+    "aiohttp[speedup]>=3.10.10",
+    "outline-openapi @ file:///${PROJECT_ROOT}/packages/outline",
+    "authentik-openapi @ file:///${PROJECT_ROOT}/packages/authentik",
 ]
 requires-python = ">=3.12"
 readme = "README.md"
-license = {text = "AGPL-3.0-only"}
+license = { text = "AGPL-3.0-only" }
 
 [build-system]
 requires = ["pdm-backend"]
@@ -22,12 +22,11 @@ build-backend = "pdm.backend"
 distribution = true
 
 [tool.pdm.dev-dependencies]
-dev = [
-    "ruff>=0.6.9",
-]
+dev = ["ruff>=0.6.9"]
 
 [tool.pyright]
 typeCheckingMode = "standard"
+exclude = ["packages/**/*"]
 
 [tool.ruff]
 lint.select = [
