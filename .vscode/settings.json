@@ -1,5 +1,4 @@
 {
-    "python.languageServer": "Pylance",
     "[python]": {
         "editor.codeActionsOnSave": {
             "source.fixAll.ruff": "explicit"
@@ -17,7 +16,6 @@
         "**/.mypy_cache/**": true
     },
     "files.encoding": "utf8",
-    "python.analysis.diagnosticMode": "workspace",
     "cSpell.words": [
         "fastapi",
         "OASYNC",
