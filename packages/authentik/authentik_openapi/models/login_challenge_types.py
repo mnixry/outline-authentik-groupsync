@@ -33,10 +33,10 @@ class LoginChallengeTypes(BaseModel):
     """
     # data type: RedirectChallenge
     oneof_schema_1_validator: Optional[RedirectChallenge] = None
-    # data type: PlexAuthenticationChallenge
-    oneof_schema_2_validator: Optional[PlexAuthenticationChallenge] = None
     # data type: AppleLoginChallenge
-    oneof_schema_3_validator: Optional[AppleLoginChallenge] = None
+    oneof_schema_2_validator: Optional[AppleLoginChallenge] = None
+    # data type: PlexAuthenticationChallenge
+    oneof_schema_3_validator: Optional[PlexAuthenticationChallenge] = None
     actual_instance: Optional[Union[AppleLoginChallenge, PlexAuthenticationChallenge, RedirectChallenge]] = None
     one_of_schemas: Set[str] = { "AppleLoginChallenge", "PlexAuthenticationChallenge", "RedirectChallenge" }
 
@@ -69,14 +69,14 @@ class LoginChallengeTypes(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `RedirectChallenge`")
         else:
             match += 1
-        # validate data type: PlexAuthenticationChallenge
-        if not isinstance(v, PlexAuthenticationChallenge):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `PlexAuthenticationChallenge`")
-        else:
-            match += 1
         # validate data type: AppleLoginChallenge
         if not isinstance(v, AppleLoginChallenge):
             error_messages.append(f"Error! Input type `{type(v)}` is not `AppleLoginChallenge`")
+        else:
+            match += 1
+        # validate data type: PlexAuthenticationChallenge
+        if not isinstance(v, PlexAuthenticationChallenge):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `PlexAuthenticationChallenge`")
         else:
             match += 1
         if match > 1:
@@ -105,15 +105,15 @@ class LoginChallengeTypes(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into PlexAuthenticationChallenge
-        try:
-            instance.actual_instance = PlexAuthenticationChallenge.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
         # deserialize data into AppleLoginChallenge
         try:
             instance.actual_instance = AppleLoginChallenge.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into PlexAuthenticationChallenge
+        try:
+            instance.actual_instance = PlexAuthenticationChallenge.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))

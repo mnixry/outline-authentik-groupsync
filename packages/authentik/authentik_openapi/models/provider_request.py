@@ -31,8 +31,9 @@ class ProviderRequest(BaseModel):
     name: Annotated[str, Field(min_length=1, strict=True)]
     authentication_flow: Optional[StrictStr] = Field(default=None, description="Flow used for authentication when the associated application is accessed by an un-authenticated user.")
     authorization_flow: StrictStr = Field(description="Flow used when authorizing this provider.")
+    invalidation_flow: StrictStr = Field(description="Flow used ending the session from a provider.")
     property_mappings: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "property_mappings"]
+    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,7 @@ class ProviderRequest(BaseModel):
             "name": obj.get("name"),
             "authentication_flow": obj.get("authentication_flow"),
             "authorization_flow": obj.get("authorization_flow"),
+            "invalidation_flow": obj.get("invalidation_flow"),
             "property_mappings": obj.get("property_mappings")
         })
         return _obj

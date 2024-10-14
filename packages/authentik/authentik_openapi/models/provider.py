@@ -31,6 +31,7 @@ class Provider(BaseModel):
     name: StrictStr
     authentication_flow: Optional[StrictStr] = Field(default=None, description="Flow used for authentication when the associated application is accessed by an un-authenticated user.")
     authorization_flow: StrictStr = Field(description="Flow used when authorizing this provider.")
+    invalidation_flow: StrictStr = Field(description="Flow used ending the session from a provider.")
     property_mappings: Optional[List[StrictStr]] = None
     component: StrictStr = Field(description="Get object component so that we know how to edit the object")
     assigned_application_slug: StrictStr = Field(description="Internal application name, used in URLs.")
@@ -40,7 +41,7 @@ class Provider(BaseModel):
     verbose_name: StrictStr = Field(description="Return object's verbose_name")
     verbose_name_plural: StrictStr = Field(description="Return object's plural verbose_name")
     meta_model_name: StrictStr = Field(description="Return internal model name")
-    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name"]
+    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -120,6 +121,7 @@ class Provider(BaseModel):
             "name": obj.get("name"),
             "authentication_flow": obj.get("authentication_flow"),
             "authorization_flow": obj.get("authorization_flow"),
+            "invalidation_flow": obj.get("invalidation_flow"),
             "property_mappings": obj.get("property_mappings"),
             "component": obj.get("component"),
             "assigned_application_slug": obj.get("assigned_application_slug"),

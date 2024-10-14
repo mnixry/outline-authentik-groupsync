@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **property_mappings** | **List[str]** |  | [optional] 
 **property_mappings_group** | **List[str]** | Property mappings used for group creation/updating. | [optional] 
 **url** | **str** | Base URL to SCIM requests, usually ends in /v2 | 
+**verify_certificates** | **bool** |  | [optional] 
 **token** | **str** | Authentication token | 
 **exclude_users_service_account** | **bool** |  | [optional] 
 **filter_group** | **str** |  | [optional] 

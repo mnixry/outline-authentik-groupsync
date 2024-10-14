@@ -1,6 +1,6 @@
 # authentik_openapi.CoreApi
 
-All URIs are relative to *https://id.customers.goauthentik.io/api/v3*
+All URIs are relative to *https://github.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -85,10 +85,10 @@ from authentik_openapi.models.policy_test_result import PolicyTestResult
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -167,10 +167,10 @@ from authentik_openapi.models.application_request import ApplicationRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -245,10 +245,10 @@ import authentik_openapi
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -322,10 +322,10 @@ from authentik_openapi.models.paginated_application_list import PaginatedApplica
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -425,10 +425,10 @@ from authentik_openapi.models.coordinate import Coordinate
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -505,10 +505,10 @@ from authentik_openapi.models.patched_application_request import PatchedApplicat
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -586,10 +586,10 @@ from authentik_openapi.models.application import Application
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -664,10 +664,10 @@ import authentik_openapi
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -745,10 +745,10 @@ from authentik_openapi.models.file_path_request import FilePathRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -825,10 +825,10 @@ from authentik_openapi.models.application_request import ApplicationRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -906,10 +906,10 @@ from authentik_openapi.models.used_by import UsedBy
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -984,10 +984,10 @@ import authentik_openapi
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1061,10 +1061,10 @@ from authentik_openapi.models.paginated_authenticated_session_list import Pagina
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1152,10 +1152,10 @@ from authentik_openapi.models.authenticated_session import AuthenticatedSession
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1231,10 +1231,10 @@ from authentik_openapi.models.used_by import UsedBy
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1311,10 +1311,10 @@ from authentik_openapi.models.brand_request import BrandRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1390,10 +1390,10 @@ from authentik_openapi.models.current_brand import CurrentBrand
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1464,10 +1464,10 @@ import authentik_openapi
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1541,10 +1541,10 @@ from authentik_openapi.models.paginated_brand_list import PaginatedBrandList
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1653,10 +1653,10 @@ from authentik_openapi.models.patched_brand_request import PatchedBrandRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1734,10 +1734,10 @@ from authentik_openapi.models.brand import Brand
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1814,10 +1814,10 @@ from authentik_openapi.models.brand_request import BrandRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1895,10 +1895,10 @@ from authentik_openapi.models.used_by import UsedBy
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1974,10 +1974,10 @@ from authentik_openapi.models.user_account_request import UserAccountRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2055,10 +2055,10 @@ from authentik_openapi.models.group_request import GroupRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2133,10 +2133,10 @@ import authentik_openapi
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2210,10 +2210,10 @@ from authentik_openapi.models.paginated_group_list import PaginatedGroupList
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2308,10 +2308,10 @@ from authentik_openapi.models.patched_group_request import PatchedGroupRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2389,10 +2389,10 @@ from authentik_openapi.models.user_account_request import UserAccountRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2469,10 +2469,10 @@ from authentik_openapi.models.group import Group
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2551,10 +2551,10 @@ from authentik_openapi.models.group_request import GroupRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2632,10 +2632,10 @@ from authentik_openapi.models.used_by import UsedBy
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2712,10 +2712,10 @@ from authentik_openapi.models.token_request import TokenRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2790,10 +2790,10 @@ import authentik_openapi
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2867,10 +2867,10 @@ from authentik_openapi.models.paginated_token_list import PaginatedTokenList
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2967,10 +2967,10 @@ from authentik_openapi.models.token import Token
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3048,10 +3048,10 @@ from authentik_openapi.models.token import Token
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3127,10 +3127,10 @@ from authentik_openapi.models.token_set_key_request import TokenSetKeyRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3208,10 +3208,10 @@ from authentik_openapi.models.token_request import TokenRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3289,10 +3289,10 @@ from authentik_openapi.models.used_by import UsedBy
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3368,10 +3368,10 @@ from authentik_openapi.models.token_view import TokenView
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3449,10 +3449,10 @@ from authentik_openapi.models.transaction_application_response import Transactio
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3527,10 +3527,10 @@ import authentik_openapi
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3604,10 +3604,10 @@ from authentik_openapi.models.paginated_user_consent_list import PaginatedUserCo
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3693,10 +3693,10 @@ from authentik_openapi.models.user_consent import UserConsent
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3772,10 +3772,10 @@ from authentik_openapi.models.used_by import UsedBy
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3852,10 +3852,10 @@ from authentik_openapi.models.user_request import UserRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3930,10 +3930,10 @@ import authentik_openapi
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4006,10 +4006,10 @@ import authentik_openapi
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4083,10 +4083,10 @@ import authentik_openapi
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4156,10 +4156,10 @@ from authentik_openapi.models.paginated_user_list import PaginatedUserList
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4267,10 +4267,10 @@ from authentik_openapi.models.session_user import SessionUser
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4342,10 +4342,10 @@ from authentik_openapi.models.user_metrics import UserMetrics
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4422,10 +4422,10 @@ from authentik_openapi.models.user import User
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4503,10 +4503,10 @@ from authentik_openapi.models.user_path import UserPath
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4582,10 +4582,10 @@ from authentik_openapi.models.link import Link
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4660,10 +4660,10 @@ import authentik_openapi
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4739,10 +4739,10 @@ from authentik_openapi.models.user import User
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4819,10 +4819,10 @@ from authentik_openapi.models.user_service_account_response import UserServiceAc
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4898,10 +4898,10 @@ from authentik_openapi.models.user_password_set_request import UserPasswordSetRe
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4978,10 +4978,10 @@ from authentik_openapi.models.user_request import UserRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5059,10 +5059,10 @@ from authentik_openapi.models.used_by import UsedBy
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters

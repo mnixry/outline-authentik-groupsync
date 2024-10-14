@@ -34,6 +34,7 @@ class PatchedSAMLProviderRequest(BaseModel):
     name: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     authentication_flow: Optional[StrictStr] = Field(default=None, description="Flow used for authentication when the associated application is accessed by an un-authenticated user.")
     authorization_flow: Optional[StrictStr] = Field(default=None, description="Flow used when authorizing this provider.")
+    invalidation_flow: Optional[StrictStr] = Field(default=None, description="Flow used ending the session from a provider.")
     property_mappings: Optional[List[StrictStr]] = None
     acs_url: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = None
     audience: Optional[StrictStr] = Field(default=None, description="Value of the audience restriction field of the assertion. When left empty, no audience restriction will be added.")
@@ -51,7 +52,7 @@ class PatchedSAMLProviderRequest(BaseModel):
     sign_response: Optional[StrictBool] = None
     sp_binding: Optional[SpBindingEnum] = Field(default=None, description="This determines how authentik sends the response back to the Service Provider.")
     default_relay_state: Optional[StrictStr] = Field(default=None, description="Default relay_state value for IDP-initiated logins")
-    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "property_mappings", "acs_url", "audience", "issuer", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "verification_kp", "encryption_kp", "sign_assertion", "sign_response", "sp_binding", "default_relay_state"]
+    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "acs_url", "audience", "issuer", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "verification_kp", "encryption_kp", "sign_assertion", "sign_response", "sp_binding", "default_relay_state"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -132,6 +133,7 @@ class PatchedSAMLProviderRequest(BaseModel):
             "name": obj.get("name"),
             "authentication_flow": obj.get("authentication_flow"),
             "authorization_flow": obj.get("authorization_flow"),
+            "invalidation_flow": obj.get("invalidation_flow"),
             "property_mappings": obj.get("property_mappings"),
             "acs_url": obj.get("acs_url"),
             "audience": obj.get("audience"),

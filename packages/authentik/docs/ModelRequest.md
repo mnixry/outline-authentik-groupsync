@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **default_group_email_domain** | **str** |  | 
 **authentication_flow** | **str** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
 **authorization_flow** | **str** | Flow used when authorizing this provider. | 
+**invalidation_flow** | **str** | Flow used ending the session from a provider. | 
 **base_dn** | **str** | DN under which objects are accessible. | [optional] 
 **certificate** | **str** |  | [optional] 
 **tls_server_name** | **str** |  | [optional] 
@@ -71,6 +72,7 @@ Name | Type | Description | Notes
 **sp_binding** | [**SpBindingEnum**](SpBindingEnum.md) | This determines how authentik sends the response back to the Service Provider. | [optional] 
 **default_relay_state** | **str** | Default relay_state value for IDP-initiated logins | [optional] 
 **url** | **str** | Base URL to SCIM requests, usually ends in /v2 | 
+**verify_certificates** | **bool** |  | [optional] 
 **token** | **str** | Authentication token | 
 
 ## Example

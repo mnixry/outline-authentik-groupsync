@@ -32,6 +32,7 @@ class PatchedProxyProviderRequest(BaseModel):
     name: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     authentication_flow: Optional[StrictStr] = Field(default=None, description="Flow used for authentication when the associated application is accessed by an un-authenticated user.")
     authorization_flow: Optional[StrictStr] = Field(default=None, description="Flow used when authorizing this provider.")
+    invalidation_flow: Optional[StrictStr] = Field(default=None, description="Flow used ending the session from a provider.")
     property_mappings: Optional[List[StrictStr]] = None
     internal_host: Optional[StrictStr] = None
     external_host: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
@@ -47,7 +48,7 @@ class PatchedProxyProviderRequest(BaseModel):
     jwks_sources: Optional[List[StrictStr]] = None
     access_token_validity: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3).")
     refresh_token_validity: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3).")
-    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "property_mappings", "internal_host", "external_host", "internal_host_ssl_validation", "certificate", "skip_path_regex", "basic_auth_enabled", "basic_auth_password_attribute", "basic_auth_user_attribute", "mode", "intercept_header_auth", "cookie_domain", "jwks_sources", "access_token_validity", "refresh_token_validity"]
+    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "internal_host", "external_host", "internal_host_ssl_validation", "certificate", "skip_path_regex", "basic_auth_enabled", "basic_auth_password_attribute", "basic_auth_user_attribute", "mode", "intercept_header_auth", "cookie_domain", "jwks_sources", "access_token_validity", "refresh_token_validity"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,6 +114,7 @@ class PatchedProxyProviderRequest(BaseModel):
             "name": obj.get("name"),
             "authentication_flow": obj.get("authentication_flow"),
             "authorization_flow": obj.get("authorization_flow"),
+            "invalidation_flow": obj.get("invalidation_flow"),
             "property_mappings": obj.get("property_mappings"),
             "internal_host": obj.get("internal_host"),
             "external_host": obj.get("external_host"),

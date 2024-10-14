@@ -32,6 +32,7 @@ class ProxyProvider(BaseModel):
     name: StrictStr
     authentication_flow: Optional[StrictStr] = Field(default=None, description="Flow used for authentication when the associated application is accessed by an un-authenticated user.")
     authorization_flow: StrictStr = Field(description="Flow used when authorizing this provider.")
+    invalidation_flow: StrictStr = Field(description="Flow used ending the session from a provider.")
     property_mappings: Optional[List[StrictStr]] = None
     component: StrictStr = Field(description="Get object component so that we know how to edit the object")
     assigned_application_slug: StrictStr = Field(description="Internal application name, used in URLs.")
@@ -58,7 +59,7 @@ class ProxyProvider(BaseModel):
     access_token_validity: Optional[StrictStr] = Field(default=None, description="Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3).")
     refresh_token_validity: Optional[StrictStr] = Field(default=None, description="Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3).")
     outpost_set: List[StrictStr]
-    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "client_id", "internal_host", "external_host", "internal_host_ssl_validation", "certificate", "skip_path_regex", "basic_auth_enabled", "basic_auth_password_attribute", "basic_auth_user_attribute", "mode", "intercept_header_auth", "redirect_uris", "cookie_domain", "jwks_sources", "access_token_validity", "refresh_token_validity", "outpost_set"]
+    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "client_id", "internal_host", "external_host", "internal_host_ssl_validation", "certificate", "skip_path_regex", "basic_auth_enabled", "basic_auth_password_attribute", "basic_auth_user_attribute", "mode", "intercept_header_auth", "redirect_uris", "cookie_domain", "jwks_sources", "access_token_validity", "refresh_token_validity", "outpost_set"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -149,6 +150,7 @@ class ProxyProvider(BaseModel):
             "name": obj.get("name"),
             "authentication_flow": obj.get("authentication_flow"),
             "authorization_flow": obj.get("authorization_flow"),
+            "invalidation_flow": obj.get("invalidation_flow"),
             "property_mappings": obj.get("property_mappings"),
             "component": obj.get("component"),
             "assigned_application_slug": obj.get("assigned_application_slug"),

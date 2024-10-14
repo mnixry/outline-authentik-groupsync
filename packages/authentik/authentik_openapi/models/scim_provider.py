@@ -38,10 +38,11 @@ class SCIMProvider(BaseModel):
     verbose_name_plural: StrictStr = Field(description="Return object's plural verbose_name")
     meta_model_name: StrictStr = Field(description="Return internal model name")
     url: StrictStr = Field(description="Base URL to SCIM requests, usually ends in /v2")
+    verify_certificates: Optional[StrictBool] = None
     token: StrictStr = Field(description="Authentication token")
     exclude_users_service_account: Optional[StrictBool] = None
     filter_group: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["pk", "name", "property_mappings", "property_mappings_group", "component", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "url", "token", "exclude_users_service_account", "filter_group"]
+    __properties: ClassVar[List[str]] = ["pk", "name", "property_mappings", "property_mappings_group", "component", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "url", "verify_certificates", "token", "exclude_users_service_account", "filter_group"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -124,6 +125,7 @@ class SCIMProvider(BaseModel):
             "verbose_name_plural": obj.get("verbose_name_plural"),
             "meta_model_name": obj.get("meta_model_name"),
             "url": obj.get("url"),
+            "verify_certificates": obj.get("verify_certificates"),
             "token": obj.get("token"),
             "exclude_users_service_account": obj.get("exclude_users_service_account"),
             "filter_group": obj.get("filter_group")

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **base_dn** | **str** | DN under which objects are accessible. | [optional] 
 **bind_flow_slug** | **str** |  | 
+**unbind_flow_slug** | **str** | Get slug for unbind flow, defaulting to brand&#39;s default flow. | [readonly] 
 **application_slug** | **str** | Prioritise backchannel slug over direct application slug | [readonly] 
 **certificate** | **str** |  | [optional] 
 **tls_server_name** | **str** |  | [optional] 

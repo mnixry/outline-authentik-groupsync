@@ -6,14 +6,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **flow_info** | [**ContextualFlowInfo**](ContextualFlowInfo.md) |  | [optional] 
-**component** | **str** |  | [optional] [default to 'ak-source-oauth-apple']
+**component** | **str** |  | [optional] [default to 'ak-source-plex']
 **response_errors** | **Dict[str, List[ErrorDetail]]** |  | [optional] 
 **to** | **str** |  | 
 **client_id** | **str** |  | 
-**slug** | **str** |  | 
 **scope** | **str** |  | 
 **redirect_uri** | **str** |  | 
 **state** | **str** |  | 
+**slug** | **str** |  | 
 
 ## Example
 

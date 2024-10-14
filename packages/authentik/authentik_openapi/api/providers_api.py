@@ -24377,6 +24377,7 @@ class ProvidersApi:
         self,
         name: Annotated[str, Field(min_length=1, strict=True)],
         authorization_flow: StrictStr,
+        invalidation_flow: StrictStr,
         file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
         _request_timeout: Union[
             None,
@@ -24399,6 +24400,8 @@ class ProvidersApi:
         :type name: str
         :param authorization_flow: (required)
         :type authorization_flow: str
+        :param invalidation_flow: (required)
+        :type invalidation_flow: str
         :param file: (required)
         :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
@@ -24426,6 +24429,7 @@ class ProvidersApi:
         _param = self._providers_saml_import_metadata_create_serialize(
             name=name,
             authorization_flow=authorization_flow,
+            invalidation_flow=invalidation_flow,
             file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -24454,6 +24458,7 @@ class ProvidersApi:
         self,
         name: Annotated[str, Field(min_length=1, strict=True)],
         authorization_flow: StrictStr,
+        invalidation_flow: StrictStr,
         file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
         _request_timeout: Union[
             None,
@@ -24476,6 +24481,8 @@ class ProvidersApi:
         :type name: str
         :param authorization_flow: (required)
         :type authorization_flow: str
+        :param invalidation_flow: (required)
+        :type invalidation_flow: str
         :param file: (required)
         :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
@@ -24503,6 +24510,7 @@ class ProvidersApi:
         _param = self._providers_saml_import_metadata_create_serialize(
             name=name,
             authorization_flow=authorization_flow,
+            invalidation_flow=invalidation_flow,
             file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -24531,6 +24539,7 @@ class ProvidersApi:
         self,
         name: Annotated[str, Field(min_length=1, strict=True)],
         authorization_flow: StrictStr,
+        invalidation_flow: StrictStr,
         file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
         _request_timeout: Union[
             None,
@@ -24553,6 +24562,8 @@ class ProvidersApi:
         :type name: str
         :param authorization_flow: (required)
         :type authorization_flow: str
+        :param invalidation_flow: (required)
+        :type invalidation_flow: str
         :param file: (required)
         :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
@@ -24580,6 +24591,7 @@ class ProvidersApi:
         _param = self._providers_saml_import_metadata_create_serialize(
             name=name,
             authorization_flow=authorization_flow,
+            invalidation_flow=invalidation_flow,
             file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -24603,6 +24615,7 @@ class ProvidersApi:
         self,
         name,
         authorization_flow,
+        invalidation_flow,
         file,
         _request_auth,
         _content_type,
@@ -24632,6 +24645,8 @@ class ProvidersApi:
             _form_params.append(('name', name))
         if authorization_flow is not None:
             _form_params.append(('authorization_flow', authorization_flow))
+        if invalidation_flow is not None:
+            _form_params.append(('invalidation_flow', invalidation_flow))
         if file is not None:
             _files['file'] = file
         # process the body parameter
@@ -24695,6 +24710,7 @@ class ProvidersApi:
         default_relay_state: Optional[StrictStr] = None,
         digest_algorithm: Optional[StrictStr] = None,
         encryption_kp: Optional[StrictStr] = None,
+        invalidation_flow: Optional[StrictStr] = None,
         is_backchannel: Optional[StrictBool] = None,
         issuer: Optional[StrictStr] = None,
         name: Optional[StrictStr] = None,
@@ -24748,6 +24764,8 @@ class ProvidersApi:
         :type digest_algorithm: str
         :param encryption_kp:
         :type encryption_kp: str
+        :param invalidation_flow:
+        :type invalidation_flow: str
         :param is_backchannel:
         :type is_backchannel: bool
         :param issuer:
@@ -24813,6 +24831,7 @@ class ProvidersApi:
             default_relay_state=default_relay_state,
             digest_algorithm=digest_algorithm,
             encryption_kp=encryption_kp,
+            invalidation_flow=invalidation_flow,
             is_backchannel=is_backchannel,
             issuer=issuer,
             name=name,
@@ -24864,6 +24883,7 @@ class ProvidersApi:
         default_relay_state: Optional[StrictStr] = None,
         digest_algorithm: Optional[StrictStr] = None,
         encryption_kp: Optional[StrictStr] = None,
+        invalidation_flow: Optional[StrictStr] = None,
         is_backchannel: Optional[StrictBool] = None,
         issuer: Optional[StrictStr] = None,
         name: Optional[StrictStr] = None,
@@ -24917,6 +24937,8 @@ class ProvidersApi:
         :type digest_algorithm: str
         :param encryption_kp:
         :type encryption_kp: str
+        :param invalidation_flow:
+        :type invalidation_flow: str
         :param is_backchannel:
         :type is_backchannel: bool
         :param issuer:
@@ -24982,6 +25004,7 @@ class ProvidersApi:
             default_relay_state=default_relay_state,
             digest_algorithm=digest_algorithm,
             encryption_kp=encryption_kp,
+            invalidation_flow=invalidation_flow,
             is_backchannel=is_backchannel,
             issuer=issuer,
             name=name,
@@ -25033,6 +25056,7 @@ class ProvidersApi:
         default_relay_state: Optional[StrictStr] = None,
         digest_algorithm: Optional[StrictStr] = None,
         encryption_kp: Optional[StrictStr] = None,
+        invalidation_flow: Optional[StrictStr] = None,
         is_backchannel: Optional[StrictBool] = None,
         issuer: Optional[StrictStr] = None,
         name: Optional[StrictStr] = None,
@@ -25086,6 +25110,8 @@ class ProvidersApi:
         :type digest_algorithm: str
         :param encryption_kp:
         :type encryption_kp: str
+        :param invalidation_flow:
+        :type invalidation_flow: str
         :param is_backchannel:
         :type is_backchannel: bool
         :param issuer:
@@ -25151,6 +25177,7 @@ class ProvidersApi:
             default_relay_state=default_relay_state,
             digest_algorithm=digest_algorithm,
             encryption_kp=encryption_kp,
+            invalidation_flow=invalidation_flow,
             is_backchannel=is_backchannel,
             issuer=issuer,
             name=name,
@@ -25197,6 +25224,7 @@ class ProvidersApi:
         default_relay_state,
         digest_algorithm,
         encryption_kp,
+        invalidation_flow,
         is_backchannel,
         issuer,
         name,
@@ -25275,6 +25303,10 @@ class ProvidersApi:
         if encryption_kp is not None:
             
             _query_params.append(('encryption_kp', encryption_kp))
+            
+        if invalidation_flow is not None:
+            
+            _query_params.append(('invalidation_flow', invalidation_flow))
             
         if is_backchannel is not None:
             

@@ -32,6 +32,7 @@ class LDAPProviderRequest(BaseModel):
     name: Annotated[str, Field(min_length=1, strict=True)]
     authentication_flow: Optional[StrictStr] = Field(default=None, description="Flow used for authentication when the associated application is accessed by an un-authenticated user.")
     authorization_flow: StrictStr = Field(description="Flow used when authorizing this provider.")
+    invalidation_flow: StrictStr = Field(description="Flow used ending the session from a provider.")
     property_mappings: Optional[List[StrictStr]] = None
     base_dn: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="DN under which objects are accessible.")
     certificate: Optional[StrictStr] = None
@@ -41,7 +42,7 @@ class LDAPProviderRequest(BaseModel):
     search_mode: Optional[LDAPAPIAccessMode] = None
     bind_mode: Optional[LDAPAPIAccessMode] = None
     mfa_support: Optional[StrictBool] = Field(default=None, description="When enabled, code-based multi-factor authentication can be used by appending a semicolon and the TOTP code to the password. This should only be enabled if all users that will bind to this provider have a TOTP device configured, as otherwise a password may incorrectly be rejected if it contains a semicolon.")
-    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "property_mappings", "base_dn", "certificate", "tls_server_name", "uid_start_number", "gid_start_number", "search_mode", "bind_mode", "mfa_support"]
+    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "base_dn", "certificate", "tls_server_name", "uid_start_number", "gid_start_number", "search_mode", "bind_mode", "mfa_support"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,6 +108,7 @@ class LDAPProviderRequest(BaseModel):
             "name": obj.get("name"),
             "authentication_flow": obj.get("authentication_flow"),
             "authorization_flow": obj.get("authorization_flow"),
+            "invalidation_flow": obj.get("invalidation_flow"),
             "property_mappings": obj.get("property_mappings"),
             "base_dn": obj.get("base_dn"),
             "certificate": obj.get("certificate"),

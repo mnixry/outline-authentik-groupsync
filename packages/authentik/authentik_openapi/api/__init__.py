@@ -20,4 +20,5 @@ from authentik_openapi.api.root_api import RootApi
 from authentik_openapi.api.schema_api import SchemaApi
 from authentik_openapi.api.sources_api import SourcesApi
 from authentik_openapi.api.stages_api import StagesApi
+from authentik_openapi.api.tenants_api import TenantsApi
 

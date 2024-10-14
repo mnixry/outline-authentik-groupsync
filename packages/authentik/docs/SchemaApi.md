@@ -1,6 +1,6 @@
 # authentik_openapi.SchemaApi
 
-All URIs are relative to *https://id.customers.goauthentik.io/api/v3*
+All URIs are relative to *https://github.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,10 +23,10 @@ import authentik_openapi
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters

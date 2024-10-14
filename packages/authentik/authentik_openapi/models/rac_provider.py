@@ -31,6 +31,7 @@ class RACProvider(BaseModel):
     name: StrictStr
     authentication_flow: Optional[StrictStr] = Field(default=None, description="Flow used for authentication when the associated application is accessed by an un-authenticated user.")
     authorization_flow: StrictStr = Field(description="Flow used when authorizing this provider.")
+    invalidation_flow: StrictStr = Field(description="Flow used ending the session from a provider.")
     property_mappings: Optional[List[StrictStr]] = None
     component: StrictStr = Field(description="Get object component so that we know how to edit the object")
     assigned_application_slug: StrictStr = Field(description="Internal application name, used in URLs.")
@@ -44,7 +45,7 @@ class RACProvider(BaseModel):
     outpost_set: List[StrictStr]
     connection_expiry: Optional[StrictStr] = Field(default=None, description="Determines how long a session lasts. Default of 0 means that the sessions lasts until the browser is closed. (Format: hours=-1;minutes=-2;seconds=-3)")
     delete_token_on_disconnect: Optional[StrictBool] = Field(default=None, description="When set to true, connection tokens will be deleted upon disconnect.")
-    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "settings", "outpost_set", "connection_expiry", "delete_token_on_disconnect"]
+    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "settings", "outpost_set", "connection_expiry", "delete_token_on_disconnect"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -131,6 +132,7 @@ class RACProvider(BaseModel):
             "name": obj.get("name"),
             "authentication_flow": obj.get("authentication_flow"),
             "authorization_flow": obj.get("authorization_flow"),
+            "invalidation_flow": obj.get("invalidation_flow"),
             "property_mappings": obj.get("property_mappings"),
             "component": obj.get("component"),
             "assigned_application_slug": obj.get("assigned_application_slug"),

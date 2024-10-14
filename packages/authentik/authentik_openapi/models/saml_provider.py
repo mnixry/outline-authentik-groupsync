@@ -35,6 +35,7 @@ class SAMLProvider(BaseModel):
     name: StrictStr
     authentication_flow: Optional[StrictStr] = Field(default=None, description="Flow used for authentication when the associated application is accessed by an un-authenticated user.")
     authorization_flow: StrictStr = Field(description="Flow used when authorizing this provider.")
+    invalidation_flow: StrictStr = Field(description="Flow used ending the session from a provider.")
     property_mappings: Optional[List[StrictStr]] = None
     component: StrictStr = Field(description="Get object component so that we know how to edit the object")
     assigned_application_slug: StrictStr = Field(description="Internal application name, used in URLs.")
@@ -66,7 +67,7 @@ class SAMLProvider(BaseModel):
     url_sso_init: StrictStr = Field(description="Get SSO IDP-Initiated URL")
     url_slo_post: StrictStr = Field(description="Get SLO POST URL")
     url_slo_redirect: StrictStr = Field(description="Get SLO redirect URL")
-    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "acs_url", "audience", "issuer", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "verification_kp", "encryption_kp", "sign_assertion", "sign_response", "sp_binding", "default_relay_state", "url_download_metadata", "url_sso_post", "url_sso_redirect", "url_sso_init", "url_slo_post", "url_slo_redirect"]
+    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "acs_url", "audience", "issuer", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "verification_kp", "encryption_kp", "sign_assertion", "sign_response", "sp_binding", "default_relay_state", "url_download_metadata", "url_sso_post", "url_sso_redirect", "url_sso_init", "url_slo_post", "url_slo_redirect"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -178,6 +179,7 @@ class SAMLProvider(BaseModel):
             "name": obj.get("name"),
             "authentication_flow": obj.get("authentication_flow"),
             "authorization_flow": obj.get("authorization_flow"),
+            "invalidation_flow": obj.get("invalidation_flow"),
             "property_mappings": obj.get("property_mappings"),
             "component": obj.get("component"),
             "assigned_application_slug": obj.get("assigned_application_slug"),

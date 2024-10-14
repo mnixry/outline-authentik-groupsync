@@ -55,10 +55,10 @@ import authentik_openapi
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://id.customers.goauthentik.io/api/v3
+# Defining the host is optional and defaults to https://github.com/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_openapi.Configuration(
-    host = "https://id.customers.goauthentik.io/api/v3"
+    host = "https://github.com/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -88,7 +88,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://id.customers.goauthentik.io/api/v3*
+All URIs are relative to *https://github.com/api/v3*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -953,6 +953,20 @@ Class | Method | HTTP request | Description
 *StagesApi* | [**stages_user_write_retrieve**](docs/StagesApi.md#stages_user_write_retrieve) | **GET** /stages/user_write/{stage_uuid}/ | 
 *StagesApi* | [**stages_user_write_update**](docs/StagesApi.md#stages_user_write_update) | **PUT** /stages/user_write/{stage_uuid}/ | 
 *StagesApi* | [**stages_user_write_used_by_list**](docs/StagesApi.md#stages_user_write_used_by_list) | **GET** /stages/user_write/{stage_uuid}/used_by/ | 
+*TenantsApi* | [**tenants_domains_create**](docs/TenantsApi.md#tenants_domains_create) | **POST** /tenants/domains/ | 
+*TenantsApi* | [**tenants_domains_destroy**](docs/TenantsApi.md#tenants_domains_destroy) | **DELETE** /tenants/domains/{id}/ | 
+*TenantsApi* | [**tenants_domains_list**](docs/TenantsApi.md#tenants_domains_list) | **GET** /tenants/domains/ | 
+*TenantsApi* | [**tenants_domains_partial_update**](docs/TenantsApi.md#tenants_domains_partial_update) | **PATCH** /tenants/domains/{id}/ | 
+*TenantsApi* | [**tenants_domains_retrieve**](docs/TenantsApi.md#tenants_domains_retrieve) | **GET** /tenants/domains/{id}/ | 
+*TenantsApi* | [**tenants_domains_update**](docs/TenantsApi.md#tenants_domains_update) | **PUT** /tenants/domains/{id}/ | 
+*TenantsApi* | [**tenants_tenants_create**](docs/TenantsApi.md#tenants_tenants_create) | **POST** /tenants/tenants/ | 
+*TenantsApi* | [**tenants_tenants_create_admin_group_create**](docs/TenantsApi.md#tenants_tenants_create_admin_group_create) | **POST** /tenants/tenants/{tenant_uuid}/create_admin_group/ | 
+*TenantsApi* | [**tenants_tenants_create_recovery_key_create**](docs/TenantsApi.md#tenants_tenants_create_recovery_key_create) | **POST** /tenants/tenants/{tenant_uuid}/create_recovery_key/ | 
+*TenantsApi* | [**tenants_tenants_destroy**](docs/TenantsApi.md#tenants_tenants_destroy) | **DELETE** /tenants/tenants/{tenant_uuid}/ | 
+*TenantsApi* | [**tenants_tenants_list**](docs/TenantsApi.md#tenants_tenants_list) | **GET** /tenants/tenants/ | 
+*TenantsApi* | [**tenants_tenants_partial_update**](docs/TenantsApi.md#tenants_tenants_partial_update) | **PATCH** /tenants/tenants/{tenant_uuid}/ | 
+*TenantsApi* | [**tenants_tenants_retrieve**](docs/TenantsApi.md#tenants_tenants_retrieve) | **GET** /tenants/tenants/{tenant_uuid}/ | 
+*TenantsApi* | [**tenants_tenants_update**](docs/TenantsApi.md#tenants_tenants_update) | **PUT** /tenants/tenants/{tenant_uuid}/ | 
 
 
 ## Documentation For Models
@@ -1052,6 +1066,10 @@ Class | Method | HTTP request | Description
  - [DigitsEnum](docs/DigitsEnum.md)
  - [DockerServiceConnection](docs/DockerServiceConnection.md)
  - [DockerServiceConnectionRequest](docs/DockerServiceConnectionRequest.md)
+ - [Domain](docs/Domain.md)
+ - [DomainRequest](docs/DomainRequest.md)
+ - [DummyChallenge](docs/DummyChallenge.md)
+ - [DummyChallengeResponseRequest](docs/DummyChallengeResponseRequest.md)
  - [DummyPolicy](docs/DummyPolicy.md)
  - [DummyPolicyRequest](docs/DummyPolicyRequest.md)
  - [DummyStage](docs/DummyStage.md)
@@ -1211,6 +1229,7 @@ Class | Method | HTTP request | Description
  - [PaginatedConsentStageList](docs/PaginatedConsentStageList.md)
  - [PaginatedDenyStageList](docs/PaginatedDenyStageList.md)
  - [PaginatedDockerServiceConnectionList](docs/PaginatedDockerServiceConnectionList.md)
+ - [PaginatedDomainList](docs/PaginatedDomainList.md)
  - [PaginatedDummyPolicyList](docs/PaginatedDummyPolicyList.md)
  - [PaginatedDummyStageList](docs/PaginatedDummyStageList.md)
  - [PaginatedDuoDeviceList](docs/PaginatedDuoDeviceList.md)
@@ -1298,6 +1317,7 @@ Class | Method | HTTP request | Description
  - [PaginatedStaticDeviceList](docs/PaginatedStaticDeviceList.md)
  - [PaginatedSystemTaskList](docs/PaginatedSystemTaskList.md)
  - [PaginatedTOTPDeviceList](docs/PaginatedTOTPDeviceList.md)
+ - [PaginatedTenantList](docs/PaginatedTenantList.md)
  - [PaginatedTokenList](docs/PaginatedTokenList.md)
  - [PaginatedTokenModelList](docs/PaginatedTokenModelList.md)
  - [PaginatedUserAssignedObjectPermissionList](docs/PaginatedUserAssignedObjectPermissionList.md)
@@ -1337,6 +1357,7 @@ Class | Method | HTTP request | Description
  - [PatchedConsentStageRequest](docs/PatchedConsentStageRequest.md)
  - [PatchedDenyStageRequest](docs/PatchedDenyStageRequest.md)
  - [PatchedDockerServiceConnectionRequest](docs/PatchedDockerServiceConnectionRequest.md)
+ - [PatchedDomainRequest](docs/PatchedDomainRequest.md)
  - [PatchedDummyPolicyRequest](docs/PatchedDummyPolicyRequest.md)
  - [PatchedDummyStageRequest](docs/PatchedDummyStageRequest.md)
  - [PatchedDuoDeviceRequest](docs/PatchedDuoDeviceRequest.md)
@@ -1403,6 +1424,7 @@ Class | Method | HTTP request | Description
  - [PatchedSourceStageRequest](docs/PatchedSourceStageRequest.md)
  - [PatchedStaticDeviceRequest](docs/PatchedStaticDeviceRequest.md)
  - [PatchedTOTPDeviceRequest](docs/PatchedTOTPDeviceRequest.md)
+ - [PatchedTenantRequest](docs/PatchedTenantRequest.md)
  - [PatchedTokenRequest](docs/PatchedTokenRequest.md)
  - [PatchedUserDeleteStageRequest](docs/PatchedUserDeleteStageRequest.md)
  - [PatchedUserLoginStageRequest](docs/PatchedUserLoginStageRequest.md)
@@ -1503,6 +1525,7 @@ Class | Method | HTTP request | Description
  - [ServiceConnection](docs/ServiceConnection.md)
  - [ServiceConnectionRequest](docs/ServiceConnectionRequest.md)
  - [ServiceConnectionState](docs/ServiceConnectionState.md)
+ - [SessionEndChallenge](docs/SessionEndChallenge.md)
  - [SessionUser](docs/SessionUser.md)
  - [Settings](docs/Settings.md)
  - [SettingsRequest](docs/SettingsRequest.md)
@@ -1533,6 +1556,11 @@ Class | Method | HTTP request | Description
  - [SystemTaskStatusEnum](docs/SystemTaskStatusEnum.md)
  - [TOTPDevice](docs/TOTPDevice.md)
  - [TOTPDeviceRequest](docs/TOTPDeviceRequest.md)
+ - [Tenant](docs/Tenant.md)
+ - [TenantAdminGroupRequestRequest](docs/TenantAdminGroupRequestRequest.md)
+ - [TenantRecoveryKeyRequestRequest](docs/TenantRecoveryKeyRequestRequest.md)
+ - [TenantRecoveryKeyResponse](docs/TenantRecoveryKeyResponse.md)
+ - [TenantRequest](docs/TenantRequest.md)
  - [Token](docs/Token.md)
  - [TokenModel](docs/TokenModel.md)
  - [TokenRequest](docs/TokenRequest.md)

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **authentication_flow** | **str** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
 **authorization_flow** | **str** | Flow used when authorizing this provider. | [optional] 
+**invalidation_flow** | **str** | Flow used ending the session from a provider. | [optional] 
 **property_mappings** | **List[str]** |  | [optional] 
 **base_dn** | **str** | DN under which objects are accessible. | [optional] 
 **certificate** | **str** |  | [optional] 

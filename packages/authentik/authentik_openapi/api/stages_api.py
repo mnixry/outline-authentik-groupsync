@@ -142,7 +142,7 @@ class StagesApi:
     @validate_call
     async def stages_all_destroy(
         self,
-        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage.")],
+        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this stage.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -160,7 +160,7 @@ class StagesApi:
 
         Stage Viewset
 
-        :param stage_uuid: A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage. (required)
+        :param stage_uuid: A UUID string identifying this stage. (required)
         :type stage_uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -211,7 +211,7 @@ class StagesApi:
     @validate_call
     async def stages_all_destroy_with_http_info(
         self,
-        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage.")],
+        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this stage.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -229,7 +229,7 @@ class StagesApi:
 
         Stage Viewset
 
-        :param stage_uuid: A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage. (required)
+        :param stage_uuid: A UUID string identifying this stage. (required)
         :type stage_uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -280,7 +280,7 @@ class StagesApi:
     @validate_call
     async def stages_all_destroy_without_preload_content(
         self,
-        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage.")],
+        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this stage.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -298,7 +298,7 @@ class StagesApi:
 
         Stage Viewset
 
-        :param stage_uuid: A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage. (required)
+        :param stage_uuid: A UUID string identifying this stage. (required)
         :type stage_uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -746,7 +746,7 @@ class StagesApi:
     @validate_call
     async def stages_all_retrieve(
         self,
-        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage.")],
+        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this stage.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -764,7 +764,7 @@ class StagesApi:
 
         Stage Viewset
 
-        :param stage_uuid: A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage. (required)
+        :param stage_uuid: A UUID string identifying this stage. (required)
         :type stage_uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -815,7 +815,7 @@ class StagesApi:
     @validate_call
     async def stages_all_retrieve_with_http_info(
         self,
-        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage.")],
+        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this stage.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -833,7 +833,7 @@ class StagesApi:
 
         Stage Viewset
 
-        :param stage_uuid: A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage. (required)
+        :param stage_uuid: A UUID string identifying this stage. (required)
         :type stage_uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -884,7 +884,7 @@ class StagesApi:
     @validate_call
     async def stages_all_retrieve_without_preload_content(
         self,
-        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage.")],
+        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this stage.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -902,7 +902,7 @@ class StagesApi:
 
         Stage Viewset
 
-        :param stage_uuid: A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage. (required)
+        :param stage_uuid: A UUID string identifying this stage. (required)
         :type stage_uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1265,7 +1265,7 @@ class StagesApi:
     @validate_call
     async def stages_all_used_by_list(
         self,
-        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage.")],
+        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this stage.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1283,7 +1283,7 @@ class StagesApi:
 
         Get a list of all objects that use this object
 
-        :param stage_uuid: A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage. (required)
+        :param stage_uuid: A UUID string identifying this stage. (required)
         :type stage_uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1334,7 +1334,7 @@ class StagesApi:
     @validate_call
     async def stages_all_used_by_list_with_http_info(
         self,
-        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage.")],
+        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this stage.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1352,7 +1352,7 @@ class StagesApi:
 
         Get a list of all objects that use this object
 
-        :param stage_uuid: A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage. (required)
+        :param stage_uuid: A UUID string identifying this stage. (required)
         :type stage_uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1403,7 +1403,7 @@ class StagesApi:
     @validate_call
     async def stages_all_used_by_list_without_preload_content(
         self,
-        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage.")],
+        stage_uuid: Annotated[StrictStr, Field(description="A UUID string identifying this stage.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1421,7 +1421,7 @@ class StagesApi:
 
         Get a list of all objects that use this object
 
-        :param stage_uuid: A UUID string identifying this authentik.providers.oauth2.views.authorize.OAuthFulfillmentStage. (required)
+        :param stage_uuid: A UUID string identifying this stage. (required)
         :type stage_uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

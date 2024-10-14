@@ -33,6 +33,7 @@ class LDAPOutpostConfig(BaseModel):
     name: StrictStr
     base_dn: Optional[StrictStr] = Field(default=None, description="DN under which objects are accessible.")
     bind_flow_slug: StrictStr
+    unbind_flow_slug: Optional[StrictStr] = Field(description="Get slug for unbind flow, defaulting to brand's default flow.")
     application_slug: StrictStr = Field(description="Prioritise backchannel slug over direct application slug")
     certificate: Optional[StrictStr] = None
     tls_server_name: Optional[StrictStr] = None
@@ -41,7 +42,7 @@ class LDAPOutpostConfig(BaseModel):
     search_mode: Optional[LDAPAPIAccessMode] = None
     bind_mode: Optional[LDAPAPIAccessMode] = None
     mfa_support: Optional[StrictBool] = Field(default=None, description="When enabled, code-based multi-factor authentication can be used by appending a semicolon and the TOTP code to the password. This should only be enabled if all users that will bind to this provider have a TOTP device configured, as otherwise a password may incorrectly be rejected if it contains a semicolon.")
-    __properties: ClassVar[List[str]] = ["pk", "name", "base_dn", "bind_flow_slug", "application_slug", "certificate", "tls_server_name", "uid_start_number", "gid_start_number", "search_mode", "bind_mode", "mfa_support"]
+    __properties: ClassVar[List[str]] = ["pk", "name", "base_dn", "bind_flow_slug", "unbind_flow_slug", "application_slug", "certificate", "tls_server_name", "uid_start_number", "gid_start_number", "search_mode", "bind_mode", "mfa_support"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -75,9 +76,11 @@ class LDAPOutpostConfig(BaseModel):
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "pk",
+            "unbind_flow_slug",
             "application_slug",
         ])
 
@@ -86,6 +89,11 @@ class LDAPOutpostConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if unbind_flow_slug (nullable) is None
+        # and model_fields_set contains the field
+        if self.unbind_flow_slug is None and "unbind_flow_slug" in self.model_fields_set:
+            _dict['unbind_flow_slug'] = None
+
         # set to None if certificate (nullable) is None
         # and model_fields_set contains the field
         if self.certificate is None and "certificate" in self.model_fields_set:
@@ -107,6 +115,7 @@ class LDAPOutpostConfig(BaseModel):
             "name": obj.get("name"),
             "base_dn": obj.get("base_dn"),
             "bind_flow_slug": obj.get("bind_flow_slug"),
+            "unbind_flow_slug": obj.get("unbind_flow_slug"),
             "application_slug": obj.get("application_slug"),
             "certificate": obj.get("certificate"),
             "tls_server_name": obj.get("tls_server_name"),

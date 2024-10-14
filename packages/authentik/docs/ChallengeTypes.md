@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **permissions** | [**List[ConsentPermission]**](ConsentPermission.md) |  | 
 **additional_permissions** | [**List[ConsentPermission]**](ConsentPermission.md) |  | 
 **token** | **str** |  | 
+**name** | **str** |  | 
 **request_id** | **str** |  | 
 **error** | **str** |  | [optional] 
 **traceback** | **str** |  | [optional] 
@@ -50,6 +51,10 @@ Name | Type | Description | Notes
 **slug** | **str** |  | 
 **fields** | [**List[StagePrompt]**](StagePrompt.md) |  | 
 **to** | **str** |  | 
+**application_name** | **str** |  | [optional] 
+**application_launch_url** | **str** |  | [optional] 
+**invalidation_flow_url** | **str** |  | [optional] 
+**brand_name** | **str** |  | 
 **body** | **str** |  | 
 
 ## Example

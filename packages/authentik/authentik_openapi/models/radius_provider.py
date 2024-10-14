@@ -31,6 +31,7 @@ class RadiusProvider(BaseModel):
     name: StrictStr
     authentication_flow: Optional[StrictStr] = Field(default=None, description="Flow used for authentication when the associated application is accessed by an un-authenticated user.")
     authorization_flow: StrictStr = Field(description="Flow used when authorizing this provider.")
+    invalidation_flow: StrictStr = Field(description="Flow used ending the session from a provider.")
     property_mappings: Optional[List[StrictStr]] = None
     component: StrictStr = Field(description="Get object component so that we know how to edit the object")
     assigned_application_slug: StrictStr = Field(description="Internal application name, used in URLs.")
@@ -44,7 +45,7 @@ class RadiusProvider(BaseModel):
     shared_secret: Optional[StrictStr] = Field(default=None, description="Shared secret between clients and server to hash packets.")
     outpost_set: List[StrictStr]
     mfa_support: Optional[StrictBool] = Field(default=None, description="When enabled, code-based multi-factor authentication can be used by appending a semicolon and the TOTP code to the password. This should only be enabled if all users that will bind to this provider have a TOTP device configured, as otherwise a password may incorrectly be rejected if it contains a semicolon.")
-    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "client_networks", "shared_secret", "outpost_set", "mfa_support"]
+    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "client_networks", "shared_secret", "outpost_set", "mfa_support"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -126,6 +127,7 @@ class RadiusProvider(BaseModel):
             "name": obj.get("name"),
             "authentication_flow": obj.get("authentication_flow"),
             "authorization_flow": obj.get("authorization_flow"),
+            "invalidation_flow": obj.get("invalidation_flow"),
             "property_mappings": obj.get("property_mappings"),
             "component": obj.get("component"),
             "assigned_application_slug": obj.get("assigned_application_slug"),

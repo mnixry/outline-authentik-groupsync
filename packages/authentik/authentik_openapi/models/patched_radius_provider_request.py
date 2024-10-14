@@ -31,11 +31,12 @@ class PatchedRadiusProviderRequest(BaseModel):
     name: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     authentication_flow: Optional[StrictStr] = Field(default=None, description="Flow used for authentication when the associated application is accessed by an un-authenticated user.")
     authorization_flow: Optional[StrictStr] = Field(default=None, description="Flow used when authorizing this provider.")
+    invalidation_flow: Optional[StrictStr] = Field(default=None, description="Flow used ending the session from a provider.")
     property_mappings: Optional[List[StrictStr]] = None
     client_networks: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="List of CIDRs (comma-separated) that clients can connect from. A more specific CIDR will match before a looser one. Clients connecting from a non-specified CIDR will be dropped.")
     shared_secret: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Shared secret between clients and server to hash packets.")
     mfa_support: Optional[StrictBool] = Field(default=None, description="When enabled, code-based multi-factor authentication can be used by appending a semicolon and the TOTP code to the password. This should only be enabled if all users that will bind to this provider have a TOTP device configured, as otherwise a password may incorrectly be rejected if it contains a semicolon.")
-    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "property_mappings", "client_networks", "shared_secret", "mfa_support"]
+    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "client_networks", "shared_secret", "mfa_support"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,6 +97,7 @@ class PatchedRadiusProviderRequest(BaseModel):
             "name": obj.get("name"),
             "authentication_flow": obj.get("authentication_flow"),
             "authorization_flow": obj.get("authorization_flow"),
+            "invalidation_flow": obj.get("invalidation_flow"),
             "property_mappings": obj.get("property_mappings"),
             "client_networks": obj.get("client_networks"),
             "shared_secret": obj.get("shared_secret"),

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **authentication_flow** | **str** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
 **authorization_flow** | **str** | Flow used when authorizing this provider. | 
+**invalidation_flow** | **str** | Flow used ending the session from a provider. | 
 **property_mappings** | **List[str]** |  | [optional] 
 **acs_url** | **str** |  | 
 **audience** | **str** | Value of the audience restriction field of the assertion. When left empty, no audience restriction will be added. | [optional] 

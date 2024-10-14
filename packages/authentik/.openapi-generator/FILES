@@ -24,6 +24,7 @@ authentik_openapi/api/root_api.py
 authentik_openapi/api/schema_api.py
 authentik_openapi/api/sources_api.py
 authentik_openapi/api/stages_api.py
+authentik_openapi/api/tenants_api.py
 authentik_openapi/api_client.py
 authentik_openapi/api_response.py
 authentik_openapi/configuration.py
@@ -124,6 +125,10 @@ authentik_openapi/models/digest_algorithm_enum.py
 authentik_openapi/models/digits_enum.py
 authentik_openapi/models/docker_service_connection.py
 authentik_openapi/models/docker_service_connection_request.py
+authentik_openapi/models/domain.py
+authentik_openapi/models/domain_request.py
+authentik_openapi/models/dummy_challenge.py
+authentik_openapi/models/dummy_challenge_response_request.py
 authentik_openapi/models/dummy_policy.py
 authentik_openapi/models/dummy_policy_request.py
 authentik_openapi/models/dummy_stage.py
@@ -283,6 +288,7 @@ authentik_openapi/models/paginated_connection_token_list.py
 authentik_openapi/models/paginated_consent_stage_list.py
 authentik_openapi/models/paginated_deny_stage_list.py
 authentik_openapi/models/paginated_docker_service_connection_list.py
+authentik_openapi/models/paginated_domain_list.py
 authentik_openapi/models/paginated_dummy_policy_list.py
 authentik_openapi/models/paginated_dummy_stage_list.py
 authentik_openapi/models/paginated_duo_device_list.py
@@ -369,6 +375,7 @@ authentik_openapi/models/paginated_source_stage_list.py
 authentik_openapi/models/paginated_stage_list.py
 authentik_openapi/models/paginated_static_device_list.py
 authentik_openapi/models/paginated_system_task_list.py
+authentik_openapi/models/paginated_tenant_list.py
 authentik_openapi/models/paginated_token_list.py
 authentik_openapi/models/paginated_token_model_list.py
 authentik_openapi/models/paginated_totp_device_list.py
@@ -409,6 +416,7 @@ authentik_openapi/models/patched_connection_token_request.py
 authentik_openapi/models/patched_consent_stage_request.py
 authentik_openapi/models/patched_deny_stage_request.py
 authentik_openapi/models/patched_docker_service_connection_request.py
+authentik_openapi/models/patched_domain_request.py
 authentik_openapi/models/patched_dummy_policy_request.py
 authentik_openapi/models/patched_dummy_stage_request.py
 authentik_openapi/models/patched_duo_device_request.py
@@ -474,6 +482,7 @@ authentik_openapi/models/patched_settings_request.py
 authentik_openapi/models/patched_sms_device_request.py
 authentik_openapi/models/patched_source_stage_request.py
 authentik_openapi/models/patched_static_device_request.py
+authentik_openapi/models/patched_tenant_request.py
 authentik_openapi/models/patched_token_request.py
 authentik_openapi/models/patched_totp_device_request.py
 authentik_openapi/models/patched_user_delete_stage_request.py
@@ -573,6 +582,7 @@ authentik_openapi/models/selectable_stage.py
 authentik_openapi/models/service_connection.py
 authentik_openapi/models/service_connection_request.py
 authentik_openapi/models/service_connection_state.py
+authentik_openapi/models/session_end_challenge.py
 authentik_openapi/models/session_user.py
 authentik_openapi/models/settings.py
 authentik_openapi/models/settings_request.py
@@ -603,6 +613,11 @@ authentik_openapi/models/system_info.py
 authentik_openapi/models/system_info_runtime.py
 authentik_openapi/models/system_task.py
 authentik_openapi/models/system_task_status_enum.py
+authentik_openapi/models/tenant.py
+authentik_openapi/models/tenant_admin_group_request_request.py
+authentik_openapi/models/tenant_recovery_key_request_request.py
+authentik_openapi/models/tenant_recovery_key_response.py
+authentik_openapi/models/tenant_request.py
 authentik_openapi/models/token.py
 authentik_openapi/models/token_model.py
 authentik_openapi/models/token_request.py
@@ -762,6 +777,10 @@ docs/DigestAlgorithmEnum.md
 docs/DigitsEnum.md
 docs/DockerServiceConnection.md
 docs/DockerServiceConnectionRequest.md
+docs/Domain.md
+docs/DomainRequest.md
+docs/DummyChallenge.md
+docs/DummyChallengeResponseRequest.md
 docs/DummyPolicy.md
 docs/DummyPolicyRequest.md
 docs/DummyStage.md
@@ -927,6 +946,7 @@ docs/PaginatedConnectionTokenList.md
 docs/PaginatedConsentStageList.md
 docs/PaginatedDenyStageList.md
 docs/PaginatedDockerServiceConnectionList.md
+docs/PaginatedDomainList.md
 docs/PaginatedDummyPolicyList.md
 docs/PaginatedDummyStageList.md
 docs/PaginatedDuoDeviceList.md
@@ -1014,6 +1034,7 @@ docs/PaginatedStageList.md
 docs/PaginatedStaticDeviceList.md
 docs/PaginatedSystemTaskList.md
 docs/PaginatedTOTPDeviceList.md
+docs/PaginatedTenantList.md
 docs/PaginatedTokenList.md
 docs/PaginatedTokenModelList.md
 docs/PaginatedUserAssignedObjectPermissionList.md
@@ -1053,6 +1074,7 @@ docs/PatchedConnectionTokenRequest.md
 docs/PatchedConsentStageRequest.md
 docs/PatchedDenyStageRequest.md
 docs/PatchedDockerServiceConnectionRequest.md
+docs/PatchedDomainRequest.md
 docs/PatchedDummyPolicyRequest.md
 docs/PatchedDummyStageRequest.md
 docs/PatchedDuoDeviceRequest.md
@@ -1119,6 +1141,7 @@ docs/PatchedSettingsRequest.md
 docs/PatchedSourceStageRequest.md
 docs/PatchedStaticDeviceRequest.md
 docs/PatchedTOTPDeviceRequest.md
+docs/PatchedTenantRequest.md
 docs/PatchedTokenRequest.md
 docs/PatchedUserDeleteStageRequest.md
 docs/PatchedUserLoginStageRequest.md
@@ -1226,6 +1249,7 @@ docs/SelectableStage.md
 docs/ServiceConnection.md
 docs/ServiceConnectionRequest.md
 docs/ServiceConnectionState.md
+docs/SessionEndChallenge.md
 docs/SessionUser.md
 docs/Settings.md
 docs/SettingsRequest.md
@@ -1258,6 +1282,12 @@ docs/SystemTask.md
 docs/SystemTaskStatusEnum.md
 docs/TOTPDevice.md
 docs/TOTPDeviceRequest.md
+docs/Tenant.md
+docs/TenantAdminGroupRequestRequest.md
+docs/TenantRecoveryKeyRequestRequest.md
+docs/TenantRecoveryKeyResponse.md
+docs/TenantRequest.md
+docs/TenantsApi.md
 docs/Token.md
 docs/TokenModel.md
 docs/TokenRequest.md
@@ -1321,4 +1351,19 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_domain.py
+test/test_domain_request.py
+test/test_dummy_challenge.py
+test/test_dummy_challenge_response_request.py
+test/test_paginated_domain_list.py
+test/test_paginated_tenant_list.py
+test/test_patched_domain_request.py
+test/test_patched_tenant_request.py
+test/test_session_end_challenge.py
+test/test_tenant.py
+test/test_tenant_admin_group_request_request.py
+test/test_tenant_recovery_key_request_request.py
+test/test_tenant_recovery_key_response.py
+test/test_tenant_request.py
+test/test_tenants_api.py
 tox.ini

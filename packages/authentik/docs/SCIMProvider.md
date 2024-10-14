@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
 **url** | **str** | Base URL to SCIM requests, usually ends in /v2 | 
+**verify_certificates** | **bool** |  | [optional] 
 **token** | **str** | Authentication token | 
 **exclude_users_service_account** | **bool** |  | [optional] 
 **filter_group** | **str** |  | [optional] 

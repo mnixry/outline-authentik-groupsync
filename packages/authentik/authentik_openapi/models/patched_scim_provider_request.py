@@ -32,10 +32,11 @@ class PatchedSCIMProviderRequest(BaseModel):
     property_mappings: Optional[List[StrictStr]] = None
     property_mappings_group: Optional[List[StrictStr]] = Field(default=None, description="Property mappings used for group creation/updating.")
     url: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Base URL to SCIM requests, usually ends in /v2")
+    verify_certificates: Optional[StrictBool] = None
     token: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Authentication token")
     exclude_users_service_account: Optional[StrictBool] = None
     filter_group: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["name", "property_mappings", "property_mappings_group", "url", "token", "exclude_users_service_account", "filter_group"]
+    __properties: ClassVar[List[str]] = ["name", "property_mappings", "property_mappings_group", "url", "verify_certificates", "token", "exclude_users_service_account", "filter_group"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,6 +98,7 @@ class PatchedSCIMProviderRequest(BaseModel):
             "property_mappings": obj.get("property_mappings"),
             "property_mappings_group": obj.get("property_mappings_group"),
             "url": obj.get("url"),
+            "verify_certificates": obj.get("verify_certificates"),
             "token": obj.get("token"),
             "exclude_users_service_account": obj.get("exclude_users_service_account"),
             "filter_group": obj.get("filter_group")

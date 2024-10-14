@@ -34,6 +34,7 @@ class OAuth2ProviderRequest(BaseModel):
     name: Annotated[str, Field(min_length=1, strict=True)]
     authentication_flow: Optional[StrictStr] = Field(default=None, description="Flow used for authentication when the associated application is accessed by an un-authenticated user.")
     authorization_flow: StrictStr = Field(description="Flow used when authorizing this provider.")
+    invalidation_flow: StrictStr = Field(description="Flow used ending the session from a provider.")
     property_mappings: Optional[List[StrictStr]] = None
     client_type: Optional[ClientTypeEnum] = Field(default=None, description="Confidential clients are capable of maintaining the confidentiality of their credentials. Public clients are incapable")
     client_id: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=255)]] = None
@@ -47,7 +48,7 @@ class OAuth2ProviderRequest(BaseModel):
     sub_mode: Optional[SubModeEnum] = Field(default=None, description="Configure what data should be used as unique User Identifier. For most cases, the default should be fine.")
     issuer_mode: Optional[IssuerModeEnum] = Field(default=None, description="Configure how the issuer field of the ID Token should be filled.")
     jwks_sources: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "property_mappings", "client_type", "client_id", "client_secret", "access_code_validity", "access_token_validity", "refresh_token_validity", "include_claims_in_id_token", "signing_key", "redirect_uris", "sub_mode", "issuer_mode", "jwks_sources"]
+    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "client_type", "client_id", "client_secret", "access_code_validity", "access_token_validity", "refresh_token_validity", "include_claims_in_id_token", "signing_key", "redirect_uris", "sub_mode", "issuer_mode", "jwks_sources"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,6 +114,7 @@ class OAuth2ProviderRequest(BaseModel):
             "name": obj.get("name"),
             "authentication_flow": obj.get("authentication_flow"),
             "authorization_flow": obj.get("authorization_flow"),
+            "invalidation_flow": obj.get("invalidation_flow"),
             "property_mappings": obj.get("property_mappings"),
             "client_type": obj.get("client_type"),
             "client_id": obj.get("client_id"),
