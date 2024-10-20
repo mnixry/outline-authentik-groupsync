@@ -21,4 +21,5 @@
         "OASYNC",
         "pydantic"
     ],
+    "basedpyright.analysis.diagnosticMode": "workspace",
 }
