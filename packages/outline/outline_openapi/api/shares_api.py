@@ -3,7 +3,7 @@
 """
     Outline API
 
-    # Introduction  The Outline API is structured in an RPC style. It enables you to programatically interact with all aspects of Outline’s data – in fact, the main application is built on exactly the same API.  The API structure is available as an [openapi specification](https://github.com/outline/openapi) if that’s your jam – it can be used to generate clients for most programming languages.  # Making requests  Outline’s API follows simple RPC style conventions where each API endpoint is a method on `https://app.getoutline.com/api/method`. Both `GET` and `POST` methods are supported but it’s recommended that you make all call using POST. Only HTTPS is supported and all response payloads are JSON.  When making `POST` requests, request parameters are parsed depending on Content-Type header. To make a call using JSON payload, you must pass Content-Type: application/json header, here’s an example using CURL:  ``` curl https://app.getoutline.com/api/documents.info \\ -X 'POST' \\ -H 'authorization: Bearer MY_API_KEY' \\ -H 'content-type: application/json' \\ -H 'accept: application/json' \\ -d '{\"id\": \"outline-api-NTpezNwhUP\"}' ```  Or, with JavaScript:  ```javascript const response = await fetch(\"https://app.getoutline.com/api/documents.info\", {   method: \"POST\",   headers: {     Accept: \"application/json\",     \"Content-Type\": \"application/json\",     Authorization: \"Bearer MY_API_KEY\"   } })  const body = await response.json(); const document = body.data; ```  # Authentication  To access API endpoints, you must provide a valid API key. You can create new API keys in your [account settings](https://app.getoutline.com/settings). Be careful when handling your keys as they give access to all of your documents, you should treat them like passwords and they should never be committed to source control.  To authenticate with API, you can supply the API key as a header (`Authorization: Bearer YOUR_API_KEY`) or as part of the payload using `token` parameter. Header based authentication is highly recommended so that your keys don’t accidentally leak into logs.  Some API endpoints allow unauthenticated requests for public resources and they can be called without an API key.  # Errors  All successful API requests will be returned with a 200 or 201 status code and `ok: true` in the response payload. If there’s an error while making the request, the appropriate status code is returned with the error message:  ``` {   \"ok\": false,   \"error\": \"Not Found\" } ```  # Pagination  Most top-level API resources have support for \"list\" API methods. For instance, you can list users, documents, and collections. These list methods share common parameters, taking both `limit` and `offset`.  Responses will echo these parameters in the root `pagination` key, and also include a `nextPath` key which can be used as a handy shortcut to fetch the next page of results. For example:  ``` {   ok: true,   status: 200,   data: […],   pagination: {     limit: 25,     offset: 0,     nextPath: \"/api/documents.list?limit=25&offset=25\"   } } ```  # Policies  Most API resources have associated \"policies\", these objects describe the current API keys authorized actions related to an individual resource. It should be noted that the policy \"id\" is identical to the resource it is related to, policies themselves do not have unique identifiers.  For most usecases of the API, policies can be safely ignored. Calling unauthorized methods will result in the appropriate response code – these can be used in an interface to adjust which elements are visible. 
+    # Introduction  The Outline API is structured in an RPC style. It enables you to programatically interact with all aspects of Outline’s data – in fact, the main application is built on exactly the same API.  The API structure is available as an [openapi specification](https://github.com/outline/openapi) if that’s your jam – it can be used to generate clients for most programming languages.  # Making requests  Outline’s API follows simple RPC style conventions where each API endpoint is a `POST` method on `https://app.getoutline.com/api/:method`. Only HTTPS is supported and all response payloads are JSON.  When making `POST` requests, request parameters are parsed depending on Content-Type header. To make a call using JSON payload, you must pass Content-Type: application/json header, here’s an example using CURL:  ``` curl https://app.getoutline.com/api/documents.info \\ -X 'POST' \\ -H 'authorization: Bearer MY_API_KEY' \\ -H 'content-type: application/json' \\ -H 'accept: application/json' \\ -d '{\"id\": \"outline-api-NTpezNwhUP\"}' ```  Or, with JavaScript:  ```javascript const response = await fetch(\"https://app.getoutline.com/api/documents.info\", {   method: \"POST\",   headers: {     Accept: \"application/json\",     \"Content-Type\": \"application/json\",     Authorization: \"Bearer MY_API_KEY\"   } })  const body = await response.json(); const document = body.data; ```  # Authentication  ## API key  You can create new API keys under **Settings => API & Apps**. Be careful when handling your keys as they give access to all of your documents, you should treat them like passwords and they should never be committed to source control.  To authenticate with API, you should supply the API key as the `Authorization` header (`Authorization: Bearer YOUR_API_KEY`).  ## OAuth 2.0  OAuth 2.0 is a widely used protocol for authorization and authentication. It allows users to grant third-party _or_ internal applications access to their resources without sharing their credentials. To use OAuth 2.0 you need to follow these steps:  1. Register your application under **Settings => Applications** 2. Obtain an access token by exchanging the client credentials for an access token 3. Use the access token to authenticate requests to the API  Some API endpoints allow unauthenticated requests for public resources and they can be called without authentication  # Scopes  Scopes are used to limit the access of an API key or application to specific resources. For example, an application may only need access to read documents, but not write them. Scopes can be global in the case of `read` and `write` scopes, scoped to a namespace, scoped to an API endpoint, or use wildcard scopes like `documents.*`. Some examples of scopes that can be used are:  ## Global  - `read`: Allows all read actions - `write`: Allows all read and write actions  ## Namespaced  - `documents:read`: Allows all document read actions - `collections:write`: Allows all collection write actions  ## Endpoints  - `documents.info`: Allows only one specific API method - `documents.*`: Allows all document API methods - `users.*`: Allows all user API methods  # Errors  All successful API requests will be returned with a 200 or 201 status code and `ok: true` in the response payload. If there’s an error while making the request, the appropriate status code is returned with the error message:  ``` {   \"ok\": false,   \"error\": \"Not Found\" } ```  # Pagination  Most top-level API resources have support for \"list\" API methods. For instance, you can list users, documents, and collections. These list methods share common parameters, taking both `limit` and `offset`.  Responses will echo these parameters in the root `pagination` key, and also include a `nextPath` key which can be used as a handy shortcut to fetch the next page of results. For example:  ``` {   ok: true,   status: 200,   data: […],   pagination: {     limit: 25,     offset: 0,     nextPath: \"/api/documents.list?limit=25&offset=25\"   } } ```  # Rate limits  Like most APIs, Outline has rate limits in place to prevent abuse. Endpoints that mutate data are more restrictive than read-only endpoints. If you exceed the rate limit for a given endpoint, you will receive a `429 Too Many Requests` status code.  The response will include a `Retry-After` header that indicates how many seconds you should wait before making another request.  # Policies  Most API resources have associated \"policies\", these objects describe the current authentications authorized actions related to an individual resource. It should be noted that the policy \"id\" is identical to the resource it is related to, policies themselves do not have unique identifiers.  For most usecases of the API, policies can be safely ignored. Calling unauthorized methods will result in the appropriate response code – these can be used in an interface to adjust which elements are visible. 
 
     The version of the OpenAPI document: 0.1.0
     Contact: hello@getoutline.com
@@ -18,14 +18,14 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from typing import Optional
-from outline_openapi.models.attachments_delete_post200_response import AttachmentsDeletePost200Response
-from outline_openapi.models.collections_delete_post_request import CollectionsDeletePostRequest
-from outline_openapi.models.documents_viewed_post_request import DocumentsViewedPostRequest
-from outline_openapi.models.shares_create_post_request import SharesCreatePostRequest
-from outline_openapi.models.shares_info_post200_response import SharesInfoPost200Response
-from outline_openapi.models.shares_info_post_request import SharesInfoPostRequest
-from outline_openapi.models.shares_list_post200_response import SharesListPost200Response
-from outline_openapi.models.shares_update_post_request import SharesUpdatePostRequest
+from outline_openapi.models.attachments_delete200_response import AttachmentsDelete200Response
+from outline_openapi.models.collections_delete_request import CollectionsDeleteRequest
+from outline_openapi.models.shares_create_request import SharesCreateRequest
+from outline_openapi.models.shares_info200_response import SharesInfo200Response
+from outline_openapi.models.shares_info_request import SharesInfoRequest
+from outline_openapi.models.shares_list200_response import SharesList200Response
+from outline_openapi.models.shares_list_request import SharesListRequest
+from outline_openapi.models.shares_update_request import SharesUpdateRequest
 
 from outline_openapi.api_client import ApiClient, RequestSerialized
 from outline_openapi.api_response import ApiResponse
@@ -46,9 +46,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_create_post(
+    async def shares_create(
         self,
-        shares_create_post_request: Optional[SharesCreatePostRequest] = None,
+        shares_create_request: Optional[SharesCreateRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -61,13 +61,13 @@ class SharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> SharesInfoPost200Response:
+    ) -> SharesInfo200Response:
         """Create a share
 
         Creates a new share link that can be used by to access a document. If you request multiple shares for the same document with the same API key, the same share object will be returned. By default all shares are unpublished.
 
-        :param shares_create_post_request:
-        :type shares_create_post_request: SharesCreatePostRequest
+        :param shares_create_request:
+        :type shares_create_request: SharesCreateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -90,8 +90,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_create_post_serialize(
-            shares_create_post_request=shares_create_post_request,
+        _param = self._shares_create_serialize(
+            shares_create_request=shares_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -99,10 +99,11 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SharesInfoPost200Response",
+            '200': "SharesInfo200Response",
             '400': "Error",
             '401': "Error",
             '403': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -116,9 +117,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_create_post_with_http_info(
+    async def shares_create_with_http_info(
         self,
-        shares_create_post_request: Optional[SharesCreatePostRequest] = None,
+        shares_create_request: Optional[SharesCreateRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -131,13 +132,13 @@ class SharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[SharesInfoPost200Response]:
+    ) -> ApiResponse[SharesInfo200Response]:
         """Create a share
 
         Creates a new share link that can be used by to access a document. If you request multiple shares for the same document with the same API key, the same share object will be returned. By default all shares are unpublished.
 
-        :param shares_create_post_request:
-        :type shares_create_post_request: SharesCreatePostRequest
+        :param shares_create_request:
+        :type shares_create_request: SharesCreateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -160,8 +161,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_create_post_serialize(
-            shares_create_post_request=shares_create_post_request,
+        _param = self._shares_create_serialize(
+            shares_create_request=shares_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -169,10 +170,11 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SharesInfoPost200Response",
+            '200': "SharesInfo200Response",
             '400': "Error",
             '401': "Error",
             '403': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -186,9 +188,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_create_post_without_preload_content(
+    async def shares_create_without_preload_content(
         self,
-        shares_create_post_request: Optional[SharesCreatePostRequest] = None,
+        shares_create_request: Optional[SharesCreateRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -206,8 +208,8 @@ class SharesApi:
 
         Creates a new share link that can be used by to access a document. If you request multiple shares for the same document with the same API key, the same share object will be returned. By default all shares are unpublished.
 
-        :param shares_create_post_request:
-        :type shares_create_post_request: SharesCreatePostRequest
+        :param shares_create_request:
+        :type shares_create_request: SharesCreateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -230,8 +232,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_create_post_serialize(
-            shares_create_post_request=shares_create_post_request,
+        _param = self._shares_create_serialize(
+            shares_create_request=shares_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -239,10 +241,11 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SharesInfoPost200Response",
+            '200': "SharesInfo200Response",
             '400': "Error",
             '401': "Error",
             '403': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -251,9 +254,9 @@ class SharesApi:
         return response_data.response
 
 
-    def _shares_create_post_serialize(
+    def _shares_create_serialize(
         self,
-        shares_create_post_request,
+        shares_create_request,
         _request_auth,
         _content_type,
         _headers,
@@ -279,8 +282,8 @@ class SharesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if shares_create_post_request is not None:
-            _body_params = shares_create_post_request
+        if shares_create_request is not None:
+            _body_params = shares_create_request
 
 
         # set the HTTP header `Accept`
@@ -307,7 +310,8 @@ class SharesApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'http'
+            'OAuth2', 
+            'BearerAuth'
         ]
 
         return self.api_client.param_serialize(
@@ -329,9 +333,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_info_post(
+    async def shares_info(
         self,
-        shares_info_post_request: Optional[SharesInfoPostRequest] = None,
+        shares_info_request: Optional[SharesInfoRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -344,12 +348,12 @@ class SharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> SharesInfoPost200Response:
+    ) -> SharesInfo200Response:
         """Retrieve a share object
 
 
-        :param shares_info_post_request:
-        :type shares_info_post_request: SharesInfoPostRequest
+        :param shares_info_request:
+        :type shares_info_request: SharesInfoRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -372,8 +376,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_info_post_serialize(
-            shares_info_post_request=shares_info_post_request,
+        _param = self._shares_info_serialize(
+            shares_info_request=shares_info_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -381,10 +385,11 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SharesInfoPost200Response",
+            '200': "SharesInfo200Response",
             '401': "Error",
             '403': "Error",
             '404': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -398,9 +403,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_info_post_with_http_info(
+    async def shares_info_with_http_info(
         self,
-        shares_info_post_request: Optional[SharesInfoPostRequest] = None,
+        shares_info_request: Optional[SharesInfoRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -413,12 +418,12 @@ class SharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[SharesInfoPost200Response]:
+    ) -> ApiResponse[SharesInfo200Response]:
         """Retrieve a share object
 
 
-        :param shares_info_post_request:
-        :type shares_info_post_request: SharesInfoPostRequest
+        :param shares_info_request:
+        :type shares_info_request: SharesInfoRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -441,8 +446,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_info_post_serialize(
-            shares_info_post_request=shares_info_post_request,
+        _param = self._shares_info_serialize(
+            shares_info_request=shares_info_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -450,10 +455,11 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SharesInfoPost200Response",
+            '200': "SharesInfo200Response",
             '401': "Error",
             '403': "Error",
             '404': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -467,9 +473,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_info_post_without_preload_content(
+    async def shares_info_without_preload_content(
         self,
-        shares_info_post_request: Optional[SharesInfoPostRequest] = None,
+        shares_info_request: Optional[SharesInfoRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -486,8 +492,8 @@ class SharesApi:
         """Retrieve a share object
 
 
-        :param shares_info_post_request:
-        :type shares_info_post_request: SharesInfoPostRequest
+        :param shares_info_request:
+        :type shares_info_request: SharesInfoRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -510,8 +516,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_info_post_serialize(
-            shares_info_post_request=shares_info_post_request,
+        _param = self._shares_info_serialize(
+            shares_info_request=shares_info_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -519,10 +525,11 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SharesInfoPost200Response",
+            '200': "SharesInfo200Response",
             '401': "Error",
             '403': "Error",
             '404': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -531,9 +538,9 @@ class SharesApi:
         return response_data.response
 
 
-    def _shares_info_post_serialize(
+    def _shares_info_serialize(
         self,
-        shares_info_post_request,
+        shares_info_request,
         _request_auth,
         _content_type,
         _headers,
@@ -559,8 +566,8 @@ class SharesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if shares_info_post_request is not None:
-            _body_params = shares_info_post_request
+        if shares_info_request is not None:
+            _body_params = shares_info_request
 
 
         # set the HTTP header `Accept`
@@ -587,7 +594,8 @@ class SharesApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'http'
+            'OAuth2', 
+            'BearerAuth'
         ]
 
         return self.api_client.param_serialize(
@@ -609,9 +617,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_list_post(
+    async def shares_list(
         self,
-        documents_viewed_post_request: Optional[DocumentsViewedPostRequest] = None,
+        shares_list_request: Optional[SharesListRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -624,12 +632,12 @@ class SharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> SharesListPost200Response:
+    ) -> SharesList200Response:
         """List all shares
 
 
-        :param documents_viewed_post_request:
-        :type documents_viewed_post_request: DocumentsViewedPostRequest
+        :param shares_list_request:
+        :type shares_list_request: SharesListRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -652,8 +660,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_list_post_serialize(
-            documents_viewed_post_request=documents_viewed_post_request,
+        _param = self._shares_list_serialize(
+            shares_list_request=shares_list_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -661,9 +669,10 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SharesListPost200Response",
+            '200': "SharesList200Response",
             '401': "Error",
             '403': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -677,9 +686,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_list_post_with_http_info(
+    async def shares_list_with_http_info(
         self,
-        documents_viewed_post_request: Optional[DocumentsViewedPostRequest] = None,
+        shares_list_request: Optional[SharesListRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -692,12 +701,12 @@ class SharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[SharesListPost200Response]:
+    ) -> ApiResponse[SharesList200Response]:
         """List all shares
 
 
-        :param documents_viewed_post_request:
-        :type documents_viewed_post_request: DocumentsViewedPostRequest
+        :param shares_list_request:
+        :type shares_list_request: SharesListRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -720,8 +729,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_list_post_serialize(
-            documents_viewed_post_request=documents_viewed_post_request,
+        _param = self._shares_list_serialize(
+            shares_list_request=shares_list_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -729,9 +738,10 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SharesListPost200Response",
+            '200': "SharesList200Response",
             '401': "Error",
             '403': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -745,9 +755,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_list_post_without_preload_content(
+    async def shares_list_without_preload_content(
         self,
-        documents_viewed_post_request: Optional[DocumentsViewedPostRequest] = None,
+        shares_list_request: Optional[SharesListRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -764,8 +774,8 @@ class SharesApi:
         """List all shares
 
 
-        :param documents_viewed_post_request:
-        :type documents_viewed_post_request: DocumentsViewedPostRequest
+        :param shares_list_request:
+        :type shares_list_request: SharesListRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -788,8 +798,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_list_post_serialize(
-            documents_viewed_post_request=documents_viewed_post_request,
+        _param = self._shares_list_serialize(
+            shares_list_request=shares_list_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -797,9 +807,10 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SharesListPost200Response",
+            '200': "SharesList200Response",
             '401': "Error",
             '403': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -808,9 +819,9 @@ class SharesApi:
         return response_data.response
 
 
-    def _shares_list_post_serialize(
+    def _shares_list_serialize(
         self,
-        documents_viewed_post_request,
+        shares_list_request,
         _request_auth,
         _content_type,
         _headers,
@@ -836,8 +847,8 @@ class SharesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if documents_viewed_post_request is not None:
-            _body_params = documents_viewed_post_request
+        if shares_list_request is not None:
+            _body_params = shares_list_request
 
 
         # set the HTTP header `Accept`
@@ -864,7 +875,8 @@ class SharesApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'http'
+            'OAuth2', 
+            'BearerAuth'
         ]
 
         return self.api_client.param_serialize(
@@ -886,9 +898,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_revoke_post(
+    async def shares_revoke(
         self,
-        collections_delete_post_request: Optional[CollectionsDeletePostRequest] = None,
+        collections_delete_request: Optional[CollectionsDeleteRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -901,13 +913,13 @@ class SharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AttachmentsDeletePost200Response:
+    ) -> AttachmentsDelete200Response:
         """Revoke a share
 
         Makes the share link inactive so that it can no longer be used to access the document.
 
-        :param collections_delete_post_request:
-        :type collections_delete_post_request: CollectionsDeletePostRequest
+        :param collections_delete_request:
+        :type collections_delete_request: CollectionsDeleteRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -930,8 +942,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_revoke_post_serialize(
-            collections_delete_post_request=collections_delete_post_request,
+        _param = self._shares_revoke_serialize(
+            collections_delete_request=collections_delete_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -939,11 +951,12 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AttachmentsDeletePost200Response",
+            '200': "AttachmentsDelete200Response",
             '400': "Error",
             '401': "Error",
             '403': "Error",
             '404': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -957,9 +970,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_revoke_post_with_http_info(
+    async def shares_revoke_with_http_info(
         self,
-        collections_delete_post_request: Optional[CollectionsDeletePostRequest] = None,
+        collections_delete_request: Optional[CollectionsDeleteRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -972,13 +985,13 @@ class SharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AttachmentsDeletePost200Response]:
+    ) -> ApiResponse[AttachmentsDelete200Response]:
         """Revoke a share
 
         Makes the share link inactive so that it can no longer be used to access the document.
 
-        :param collections_delete_post_request:
-        :type collections_delete_post_request: CollectionsDeletePostRequest
+        :param collections_delete_request:
+        :type collections_delete_request: CollectionsDeleteRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1001,8 +1014,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_revoke_post_serialize(
-            collections_delete_post_request=collections_delete_post_request,
+        _param = self._shares_revoke_serialize(
+            collections_delete_request=collections_delete_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1010,11 +1023,12 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AttachmentsDeletePost200Response",
+            '200': "AttachmentsDelete200Response",
             '400': "Error",
             '401': "Error",
             '403': "Error",
             '404': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -1028,9 +1042,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_revoke_post_without_preload_content(
+    async def shares_revoke_without_preload_content(
         self,
-        collections_delete_post_request: Optional[CollectionsDeletePostRequest] = None,
+        collections_delete_request: Optional[CollectionsDeleteRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1048,8 +1062,8 @@ class SharesApi:
 
         Makes the share link inactive so that it can no longer be used to access the document.
 
-        :param collections_delete_post_request:
-        :type collections_delete_post_request: CollectionsDeletePostRequest
+        :param collections_delete_request:
+        :type collections_delete_request: CollectionsDeleteRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1072,8 +1086,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_revoke_post_serialize(
-            collections_delete_post_request=collections_delete_post_request,
+        _param = self._shares_revoke_serialize(
+            collections_delete_request=collections_delete_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1081,11 +1095,12 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AttachmentsDeletePost200Response",
+            '200': "AttachmentsDelete200Response",
             '400': "Error",
             '401': "Error",
             '403': "Error",
             '404': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -1094,9 +1109,9 @@ class SharesApi:
         return response_data.response
 
 
-    def _shares_revoke_post_serialize(
+    def _shares_revoke_serialize(
         self,
-        collections_delete_post_request,
+        collections_delete_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1122,8 +1137,8 @@ class SharesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if collections_delete_post_request is not None:
-            _body_params = collections_delete_post_request
+        if collections_delete_request is not None:
+            _body_params = collections_delete_request
 
 
         # set the HTTP header `Accept`
@@ -1150,7 +1165,8 @@ class SharesApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'http'
+            'OAuth2', 
+            'BearerAuth'
         ]
 
         return self.api_client.param_serialize(
@@ -1172,9 +1188,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_update_post(
+    async def shares_update(
         self,
-        shares_update_post_request: Optional[SharesUpdatePostRequest] = None,
+        shares_update_request: Optional[SharesUpdateRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1187,13 +1203,13 @@ class SharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> SharesInfoPost200Response:
+    ) -> SharesInfo200Response:
         """Update a share
 
-        Allows changing an existing shares published status, which removes authentication and makes it available to anyone with the link.
+        Allows changing an existing share's published status, which removes authentication and makes it available to anyone with the link.
 
-        :param shares_update_post_request:
-        :type shares_update_post_request: SharesUpdatePostRequest
+        :param shares_update_request:
+        :type shares_update_request: SharesUpdateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1216,8 +1232,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_update_post_serialize(
-            shares_update_post_request=shares_update_post_request,
+        _param = self._shares_update_serialize(
+            shares_update_request=shares_update_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1225,10 +1241,11 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SharesInfoPost200Response",
+            '200': "SharesInfo200Response",
             '400': "Error",
             '401': "Error",
             '403': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -1242,9 +1259,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_update_post_with_http_info(
+    async def shares_update_with_http_info(
         self,
-        shares_update_post_request: Optional[SharesUpdatePostRequest] = None,
+        shares_update_request: Optional[SharesUpdateRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1257,13 +1274,13 @@ class SharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[SharesInfoPost200Response]:
+    ) -> ApiResponse[SharesInfo200Response]:
         """Update a share
 
-        Allows changing an existing shares published status, which removes authentication and makes it available to anyone with the link.
+        Allows changing an existing share's published status, which removes authentication and makes it available to anyone with the link.
 
-        :param shares_update_post_request:
-        :type shares_update_post_request: SharesUpdatePostRequest
+        :param shares_update_request:
+        :type shares_update_request: SharesUpdateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1286,8 +1303,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_update_post_serialize(
-            shares_update_post_request=shares_update_post_request,
+        _param = self._shares_update_serialize(
+            shares_update_request=shares_update_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1295,10 +1312,11 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SharesInfoPost200Response",
+            '200': "SharesInfo200Response",
             '400': "Error",
             '401': "Error",
             '403': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -1312,9 +1330,9 @@ class SharesApi:
 
 
     @validate_call
-    async def shares_update_post_without_preload_content(
+    async def shares_update_without_preload_content(
         self,
-        shares_update_post_request: Optional[SharesUpdatePostRequest] = None,
+        shares_update_request: Optional[SharesUpdateRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1330,10 +1348,10 @@ class SharesApi:
     ) -> RESTResponseType:
         """Update a share
 
-        Allows changing an existing shares published status, which removes authentication and makes it available to anyone with the link.
+        Allows changing an existing share's published status, which removes authentication and makes it available to anyone with the link.
 
-        :param shares_update_post_request:
-        :type shares_update_post_request: SharesUpdatePostRequest
+        :param shares_update_request:
+        :type shares_update_request: SharesUpdateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1356,8 +1374,8 @@ class SharesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shares_update_post_serialize(
-            shares_update_post_request=shares_update_post_request,
+        _param = self._shares_update_serialize(
+            shares_update_request=shares_update_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1365,10 +1383,11 @@ class SharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SharesInfoPost200Response",
+            '200': "SharesInfo200Response",
             '400': "Error",
             '401': "Error",
             '403': "Error",
+            '429': "InlineObject",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -1377,9 +1396,9 @@ class SharesApi:
         return response_data.response
 
 
-    def _shares_update_post_serialize(
+    def _shares_update_serialize(
         self,
-        shares_update_post_request,
+        shares_update_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1405,8 +1424,8 @@ class SharesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if shares_update_post_request is not None:
-            _body_params = shares_update_post_request
+        if shares_update_request is not None:
+            _body_params = shares_update_request
 
 
         # set the HTTP header `Accept`
@@ -1433,7 +1452,8 @@ class SharesApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'http'
+            'OAuth2', 
+            'BearerAuth'
         ]
 
         return self.api_client.param_serialize(

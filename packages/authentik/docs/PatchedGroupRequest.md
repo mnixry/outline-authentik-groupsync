@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **users** | **List[int]** |  | [optional] 
 **attributes** | **Dict[str, object]** |  | [optional] 
 **roles** | **List[str]** |  | [optional] 
+**children** | **List[str]** |  | [optional] 
 
 ## Example
 

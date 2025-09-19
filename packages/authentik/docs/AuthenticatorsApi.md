@@ -11,6 +11,18 @@ Method | HTTP request | Description
 [**authenticators_admin_duo_partial_update**](AuthenticatorsApi.md#authenticators_admin_duo_partial_update) | **PATCH** /authenticators/admin/duo/{id}/ | 
 [**authenticators_admin_duo_retrieve**](AuthenticatorsApi.md#authenticators_admin_duo_retrieve) | **GET** /authenticators/admin/duo/{id}/ | 
 [**authenticators_admin_duo_update**](AuthenticatorsApi.md#authenticators_admin_duo_update) | **PUT** /authenticators/admin/duo/{id}/ | 
+[**authenticators_admin_email_create**](AuthenticatorsApi.md#authenticators_admin_email_create) | **POST** /authenticators/admin/email/ | 
+[**authenticators_admin_email_destroy**](AuthenticatorsApi.md#authenticators_admin_email_destroy) | **DELETE** /authenticators/admin/email/{id}/ | 
+[**authenticators_admin_email_list**](AuthenticatorsApi.md#authenticators_admin_email_list) | **GET** /authenticators/admin/email/ | 
+[**authenticators_admin_email_partial_update**](AuthenticatorsApi.md#authenticators_admin_email_partial_update) | **PATCH** /authenticators/admin/email/{id}/ | 
+[**authenticators_admin_email_retrieve**](AuthenticatorsApi.md#authenticators_admin_email_retrieve) | **GET** /authenticators/admin/email/{id}/ | 
+[**authenticators_admin_email_update**](AuthenticatorsApi.md#authenticators_admin_email_update) | **PUT** /authenticators/admin/email/{id}/ | 
+[**authenticators_admin_endpoint_create**](AuthenticatorsApi.md#authenticators_admin_endpoint_create) | **POST** /authenticators/admin/endpoint/ | 
+[**authenticators_admin_endpoint_destroy**](AuthenticatorsApi.md#authenticators_admin_endpoint_destroy) | **DELETE** /authenticators/admin/endpoint/{uuid}/ | 
+[**authenticators_admin_endpoint_list**](AuthenticatorsApi.md#authenticators_admin_endpoint_list) | **GET** /authenticators/admin/endpoint/ | 
+[**authenticators_admin_endpoint_partial_update**](AuthenticatorsApi.md#authenticators_admin_endpoint_partial_update) | **PATCH** /authenticators/admin/endpoint/{uuid}/ | 
+[**authenticators_admin_endpoint_retrieve**](AuthenticatorsApi.md#authenticators_admin_endpoint_retrieve) | **GET** /authenticators/admin/endpoint/{uuid}/ | 
+[**authenticators_admin_endpoint_update**](AuthenticatorsApi.md#authenticators_admin_endpoint_update) | **PUT** /authenticators/admin/endpoint/{uuid}/ | 
 [**authenticators_admin_sms_create**](AuthenticatorsApi.md#authenticators_admin_sms_create) | **POST** /authenticators/admin/sms/ | 
 [**authenticators_admin_sms_destroy**](AuthenticatorsApi.md#authenticators_admin_sms_destroy) | **DELETE** /authenticators/admin/sms/{id}/ | 
 [**authenticators_admin_sms_list**](AuthenticatorsApi.md#authenticators_admin_sms_list) | **GET** /authenticators/admin/sms/ | 
@@ -42,6 +54,15 @@ Method | HTTP request | Description
 [**authenticators_duo_retrieve**](AuthenticatorsApi.md#authenticators_duo_retrieve) | **GET** /authenticators/duo/{id}/ | 
 [**authenticators_duo_update**](AuthenticatorsApi.md#authenticators_duo_update) | **PUT** /authenticators/duo/{id}/ | 
 [**authenticators_duo_used_by_list**](AuthenticatorsApi.md#authenticators_duo_used_by_list) | **GET** /authenticators/duo/{id}/used_by/ | 
+[**authenticators_email_destroy**](AuthenticatorsApi.md#authenticators_email_destroy) | **DELETE** /authenticators/email/{id}/ | 
+[**authenticators_email_list**](AuthenticatorsApi.md#authenticators_email_list) | **GET** /authenticators/email/ | 
+[**authenticators_email_partial_update**](AuthenticatorsApi.md#authenticators_email_partial_update) | **PATCH** /authenticators/email/{id}/ | 
+[**authenticators_email_retrieve**](AuthenticatorsApi.md#authenticators_email_retrieve) | **GET** /authenticators/email/{id}/ | 
+[**authenticators_email_update**](AuthenticatorsApi.md#authenticators_email_update) | **PUT** /authenticators/email/{id}/ | 
+[**authenticators_email_used_by_list**](AuthenticatorsApi.md#authenticators_email_used_by_list) | **GET** /authenticators/email/{id}/used_by/ | 
+[**authenticators_endpoint_list**](AuthenticatorsApi.md#authenticators_endpoint_list) | **GET** /authenticators/endpoint/ | 
+[**authenticators_endpoint_retrieve**](AuthenticatorsApi.md#authenticators_endpoint_retrieve) | **GET** /authenticators/endpoint/{uuid}/ | 
+[**authenticators_endpoint_used_by_list**](AuthenticatorsApi.md#authenticators_endpoint_used_by_list) | **GET** /authenticators/endpoint/{uuid}/used_by/ | 
 [**authenticators_sms_destroy**](AuthenticatorsApi.md#authenticators_sms_destroy) | **DELETE** /authenticators/sms/{id}/ | 
 [**authenticators_sms_list**](AuthenticatorsApi.md#authenticators_sms_list) | **GET** /authenticators/sms/ | 
 [**authenticators_sms_partial_update**](AuthenticatorsApi.md#authenticators_sms_partial_update) | **PATCH** /authenticators/sms/{id}/ | 
@@ -70,8 +91,6 @@ Method | HTTP request | Description
 
 # **authenticators_admin_all_list**
 > List[Device] authenticators_admin_all_list(user=user)
-
-
 
 Get all devices for current user
 
@@ -149,8 +168,6 @@ Name | Type | Description  | Notes
 
 # **authenticators_admin_duo_create**
 > DuoDevice authenticators_admin_duo_create(duo_device_request)
-
-
 
 Viewset for Duo authenticator devices (for admins)
 
@@ -230,8 +247,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_duo_destroy**
 > authenticators_admin_duo_destroy(id)
 
-
-
 Viewset for Duo authenticator devices (for admins)
 
 ### Example
@@ -305,8 +320,6 @@ void (empty response body)
 
 # **authenticators_admin_duo_list**
 > PaginatedDuoDeviceList authenticators_admin_duo_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 Viewset for Duo authenticator devices (for admins)
 
@@ -393,8 +406,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_duo_partial_update**
 > DuoDevice authenticators_admin_duo_partial_update(id, patched_duo_device_request=patched_duo_device_request)
 
-
-
 Viewset for Duo authenticator devices (for admins)
 
 ### Example
@@ -475,8 +486,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_duo_retrieve**
 > DuoDevice authenticators_admin_duo_retrieve(id)
 
-
-
 Viewset for Duo authenticator devices (for admins)
 
 ### Example
@@ -553,8 +562,6 @@ Name | Type | Description  | Notes
 
 # **authenticators_admin_duo_update**
 > DuoDevice authenticators_admin_duo_update(id, duo_device_request)
-
-
 
 Viewset for Duo authenticator devices (for admins)
 
@@ -633,10 +640,956 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **authenticators_admin_email_create**
+> EmailDevice authenticators_admin_email_create(email_device_request)
+
+Viewset for email authenticator devices (for admins)
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.email_device import EmailDevice
+from authentik_openapi.models.email_device_request import EmailDeviceRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    email_device_request = authentik_openapi.EmailDeviceRequest() # EmailDeviceRequest | 
+
+    try:
+        api_response = await api_instance.authenticators_admin_email_create(email_device_request)
+        print("The response of AuthenticatorsApi->authenticators_admin_email_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_admin_email_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email_device_request** | [**EmailDeviceRequest**](EmailDeviceRequest.md)|  | 
+
+### Return type
+
+[**EmailDevice**](EmailDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_admin_email_destroy**
+> authenticators_admin_email_destroy(id)
+
+Viewset for email authenticator devices (for admins)
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    id = 56 # int | A unique integer value identifying this Email Device.
+
+    try:
+        await api_instance.authenticators_admin_email_destroy(id)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_admin_email_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Email Device. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_admin_email_list**
+> PaginatedEmailDeviceList authenticators_admin_email_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+
+Viewset for email authenticator devices (for admins)
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_email_device_list import PaginatedEmailDeviceList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+
+    try:
+        api_response = await api_instance.authenticators_admin_email_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        print("The response of AuthenticatorsApi->authenticators_admin_email_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_admin_email_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedEmailDeviceList**](PaginatedEmailDeviceList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_admin_email_partial_update**
+> EmailDevice authenticators_admin_email_partial_update(id, patched_email_device_request=patched_email_device_request)
+
+Viewset for email authenticator devices (for admins)
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.email_device import EmailDevice
+from authentik_openapi.models.patched_email_device_request import PatchedEmailDeviceRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    id = 56 # int | A unique integer value identifying this Email Device.
+    patched_email_device_request = authentik_openapi.PatchedEmailDeviceRequest() # PatchedEmailDeviceRequest |  (optional)
+
+    try:
+        api_response = await api_instance.authenticators_admin_email_partial_update(id, patched_email_device_request=patched_email_device_request)
+        print("The response of AuthenticatorsApi->authenticators_admin_email_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_admin_email_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Email Device. | 
+ **patched_email_device_request** | [**PatchedEmailDeviceRequest**](PatchedEmailDeviceRequest.md)|  | [optional] 
+
+### Return type
+
+[**EmailDevice**](EmailDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_admin_email_retrieve**
+> EmailDevice authenticators_admin_email_retrieve(id)
+
+Viewset for email authenticator devices (for admins)
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.email_device import EmailDevice
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    id = 56 # int | A unique integer value identifying this Email Device.
+
+    try:
+        api_response = await api_instance.authenticators_admin_email_retrieve(id)
+        print("The response of AuthenticatorsApi->authenticators_admin_email_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_admin_email_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Email Device. | 
+
+### Return type
+
+[**EmailDevice**](EmailDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_admin_email_update**
+> EmailDevice authenticators_admin_email_update(id, email_device_request)
+
+Viewset for email authenticator devices (for admins)
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.email_device import EmailDevice
+from authentik_openapi.models.email_device_request import EmailDeviceRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    id = 56 # int | A unique integer value identifying this Email Device.
+    email_device_request = authentik_openapi.EmailDeviceRequest() # EmailDeviceRequest | 
+
+    try:
+        api_response = await api_instance.authenticators_admin_email_update(id, email_device_request)
+        print("The response of AuthenticatorsApi->authenticators_admin_email_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_admin_email_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Email Device. | 
+ **email_device_request** | [**EmailDeviceRequest**](EmailDeviceRequest.md)|  | 
+
+### Return type
+
+[**EmailDevice**](EmailDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_admin_endpoint_create**
+> EndpointDevice authenticators_admin_endpoint_create(endpoint_device_request)
+
+Viewset for Endpoint authenticator devices (for admins)
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.endpoint_device import EndpointDevice
+from authentik_openapi.models.endpoint_device_request import EndpointDeviceRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    endpoint_device_request = authentik_openapi.EndpointDeviceRequest() # EndpointDeviceRequest | 
+
+    try:
+        api_response = await api_instance.authenticators_admin_endpoint_create(endpoint_device_request)
+        print("The response of AuthenticatorsApi->authenticators_admin_endpoint_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_admin_endpoint_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **endpoint_device_request** | [**EndpointDeviceRequest**](EndpointDeviceRequest.md)|  | 
+
+### Return type
+
+[**EndpointDevice**](EndpointDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_admin_endpoint_destroy**
+> authenticators_admin_endpoint_destroy(uuid)
+
+Viewset for Endpoint authenticator devices (for admins)
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    uuid = 'uuid_example' # str | A UUID string identifying this Endpoint Device.
+
+    try:
+        await api_instance.authenticators_admin_endpoint_destroy(uuid)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_admin_endpoint_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **str**| A UUID string identifying this Endpoint Device. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_admin_endpoint_list**
+> PaginatedEndpointDeviceList authenticators_admin_endpoint_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+
+Viewset for Endpoint authenticator devices (for admins)
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_endpoint_device_list import PaginatedEndpointDeviceList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+
+    try:
+        api_response = await api_instance.authenticators_admin_endpoint_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        print("The response of AuthenticatorsApi->authenticators_admin_endpoint_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_admin_endpoint_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedEndpointDeviceList**](PaginatedEndpointDeviceList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_admin_endpoint_partial_update**
+> EndpointDevice authenticators_admin_endpoint_partial_update(uuid, patched_endpoint_device_request=patched_endpoint_device_request)
+
+Viewset for Endpoint authenticator devices (for admins)
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.endpoint_device import EndpointDevice
+from authentik_openapi.models.patched_endpoint_device_request import PatchedEndpointDeviceRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    uuid = 'uuid_example' # str | A UUID string identifying this Endpoint Device.
+    patched_endpoint_device_request = authentik_openapi.PatchedEndpointDeviceRequest() # PatchedEndpointDeviceRequest |  (optional)
+
+    try:
+        api_response = await api_instance.authenticators_admin_endpoint_partial_update(uuid, patched_endpoint_device_request=patched_endpoint_device_request)
+        print("The response of AuthenticatorsApi->authenticators_admin_endpoint_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_admin_endpoint_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **str**| A UUID string identifying this Endpoint Device. | 
+ **patched_endpoint_device_request** | [**PatchedEndpointDeviceRequest**](PatchedEndpointDeviceRequest.md)|  | [optional] 
+
+### Return type
+
+[**EndpointDevice**](EndpointDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_admin_endpoint_retrieve**
+> EndpointDevice authenticators_admin_endpoint_retrieve(uuid)
+
+Viewset for Endpoint authenticator devices (for admins)
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.endpoint_device import EndpointDevice
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    uuid = 'uuid_example' # str | A UUID string identifying this Endpoint Device.
+
+    try:
+        api_response = await api_instance.authenticators_admin_endpoint_retrieve(uuid)
+        print("The response of AuthenticatorsApi->authenticators_admin_endpoint_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_admin_endpoint_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **str**| A UUID string identifying this Endpoint Device. | 
+
+### Return type
+
+[**EndpointDevice**](EndpointDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_admin_endpoint_update**
+> EndpointDevice authenticators_admin_endpoint_update(uuid, endpoint_device_request)
+
+Viewset for Endpoint authenticator devices (for admins)
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.endpoint_device import EndpointDevice
+from authentik_openapi.models.endpoint_device_request import EndpointDeviceRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    uuid = 'uuid_example' # str | A UUID string identifying this Endpoint Device.
+    endpoint_device_request = authentik_openapi.EndpointDeviceRequest() # EndpointDeviceRequest | 
+
+    try:
+        api_response = await api_instance.authenticators_admin_endpoint_update(uuid, endpoint_device_request)
+        print("The response of AuthenticatorsApi->authenticators_admin_endpoint_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_admin_endpoint_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **str**| A UUID string identifying this Endpoint Device. | 
+ **endpoint_device_request** | [**EndpointDeviceRequest**](EndpointDeviceRequest.md)|  | 
+
+### Return type
+
+[**EndpointDevice**](EndpointDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **authenticators_admin_sms_create**
 > SMSDevice authenticators_admin_sms_create(sms_device_request)
-
-
 
 Viewset for sms authenticator devices (for admins)
 
@@ -716,8 +1669,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_sms_destroy**
 > authenticators_admin_sms_destroy(id)
 
-
-
 Viewset for sms authenticator devices (for admins)
 
 ### Example
@@ -791,8 +1742,6 @@ void (empty response body)
 
 # **authenticators_admin_sms_list**
 > PaginatedSMSDeviceList authenticators_admin_sms_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 Viewset for sms authenticator devices (for admins)
 
@@ -879,8 +1828,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_sms_partial_update**
 > SMSDevice authenticators_admin_sms_partial_update(id, patched_sms_device_request=patched_sms_device_request)
 
-
-
 Viewset for sms authenticator devices (for admins)
 
 ### Example
@@ -961,8 +1908,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_sms_retrieve**
 > SMSDevice authenticators_admin_sms_retrieve(id)
 
-
-
 Viewset for sms authenticator devices (for admins)
 
 ### Example
@@ -1039,8 +1984,6 @@ Name | Type | Description  | Notes
 
 # **authenticators_admin_sms_update**
 > SMSDevice authenticators_admin_sms_update(id, sms_device_request)
-
-
 
 Viewset for sms authenticator devices (for admins)
 
@@ -1122,8 +2065,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_static_create**
 > StaticDevice authenticators_admin_static_create(static_device_request)
 
-
-
 Viewset for static authenticator devices (for admins)
 
 ### Example
@@ -1202,8 +2143,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_static_destroy**
 > authenticators_admin_static_destroy(id)
 
-
-
 Viewset for static authenticator devices (for admins)
 
 ### Example
@@ -1277,8 +2216,6 @@ void (empty response body)
 
 # **authenticators_admin_static_list**
 > PaginatedStaticDeviceList authenticators_admin_static_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 Viewset for static authenticator devices (for admins)
 
@@ -1365,8 +2302,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_static_partial_update**
 > StaticDevice authenticators_admin_static_partial_update(id, patched_static_device_request=patched_static_device_request)
 
-
-
 Viewset for static authenticator devices (for admins)
 
 ### Example
@@ -1447,8 +2382,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_static_retrieve**
 > StaticDevice authenticators_admin_static_retrieve(id)
 
-
-
 Viewset for static authenticator devices (for admins)
 
 ### Example
@@ -1525,8 +2458,6 @@ Name | Type | Description  | Notes
 
 # **authenticators_admin_static_update**
 > StaticDevice authenticators_admin_static_update(id, static_device_request)
-
-
 
 Viewset for static authenticator devices (for admins)
 
@@ -1608,8 +2539,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_totp_create**
 > TOTPDevice authenticators_admin_totp_create(totp_device_request)
 
-
-
 Viewset for totp authenticator devices (for admins)
 
 ### Example
@@ -1688,8 +2617,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_totp_destroy**
 > authenticators_admin_totp_destroy(id)
 
-
-
 Viewset for totp authenticator devices (for admins)
 
 ### Example
@@ -1763,8 +2690,6 @@ void (empty response body)
 
 # **authenticators_admin_totp_list**
 > PaginatedTOTPDeviceList authenticators_admin_totp_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 Viewset for totp authenticator devices (for admins)
 
@@ -1851,8 +2776,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_totp_partial_update**
 > TOTPDevice authenticators_admin_totp_partial_update(id, patched_totp_device_request=patched_totp_device_request)
 
-
-
 Viewset for totp authenticator devices (for admins)
 
 ### Example
@@ -1933,8 +2856,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_totp_retrieve**
 > TOTPDevice authenticators_admin_totp_retrieve(id)
 
-
-
 Viewset for totp authenticator devices (for admins)
 
 ### Example
@@ -2011,8 +2932,6 @@ Name | Type | Description  | Notes
 
 # **authenticators_admin_totp_update**
 > TOTPDevice authenticators_admin_totp_update(id, totp_device_request)
-
-
 
 Viewset for totp authenticator devices (for admins)
 
@@ -2094,8 +3013,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_webauthn_create**
 > WebAuthnDevice authenticators_admin_webauthn_create(web_authn_device_request)
 
-
-
 Viewset for WebAuthn authenticator devices (for admins)
 
 ### Example
@@ -2174,8 +3091,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_webauthn_destroy**
 > authenticators_admin_webauthn_destroy(id)
 
-
-
 Viewset for WebAuthn authenticator devices (for admins)
 
 ### Example
@@ -2249,8 +3164,6 @@ void (empty response body)
 
 # **authenticators_admin_webauthn_list**
 > PaginatedWebAuthnDeviceList authenticators_admin_webauthn_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 Viewset for WebAuthn authenticator devices (for admins)
 
@@ -2337,8 +3250,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_webauthn_partial_update**
 > WebAuthnDevice authenticators_admin_webauthn_partial_update(id, patched_web_authn_device_request=patched_web_authn_device_request)
 
-
-
 Viewset for WebAuthn authenticator devices (for admins)
 
 ### Example
@@ -2419,8 +3330,6 @@ Name | Type | Description  | Notes
 # **authenticators_admin_webauthn_retrieve**
 > WebAuthnDevice authenticators_admin_webauthn_retrieve(id)
 
-
-
 Viewset for WebAuthn authenticator devices (for admins)
 
 ### Example
@@ -2497,8 +3406,6 @@ Name | Type | Description  | Notes
 
 # **authenticators_admin_webauthn_update**
 > WebAuthnDevice authenticators_admin_webauthn_update(id, web_authn_device_request)
-
-
 
 Viewset for WebAuthn authenticator devices (for admins)
 
@@ -2580,8 +3487,6 @@ Name | Type | Description  | Notes
 # **authenticators_all_list**
 > List[Device] authenticators_all_list()
 
-
-
 Get all devices for current user
 
 ### Example
@@ -2654,8 +3559,6 @@ This endpoint does not need any parameter.
 
 # **authenticators_duo_destroy**
 > authenticators_duo_destroy(id)
-
-
 
 Viewset for Duo authenticator devices
 
@@ -2730,8 +3633,6 @@ void (empty response body)
 
 # **authenticators_duo_list**
 > PaginatedDuoDeviceList authenticators_duo_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 Viewset for Duo authenticator devices
 
@@ -2818,8 +3719,6 @@ Name | Type | Description  | Notes
 # **authenticators_duo_partial_update**
 > DuoDevice authenticators_duo_partial_update(id, patched_duo_device_request=patched_duo_device_request)
 
-
-
 Viewset for Duo authenticator devices
 
 ### Example
@@ -2900,8 +3799,6 @@ Name | Type | Description  | Notes
 # **authenticators_duo_retrieve**
 > DuoDevice authenticators_duo_retrieve(id)
 
-
-
 Viewset for Duo authenticator devices
 
 ### Example
@@ -2978,8 +3875,6 @@ Name | Type | Description  | Notes
 
 # **authenticators_duo_update**
 > DuoDevice authenticators_duo_update(id, duo_device_request)
-
-
 
 Viewset for Duo authenticator devices
 
@@ -3061,8 +3956,6 @@ Name | Type | Description  | Notes
 # **authenticators_duo_used_by_list**
 > List[UsedBy] authenticators_duo_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -3137,10 +4030,720 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **authenticators_email_destroy**
+> authenticators_email_destroy(id)
+
+Viewset for email authenticator devices
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    id = 56 # int | A unique integer value identifying this Email Device.
+
+    try:
+        await api_instance.authenticators_email_destroy(id)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_email_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Email Device. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_email_list**
+> PaginatedEmailDeviceList authenticators_email_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+
+Viewset for email authenticator devices
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_email_device_list import PaginatedEmailDeviceList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+
+    try:
+        api_response = await api_instance.authenticators_email_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        print("The response of AuthenticatorsApi->authenticators_email_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_email_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedEmailDeviceList**](PaginatedEmailDeviceList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_email_partial_update**
+> EmailDevice authenticators_email_partial_update(id, patched_email_device_request=patched_email_device_request)
+
+Viewset for email authenticator devices
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.email_device import EmailDevice
+from authentik_openapi.models.patched_email_device_request import PatchedEmailDeviceRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    id = 56 # int | A unique integer value identifying this Email Device.
+    patched_email_device_request = authentik_openapi.PatchedEmailDeviceRequest() # PatchedEmailDeviceRequest |  (optional)
+
+    try:
+        api_response = await api_instance.authenticators_email_partial_update(id, patched_email_device_request=patched_email_device_request)
+        print("The response of AuthenticatorsApi->authenticators_email_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_email_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Email Device. | 
+ **patched_email_device_request** | [**PatchedEmailDeviceRequest**](PatchedEmailDeviceRequest.md)|  | [optional] 
+
+### Return type
+
+[**EmailDevice**](EmailDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_email_retrieve**
+> EmailDevice authenticators_email_retrieve(id)
+
+Viewset for email authenticator devices
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.email_device import EmailDevice
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    id = 56 # int | A unique integer value identifying this Email Device.
+
+    try:
+        api_response = await api_instance.authenticators_email_retrieve(id)
+        print("The response of AuthenticatorsApi->authenticators_email_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_email_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Email Device. | 
+
+### Return type
+
+[**EmailDevice**](EmailDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_email_update**
+> EmailDevice authenticators_email_update(id, email_device_request)
+
+Viewset for email authenticator devices
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.email_device import EmailDevice
+from authentik_openapi.models.email_device_request import EmailDeviceRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    id = 56 # int | A unique integer value identifying this Email Device.
+    email_device_request = authentik_openapi.EmailDeviceRequest() # EmailDeviceRequest | 
+
+    try:
+        api_response = await api_instance.authenticators_email_update(id, email_device_request)
+        print("The response of AuthenticatorsApi->authenticators_email_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_email_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Email Device. | 
+ **email_device_request** | [**EmailDeviceRequest**](EmailDeviceRequest.md)|  | 
+
+### Return type
+
+[**EmailDevice**](EmailDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_email_used_by_list**
+> List[UsedBy] authenticators_email_used_by_list(id)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.used_by import UsedBy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    id = 56 # int | A unique integer value identifying this Email Device.
+
+    try:
+        api_response = await api_instance.authenticators_email_used_by_list(id)
+        print("The response of AuthenticatorsApi->authenticators_email_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_email_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Email Device. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_endpoint_list**
+> PaginatedEndpointDeviceList authenticators_endpoint_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+
+Viewset for Endpoint authenticator devices
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_endpoint_device_list import PaginatedEndpointDeviceList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+
+    try:
+        api_response = await api_instance.authenticators_endpoint_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        print("The response of AuthenticatorsApi->authenticators_endpoint_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_endpoint_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedEndpointDeviceList**](PaginatedEndpointDeviceList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_endpoint_retrieve**
+> EndpointDevice authenticators_endpoint_retrieve(uuid)
+
+Viewset for Endpoint authenticator devices
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.endpoint_device import EndpointDevice
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    uuid = 'uuid_example' # str | A UUID string identifying this Endpoint Device.
+
+    try:
+        api_response = await api_instance.authenticators_endpoint_retrieve(uuid)
+        print("The response of AuthenticatorsApi->authenticators_endpoint_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_endpoint_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **str**| A UUID string identifying this Endpoint Device. | 
+
+### Return type
+
+[**EndpointDevice**](EndpointDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticators_endpoint_used_by_list**
+> List[UsedBy] authenticators_endpoint_used_by_list(uuid)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.used_by import UsedBy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.AuthenticatorsApi(api_client)
+    uuid = 'uuid_example' # str | A UUID string identifying this Endpoint Device.
+
+    try:
+        api_response = await api_instance.authenticators_endpoint_used_by_list(uuid)
+        print("The response of AuthenticatorsApi->authenticators_endpoint_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticatorsApi->authenticators_endpoint_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **str**| A UUID string identifying this Endpoint Device. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **authenticators_sms_destroy**
 > authenticators_sms_destroy(id)
-
-
 
 Viewset for sms authenticator devices
 
@@ -3215,8 +4818,6 @@ void (empty response body)
 
 # **authenticators_sms_list**
 > PaginatedSMSDeviceList authenticators_sms_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 Viewset for sms authenticator devices
 
@@ -3303,8 +4904,6 @@ Name | Type | Description  | Notes
 # **authenticators_sms_partial_update**
 > SMSDevice authenticators_sms_partial_update(id, patched_sms_device_request=patched_sms_device_request)
 
-
-
 Viewset for sms authenticator devices
 
 ### Example
@@ -3385,8 +4984,6 @@ Name | Type | Description  | Notes
 # **authenticators_sms_retrieve**
 > SMSDevice authenticators_sms_retrieve(id)
 
-
-
 Viewset for sms authenticator devices
 
 ### Example
@@ -3463,8 +5060,6 @@ Name | Type | Description  | Notes
 
 # **authenticators_sms_update**
 > SMSDevice authenticators_sms_update(id, sms_device_request)
-
-
 
 Viewset for sms authenticator devices
 
@@ -3546,8 +5141,6 @@ Name | Type | Description  | Notes
 # **authenticators_sms_used_by_list**
 > List[UsedBy] authenticators_sms_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -3625,8 +5218,6 @@ Name | Type | Description  | Notes
 # **authenticators_static_destroy**
 > authenticators_static_destroy(id)
 
-
-
 Viewset for static authenticator devices
 
 ### Example
@@ -3700,8 +5291,6 @@ void (empty response body)
 
 # **authenticators_static_list**
 > PaginatedStaticDeviceList authenticators_static_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 Viewset for static authenticator devices
 
@@ -3788,8 +5377,6 @@ Name | Type | Description  | Notes
 # **authenticators_static_partial_update**
 > StaticDevice authenticators_static_partial_update(id, patched_static_device_request=patched_static_device_request)
 
-
-
 Viewset for static authenticator devices
 
 ### Example
@@ -3870,8 +5457,6 @@ Name | Type | Description  | Notes
 # **authenticators_static_retrieve**
 > StaticDevice authenticators_static_retrieve(id)
 
-
-
 Viewset for static authenticator devices
 
 ### Example
@@ -3948,8 +5533,6 @@ Name | Type | Description  | Notes
 
 # **authenticators_static_update**
 > StaticDevice authenticators_static_update(id, static_device_request)
-
-
 
 Viewset for static authenticator devices
 
@@ -4031,8 +5614,6 @@ Name | Type | Description  | Notes
 # **authenticators_static_used_by_list**
 > List[UsedBy] authenticators_static_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -4110,8 +5691,6 @@ Name | Type | Description  | Notes
 # **authenticators_totp_destroy**
 > authenticators_totp_destroy(id)
 
-
-
 Viewset for totp authenticator devices
 
 ### Example
@@ -4185,8 +5764,6 @@ void (empty response body)
 
 # **authenticators_totp_list**
 > PaginatedTOTPDeviceList authenticators_totp_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 Viewset for totp authenticator devices
 
@@ -4273,8 +5850,6 @@ Name | Type | Description  | Notes
 # **authenticators_totp_partial_update**
 > TOTPDevice authenticators_totp_partial_update(id, patched_totp_device_request=patched_totp_device_request)
 
-
-
 Viewset for totp authenticator devices
 
 ### Example
@@ -4355,8 +5930,6 @@ Name | Type | Description  | Notes
 # **authenticators_totp_retrieve**
 > TOTPDevice authenticators_totp_retrieve(id)
 
-
-
 Viewset for totp authenticator devices
 
 ### Example
@@ -4433,8 +6006,6 @@ Name | Type | Description  | Notes
 
 # **authenticators_totp_update**
 > TOTPDevice authenticators_totp_update(id, totp_device_request)
-
-
 
 Viewset for totp authenticator devices
 
@@ -4516,8 +6087,6 @@ Name | Type | Description  | Notes
 # **authenticators_totp_used_by_list**
 > List[UsedBy] authenticators_totp_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -4595,8 +6164,6 @@ Name | Type | Description  | Notes
 # **authenticators_webauthn_destroy**
 > authenticators_webauthn_destroy(id)
 
-
-
 Viewset for WebAuthn authenticator devices
 
 ### Example
@@ -4670,8 +6237,6 @@ void (empty response body)
 
 # **authenticators_webauthn_list**
 > PaginatedWebAuthnDeviceList authenticators_webauthn_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 Viewset for WebAuthn authenticator devices
 
@@ -4758,8 +6323,6 @@ Name | Type | Description  | Notes
 # **authenticators_webauthn_partial_update**
 > WebAuthnDevice authenticators_webauthn_partial_update(id, patched_web_authn_device_request=patched_web_authn_device_request)
 
-
-
 Viewset for WebAuthn authenticator devices
 
 ### Example
@@ -4840,8 +6403,6 @@ Name | Type | Description  | Notes
 # **authenticators_webauthn_retrieve**
 > WebAuthnDevice authenticators_webauthn_retrieve(id)
 
-
-
 Viewset for WebAuthn authenticator devices
 
 ### Example
@@ -4918,8 +6479,6 @@ Name | Type | Description  | Notes
 
 # **authenticators_webauthn_update**
 > WebAuthnDevice authenticators_webauthn_update(id, web_authn_device_request)
-
-
 
 Viewset for WebAuthn authenticator devices
 
@@ -5000,8 +6559,6 @@ Name | Type | Description  | Notes
 
 # **authenticators_webauthn_used_by_list**
 > List[UsedBy] authenticators_webauthn_used_by_list(id)
-
-
 
 Get a list of all objects that use this object
 

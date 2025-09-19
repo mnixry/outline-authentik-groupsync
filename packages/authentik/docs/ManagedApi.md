@@ -18,8 +18,6 @@ Method | HTTP request | Description
 # **managed_blueprints_apply_create**
 > BlueprintInstance managed_blueprints_apply_create(instance_uuid)
 
-
-
 Apply a blueprint
 
 ### Example
@@ -97,8 +95,6 @@ Name | Type | Description  | Notes
 # **managed_blueprints_available_list**
 > List[BlueprintFile] managed_blueprints_available_list()
 
-
-
 Get blueprints
 
 ### Example
@@ -171,8 +167,6 @@ This endpoint does not need any parameter.
 
 # **managed_blueprints_create**
 > BlueprintInstance managed_blueprints_create(blueprint_instance_request)
-
-
 
 Blueprint instances
 
@@ -252,8 +246,6 @@ Name | Type | Description  | Notes
 # **managed_blueprints_destroy**
 > managed_blueprints_destroy(instance_uuid)
 
-
-
 Blueprint instances
 
 ### Example
@@ -327,8 +319,6 @@ void (empty response body)
 
 # **managed_blueprints_list**
 > PaginatedBlueprintInstanceList managed_blueprints_list(name=name, ordering=ordering, page=page, page_size=page_size, path=path, search=search)
-
-
 
 Blueprint instances
 
@@ -417,8 +407,6 @@ Name | Type | Description  | Notes
 # **managed_blueprints_partial_update**
 > BlueprintInstance managed_blueprints_partial_update(instance_uuid, patched_blueprint_instance_request=patched_blueprint_instance_request)
 
-
-
 Blueprint instances
 
 ### Example
@@ -499,8 +487,6 @@ Name | Type | Description  | Notes
 # **managed_blueprints_retrieve**
 > BlueprintInstance managed_blueprints_retrieve(instance_uuid)
 
-
-
 Blueprint instances
 
 ### Example
@@ -577,8 +563,6 @@ Name | Type | Description  | Notes
 
 # **managed_blueprints_update**
 > BlueprintInstance managed_blueprints_update(instance_uuid, blueprint_instance_request)
-
-
 
 Blueprint instances
 
@@ -659,8 +643,6 @@ Name | Type | Description  | Notes
 
 # **managed_blueprints_used_by_list**
 > List[UsedBy] managed_blueprints_used_by_list(instance_uuid)
-
-
 
 Get a list of all objects that use this object
 

@@ -17,13 +17,14 @@ Name | Type | Description | Notes
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
 **delegated_subject** | **str** |  | 
-**credentials** | **object** |  | 
+**credentials** | **Dict[str, object]** |  | 
 **scopes** | **str** |  | [optional] 
 **exclude_users_service_account** | **bool** |  | [optional] 
 **filter_group** | **str** |  | [optional] 
 **user_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **group_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **default_group_email_domain** | **str** |  | 
+**dry_run** | **bool** | When enabled, provider will not modify or create objects in the remote system. | [optional] 
 
 ## Example
 

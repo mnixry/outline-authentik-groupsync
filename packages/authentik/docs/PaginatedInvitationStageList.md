@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](Pagination.md) |  | 
 **results** | [**List[InvitationStage]**](InvitationStage.md) |  | 
+**autocomplete** | **Dict[str, object]** |  | 
 
 ## Example
 

@@ -1,15 +1,18 @@
 # UserSourceConnection
 
-OAuth Source Serializer
+User source connection
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **int** |  | [readonly] 
-**user** | **int** |  | [readonly] 
-**source** | [**Source**](Source.md) |  | [readonly] 
+**user** | **int** |  | 
+**source** | **str** |  | 
+**source_obj** | [**Source**](Source.md) |  | [readonly] 
+**identifier** | **str** |  | 
 **created** | **datetime** |  | [readonly] 
+**last_updated** | **datetime** |  | [readonly] 
 
 ## Example
 

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **component** | **str** |  | [optional] [default to 'ak-stage-identification']
 **uid_field** | **str** |  | 
 **password** | **str** |  | [optional] 
+**captcha_token** | **str** |  | [optional] 
 
 ## Example
 

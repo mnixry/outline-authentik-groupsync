@@ -1,16 +1,18 @@
 # GroupSAMLSourceConnection
 
-OAuth Group-Source connection Serializer
+Group Source Connection
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **int** |  | [readonly] 
-**group** | **str** |  | [readonly] 
-**source** | [**Source**](Source.md) |  | [readonly] 
-**identifier** | **str** |  | [readonly] 
+**group** | **str** |  | 
+**source** | **str** |  | 
+**source_obj** | [**Source**](Source.md) |  | [readonly] 
+**identifier** | **str** |  | 
 **created** | **datetime** |  | [readonly] 
+**last_updated** | **datetime** |  | [readonly] 
 
 ## Example
 

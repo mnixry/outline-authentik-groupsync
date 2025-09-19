@@ -19,6 +19,8 @@ from authentik_openapi.api.rbac_api import RbacApi
 from authentik_openapi.api.root_api import RootApi
 from authentik_openapi.api.schema_api import SchemaApi
 from authentik_openapi.api.sources_api import SourcesApi
+from authentik_openapi.api.ssf_api import SsfApi
 from authentik_openapi.api.stages_api import StagesApi
+from authentik_openapi.api.tasks_api import TasksApi
 from authentik_openapi.api.tenants_api import TenantsApi
 

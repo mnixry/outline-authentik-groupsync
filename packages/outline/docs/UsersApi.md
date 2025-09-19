@@ -4,18 +4,18 @@ All URIs are relative to *https://app.getoutline.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**users_activate_post**](UsersApi.md#users_activate_post) | **POST** /users.activate | Activate a user
-[**users_delete_post**](UsersApi.md#users_delete_post) | **POST** /users.delete | Delete a user
-[**users_info_post**](UsersApi.md#users_info_post) | **POST** /users.info | Retrieve a user
-[**users_invite_post**](UsersApi.md#users_invite_post) | **POST** /users.invite | Invite users
-[**users_list_post**](UsersApi.md#users_list_post) | **POST** /users.list | List all users
-[**users_suspend_post**](UsersApi.md#users_suspend_post) | **POST** /users.suspend | Suspend a user
-[**users_update_post**](UsersApi.md#users_update_post) | **POST** /users.update | Update a user
-[**users_update_role_post**](UsersApi.md#users_update_role_post) | **POST** /users.update_role | Change a users role
+[**users_activate**](UsersApi.md#users_activate) | **POST** /users.activate | Activate a user
+[**users_delete**](UsersApi.md#users_delete) | **POST** /users.delete | Delete a user
+[**users_info**](UsersApi.md#users_info) | **POST** /users.info | Retrieve a user
+[**users_invite**](UsersApi.md#users_invite) | **POST** /users.invite | Invite users
+[**users_list**](UsersApi.md#users_list) | **POST** /users.list | List all users
+[**users_suspend**](UsersApi.md#users_suspend) | **POST** /users.suspend | Suspend a user
+[**users_update**](UsersApi.md#users_update) | **POST** /users.update | Update a user
+[**users_update_role**](UsersApi.md#users_update_role) | **POST** /users.update_role | Change a users role
 
 
-# **users_activate_post**
-> UsersInfoPost200Response users_activate_post(users_info_post_request=users_info_post_request)
+# **users_activate**
+> UsersInfo200Response users_activate(users_info_request=users_info_request)
 
 Activate a user
 
@@ -23,12 +23,13 @@ Activating a previously suspended user allows them to signin again. Users that a
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.users_info_post200_response import UsersInfoPost200Response
-from outline_openapi.models.users_info_post_request import UsersInfoPostRequest
+from outline_openapi.models.users_info200_response import UsersInfo200Response
+from outline_openapi.models.users_info_request import UsersInfoRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -43,7 +44,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -52,15 +55,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.UsersApi(api_client)
-    users_info_post_request = outline_openapi.UsersInfoPostRequest() # UsersInfoPostRequest |  (optional)
+    users_info_request = outline_openapi.UsersInfoRequest() # UsersInfoRequest |  (optional)
 
     try:
         # Activate a user
-        api_response = await api_instance.users_activate_post(users_info_post_request=users_info_post_request)
-        print("The response of UsersApi->users_activate_post:\n")
+        api_response = await api_instance.users_activate(users_info_request=users_info_request)
+        print("The response of UsersApi->users_activate:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UsersApi->users_activate_post: %s\n" % e)
+        print("Exception when calling UsersApi->users_activate: %s\n" % e)
 ```
 
 
@@ -70,15 +73,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **users_info_post_request** | [**UsersInfoPostRequest**](UsersInfoPostRequest.md)|  | [optional] 
+ **users_info_request** | [**UsersInfoRequest**](UsersInfoRequest.md)|  | [optional] 
 
 ### Return type
 
-[**UsersInfoPost200Response**](UsersInfoPost200Response.md)
+[**UsersInfo200Response**](UsersInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -93,11 +96,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **users_delete_post**
-> AttachmentsDeletePost200Response users_delete_post(users_info_post_request=users_info_post_request)
+# **users_delete**
+> AttachmentsDelete200Response users_delete(users_info_request=users_info_request)
 
 Delete a user
 
@@ -105,12 +109,13 @@ Deleting a user removes the object entirely. In almost every circumstance it is 
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.attachments_delete_post200_response import AttachmentsDeletePost200Response
-from outline_openapi.models.users_info_post_request import UsersInfoPostRequest
+from outline_openapi.models.attachments_delete200_response import AttachmentsDelete200Response
+from outline_openapi.models.users_info_request import UsersInfoRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -125,7 +130,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -134,15 +141,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.UsersApi(api_client)
-    users_info_post_request = outline_openapi.UsersInfoPostRequest() # UsersInfoPostRequest |  (optional)
+    users_info_request = outline_openapi.UsersInfoRequest() # UsersInfoRequest |  (optional)
 
     try:
         # Delete a user
-        api_response = await api_instance.users_delete_post(users_info_post_request=users_info_post_request)
-        print("The response of UsersApi->users_delete_post:\n")
+        api_response = await api_instance.users_delete(users_info_request=users_info_request)
+        print("The response of UsersApi->users_delete:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UsersApi->users_delete_post: %s\n" % e)
+        print("Exception when calling UsersApi->users_delete: %s\n" % e)
 ```
 
 
@@ -152,15 +159,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **users_info_post_request** | [**UsersInfoPostRequest**](UsersInfoPostRequest.md)|  | [optional] 
+ **users_info_request** | [**UsersInfoRequest**](UsersInfoRequest.md)|  | [optional] 
 
 ### Return type
 
-[**AttachmentsDeletePost200Response**](AttachmentsDeletePost200Response.md)
+[**AttachmentsDelete200Response**](AttachmentsDelete200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -175,22 +182,24 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **users_info_post**
-> UsersInfoPost200Response users_info_post(users_info_post_request=users_info_post_request)
+# **users_info**
+> UsersInfo200Response users_info(users_info_request=users_info_request)
 
 Retrieve a user
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.users_info_post200_response import UsersInfoPost200Response
-from outline_openapi.models.users_info_post_request import UsersInfoPostRequest
+from outline_openapi.models.users_info200_response import UsersInfo200Response
+from outline_openapi.models.users_info_request import UsersInfoRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -205,7 +214,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -214,15 +225,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.UsersApi(api_client)
-    users_info_post_request = outline_openapi.UsersInfoPostRequest() # UsersInfoPostRequest |  (optional)
+    users_info_request = outline_openapi.UsersInfoRequest() # UsersInfoRequest |  (optional)
 
     try:
         # Retrieve a user
-        api_response = await api_instance.users_info_post(users_info_post_request=users_info_post_request)
-        print("The response of UsersApi->users_info_post:\n")
+        api_response = await api_instance.users_info(users_info_request=users_info_request)
+        print("The response of UsersApi->users_info:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UsersApi->users_info_post: %s\n" % e)
+        print("Exception when calling UsersApi->users_info: %s\n" % e)
 ```
 
 
@@ -232,15 +243,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **users_info_post_request** | [**UsersInfoPostRequest**](UsersInfoPostRequest.md)|  | [optional] 
+ **users_info_request** | [**UsersInfoRequest**](UsersInfoRequest.md)|  | [optional] 
 
 ### Return type
 
-[**UsersInfoPost200Response**](UsersInfoPost200Response.md)
+[**UsersInfo200Response**](UsersInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -255,22 +266,24 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **users_invite_post**
-> UsersInvitePost200Response users_invite_post(users_invite_post_request=users_invite_post_request)
+# **users_invite**
+> UsersInvite200Response users_invite(users_invite_request=users_invite_request)
 
 Invite users
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.users_invite_post200_response import UsersInvitePost200Response
-from outline_openapi.models.users_invite_post_request import UsersInvitePostRequest
+from outline_openapi.models.users_invite200_response import UsersInvite200Response
+from outline_openapi.models.users_invite_request import UsersInviteRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -285,7 +298,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -294,15 +309,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.UsersApi(api_client)
-    users_invite_post_request = outline_openapi.UsersInvitePostRequest() # UsersInvitePostRequest |  (optional)
+    users_invite_request = outline_openapi.UsersInviteRequest() # UsersInviteRequest |  (optional)
 
     try:
         # Invite users
-        api_response = await api_instance.users_invite_post(users_invite_post_request=users_invite_post_request)
-        print("The response of UsersApi->users_invite_post:\n")
+        api_response = await api_instance.users_invite(users_invite_request=users_invite_request)
+        print("The response of UsersApi->users_invite:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UsersApi->users_invite_post: %s\n" % e)
+        print("Exception when calling UsersApi->users_invite: %s\n" % e)
 ```
 
 
@@ -312,15 +327,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **users_invite_post_request** | [**UsersInvitePostRequest**](UsersInvitePostRequest.md)|  | [optional] 
+ **users_invite_request** | [**UsersInviteRequest**](UsersInviteRequest.md)|  | [optional] 
 
 ### Return type
 
-[**UsersInvitePost200Response**](UsersInvitePost200Response.md)
+[**UsersInvite200Response**](UsersInvite200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -334,11 +349,12 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **users_list_post**
-> UsersListPost200Response users_list_post(users_list_post_request=users_list_post_request)
+# **users_list**
+> UsersList200Response users_list(users_list_request=users_list_request)
 
 List all users
 
@@ -346,12 +362,13 @@ List and filter all the users in the team
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.users_list_post200_response import UsersListPost200Response
-from outline_openapi.models.users_list_post_request import UsersListPostRequest
+from outline_openapi.models.users_list200_response import UsersList200Response
+from outline_openapi.models.users_list_request import UsersListRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -366,7 +383,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -375,15 +394,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.UsersApi(api_client)
-    users_list_post_request = outline_openapi.UsersListPostRequest() # UsersListPostRequest |  (optional)
+    users_list_request = outline_openapi.UsersListRequest() # UsersListRequest |  (optional)
 
     try:
         # List all users
-        api_response = await api_instance.users_list_post(users_list_post_request=users_list_post_request)
-        print("The response of UsersApi->users_list_post:\n")
+        api_response = await api_instance.users_list(users_list_request=users_list_request)
+        print("The response of UsersApi->users_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UsersApi->users_list_post: %s\n" % e)
+        print("Exception when calling UsersApi->users_list: %s\n" % e)
 ```
 
 
@@ -393,15 +412,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **users_list_post_request** | [**UsersListPostRequest**](UsersListPostRequest.md)|  | [optional] 
+ **users_list_request** | [**UsersListRequest**](UsersListRequest.md)|  | [optional] 
 
 ### Return type
 
-[**UsersListPost200Response**](UsersListPost200Response.md)
+[**UsersList200Response**](UsersList200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -415,11 +434,12 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **users_suspend_post**
-> UsersInfoPost200Response users_suspend_post(users_info_post_request=users_info_post_request)
+# **users_suspend**
+> UsersInfo200Response users_suspend(users_info_request=users_info_request)
 
 Suspend a user
 
@@ -427,12 +447,13 @@ Suspending a user prevents the user from signing in. Users that are suspended ar
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.users_info_post200_response import UsersInfoPost200Response
-from outline_openapi.models.users_info_post_request import UsersInfoPostRequest
+from outline_openapi.models.users_info200_response import UsersInfo200Response
+from outline_openapi.models.users_info_request import UsersInfoRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -447,7 +468,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -456,15 +479,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.UsersApi(api_client)
-    users_info_post_request = outline_openapi.UsersInfoPostRequest() # UsersInfoPostRequest |  (optional)
+    users_info_request = outline_openapi.UsersInfoRequest() # UsersInfoRequest |  (optional)
 
     try:
         # Suspend a user
-        api_response = await api_instance.users_suspend_post(users_info_post_request=users_info_post_request)
-        print("The response of UsersApi->users_suspend_post:\n")
+        api_response = await api_instance.users_suspend(users_info_request=users_info_request)
+        print("The response of UsersApi->users_suspend:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UsersApi->users_suspend_post: %s\n" % e)
+        print("Exception when calling UsersApi->users_suspend: %s\n" % e)
 ```
 
 
@@ -474,15 +497,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **users_info_post_request** | [**UsersInfoPostRequest**](UsersInfoPostRequest.md)|  | [optional] 
+ **users_info_request** | [**UsersInfoRequest**](UsersInfoRequest.md)|  | [optional] 
 
 ### Return type
 
-[**UsersInfoPost200Response**](UsersInfoPost200Response.md)
+[**UsersInfo200Response**](UsersInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -497,11 +520,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **users_update_post**
-> UsersInfoPost200Response users_update_post(users_update_post_request=users_update_post_request)
+# **users_update**
+> UsersInfo200Response users_update(users_update_request=users_update_request)
 
 Update a user
 
@@ -509,12 +533,13 @@ Update a users name or avatar. If no `id` is passed then the user associated wit
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.users_info_post200_response import UsersInfoPost200Response
-from outline_openapi.models.users_update_post_request import UsersUpdatePostRequest
+from outline_openapi.models.users_info200_response import UsersInfo200Response
+from outline_openapi.models.users_update_request import UsersUpdateRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -529,7 +554,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -538,15 +565,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.UsersApi(api_client)
-    users_update_post_request = outline_openapi.UsersUpdatePostRequest() # UsersUpdatePostRequest |  (optional)
+    users_update_request = outline_openapi.UsersUpdateRequest() # UsersUpdateRequest |  (optional)
 
     try:
         # Update a user
-        api_response = await api_instance.users_update_post(users_update_post_request=users_update_post_request)
-        print("The response of UsersApi->users_update_post:\n")
+        api_response = await api_instance.users_update(users_update_request=users_update_request)
+        print("The response of UsersApi->users_update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UsersApi->users_update_post: %s\n" % e)
+        print("Exception when calling UsersApi->users_update: %s\n" % e)
 ```
 
 
@@ -556,15 +583,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **users_update_post_request** | [**UsersUpdatePostRequest**](UsersUpdatePostRequest.md)|  | [optional] 
+ **users_update_request** | [**UsersUpdateRequest**](UsersUpdateRequest.md)|  | [optional] 
 
 ### Return type
 
-[**UsersInfoPost200Response**](UsersInfoPost200Response.md)
+[**UsersInfo200Response**](UsersInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -579,11 +606,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **users_update_role_post**
-> UsersInfoPost200Response users_update_role_post(users_update_role_post_request=users_update_role_post_request)
+# **users_update_role**
+> UsersInfo200Response users_update_role(users_update_role_request=users_update_role_request)
 
 Change a users role
 
@@ -591,12 +619,13 @@ Change the role of a user, only available to admin authorization.
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.users_info_post200_response import UsersInfoPost200Response
-from outline_openapi.models.users_update_role_post_request import UsersUpdateRolePostRequest
+from outline_openapi.models.users_info200_response import UsersInfo200Response
+from outline_openapi.models.users_update_role_request import UsersUpdateRoleRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -611,7 +640,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -620,15 +651,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.UsersApi(api_client)
-    users_update_role_post_request = outline_openapi.UsersUpdateRolePostRequest() # UsersUpdateRolePostRequest |  (optional)
+    users_update_role_request = outline_openapi.UsersUpdateRoleRequest() # UsersUpdateRoleRequest |  (optional)
 
     try:
         # Change a users role
-        api_response = await api_instance.users_update_role_post(users_update_role_post_request=users_update_role_post_request)
-        print("The response of UsersApi->users_update_role_post:\n")
+        api_response = await api_instance.users_update_role(users_update_role_request=users_update_role_request)
+        print("The response of UsersApi->users_update_role:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UsersApi->users_update_role_post: %s\n" % e)
+        print("Exception when calling UsersApi->users_update_role: %s\n" % e)
 ```
 
 
@@ -638,15 +669,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **users_update_role_post_request** | [**UsersUpdateRolePostRequest**](UsersUpdateRolePostRequest.md)|  | [optional] 
+ **users_update_role_request** | [**UsersUpdateRoleRequest**](UsersUpdateRoleRequest.md)|  | [optional] 
 
 ### Return type
 
-[**UsersInfoPost200Response**](UsersInfoPost200Response.md)
+[**UsersInfo200Response**](UsersInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -661,6 +692,7 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

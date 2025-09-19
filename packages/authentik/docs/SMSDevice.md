@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** | The human-readable name of this device. | 
 **pk** | **int** |  | [readonly] 
 **phone_number** | **str** |  | [readonly] 
+**user** | [**GroupMember**](GroupMember.md) |  | [readonly] 
 
 ## Example
 

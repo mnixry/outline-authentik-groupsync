@@ -19,8 +19,6 @@ Method | HTTP request | Description
 # **crypto_certificatekeypairs_create**
 > CertificateKeyPair crypto_certificatekeypairs_create(certificate_key_pair_request)
 
-
-
 CertificateKeyPair Viewset
 
 ### Example
@@ -99,8 +97,6 @@ Name | Type | Description  | Notes
 # **crypto_certificatekeypairs_destroy**
 > crypto_certificatekeypairs_destroy(kp_uuid)
 
-
-
 CertificateKeyPair Viewset
 
 ### Example
@@ -174,8 +170,6 @@ void (empty response body)
 
 # **crypto_certificatekeypairs_generate_create**
 > CertificateKeyPair crypto_certificatekeypairs_generate_create(certificate_generation_request)
-
-
 
 Generate a new, self-signed certificate-key pair
 
@@ -254,8 +248,6 @@ Name | Type | Description  | Notes
 
 # **crypto_certificatekeypairs_list**
 > PaginatedCertificateKeyPairList crypto_certificatekeypairs_list(has_key=has_key, include_details=include_details, managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 CertificateKeyPair Viewset
 
@@ -348,8 +340,6 @@ Name | Type | Description  | Notes
 # **crypto_certificatekeypairs_partial_update**
 > CertificateKeyPair crypto_certificatekeypairs_partial_update(kp_uuid, patched_certificate_key_pair_request=patched_certificate_key_pair_request)
 
-
-
 CertificateKeyPair Viewset
 
 ### Example
@@ -430,8 +420,6 @@ Name | Type | Description  | Notes
 # **crypto_certificatekeypairs_retrieve**
 > CertificateKeyPair crypto_certificatekeypairs_retrieve(kp_uuid)
 
-
-
 CertificateKeyPair Viewset
 
 ### Example
@@ -508,8 +496,6 @@ Name | Type | Description  | Notes
 
 # **crypto_certificatekeypairs_update**
 > CertificateKeyPair crypto_certificatekeypairs_update(kp_uuid, certificate_key_pair_request)
-
-
 
 CertificateKeyPair Viewset
 
@@ -591,8 +577,6 @@ Name | Type | Description  | Notes
 # **crypto_certificatekeypairs_used_by_list**
 > List[UsedBy] crypto_certificatekeypairs_used_by_list(kp_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -669,8 +653,6 @@ Name | Type | Description  | Notes
 
 # **crypto_certificatekeypairs_view_certificate_retrieve**
 > CertificateData crypto_certificatekeypairs_view_certificate_retrieve(kp_uuid, download=download)
-
-
 
 Return certificate-key pairs certificate and log access
 
@@ -750,8 +732,6 @@ Name | Type | Description  | Notes
 
 # **crypto_certificatekeypairs_view_private_key_retrieve**
 > CertificateData crypto_certificatekeypairs_view_private_key_retrieve(kp_uuid, download=download)
-
-
 
 Return certificate-key pairs private key and log access
 

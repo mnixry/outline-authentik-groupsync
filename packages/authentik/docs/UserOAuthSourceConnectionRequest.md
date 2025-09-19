@@ -1,11 +1,13 @@
 # UserOAuthSourceConnectionRequest
 
-OAuth Source Serializer
+User source connection
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**user** | **int** |  | 
+**source** | **str** |  | 
 **identifier** | **str** |  | 
 **access_token** | **str** |  | [optional] 
 

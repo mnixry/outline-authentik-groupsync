@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](Pagination.md) |  | 
 **results** | [**List[AuthenticatorStaticStage]**](AuthenticatorStaticStage.md) |  | 
+**autocomplete** | **Dict[str, object]** |  | 
 
 ## Example
 

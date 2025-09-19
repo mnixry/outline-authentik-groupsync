@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **app** | [**ApplicationRequest**](ApplicationRequest.md) |  | 
 **provider_model** | [**ProviderModelEnum**](ProviderModelEnum.md) |  | 
 **provider** | [**ModelRequest**](ModelRequest.md) |  | 
+**policy_bindings** | [**List[TransactionPolicyBindingRequest]**](TransactionPolicyBindingRequest.md) |  | [optional] 
 
 ## Example
 

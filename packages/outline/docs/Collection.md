@@ -6,16 +6,20 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | Unique identifier for the object. | [optional] [readonly] 
+**url_id** | **str** | A short unique identifier that can be used to identify the collection instead of the UUID. | [optional] [readonly] 
 **name** | **str** | The name of the collection. | [optional] 
 **description** | **str** | A description of the collection, may contain markdown formatting | [optional] 
 **sort** | [**CollectionSort**](CollectionSort.md) |  | [optional] 
 **index** | **str** | The position of the collection in the sidebar | [optional] 
 **color** | **str** | A color representing the collection, this is used to help make collections more identifiable in the UI. It should be in HEX format including the # | [optional] 
-**icon** | **str** | A string that represents an icon in the outline-icons package | [optional] 
+**icon** | **str** | A string that represents an icon in the outline-icons package or an emoji | [optional] 
 **permission** | [**Permission**](Permission.md) |  | [optional] 
+**sharing** | **bool** | Whether public document sharing is enabled in this collection | [optional] [default to False]
 **created_at** | **datetime** | The date and time that this object was created | [optional] [readonly] 
 **updated_at** | **datetime** | The date and time that this object was last changed | [optional] [readonly] 
 **deleted_at** | **datetime** | The date and time that this object was deleted | [optional] [readonly] 
+**archived_at** | **datetime** | The date and time that this object was archived | [optional] [readonly] 
+**archived_by** | [**User**](User.md) |  | [optional] 
 
 ## Example
 

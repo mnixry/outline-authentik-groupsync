@@ -7,14 +7,14 @@ Event Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **str** |  | [readonly] 
-**user** | **object** |  | [optional] 
+**user** | **Dict[str, object]** |  | [optional] 
 **action** | [**EventActions**](EventActions.md) |  | 
 **app** | **str** |  | 
-**context** | **object** |  | [optional] 
+**context** | **Dict[str, object]** |  | [optional] 
 **client_ip** | **str** |  | [optional] 
 **created** | **datetime** |  | [readonly] 
 **expires** | **datetime** |  | [optional] 
-**brand** | **object** |  | [optional] 
+**brand** | **Dict[str, object]** |  | [optional] 
 
 ## Example
 

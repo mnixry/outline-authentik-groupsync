@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **created_by** | [**User**](User.md) |  | [optional] 
 **updated_at** | **datetime** | The date and time that this object was last changed | [optional] [readonly] 
 **updated_by** | [**User**](User.md) |  | [optional] 
+**anchor_text** | **str** | The document text that the comment is anchored to, only included if includeAnchorText&#x3D;true. | [optional] [readonly] 
 
 ## Example
 

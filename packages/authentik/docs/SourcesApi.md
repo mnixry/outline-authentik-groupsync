@@ -12,6 +12,26 @@ Method | HTTP request | Description
 [**sources_all_types_list**](SourcesApi.md#sources_all_types_list) | **GET** /sources/all/types/ | 
 [**sources_all_used_by_list**](SourcesApi.md#sources_all_used_by_list) | **GET** /sources/all/{slug}/used_by/ | 
 [**sources_all_user_settings_list**](SourcesApi.md#sources_all_user_settings_list) | **GET** /sources/all/user_settings/ | 
+[**sources_group_connections_all_destroy**](SourcesApi.md#sources_group_connections_all_destroy) | **DELETE** /sources/group_connections/all/{id}/ | 
+[**sources_group_connections_all_list**](SourcesApi.md#sources_group_connections_all_list) | **GET** /sources/group_connections/all/ | 
+[**sources_group_connections_all_partial_update**](SourcesApi.md#sources_group_connections_all_partial_update) | **PATCH** /sources/group_connections/all/{id}/ | 
+[**sources_group_connections_all_retrieve**](SourcesApi.md#sources_group_connections_all_retrieve) | **GET** /sources/group_connections/all/{id}/ | 
+[**sources_group_connections_all_update**](SourcesApi.md#sources_group_connections_all_update) | **PUT** /sources/group_connections/all/{id}/ | 
+[**sources_group_connections_all_used_by_list**](SourcesApi.md#sources_group_connections_all_used_by_list) | **GET** /sources/group_connections/all/{id}/used_by/ | 
+[**sources_group_connections_kerberos_create**](SourcesApi.md#sources_group_connections_kerberos_create) | **POST** /sources/group_connections/kerberos/ | 
+[**sources_group_connections_kerberos_destroy**](SourcesApi.md#sources_group_connections_kerberos_destroy) | **DELETE** /sources/group_connections/kerberos/{id}/ | 
+[**sources_group_connections_kerberos_list**](SourcesApi.md#sources_group_connections_kerberos_list) | **GET** /sources/group_connections/kerberos/ | 
+[**sources_group_connections_kerberos_partial_update**](SourcesApi.md#sources_group_connections_kerberos_partial_update) | **PATCH** /sources/group_connections/kerberos/{id}/ | 
+[**sources_group_connections_kerberos_retrieve**](SourcesApi.md#sources_group_connections_kerberos_retrieve) | **GET** /sources/group_connections/kerberos/{id}/ | 
+[**sources_group_connections_kerberos_update**](SourcesApi.md#sources_group_connections_kerberos_update) | **PUT** /sources/group_connections/kerberos/{id}/ | 
+[**sources_group_connections_kerberos_used_by_list**](SourcesApi.md#sources_group_connections_kerberos_used_by_list) | **GET** /sources/group_connections/kerberos/{id}/used_by/ | 
+[**sources_group_connections_ldap_create**](SourcesApi.md#sources_group_connections_ldap_create) | **POST** /sources/group_connections/ldap/ | 
+[**sources_group_connections_ldap_destroy**](SourcesApi.md#sources_group_connections_ldap_destroy) | **DELETE** /sources/group_connections/ldap/{id}/ | 
+[**sources_group_connections_ldap_list**](SourcesApi.md#sources_group_connections_ldap_list) | **GET** /sources/group_connections/ldap/ | 
+[**sources_group_connections_ldap_partial_update**](SourcesApi.md#sources_group_connections_ldap_partial_update) | **PATCH** /sources/group_connections/ldap/{id}/ | 
+[**sources_group_connections_ldap_retrieve**](SourcesApi.md#sources_group_connections_ldap_retrieve) | **GET** /sources/group_connections/ldap/{id}/ | 
+[**sources_group_connections_ldap_update**](SourcesApi.md#sources_group_connections_ldap_update) | **PUT** /sources/group_connections/ldap/{id}/ | 
+[**sources_group_connections_ldap_used_by_list**](SourcesApi.md#sources_group_connections_ldap_used_by_list) | **GET** /sources/group_connections/ldap/{id}/used_by/ | 
 [**sources_group_connections_oauth_create**](SourcesApi.md#sources_group_connections_oauth_create) | **POST** /sources/group_connections/oauth/ | 
 [**sources_group_connections_oauth_destroy**](SourcesApi.md#sources_group_connections_oauth_destroy) | **DELETE** /sources/group_connections/oauth/{id}/ | 
 [**sources_group_connections_oauth_list**](SourcesApi.md#sources_group_connections_oauth_list) | **GET** /sources/group_connections/oauth/ | 
@@ -26,12 +46,21 @@ Method | HTTP request | Description
 [**sources_group_connections_plex_retrieve**](SourcesApi.md#sources_group_connections_plex_retrieve) | **GET** /sources/group_connections/plex/{id}/ | 
 [**sources_group_connections_plex_update**](SourcesApi.md#sources_group_connections_plex_update) | **PUT** /sources/group_connections/plex/{id}/ | 
 [**sources_group_connections_plex_used_by_list**](SourcesApi.md#sources_group_connections_plex_used_by_list) | **GET** /sources/group_connections/plex/{id}/used_by/ | 
+[**sources_group_connections_saml_create**](SourcesApi.md#sources_group_connections_saml_create) | **POST** /sources/group_connections/saml/ | 
 [**sources_group_connections_saml_destroy**](SourcesApi.md#sources_group_connections_saml_destroy) | **DELETE** /sources/group_connections/saml/{id}/ | 
 [**sources_group_connections_saml_list**](SourcesApi.md#sources_group_connections_saml_list) | **GET** /sources/group_connections/saml/ | 
 [**sources_group_connections_saml_partial_update**](SourcesApi.md#sources_group_connections_saml_partial_update) | **PATCH** /sources/group_connections/saml/{id}/ | 
 [**sources_group_connections_saml_retrieve**](SourcesApi.md#sources_group_connections_saml_retrieve) | **GET** /sources/group_connections/saml/{id}/ | 
 [**sources_group_connections_saml_update**](SourcesApi.md#sources_group_connections_saml_update) | **PUT** /sources/group_connections/saml/{id}/ | 
 [**sources_group_connections_saml_used_by_list**](SourcesApi.md#sources_group_connections_saml_used_by_list) | **GET** /sources/group_connections/saml/{id}/used_by/ | 
+[**sources_kerberos_create**](SourcesApi.md#sources_kerberos_create) | **POST** /sources/kerberos/ | 
+[**sources_kerberos_destroy**](SourcesApi.md#sources_kerberos_destroy) | **DELETE** /sources/kerberos/{slug}/ | 
+[**sources_kerberos_list**](SourcesApi.md#sources_kerberos_list) | **GET** /sources/kerberos/ | 
+[**sources_kerberos_partial_update**](SourcesApi.md#sources_kerberos_partial_update) | **PATCH** /sources/kerberos/{slug}/ | 
+[**sources_kerberos_retrieve**](SourcesApi.md#sources_kerberos_retrieve) | **GET** /sources/kerberos/{slug}/ | 
+[**sources_kerberos_sync_status_retrieve**](SourcesApi.md#sources_kerberos_sync_status_retrieve) | **GET** /sources/kerberos/{slug}/sync/status/ | 
+[**sources_kerberos_update**](SourcesApi.md#sources_kerberos_update) | **PUT** /sources/kerberos/{slug}/ | 
+[**sources_kerberos_used_by_list**](SourcesApi.md#sources_kerberos_used_by_list) | **GET** /sources/kerberos/{slug}/used_by/ | 
 [**sources_ldap_create**](SourcesApi.md#sources_ldap_create) | **POST** /sources/ldap/ | 
 [**sources_ldap_debug_retrieve**](SourcesApi.md#sources_ldap_debug_retrieve) | **GET** /sources/ldap/{slug}/debug/ | 
 [**sources_ldap_destroy**](SourcesApi.md#sources_ldap_destroy) | **DELETE** /sources/ldap/{slug}/ | 
@@ -93,6 +122,20 @@ Method | HTTP request | Description
 [**sources_user_connections_all_retrieve**](SourcesApi.md#sources_user_connections_all_retrieve) | **GET** /sources/user_connections/all/{id}/ | 
 [**sources_user_connections_all_update**](SourcesApi.md#sources_user_connections_all_update) | **PUT** /sources/user_connections/all/{id}/ | 
 [**sources_user_connections_all_used_by_list**](SourcesApi.md#sources_user_connections_all_used_by_list) | **GET** /sources/user_connections/all/{id}/used_by/ | 
+[**sources_user_connections_kerberos_create**](SourcesApi.md#sources_user_connections_kerberos_create) | **POST** /sources/user_connections/kerberos/ | 
+[**sources_user_connections_kerberos_destroy**](SourcesApi.md#sources_user_connections_kerberos_destroy) | **DELETE** /sources/user_connections/kerberos/{id}/ | 
+[**sources_user_connections_kerberos_list**](SourcesApi.md#sources_user_connections_kerberos_list) | **GET** /sources/user_connections/kerberos/ | 
+[**sources_user_connections_kerberos_partial_update**](SourcesApi.md#sources_user_connections_kerberos_partial_update) | **PATCH** /sources/user_connections/kerberos/{id}/ | 
+[**sources_user_connections_kerberos_retrieve**](SourcesApi.md#sources_user_connections_kerberos_retrieve) | **GET** /sources/user_connections/kerberos/{id}/ | 
+[**sources_user_connections_kerberos_update**](SourcesApi.md#sources_user_connections_kerberos_update) | **PUT** /sources/user_connections/kerberos/{id}/ | 
+[**sources_user_connections_kerberos_used_by_list**](SourcesApi.md#sources_user_connections_kerberos_used_by_list) | **GET** /sources/user_connections/kerberos/{id}/used_by/ | 
+[**sources_user_connections_ldap_create**](SourcesApi.md#sources_user_connections_ldap_create) | **POST** /sources/user_connections/ldap/ | 
+[**sources_user_connections_ldap_destroy**](SourcesApi.md#sources_user_connections_ldap_destroy) | **DELETE** /sources/user_connections/ldap/{id}/ | 
+[**sources_user_connections_ldap_list**](SourcesApi.md#sources_user_connections_ldap_list) | **GET** /sources/user_connections/ldap/ | 
+[**sources_user_connections_ldap_partial_update**](SourcesApi.md#sources_user_connections_ldap_partial_update) | **PATCH** /sources/user_connections/ldap/{id}/ | 
+[**sources_user_connections_ldap_retrieve**](SourcesApi.md#sources_user_connections_ldap_retrieve) | **GET** /sources/user_connections/ldap/{id}/ | 
+[**sources_user_connections_ldap_update**](SourcesApi.md#sources_user_connections_ldap_update) | **PUT** /sources/user_connections/ldap/{id}/ | 
+[**sources_user_connections_ldap_used_by_list**](SourcesApi.md#sources_user_connections_ldap_used_by_list) | **GET** /sources/user_connections/ldap/{id}/used_by/ | 
 [**sources_user_connections_oauth_create**](SourcesApi.md#sources_user_connections_oauth_create) | **POST** /sources/user_connections/oauth/ | 
 [**sources_user_connections_oauth_destroy**](SourcesApi.md#sources_user_connections_oauth_destroy) | **DELETE** /sources/user_connections/oauth/{id}/ | 
 [**sources_user_connections_oauth_list**](SourcesApi.md#sources_user_connections_oauth_list) | **GET** /sources/user_connections/oauth/ | 
@@ -119,9 +162,7 @@ Method | HTTP request | Description
 # **sources_all_destroy**
 > sources_all_destroy(slug)
 
-
-
-Source Viewset
+Prevent deletion of built-in sources
 
 ### Example
 
@@ -193,9 +234,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_all_list**
-> PaginatedSourceList sources_all_list(managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, search=search, slug=slug)
-
-
+> PaginatedSourceList sources_all_list(managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, search=search, slug=slug)
 
 Source Viewset
 
@@ -234,11 +273,12 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
+    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
     slug = 'slug_example' # str |  (optional)
 
     try:
-        api_response = await api_instance.sources_all_list(managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, search=search, slug=slug)
+        api_response = await api_instance.sources_all_list(managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, search=search, slug=slug)
         print("The response of SourcesApi->sources_all_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -257,6 +297,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
+ **pbm_uuid** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **slug** | **str**|  | [optional] 
 
@@ -285,8 +326,6 @@ Name | Type | Description  | Notes
 
 # **sources_all_retrieve**
 > Source sources_all_retrieve(slug)
-
-
 
 Source Viewset
 
@@ -364,8 +403,6 @@ Name | Type | Description  | Notes
 
 # **sources_all_set_icon_create**
 > sources_all_set_icon_create(slug, file=file, clear=clear)
-
-
 
 Set source icon
 
@@ -445,8 +482,6 @@ void (empty response body)
 # **sources_all_set_icon_url_create**
 > sources_all_set_icon_url_create(slug, file_path_request)
 
-
-
 Set source icon (as URL)
 
 ### Example
@@ -524,8 +559,6 @@ void (empty response body)
 # **sources_all_types_list**
 > List[TypeCreate] sources_all_types_list()
 
-
-
 Get all creatable types
 
 ### Example
@@ -598,8 +631,6 @@ This endpoint does not need any parameter.
 
 # **sources_all_used_by_list**
 > List[UsedBy] sources_all_used_by_list(slug)
-
-
 
 Get a list of all objects that use this object
 
@@ -678,8 +709,6 @@ Name | Type | Description  | Notes
 # **sources_all_user_settings_list**
 > List[UserSetting] sources_all_user_settings_list()
 
-
-
 Get all sources the user can configure
 
 ### Example
@@ -750,10 +779,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sources_group_connections_oauth_create**
-> GroupOAuthSourceConnection sources_group_connections_oauth_create()
-
-
+# **sources_group_connections_all_destroy**
+> sources_group_connections_all_destroy(id)
 
 Group-source connection Viewset
 
@@ -763,7 +790,6 @@ Group-source connection Viewset
 
 ```python
 import authentik_openapi
-from authentik_openapi.models.group_o_auth_source_connection import GroupOAuthSourceConnection
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
@@ -787,24 +813,26 @@ configuration = authentik_openapi.Configuration(
 async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this group source connection.
 
     try:
-        api_response = await api_instance.sources_group_connections_oauth_create()
-        print("The response of SourcesApi->sources_group_connections_oauth_create:\n")
-        pprint(api_response)
+        await api_instance.sources_group_connections_all_destroy(id)
     except Exception as e:
-        print("Exception when calling SourcesApi->sources_group_connections_oauth_create: %s\n" % e)
+        print("Exception when calling SourcesApi->sources_group_connections_all_destroy: %s\n" % e)
 ```
 
 
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this group source connection. | 
 
 ### Return type
 
-[**GroupOAuthSourceConnection**](GroupOAuthSourceConnection.md)
+void (empty response body)
 
 ### Authorization
 
@@ -819,6 +847,1591 @@ This endpoint does not need any parameter.
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_all_list**
+> PaginatedGroupSourceConnectionList sources_group_connections_all_list(group=group, ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_group_source_connection_list import PaginatedGroupSourceConnectionList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    group = 'group_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+    source__slug = 'source__slug_example' # str |  (optional)
+
+    try:
+        api_response = await api_instance.sources_group_connections_all_list(group=group, ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug)
+        print("The response of SourcesApi->sources_group_connections_all_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_all_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **source__slug** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedGroupSourceConnectionList**](PaginatedGroupSourceConnectionList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_all_partial_update**
+> GroupSourceConnection sources_group_connections_all_partial_update(id, patched_group_source_connection_request=patched_group_source_connection_request)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.group_source_connection import GroupSourceConnection
+from authentik_openapi.models.patched_group_source_connection_request import PatchedGroupSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this group source connection.
+    patched_group_source_connection_request = authentik_openapi.PatchedGroupSourceConnectionRequest() # PatchedGroupSourceConnectionRequest |  (optional)
+
+    try:
+        api_response = await api_instance.sources_group_connections_all_partial_update(id, patched_group_source_connection_request=patched_group_source_connection_request)
+        print("The response of SourcesApi->sources_group_connections_all_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_all_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this group source connection. | 
+ **patched_group_source_connection_request** | [**PatchedGroupSourceConnectionRequest**](PatchedGroupSourceConnectionRequest.md)|  | [optional] 
+
+### Return type
+
+[**GroupSourceConnection**](GroupSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_all_retrieve**
+> GroupSourceConnection sources_group_connections_all_retrieve(id)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.group_source_connection import GroupSourceConnection
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this group source connection.
+
+    try:
+        api_response = await api_instance.sources_group_connections_all_retrieve(id)
+        print("The response of SourcesApi->sources_group_connections_all_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_all_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this group source connection. | 
+
+### Return type
+
+[**GroupSourceConnection**](GroupSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_all_update**
+> GroupSourceConnection sources_group_connections_all_update(id, group_source_connection_request)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.group_source_connection import GroupSourceConnection
+from authentik_openapi.models.group_source_connection_request import GroupSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this group source connection.
+    group_source_connection_request = authentik_openapi.GroupSourceConnectionRequest() # GroupSourceConnectionRequest | 
+
+    try:
+        api_response = await api_instance.sources_group_connections_all_update(id, group_source_connection_request)
+        print("The response of SourcesApi->sources_group_connections_all_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_all_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this group source connection. | 
+ **group_source_connection_request** | [**GroupSourceConnectionRequest**](GroupSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**GroupSourceConnection**](GroupSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_all_used_by_list**
+> List[UsedBy] sources_group_connections_all_used_by_list(id)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.used_by import UsedBy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this group source connection.
+
+    try:
+        api_response = await api_instance.sources_group_connections_all_used_by_list(id)
+        print("The response of SourcesApi->sources_group_connections_all_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_all_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this group source connection. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_kerberos_create**
+> GroupKerberosSourceConnection sources_group_connections_kerberos_create(group_kerberos_source_connection_request)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.group_kerberos_source_connection import GroupKerberosSourceConnection
+from authentik_openapi.models.group_kerberos_source_connection_request import GroupKerberosSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    group_kerberos_source_connection_request = authentik_openapi.GroupKerberosSourceConnectionRequest() # GroupKerberosSourceConnectionRequest | 
+
+    try:
+        api_response = await api_instance.sources_group_connections_kerberos_create(group_kerberos_source_connection_request)
+        print("The response of SourcesApi->sources_group_connections_kerberos_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_kerberos_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_kerberos_source_connection_request** | [**GroupKerberosSourceConnectionRequest**](GroupKerberosSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**GroupKerberosSourceConnection**](GroupKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_kerberos_destroy**
+> sources_group_connections_kerberos_destroy(id)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group Kerberos Source Connection.
+
+    try:
+        await api_instance.sources_group_connections_kerberos_destroy(id)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_kerberos_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group Kerberos Source Connection. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_kerberos_list**
+> PaginatedGroupKerberosSourceConnectionList sources_group_connections_kerberos_list(group=group, ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_group_kerberos_source_connection_list import PaginatedGroupKerberosSourceConnectionList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    group = 'group_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+    source__slug = 'source__slug_example' # str |  (optional)
+
+    try:
+        api_response = await api_instance.sources_group_connections_kerberos_list(group=group, ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug)
+        print("The response of SourcesApi->sources_group_connections_kerberos_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_kerberos_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **source__slug** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedGroupKerberosSourceConnectionList**](PaginatedGroupKerberosSourceConnectionList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_kerberos_partial_update**
+> GroupKerberosSourceConnection sources_group_connections_kerberos_partial_update(id, patched_group_kerberos_source_connection_request=patched_group_kerberos_source_connection_request)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.group_kerberos_source_connection import GroupKerberosSourceConnection
+from authentik_openapi.models.patched_group_kerberos_source_connection_request import PatchedGroupKerberosSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group Kerberos Source Connection.
+    patched_group_kerberos_source_connection_request = authentik_openapi.PatchedGroupKerberosSourceConnectionRequest() # PatchedGroupKerberosSourceConnectionRequest |  (optional)
+
+    try:
+        api_response = await api_instance.sources_group_connections_kerberos_partial_update(id, patched_group_kerberos_source_connection_request=patched_group_kerberos_source_connection_request)
+        print("The response of SourcesApi->sources_group_connections_kerberos_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_kerberos_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group Kerberos Source Connection. | 
+ **patched_group_kerberos_source_connection_request** | [**PatchedGroupKerberosSourceConnectionRequest**](PatchedGroupKerberosSourceConnectionRequest.md)|  | [optional] 
+
+### Return type
+
+[**GroupKerberosSourceConnection**](GroupKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_kerberos_retrieve**
+> GroupKerberosSourceConnection sources_group_connections_kerberos_retrieve(id)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.group_kerberos_source_connection import GroupKerberosSourceConnection
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group Kerberos Source Connection.
+
+    try:
+        api_response = await api_instance.sources_group_connections_kerberos_retrieve(id)
+        print("The response of SourcesApi->sources_group_connections_kerberos_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_kerberos_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group Kerberos Source Connection. | 
+
+### Return type
+
+[**GroupKerberosSourceConnection**](GroupKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_kerberos_update**
+> GroupKerberosSourceConnection sources_group_connections_kerberos_update(id, group_kerberos_source_connection_request)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.group_kerberos_source_connection import GroupKerberosSourceConnection
+from authentik_openapi.models.group_kerberos_source_connection_request import GroupKerberosSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group Kerberos Source Connection.
+    group_kerberos_source_connection_request = authentik_openapi.GroupKerberosSourceConnectionRequest() # GroupKerberosSourceConnectionRequest | 
+
+    try:
+        api_response = await api_instance.sources_group_connections_kerberos_update(id, group_kerberos_source_connection_request)
+        print("The response of SourcesApi->sources_group_connections_kerberos_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_kerberos_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group Kerberos Source Connection. | 
+ **group_kerberos_source_connection_request** | [**GroupKerberosSourceConnectionRequest**](GroupKerberosSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**GroupKerberosSourceConnection**](GroupKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_kerberos_used_by_list**
+> List[UsedBy] sources_group_connections_kerberos_used_by_list(id)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.used_by import UsedBy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group Kerberos Source Connection.
+
+    try:
+        api_response = await api_instance.sources_group_connections_kerberos_used_by_list(id)
+        print("The response of SourcesApi->sources_group_connections_kerberos_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_kerberos_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group Kerberos Source Connection. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_ldap_create**
+> GroupLDAPSourceConnection sources_group_connections_ldap_create(group_ldap_source_connection_request)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.group_ldap_source_connection import GroupLDAPSourceConnection
+from authentik_openapi.models.group_ldap_source_connection_request import GroupLDAPSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    group_ldap_source_connection_request = authentik_openapi.GroupLDAPSourceConnectionRequest() # GroupLDAPSourceConnectionRequest | 
+
+    try:
+        api_response = await api_instance.sources_group_connections_ldap_create(group_ldap_source_connection_request)
+        print("The response of SourcesApi->sources_group_connections_ldap_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_ldap_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_ldap_source_connection_request** | [**GroupLDAPSourceConnectionRequest**](GroupLDAPSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**GroupLDAPSourceConnection**](GroupLDAPSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_ldap_destroy**
+> sources_group_connections_ldap_destroy(id)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group LDAP Source Connection.
+
+    try:
+        await api_instance.sources_group_connections_ldap_destroy(id)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_ldap_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group LDAP Source Connection. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_ldap_list**
+> PaginatedGroupLDAPSourceConnectionList sources_group_connections_ldap_list(group=group, ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_group_ldap_source_connection_list import PaginatedGroupLDAPSourceConnectionList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    group = 'group_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+    source__slug = 'source__slug_example' # str |  (optional)
+
+    try:
+        api_response = await api_instance.sources_group_connections_ldap_list(group=group, ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug)
+        print("The response of SourcesApi->sources_group_connections_ldap_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_ldap_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **source__slug** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedGroupLDAPSourceConnectionList**](PaginatedGroupLDAPSourceConnectionList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_ldap_partial_update**
+> GroupLDAPSourceConnection sources_group_connections_ldap_partial_update(id, patched_group_ldap_source_connection_request=patched_group_ldap_source_connection_request)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.group_ldap_source_connection import GroupLDAPSourceConnection
+from authentik_openapi.models.patched_group_ldap_source_connection_request import PatchedGroupLDAPSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group LDAP Source Connection.
+    patched_group_ldap_source_connection_request = authentik_openapi.PatchedGroupLDAPSourceConnectionRequest() # PatchedGroupLDAPSourceConnectionRequest |  (optional)
+
+    try:
+        api_response = await api_instance.sources_group_connections_ldap_partial_update(id, patched_group_ldap_source_connection_request=patched_group_ldap_source_connection_request)
+        print("The response of SourcesApi->sources_group_connections_ldap_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_ldap_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group LDAP Source Connection. | 
+ **patched_group_ldap_source_connection_request** | [**PatchedGroupLDAPSourceConnectionRequest**](PatchedGroupLDAPSourceConnectionRequest.md)|  | [optional] 
+
+### Return type
+
+[**GroupLDAPSourceConnection**](GroupLDAPSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_ldap_retrieve**
+> GroupLDAPSourceConnection sources_group_connections_ldap_retrieve(id)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.group_ldap_source_connection import GroupLDAPSourceConnection
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group LDAP Source Connection.
+
+    try:
+        api_response = await api_instance.sources_group_connections_ldap_retrieve(id)
+        print("The response of SourcesApi->sources_group_connections_ldap_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_ldap_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group LDAP Source Connection. | 
+
+### Return type
+
+[**GroupLDAPSourceConnection**](GroupLDAPSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_ldap_update**
+> GroupLDAPSourceConnection sources_group_connections_ldap_update(id, group_ldap_source_connection_request)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.group_ldap_source_connection import GroupLDAPSourceConnection
+from authentik_openapi.models.group_ldap_source_connection_request import GroupLDAPSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group LDAP Source Connection.
+    group_ldap_source_connection_request = authentik_openapi.GroupLDAPSourceConnectionRequest() # GroupLDAPSourceConnectionRequest | 
+
+    try:
+        api_response = await api_instance.sources_group_connections_ldap_update(id, group_ldap_source_connection_request)
+        print("The response of SourcesApi->sources_group_connections_ldap_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_ldap_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group LDAP Source Connection. | 
+ **group_ldap_source_connection_request** | [**GroupLDAPSourceConnectionRequest**](GroupLDAPSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**GroupLDAPSourceConnection**](GroupLDAPSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_ldap_used_by_list**
+> List[UsedBy] sources_group_connections_ldap_used_by_list(id)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.used_by import UsedBy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group LDAP Source Connection.
+
+    try:
+        api_response = await api_instance.sources_group_connections_ldap_used_by_list(id)
+        print("The response of SourcesApi->sources_group_connections_ldap_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_ldap_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group LDAP Source Connection. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_oauth_create**
+> GroupOAuthSourceConnection sources_group_connections_oauth_create(group_o_auth_source_connection_request)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.group_o_auth_source_connection import GroupOAuthSourceConnection
+from authentik_openapi.models.group_o_auth_source_connection_request import GroupOAuthSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    group_o_auth_source_connection_request = authentik_openapi.GroupOAuthSourceConnectionRequest() # GroupOAuthSourceConnectionRequest | 
+
+    try:
+        api_response = await api_instance.sources_group_connections_oauth_create(group_o_auth_source_connection_request)
+        print("The response of SourcesApi->sources_group_connections_oauth_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_oauth_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_o_auth_source_connection_request** | [**GroupOAuthSourceConnectionRequest**](GroupOAuthSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**GroupOAuthSourceConnection**](GroupOAuthSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
 **201** |  |  -  |
 **400** |  |  -  |
 **403** |  |  -  |
@@ -827,8 +2440,6 @@ This endpoint does not need any parameter.
 
 # **sources_group_connections_oauth_destroy**
 > sources_group_connections_oauth_destroy(id)
-
-
 
 Group-source connection Viewset
 
@@ -903,8 +2514,6 @@ void (empty response body)
 
 # **sources_group_connections_oauth_list**
 > PaginatedGroupOAuthSourceConnectionList sources_group_connections_oauth_list(group=group, ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug)
-
-
 
 Group-source connection Viewset
 
@@ -991,9 +2600,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_group_connections_oauth_partial_update**
-> GroupOAuthSourceConnection sources_group_connections_oauth_partial_update(id)
-
-
+> GroupOAuthSourceConnection sources_group_connections_oauth_partial_update(id, patched_group_o_auth_source_connection_request=patched_group_o_auth_source_connection_request)
 
 Group-source connection Viewset
 
@@ -1004,6 +2611,7 @@ Group-source connection Viewset
 ```python
 import authentik_openapi
 from authentik_openapi.models.group_o_auth_source_connection import GroupOAuthSourceConnection
+from authentik_openapi.models.patched_group_o_auth_source_connection_request import PatchedGroupOAuthSourceConnectionRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
@@ -1028,9 +2636,10 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.SourcesApi(api_client)
     id = 56 # int | A unique integer value identifying this Group OAuth Source Connection.
+    patched_group_o_auth_source_connection_request = authentik_openapi.PatchedGroupOAuthSourceConnectionRequest() # PatchedGroupOAuthSourceConnectionRequest |  (optional)
 
     try:
-        api_response = await api_instance.sources_group_connections_oauth_partial_update(id)
+        api_response = await api_instance.sources_group_connections_oauth_partial_update(id, patched_group_o_auth_source_connection_request=patched_group_o_auth_source_connection_request)
         print("The response of SourcesApi->sources_group_connections_oauth_partial_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -1045,6 +2654,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this Group OAuth Source Connection. | 
+ **patched_group_o_auth_source_connection_request** | [**PatchedGroupOAuthSourceConnectionRequest**](PatchedGroupOAuthSourceConnectionRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -1056,7 +2666,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1071,8 +2681,6 @@ Name | Type | Description  | Notes
 
 # **sources_group_connections_oauth_retrieve**
 > GroupOAuthSourceConnection sources_group_connections_oauth_retrieve(id)
-
-
 
 Group-source connection Viewset
 
@@ -1149,9 +2757,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_group_connections_oauth_update**
-> GroupOAuthSourceConnection sources_group_connections_oauth_update(id)
-
-
+> GroupOAuthSourceConnection sources_group_connections_oauth_update(id, group_o_auth_source_connection_request)
 
 Group-source connection Viewset
 
@@ -1162,6 +2768,7 @@ Group-source connection Viewset
 ```python
 import authentik_openapi
 from authentik_openapi.models.group_o_auth_source_connection import GroupOAuthSourceConnection
+from authentik_openapi.models.group_o_auth_source_connection_request import GroupOAuthSourceConnectionRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
@@ -1186,9 +2793,10 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.SourcesApi(api_client)
     id = 56 # int | A unique integer value identifying this Group OAuth Source Connection.
+    group_o_auth_source_connection_request = authentik_openapi.GroupOAuthSourceConnectionRequest() # GroupOAuthSourceConnectionRequest | 
 
     try:
-        api_response = await api_instance.sources_group_connections_oauth_update(id)
+        api_response = await api_instance.sources_group_connections_oauth_update(id, group_o_auth_source_connection_request)
         print("The response of SourcesApi->sources_group_connections_oauth_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -1203,6 +2811,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this Group OAuth Source Connection. | 
+ **group_o_auth_source_connection_request** | [**GroupOAuthSourceConnectionRequest**](GroupOAuthSourceConnectionRequest.md)|  | 
 
 ### Return type
 
@@ -1214,7 +2823,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1229,8 +2838,6 @@ Name | Type | Description  | Notes
 
 # **sources_group_connections_oauth_used_by_list**
 > List[UsedBy] sources_group_connections_oauth_used_by_list(id)
-
-
 
 Get a list of all objects that use this object
 
@@ -1307,9 +2914,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_group_connections_plex_create**
-> GroupPlexSourceConnection sources_group_connections_plex_create()
-
-
+> GroupPlexSourceConnection sources_group_connections_plex_create(group_plex_source_connection_request)
 
 Group-source connection Viewset
 
@@ -1320,6 +2925,7 @@ Group-source connection Viewset
 ```python
 import authentik_openapi
 from authentik_openapi.models.group_plex_source_connection import GroupPlexSourceConnection
+from authentik_openapi.models.group_plex_source_connection_request import GroupPlexSourceConnectionRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
@@ -1343,9 +2949,10 @@ configuration = authentik_openapi.Configuration(
 async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.SourcesApi(api_client)
+    group_plex_source_connection_request = authentik_openapi.GroupPlexSourceConnectionRequest() # GroupPlexSourceConnectionRequest | 
 
     try:
-        api_response = await api_instance.sources_group_connections_plex_create()
+        api_response = await api_instance.sources_group_connections_plex_create(group_plex_source_connection_request)
         print("The response of SourcesApi->sources_group_connections_plex_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -1356,7 +2963,10 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_plex_source_connection_request** | [**GroupPlexSourceConnectionRequest**](GroupPlexSourceConnectionRequest.md)|  | 
 
 ### Return type
 
@@ -1368,7 +2978,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1383,8 +2993,6 @@ This endpoint does not need any parameter.
 
 # **sources_group_connections_plex_destroy**
 > sources_group_connections_plex_destroy(id)
-
-
 
 Group-source connection Viewset
 
@@ -1459,8 +3067,6 @@ void (empty response body)
 
 # **sources_group_connections_plex_list**
 > PaginatedGroupPlexSourceConnectionList sources_group_connections_plex_list(group=group, ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug)
-
-
 
 Group-source connection Viewset
 
@@ -1547,9 +3153,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_group_connections_plex_partial_update**
-> GroupPlexSourceConnection sources_group_connections_plex_partial_update(id)
-
-
+> GroupPlexSourceConnection sources_group_connections_plex_partial_update(id, patched_group_plex_source_connection_request=patched_group_plex_source_connection_request)
 
 Group-source connection Viewset
 
@@ -1560,6 +3164,7 @@ Group-source connection Viewset
 ```python
 import authentik_openapi
 from authentik_openapi.models.group_plex_source_connection import GroupPlexSourceConnection
+from authentik_openapi.models.patched_group_plex_source_connection_request import PatchedGroupPlexSourceConnectionRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
@@ -1584,9 +3189,10 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.SourcesApi(api_client)
     id = 56 # int | A unique integer value identifying this Group Plex Source Connection.
+    patched_group_plex_source_connection_request = authentik_openapi.PatchedGroupPlexSourceConnectionRequest() # PatchedGroupPlexSourceConnectionRequest |  (optional)
 
     try:
-        api_response = await api_instance.sources_group_connections_plex_partial_update(id)
+        api_response = await api_instance.sources_group_connections_plex_partial_update(id, patched_group_plex_source_connection_request=patched_group_plex_source_connection_request)
         print("The response of SourcesApi->sources_group_connections_plex_partial_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -1601,6 +3207,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this Group Plex Source Connection. | 
+ **patched_group_plex_source_connection_request** | [**PatchedGroupPlexSourceConnectionRequest**](PatchedGroupPlexSourceConnectionRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -1612,7 +3219,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1627,8 +3234,6 @@ Name | Type | Description  | Notes
 
 # **sources_group_connections_plex_retrieve**
 > GroupPlexSourceConnection sources_group_connections_plex_retrieve(id)
-
-
 
 Group-source connection Viewset
 
@@ -1705,9 +3310,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_group_connections_plex_update**
-> GroupPlexSourceConnection sources_group_connections_plex_update(id)
-
-
+> GroupPlexSourceConnection sources_group_connections_plex_update(id, group_plex_source_connection_request)
 
 Group-source connection Viewset
 
@@ -1718,6 +3321,7 @@ Group-source connection Viewset
 ```python
 import authentik_openapi
 from authentik_openapi.models.group_plex_source_connection import GroupPlexSourceConnection
+from authentik_openapi.models.group_plex_source_connection_request import GroupPlexSourceConnectionRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
@@ -1742,9 +3346,10 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.SourcesApi(api_client)
     id = 56 # int | A unique integer value identifying this Group Plex Source Connection.
+    group_plex_source_connection_request = authentik_openapi.GroupPlexSourceConnectionRequest() # GroupPlexSourceConnectionRequest | 
 
     try:
-        api_response = await api_instance.sources_group_connections_plex_update(id)
+        api_response = await api_instance.sources_group_connections_plex_update(id, group_plex_source_connection_request)
         print("The response of SourcesApi->sources_group_connections_plex_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -1759,6 +3364,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this Group Plex Source Connection. | 
+ **group_plex_source_connection_request** | [**GroupPlexSourceConnectionRequest**](GroupPlexSourceConnectionRequest.md)|  | 
 
 ### Return type
 
@@ -1770,7 +3376,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1785,8 +3391,6 @@ Name | Type | Description  | Notes
 
 # **sources_group_connections_plex_used_by_list**
 > List[UsedBy] sources_group_connections_plex_used_by_list(id)
-
-
 
 Get a list of all objects that use this object
 
@@ -1862,10 +3466,86 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **sources_group_connections_saml_create**
+> GroupSAMLSourceConnection sources_group_connections_saml_create(group_saml_source_connection_request)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.group_saml_source_connection import GroupSAMLSourceConnection
+from authentik_openapi.models.group_saml_source_connection_request import GroupSAMLSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    group_saml_source_connection_request = authentik_openapi.GroupSAMLSourceConnectionRequest() # GroupSAMLSourceConnectionRequest | 
+
+    try:
+        api_response = await api_instance.sources_group_connections_saml_create(group_saml_source_connection_request)
+        print("The response of SourcesApi->sources_group_connections_saml_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_saml_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_saml_source_connection_request** | [**GroupSAMLSourceConnectionRequest**](GroupSAMLSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**GroupSAMLSourceConnection**](GroupSAMLSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **sources_group_connections_saml_destroy**
 > sources_group_connections_saml_destroy(id)
-
-
 
 Group-source connection Viewset
 
@@ -1940,8 +3620,6 @@ void (empty response body)
 
 # **sources_group_connections_saml_list**
 > PaginatedGroupSAMLSourceConnectionList sources_group_connections_saml_list(group=group, ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug)
-
-
 
 Group-source connection Viewset
 
@@ -2028,9 +3706,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_group_connections_saml_partial_update**
-> GroupSAMLSourceConnection sources_group_connections_saml_partial_update(id)
-
-
+> GroupSAMLSourceConnection sources_group_connections_saml_partial_update(id, patched_group_saml_source_connection_request=patched_group_saml_source_connection_request)
 
 Group-source connection Viewset
 
@@ -2041,6 +3717,7 @@ Group-source connection Viewset
 ```python
 import authentik_openapi
 from authentik_openapi.models.group_saml_source_connection import GroupSAMLSourceConnection
+from authentik_openapi.models.patched_group_saml_source_connection_request import PatchedGroupSAMLSourceConnectionRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
@@ -2065,9 +3742,10 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.SourcesApi(api_client)
     id = 56 # int | A unique integer value identifying this Group SAML Source Connection.
+    patched_group_saml_source_connection_request = authentik_openapi.PatchedGroupSAMLSourceConnectionRequest() # PatchedGroupSAMLSourceConnectionRequest |  (optional)
 
     try:
-        api_response = await api_instance.sources_group_connections_saml_partial_update(id)
+        api_response = await api_instance.sources_group_connections_saml_partial_update(id, patched_group_saml_source_connection_request=patched_group_saml_source_connection_request)
         print("The response of SourcesApi->sources_group_connections_saml_partial_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -2082,6 +3760,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this Group SAML Source Connection. | 
+ **patched_group_saml_source_connection_request** | [**PatchedGroupSAMLSourceConnectionRequest**](PatchedGroupSAMLSourceConnectionRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -2093,7 +3772,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2108,8 +3787,6 @@ Name | Type | Description  | Notes
 
 # **sources_group_connections_saml_retrieve**
 > GroupSAMLSourceConnection sources_group_connections_saml_retrieve(id)
-
-
 
 Group-source connection Viewset
 
@@ -2186,9 +3863,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_group_connections_saml_update**
-> GroupSAMLSourceConnection sources_group_connections_saml_update(id)
-
-
+> GroupSAMLSourceConnection sources_group_connections_saml_update(id, group_saml_source_connection_request)
 
 Group-source connection Viewset
 
@@ -2199,6 +3874,7 @@ Group-source connection Viewset
 ```python
 import authentik_openapi
 from authentik_openapi.models.group_saml_source_connection import GroupSAMLSourceConnection
+from authentik_openapi.models.group_saml_source_connection_request import GroupSAMLSourceConnectionRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
@@ -2223,9 +3899,10 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.SourcesApi(api_client)
     id = 56 # int | A unique integer value identifying this Group SAML Source Connection.
+    group_saml_source_connection_request = authentik_openapi.GroupSAMLSourceConnectionRequest() # GroupSAMLSourceConnectionRequest | 
 
     try:
-        api_response = await api_instance.sources_group_connections_saml_update(id)
+        api_response = await api_instance.sources_group_connections_saml_update(id, group_saml_source_connection_request)
         print("The response of SourcesApi->sources_group_connections_saml_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -2240,6 +3917,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this Group SAML Source Connection. | 
+ **group_saml_source_connection_request** | [**GroupSAMLSourceConnectionRequest**](GroupSAMLSourceConnectionRequest.md)|  | 
 
 ### Return type
 
@@ -2251,7 +3929,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2266,8 +3944,6 @@ Name | Type | Description  | Notes
 
 # **sources_group_connections_saml_used_by_list**
 > List[UsedBy] sources_group_connections_saml_used_by_list(id)
-
-
 
 Get a list of all objects that use this object
 
@@ -2343,10 +4019,656 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **sources_kerberos_create**
+> KerberosSource sources_kerberos_create(kerberos_source_request)
+
+Kerberos Source Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.kerberos_source import KerberosSource
+from authentik_openapi.models.kerberos_source_request import KerberosSourceRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    kerberos_source_request = authentik_openapi.KerberosSourceRequest() # KerberosSourceRequest | 
+
+    try:
+        api_response = await api_instance.sources_kerberos_create(kerberos_source_request)
+        print("The response of SourcesApi->sources_kerberos_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_kerberos_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kerberos_source_request** | [**KerberosSourceRequest**](KerberosSourceRequest.md)|  | 
+
+### Return type
+
+[**KerberosSource**](KerberosSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_kerberos_destroy**
+> sources_kerberos_destroy(slug)
+
+Kerberos Source Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    slug = 'slug_example' # str | 
+
+    try:
+        await api_instance.sources_kerberos_destroy(slug)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_kerberos_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_kerberos_list**
+> PaginatedKerberosSourceList sources_kerberos_list(enabled=enabled, kadmin_type=kadmin_type, name=name, ordering=ordering, page=page, page_size=page_size, password_login_update_internal_password=password_login_update_internal_password, pbm_uuid=pbm_uuid, realm=realm, search=search, slug=slug, spnego_server_name=spnego_server_name, sync_principal=sync_principal, sync_users=sync_users, sync_users_password=sync_users_password)
+
+Kerberos Source Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_kerberos_source_list import PaginatedKerberosSourceList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    enabled = True # bool |  (optional)
+    kadmin_type = 'kadmin_type_example' # str | KAdmin server type   (optional)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    password_login_update_internal_password = True # bool |  (optional)
+    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
+    realm = 'realm_example' # str |  (optional)
+    search = 'search_example' # str | A search term. (optional)
+    slug = 'slug_example' # str |  (optional)
+    spnego_server_name = 'spnego_server_name_example' # str |  (optional)
+    sync_principal = 'sync_principal_example' # str |  (optional)
+    sync_users = True # bool |  (optional)
+    sync_users_password = True # bool |  (optional)
+
+    try:
+        api_response = await api_instance.sources_kerberos_list(enabled=enabled, kadmin_type=kadmin_type, name=name, ordering=ordering, page=page, page_size=page_size, password_login_update_internal_password=password_login_update_internal_password, pbm_uuid=pbm_uuid, realm=realm, search=search, slug=slug, spnego_server_name=spnego_server_name, sync_principal=sync_principal, sync_users=sync_users, sync_users_password=sync_users_password)
+        print("The response of SourcesApi->sources_kerberos_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_kerberos_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enabled** | **bool**|  | [optional] 
+ **kadmin_type** | **str**| KAdmin server type   | [optional] 
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **password_login_update_internal_password** | **bool**|  | [optional] 
+ **pbm_uuid** | **str**|  | [optional] 
+ **realm** | **str**|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **slug** | **str**|  | [optional] 
+ **spnego_server_name** | **str**|  | [optional] 
+ **sync_principal** | **str**|  | [optional] 
+ **sync_users** | **bool**|  | [optional] 
+ **sync_users_password** | **bool**|  | [optional] 
+
+### Return type
+
+[**PaginatedKerberosSourceList**](PaginatedKerberosSourceList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_kerberos_partial_update**
+> KerberosSource sources_kerberos_partial_update(slug, patched_kerberos_source_request=patched_kerberos_source_request)
+
+Kerberos Source Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.kerberos_source import KerberosSource
+from authentik_openapi.models.patched_kerberos_source_request import PatchedKerberosSourceRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    slug = 'slug_example' # str | 
+    patched_kerberos_source_request = authentik_openapi.PatchedKerberosSourceRequest() # PatchedKerberosSourceRequest |  (optional)
+
+    try:
+        api_response = await api_instance.sources_kerberos_partial_update(slug, patched_kerberos_source_request=patched_kerberos_source_request)
+        print("The response of SourcesApi->sources_kerberos_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_kerberos_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **str**|  | 
+ **patched_kerberos_source_request** | [**PatchedKerberosSourceRequest**](PatchedKerberosSourceRequest.md)|  | [optional] 
+
+### Return type
+
+[**KerberosSource**](KerberosSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_kerberos_retrieve**
+> KerberosSource sources_kerberos_retrieve(slug)
+
+Kerberos Source Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.kerberos_source import KerberosSource
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    slug = 'slug_example' # str | 
+
+    try:
+        api_response = await api_instance.sources_kerberos_retrieve(slug)
+        print("The response of SourcesApi->sources_kerberos_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_kerberos_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **str**|  | 
+
+### Return type
+
+[**KerberosSource**](KerberosSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_kerberos_sync_status_retrieve**
+> SyncStatus sources_kerberos_sync_status_retrieve(slug)
+
+Get provider's sync status
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.sync_status import SyncStatus
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    slug = 'slug_example' # str | 
+
+    try:
+        api_response = await api_instance.sources_kerberos_sync_status_retrieve(slug)
+        print("The response of SourcesApi->sources_kerberos_sync_status_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_kerberos_sync_status_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **str**|  | 
+
+### Return type
+
+[**SyncStatus**](SyncStatus.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_kerberos_update**
+> KerberosSource sources_kerberos_update(slug, kerberos_source_request)
+
+Kerberos Source Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.kerberos_source import KerberosSource
+from authentik_openapi.models.kerberos_source_request import KerberosSourceRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    slug = 'slug_example' # str | 
+    kerberos_source_request = authentik_openapi.KerberosSourceRequest() # KerberosSourceRequest | 
+
+    try:
+        api_response = await api_instance.sources_kerberos_update(slug, kerberos_source_request)
+        print("The response of SourcesApi->sources_kerberos_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_kerberos_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **str**|  | 
+ **kerberos_source_request** | [**KerberosSourceRequest**](KerberosSourceRequest.md)|  | 
+
+### Return type
+
+[**KerberosSource**](KerberosSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_kerberos_used_by_list**
+> List[UsedBy] sources_kerberos_used_by_list(slug)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.used_by import UsedBy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    slug = 'slug_example' # str | 
+
+    try:
+        api_response = await api_instance.sources_kerberos_used_by_list(slug)
+        print("The response of SourcesApi->sources_kerberos_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_kerberos_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **str**|  | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **sources_ldap_create**
 > LDAPSource sources_ldap_create(ldap_source_request)
-
-
 
 LDAP Source Viewset
 
@@ -2426,8 +4748,6 @@ Name | Type | Description  | Notes
 # **sources_ldap_debug_retrieve**
 > LDAPDebug sources_ldap_debug_retrieve(slug)
 
-
-
 Get raw LDAP data to debug
 
 ### Example
@@ -2505,8 +4825,6 @@ Name | Type | Description  | Notes
 # **sources_ldap_destroy**
 > sources_ldap_destroy(slug)
 
-
-
 LDAP Source Viewset
 
 ### Example
@@ -2579,9 +4897,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_ldap_list**
-> PaginatedLDAPSourceList sources_ldap_list(additional_group_dn=additional_group_dn, additional_user_dn=additional_user_dn, base_dn=base_dn, bind_cn=bind_cn, client_certificate=client_certificate, enabled=enabled, group_membership_field=group_membership_field, group_object_filter=group_object_filter, group_property_mappings=group_property_mappings, name=name, object_uniqueness_field=object_uniqueness_field, ordering=ordering, page=page, page_size=page_size, password_login_update_internal_password=password_login_update_internal_password, peer_certificate=peer_certificate, search=search, server_uri=server_uri, slug=slug, sni=sni, start_tls=start_tls, sync_groups=sync_groups, sync_parent_group=sync_parent_group, sync_users=sync_users, sync_users_password=sync_users_password, user_object_filter=user_object_filter, user_property_mappings=user_property_mappings)
-
-
+> PaginatedLDAPSourceList sources_ldap_list(additional_group_dn=additional_group_dn, additional_user_dn=additional_user_dn, base_dn=base_dn, bind_cn=bind_cn, client_certificate=client_certificate, delete_not_found_objects=delete_not_found_objects, enabled=enabled, group_membership_field=group_membership_field, group_object_filter=group_object_filter, group_property_mappings=group_property_mappings, lookup_groups_from_user=lookup_groups_from_user, name=name, object_uniqueness_field=object_uniqueness_field, ordering=ordering, page=page, page_size=page_size, password_login_update_internal_password=password_login_update_internal_password, pbm_uuid=pbm_uuid, peer_certificate=peer_certificate, search=search, server_uri=server_uri, slug=slug, sni=sni, start_tls=start_tls, sync_groups=sync_groups, sync_parent_group=sync_parent_group, sync_users=sync_users, sync_users_password=sync_users_password, user_membership_attribute=user_membership_attribute, user_object_filter=user_object_filter, user_property_mappings=user_property_mappings)
 
 LDAP Source Viewset
 
@@ -2620,16 +4936,19 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     base_dn = 'base_dn_example' # str |  (optional)
     bind_cn = 'bind_cn_example' # str |  (optional)
     client_certificate = 'client_certificate_example' # str |  (optional)
+    delete_not_found_objects = True # bool |  (optional)
     enabled = True # bool |  (optional)
     group_membership_field = 'group_membership_field_example' # str |  (optional)
     group_object_filter = 'group_object_filter_example' # str |  (optional)
     group_property_mappings = ['group_property_mappings_example'] # List[str] |  (optional)
+    lookup_groups_from_user = True # bool |  (optional)
     name = 'name_example' # str |  (optional)
     object_uniqueness_field = 'object_uniqueness_field_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     password_login_update_internal_password = True # bool |  (optional)
+    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
     peer_certificate = 'peer_certificate_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
     server_uri = 'server_uri_example' # str |  (optional)
@@ -2640,11 +4959,12 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     sync_parent_group = 'sync_parent_group_example' # str |  (optional)
     sync_users = True # bool |  (optional)
     sync_users_password = True # bool |  (optional)
+    user_membership_attribute = 'user_membership_attribute_example' # str |  (optional)
     user_object_filter = 'user_object_filter_example' # str |  (optional)
     user_property_mappings = ['user_property_mappings_example'] # List[str] |  (optional)
 
     try:
-        api_response = await api_instance.sources_ldap_list(additional_group_dn=additional_group_dn, additional_user_dn=additional_user_dn, base_dn=base_dn, bind_cn=bind_cn, client_certificate=client_certificate, enabled=enabled, group_membership_field=group_membership_field, group_object_filter=group_object_filter, group_property_mappings=group_property_mappings, name=name, object_uniqueness_field=object_uniqueness_field, ordering=ordering, page=page, page_size=page_size, password_login_update_internal_password=password_login_update_internal_password, peer_certificate=peer_certificate, search=search, server_uri=server_uri, slug=slug, sni=sni, start_tls=start_tls, sync_groups=sync_groups, sync_parent_group=sync_parent_group, sync_users=sync_users, sync_users_password=sync_users_password, user_object_filter=user_object_filter, user_property_mappings=user_property_mappings)
+        api_response = await api_instance.sources_ldap_list(additional_group_dn=additional_group_dn, additional_user_dn=additional_user_dn, base_dn=base_dn, bind_cn=bind_cn, client_certificate=client_certificate, delete_not_found_objects=delete_not_found_objects, enabled=enabled, group_membership_field=group_membership_field, group_object_filter=group_object_filter, group_property_mappings=group_property_mappings, lookup_groups_from_user=lookup_groups_from_user, name=name, object_uniqueness_field=object_uniqueness_field, ordering=ordering, page=page, page_size=page_size, password_login_update_internal_password=password_login_update_internal_password, pbm_uuid=pbm_uuid, peer_certificate=peer_certificate, search=search, server_uri=server_uri, slug=slug, sni=sni, start_tls=start_tls, sync_groups=sync_groups, sync_parent_group=sync_parent_group, sync_users=sync_users, sync_users_password=sync_users_password, user_membership_attribute=user_membership_attribute, user_object_filter=user_object_filter, user_property_mappings=user_property_mappings)
         print("The response of SourcesApi->sources_ldap_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -2663,16 +4983,19 @@ Name | Type | Description  | Notes
  **base_dn** | **str**|  | [optional] 
  **bind_cn** | **str**|  | [optional] 
  **client_certificate** | **str**|  | [optional] 
+ **delete_not_found_objects** | **bool**|  | [optional] 
  **enabled** | **bool**|  | [optional] 
  **group_membership_field** | **str**|  | [optional] 
  **group_object_filter** | **str**|  | [optional] 
  **group_property_mappings** | [**List[str]**](str.md)|  | [optional] 
+ **lookup_groups_from_user** | **bool**|  | [optional] 
  **name** | **str**|  | [optional] 
  **object_uniqueness_field** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **password_login_update_internal_password** | **bool**|  | [optional] 
+ **pbm_uuid** | **str**|  | [optional] 
  **peer_certificate** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **server_uri** | **str**|  | [optional] 
@@ -2683,6 +5006,7 @@ Name | Type | Description  | Notes
  **sync_parent_group** | **str**|  | [optional] 
  **sync_users** | **bool**|  | [optional] 
  **sync_users_password** | **bool**|  | [optional] 
+ **user_membership_attribute** | **str**|  | [optional] 
  **user_object_filter** | **str**|  | [optional] 
  **user_property_mappings** | [**List[str]**](str.md)|  | [optional] 
 
@@ -2711,8 +5035,6 @@ Name | Type | Description  | Notes
 
 # **sources_ldap_partial_update**
 > LDAPSource sources_ldap_partial_update(slug, patched_ldap_source_request=patched_ldap_source_request)
-
-
 
 LDAP Source Viewset
 
@@ -2794,8 +5116,6 @@ Name | Type | Description  | Notes
 # **sources_ldap_retrieve**
 > LDAPSource sources_ldap_retrieve(slug)
 
-
-
 LDAP Source Viewset
 
 ### Example
@@ -2873,9 +5193,7 @@ Name | Type | Description  | Notes
 # **sources_ldap_sync_status_retrieve**
 > SyncStatus sources_ldap_sync_status_retrieve(slug)
 
-
-
-Get source's sync status
+Get provider's sync status
 
 ### Example
 
@@ -2951,8 +5269,6 @@ Name | Type | Description  | Notes
 
 # **sources_ldap_update**
 > LDAPSource sources_ldap_update(slug, ldap_source_request)
-
-
 
 LDAP Source Viewset
 
@@ -3034,8 +5350,6 @@ Name | Type | Description  | Notes
 # **sources_ldap_used_by_list**
 > List[UsedBy] sources_ldap_used_by_list(slug)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -3112,8 +5426,6 @@ Name | Type | Description  | Notes
 
 # **sources_oauth_create**
 > OAuthSource sources_oauth_create(o_auth_source_request)
-
-
 
 Source Viewset
 
@@ -3193,8 +5505,6 @@ Name | Type | Description  | Notes
 # **sources_oauth_destroy**
 > sources_oauth_destroy(slug)
 
-
-
 Source Viewset
 
 ### Example
@@ -3267,9 +5577,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_oauth_list**
-> PaginatedOAuthSourceList sources_oauth_list(access_token_url=access_token_url, additional_scopes=additional_scopes, authentication_flow=authentication_flow, authorization_url=authorization_url, consumer_key=consumer_key, enabled=enabled, enrollment_flow=enrollment_flow, group_matching_mode=group_matching_mode, has_jwks=has_jwks, name=name, ordering=ordering, page=page, page_size=page_size, policy_engine_mode=policy_engine_mode, profile_url=profile_url, provider_type=provider_type, request_token_url=request_token_url, search=search, slug=slug, user_matching_mode=user_matching_mode)
-
-
+> PaginatedOAuthSourceList sources_oauth_list(access_token_url=access_token_url, additional_scopes=additional_scopes, authentication_flow=authentication_flow, authorization_url=authorization_url, consumer_key=consumer_key, enabled=enabled, enrollment_flow=enrollment_flow, group_matching_mode=group_matching_mode, has_jwks=has_jwks, name=name, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policy_engine_mode=policy_engine_mode, profile_url=profile_url, provider_type=provider_type, request_token_url=request_token_url, search=search, slug=slug, user_matching_mode=user_matching_mode)
 
 Source Viewset
 
@@ -3316,6 +5624,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
+    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
     policy_engine_mode = 'policy_engine_mode_example' # str |  (optional)
     profile_url = 'profile_url_example' # str |  (optional)
     provider_type = 'provider_type_example' # str |  (optional)
@@ -3325,7 +5634,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     user_matching_mode = 'user_matching_mode_example' # str | How the source determines if an existing user should be authenticated or a new user enrolled.   (optional)
 
     try:
-        api_response = await api_instance.sources_oauth_list(access_token_url=access_token_url, additional_scopes=additional_scopes, authentication_flow=authentication_flow, authorization_url=authorization_url, consumer_key=consumer_key, enabled=enabled, enrollment_flow=enrollment_flow, group_matching_mode=group_matching_mode, has_jwks=has_jwks, name=name, ordering=ordering, page=page, page_size=page_size, policy_engine_mode=policy_engine_mode, profile_url=profile_url, provider_type=provider_type, request_token_url=request_token_url, search=search, slug=slug, user_matching_mode=user_matching_mode)
+        api_response = await api_instance.sources_oauth_list(access_token_url=access_token_url, additional_scopes=additional_scopes, authentication_flow=authentication_flow, authorization_url=authorization_url, consumer_key=consumer_key, enabled=enabled, enrollment_flow=enrollment_flow, group_matching_mode=group_matching_mode, has_jwks=has_jwks, name=name, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policy_engine_mode=policy_engine_mode, profile_url=profile_url, provider_type=provider_type, request_token_url=request_token_url, search=search, slug=slug, user_matching_mode=user_matching_mode)
         print("The response of SourcesApi->sources_oauth_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -3352,6 +5661,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
+ **pbm_uuid** | **str**|  | [optional] 
  **policy_engine_mode** | **str**|  | [optional] 
  **profile_url** | **str**|  | [optional] 
  **provider_type** | **str**|  | [optional] 
@@ -3385,8 +5695,6 @@ Name | Type | Description  | Notes
 
 # **sources_oauth_partial_update**
 > OAuthSource sources_oauth_partial_update(slug, patched_o_auth_source_request=patched_o_auth_source_request)
-
-
 
 Source Viewset
 
@@ -3468,8 +5776,6 @@ Name | Type | Description  | Notes
 # **sources_oauth_retrieve**
 > OAuthSource sources_oauth_retrieve(slug)
 
-
-
 Source Viewset
 
 ### Example
@@ -3547,9 +5853,8 @@ Name | Type | Description  | Notes
 # **sources_oauth_source_types_list**
 > List[SourceType] sources_oauth_source_types_list(name=name)
 
-
-
-Get all creatable source types. If ?name is set, only returns the type for <name>. If <name> isn't found, returns the default type.
+Get all creatable source types. If ?name is set, only returns the type for <name>.
+If <name> isn't found, returns the default type.
 
 ### Example
 
@@ -3625,8 +5930,6 @@ Name | Type | Description  | Notes
 
 # **sources_oauth_update**
 > OAuthSource sources_oauth_update(slug, o_auth_source_request)
-
-
 
 Source Viewset
 
@@ -3708,8 +6011,6 @@ Name | Type | Description  | Notes
 # **sources_oauth_used_by_list**
 > List[UsedBy] sources_oauth_used_by_list(slug)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -3786,8 +6087,6 @@ Name | Type | Description  | Notes
 
 # **sources_plex_create**
 > PlexSource sources_plex_create(plex_source_request)
-
-
 
 Plex source Viewset
 
@@ -3867,8 +6166,6 @@ Name | Type | Description  | Notes
 # **sources_plex_destroy**
 > sources_plex_destroy(slug)
 
-
-
 Plex source Viewset
 
 ### Example
@@ -3941,9 +6238,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_plex_list**
-> PaginatedPlexSourceList sources_plex_list(allow_friends=allow_friends, authentication_flow=authentication_flow, client_id=client_id, enabled=enabled, enrollment_flow=enrollment_flow, group_matching_mode=group_matching_mode, name=name, ordering=ordering, page=page, page_size=page_size, policy_engine_mode=policy_engine_mode, search=search, slug=slug, user_matching_mode=user_matching_mode)
-
-
+> PaginatedPlexSourceList sources_plex_list(allow_friends=allow_friends, authentication_flow=authentication_flow, client_id=client_id, enabled=enabled, enrollment_flow=enrollment_flow, group_matching_mode=group_matching_mode, name=name, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policy_engine_mode=policy_engine_mode, search=search, slug=slug, user_matching_mode=user_matching_mode)
 
 Plex source Viewset
 
@@ -3987,13 +6282,14 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
+    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
     policy_engine_mode = 'policy_engine_mode_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
     slug = 'slug_example' # str |  (optional)
     user_matching_mode = 'user_matching_mode_example' # str | How the source determines if an existing user should be authenticated or a new user enrolled.   (optional)
 
     try:
-        api_response = await api_instance.sources_plex_list(allow_friends=allow_friends, authentication_flow=authentication_flow, client_id=client_id, enabled=enabled, enrollment_flow=enrollment_flow, group_matching_mode=group_matching_mode, name=name, ordering=ordering, page=page, page_size=page_size, policy_engine_mode=policy_engine_mode, search=search, slug=slug, user_matching_mode=user_matching_mode)
+        api_response = await api_instance.sources_plex_list(allow_friends=allow_friends, authentication_flow=authentication_flow, client_id=client_id, enabled=enabled, enrollment_flow=enrollment_flow, group_matching_mode=group_matching_mode, name=name, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policy_engine_mode=policy_engine_mode, search=search, slug=slug, user_matching_mode=user_matching_mode)
         print("The response of SourcesApi->sources_plex_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -4017,6 +6313,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
+ **pbm_uuid** | **str**|  | [optional] 
  **policy_engine_mode** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **slug** | **str**|  | [optional] 
@@ -4047,8 +6344,6 @@ Name | Type | Description  | Notes
 
 # **sources_plex_partial_update**
 > PlexSource sources_plex_partial_update(slug, patched_plex_source_request=patched_plex_source_request)
-
-
 
 Plex source Viewset
 
@@ -4130,8 +6425,6 @@ Name | Type | Description  | Notes
 # **sources_plex_redeem_token_authenticated_create**
 > sources_plex_redeem_token_authenticated_create(plex_token_redeem_request, slug=slug)
 
-
-
 Redeem a plex token for an authenticated user, creating a connection
 
 ### Example
@@ -4209,9 +6502,8 @@ void (empty response body)
 # **sources_plex_redeem_token_create**
 > RedirectChallenge sources_plex_redeem_token_create(plex_token_redeem_request, slug=slug)
 
-
-
-Redeem a plex token, check it's access to resources against what's allowed for the source, and redirect to an authentication/enrollment flow.
+Redeem a plex token, check it's access to resources against what's allowed
+for the source, and redirect to an authentication/enrollment flow.
 
 ### Example
 
@@ -4291,8 +6583,6 @@ Name | Type | Description  | Notes
 # **sources_plex_retrieve**
 > PlexSource sources_plex_retrieve(slug)
 
-
-
 Plex source Viewset
 
 ### Example
@@ -4369,8 +6659,6 @@ Name | Type | Description  | Notes
 
 # **sources_plex_update**
 > PlexSource sources_plex_update(slug, plex_source_request)
-
-
 
 Plex source Viewset
 
@@ -4452,8 +6740,6 @@ Name | Type | Description  | Notes
 # **sources_plex_used_by_list**
 > List[UsedBy] sources_plex_used_by_list(slug)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -4530,8 +6816,6 @@ Name | Type | Description  | Notes
 
 # **sources_saml_create**
 > SAMLSource sources_saml_create(saml_source_request)
-
-
 
 SAMLSource Viewset
 
@@ -4611,8 +6895,6 @@ Name | Type | Description  | Notes
 # **sources_saml_destroy**
 > sources_saml_destroy(slug)
 
-
-
 SAMLSource Viewset
 
 ### Example
@@ -4685,9 +6967,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_saml_list**
-> PaginatedSAMLSourceList sources_saml_list(allow_idp_initiated=allow_idp_initiated, authentication_flow=authentication_flow, binding_type=binding_type, digest_algorithm=digest_algorithm, enabled=enabled, enrollment_flow=enrollment_flow, issuer=issuer, managed=managed, name=name, name_id_policy=name_id_policy, ordering=ordering, page=page, page_size=page_size, policy_engine_mode=policy_engine_mode, pre_authentication_flow=pre_authentication_flow, search=search, signature_algorithm=signature_algorithm, signing_kp=signing_kp, slo_url=slo_url, slug=slug, sso_url=sso_url, temporary_user_delete_after=temporary_user_delete_after, user_matching_mode=user_matching_mode, verification_kp=verification_kp)
-
-
+> PaginatedSAMLSourceList sources_saml_list(allow_idp_initiated=allow_idp_initiated, authentication_flow=authentication_flow, binding_type=binding_type, digest_algorithm=digest_algorithm, enabled=enabled, enrollment_flow=enrollment_flow, issuer=issuer, managed=managed, name=name, name_id_policy=name_id_policy, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policy_engine_mode=policy_engine_mode, pre_authentication_flow=pre_authentication_flow, search=search, signature_algorithm=signature_algorithm, signing_kp=signing_kp, slo_url=slo_url, slug=slug, sso_url=sso_url, temporary_user_delete_after=temporary_user_delete_after, user_matching_mode=user_matching_mode, verification_kp=verification_kp)
 
 SAMLSource Viewset
 
@@ -4734,6 +7014,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
+    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
     policy_engine_mode = 'policy_engine_mode_example' # str |  (optional)
     pre_authentication_flow = 'pre_authentication_flow_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
@@ -4747,7 +7028,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     verification_kp = 'verification_kp_example' # str |  (optional)
 
     try:
-        api_response = await api_instance.sources_saml_list(allow_idp_initiated=allow_idp_initiated, authentication_flow=authentication_flow, binding_type=binding_type, digest_algorithm=digest_algorithm, enabled=enabled, enrollment_flow=enrollment_flow, issuer=issuer, managed=managed, name=name, name_id_policy=name_id_policy, ordering=ordering, page=page, page_size=page_size, policy_engine_mode=policy_engine_mode, pre_authentication_flow=pre_authentication_flow, search=search, signature_algorithm=signature_algorithm, signing_kp=signing_kp, slo_url=slo_url, slug=slug, sso_url=sso_url, temporary_user_delete_after=temporary_user_delete_after, user_matching_mode=user_matching_mode, verification_kp=verification_kp)
+        api_response = await api_instance.sources_saml_list(allow_idp_initiated=allow_idp_initiated, authentication_flow=authentication_flow, binding_type=binding_type, digest_algorithm=digest_algorithm, enabled=enabled, enrollment_flow=enrollment_flow, issuer=issuer, managed=managed, name=name, name_id_policy=name_id_policy, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policy_engine_mode=policy_engine_mode, pre_authentication_flow=pre_authentication_flow, search=search, signature_algorithm=signature_algorithm, signing_kp=signing_kp, slo_url=slo_url, slug=slug, sso_url=sso_url, temporary_user_delete_after=temporary_user_delete_after, user_matching_mode=user_matching_mode, verification_kp=verification_kp)
         print("The response of SourcesApi->sources_saml_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -4774,6 +7055,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
+ **pbm_uuid** | **str**|  | [optional] 
  **policy_engine_mode** | **str**|  | [optional] 
  **pre_authentication_flow** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
@@ -4811,8 +7093,6 @@ Name | Type | Description  | Notes
 
 # **sources_saml_metadata_retrieve**
 > SAMLMetadata sources_saml_metadata_retrieve(slug)
-
-
 
 Return metadata as XML string
 
@@ -4890,8 +7170,6 @@ Name | Type | Description  | Notes
 
 # **sources_saml_partial_update**
 > SAMLSource sources_saml_partial_update(slug, patched_saml_source_request=patched_saml_source_request)
-
-
 
 SAMLSource Viewset
 
@@ -4973,8 +7251,6 @@ Name | Type | Description  | Notes
 # **sources_saml_retrieve**
 > SAMLSource sources_saml_retrieve(slug)
 
-
-
 SAMLSource Viewset
 
 ### Example
@@ -5051,8 +7327,6 @@ Name | Type | Description  | Notes
 
 # **sources_saml_update**
 > SAMLSource sources_saml_update(slug, saml_source_request)
-
-
 
 SAMLSource Viewset
 
@@ -5134,8 +7408,6 @@ Name | Type | Description  | Notes
 # **sources_saml_used_by_list**
 > List[UsedBy] sources_saml_used_by_list(slug)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -5212,8 +7484,6 @@ Name | Type | Description  | Notes
 
 # **sources_scim_create**
 > SCIMSource sources_scim_create(scim_source_request)
-
-
 
 SCIMSource Viewset
 
@@ -5293,8 +7563,6 @@ Name | Type | Description  | Notes
 # **sources_scim_destroy**
 > sources_scim_destroy(slug)
 
-
-
 SCIMSource Viewset
 
 ### Example
@@ -5368,8 +7636,6 @@ void (empty response body)
 
 # **sources_scim_groups_create**
 > SCIMSourceGroup sources_scim_groups_create(scim_source_group_request)
-
-
 
 SCIMSourceGroup Viewset
 
@@ -5449,8 +7715,6 @@ Name | Type | Description  | Notes
 # **sources_scim_groups_destroy**
 > sources_scim_groups_destroy(id)
 
-
-
 SCIMSourceGroup Viewset
 
 ### Example
@@ -5524,8 +7788,6 @@ void (empty response body)
 
 # **sources_scim_groups_list**
 > PaginatedSCIMSourceGroupList sources_scim_groups_list(group__group_uuid=group__group_uuid, group__name=group__name, ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug)
-
-
 
 SCIMSourceGroup Viewset
 
@@ -5616,8 +7878,6 @@ Name | Type | Description  | Notes
 # **sources_scim_groups_partial_update**
 > SCIMSourceGroup sources_scim_groups_partial_update(id, patched_scim_source_group_request=patched_scim_source_group_request)
 
-
-
 SCIMSourceGroup Viewset
 
 ### Example
@@ -5698,8 +7958,6 @@ Name | Type | Description  | Notes
 # **sources_scim_groups_retrieve**
 > SCIMSourceGroup sources_scim_groups_retrieve(id)
 
-
-
 SCIMSourceGroup Viewset
 
 ### Example
@@ -5776,8 +8034,6 @@ Name | Type | Description  | Notes
 
 # **sources_scim_groups_update**
 > SCIMSourceGroup sources_scim_groups_update(id, scim_source_group_request)
-
-
 
 SCIMSourceGroup Viewset
 
@@ -5859,8 +8115,6 @@ Name | Type | Description  | Notes
 # **sources_scim_groups_used_by_list**
 > List[UsedBy] sources_scim_groups_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -5936,9 +8190,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_scim_list**
-> PaginatedSCIMSourceList sources_scim_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search, slug=slug)
-
-
+> PaginatedSCIMSourceList sources_scim_list(name=name, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, search=search, slug=slug)
 
 SCIMSource Viewset
 
@@ -5976,11 +8228,12 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
+    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
     slug = 'slug_example' # str |  (optional)
 
     try:
-        api_response = await api_instance.sources_scim_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search, slug=slug)
+        api_response = await api_instance.sources_scim_list(name=name, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, search=search, slug=slug)
         print("The response of SourcesApi->sources_scim_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -5998,6 +8251,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
+ **pbm_uuid** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **slug** | **str**|  | [optional] 
 
@@ -6026,8 +8280,6 @@ Name | Type | Description  | Notes
 
 # **sources_scim_partial_update**
 > SCIMSource sources_scim_partial_update(slug, patched_scim_source_request=patched_scim_source_request)
-
-
 
 SCIMSource Viewset
 
@@ -6109,8 +8361,6 @@ Name | Type | Description  | Notes
 # **sources_scim_retrieve**
 > SCIMSource sources_scim_retrieve(slug)
 
-
-
 SCIMSource Viewset
 
 ### Example
@@ -6187,8 +8437,6 @@ Name | Type | Description  | Notes
 
 # **sources_scim_update**
 > SCIMSource sources_scim_update(slug, scim_source_request)
-
-
 
 SCIMSource Viewset
 
@@ -6270,8 +8518,6 @@ Name | Type | Description  | Notes
 # **sources_scim_used_by_list**
 > List[UsedBy] sources_scim_used_by_list(slug)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -6348,8 +8594,6 @@ Name | Type | Description  | Notes
 
 # **sources_scim_users_create**
 > SCIMSourceUser sources_scim_users_create(scim_source_user_request)
-
-
 
 SCIMSourceUser Viewset
 
@@ -6429,8 +8673,6 @@ Name | Type | Description  | Notes
 # **sources_scim_users_destroy**
 > sources_scim_users_destroy(id)
 
-
-
 SCIMSourceUser Viewset
 
 ### Example
@@ -6504,8 +8746,6 @@ void (empty response body)
 
 # **sources_scim_users_list**
 > PaginatedSCIMSourceUserList sources_scim_users_list(ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug, user__id=user__id, user__username=user__username)
-
-
 
 SCIMSourceUser Viewset
 
@@ -6596,8 +8836,6 @@ Name | Type | Description  | Notes
 # **sources_scim_users_partial_update**
 > SCIMSourceUser sources_scim_users_partial_update(id, patched_scim_source_user_request=patched_scim_source_user_request)
 
-
-
 SCIMSourceUser Viewset
 
 ### Example
@@ -6678,8 +8916,6 @@ Name | Type | Description  | Notes
 # **sources_scim_users_retrieve**
 > SCIMSourceUser sources_scim_users_retrieve(id)
 
-
-
 SCIMSourceUser Viewset
 
 ### Example
@@ -6756,8 +8992,6 @@ Name | Type | Description  | Notes
 
 # **sources_scim_users_update**
 > SCIMSourceUser sources_scim_users_update(id, scim_source_user_request)
-
-
 
 SCIMSourceUser Viewset
 
@@ -6839,8 +9073,6 @@ Name | Type | Description  | Notes
 # **sources_scim_users_used_by_list**
 > List[UsedBy] sources_scim_users_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -6918,8 +9150,6 @@ Name | Type | Description  | Notes
 # **sources_user_connections_all_destroy**
 > sources_user_connections_all_destroy(id)
 
-
-
 User-source connection Viewset
 
 ### Example
@@ -6993,8 +9223,6 @@ void (empty response body)
 
 # **sources_user_connections_all_list**
 > PaginatedUserSourceConnectionList sources_user_connections_all_list(ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug, user=user)
-
-
 
 User-source connection Viewset
 
@@ -7081,9 +9309,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_user_connections_all_partial_update**
-> UserSourceConnection sources_user_connections_all_partial_update(id)
-
-
+> UserSourceConnection sources_user_connections_all_partial_update(id, patched_user_source_connection_request=patched_user_source_connection_request)
 
 User-source connection Viewset
 
@@ -7093,6 +9319,7 @@ User-source connection Viewset
 
 ```python
 import authentik_openapi
+from authentik_openapi.models.patched_user_source_connection_request import PatchedUserSourceConnectionRequest
 from authentik_openapi.models.user_source_connection import UserSourceConnection
 from authentik_openapi.rest import ApiException
 from pprint import pprint
@@ -7118,9 +9345,10 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.SourcesApi(api_client)
     id = 56 # int | A unique integer value identifying this user source connection.
+    patched_user_source_connection_request = authentik_openapi.PatchedUserSourceConnectionRequest() # PatchedUserSourceConnectionRequest |  (optional)
 
     try:
-        api_response = await api_instance.sources_user_connections_all_partial_update(id)
+        api_response = await api_instance.sources_user_connections_all_partial_update(id, patched_user_source_connection_request=patched_user_source_connection_request)
         print("The response of SourcesApi->sources_user_connections_all_partial_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -7135,6 +9363,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this user source connection. | 
+ **patched_user_source_connection_request** | [**PatchedUserSourceConnectionRequest**](PatchedUserSourceConnectionRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -7146,7 +9375,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -7161,8 +9390,6 @@ Name | Type | Description  | Notes
 
 # **sources_user_connections_all_retrieve**
 > UserSourceConnection sources_user_connections_all_retrieve(id)
-
-
 
 User-source connection Viewset
 
@@ -7239,9 +9466,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_user_connections_all_update**
-> UserSourceConnection sources_user_connections_all_update(id)
-
-
+> UserSourceConnection sources_user_connections_all_update(id, user_source_connection_request)
 
 User-source connection Viewset
 
@@ -7252,6 +9477,7 @@ User-source connection Viewset
 ```python
 import authentik_openapi
 from authentik_openapi.models.user_source_connection import UserSourceConnection
+from authentik_openapi.models.user_source_connection_request import UserSourceConnectionRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
@@ -7276,9 +9502,10 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.SourcesApi(api_client)
     id = 56 # int | A unique integer value identifying this user source connection.
+    user_source_connection_request = authentik_openapi.UserSourceConnectionRequest() # UserSourceConnectionRequest | 
 
     try:
-        api_response = await api_instance.sources_user_connections_all_update(id)
+        api_response = await api_instance.sources_user_connections_all_update(id, user_source_connection_request)
         print("The response of SourcesApi->sources_user_connections_all_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -7293,6 +9520,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this user source connection. | 
+ **user_source_connection_request** | [**UserSourceConnectionRequest**](UserSourceConnectionRequest.md)|  | 
 
 ### Return type
 
@@ -7304,7 +9532,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -7319,8 +9547,6 @@ Name | Type | Description  | Notes
 
 # **sources_user_connections_all_used_by_list**
 > List[UsedBy] sources_user_connections_all_used_by_list(id)
-
-
 
 Get a list of all objects that use this object
 
@@ -7396,12 +9622,1116 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **sources_user_connections_kerberos_create**
+> UserKerberosSourceConnection sources_user_connections_kerberos_create(user_kerberos_source_connection_request)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.user_kerberos_source_connection import UserKerberosSourceConnection
+from authentik_openapi.models.user_kerberos_source_connection_request import UserKerberosSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    user_kerberos_source_connection_request = authentik_openapi.UserKerberosSourceConnectionRequest() # UserKerberosSourceConnectionRequest | 
+
+    try:
+        api_response = await api_instance.sources_user_connections_kerberos_create(user_kerberos_source_connection_request)
+        print("The response of SourcesApi->sources_user_connections_kerberos_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_kerberos_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_kerberos_source_connection_request** | [**UserKerberosSourceConnectionRequest**](UserKerberosSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**UserKerberosSourceConnection**](UserKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_kerberos_destroy**
+> sources_user_connections_kerberos_destroy(id)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User Kerberos Source Connection.
+
+    try:
+        await api_instance.sources_user_connections_kerberos_destroy(id)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_kerberos_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User Kerberos Source Connection. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_kerberos_list**
+> PaginatedUserKerberosSourceConnectionList sources_user_connections_kerberos_list(ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug, user=user)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_user_kerberos_source_connection_list import PaginatedUserKerberosSourceConnectionList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+    source__slug = 'source__slug_example' # str |  (optional)
+    user = 56 # int |  (optional)
+
+    try:
+        api_response = await api_instance.sources_user_connections_kerberos_list(ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug, user=user)
+        print("The response of SourcesApi->sources_user_connections_kerberos_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_kerberos_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **source__slug** | **str**|  | [optional] 
+ **user** | **int**|  | [optional] 
+
+### Return type
+
+[**PaginatedUserKerberosSourceConnectionList**](PaginatedUserKerberosSourceConnectionList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_kerberos_partial_update**
+> UserKerberosSourceConnection sources_user_connections_kerberos_partial_update(id, patched_user_kerberos_source_connection_request=patched_user_kerberos_source_connection_request)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.patched_user_kerberos_source_connection_request import PatchedUserKerberosSourceConnectionRequest
+from authentik_openapi.models.user_kerberos_source_connection import UserKerberosSourceConnection
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User Kerberos Source Connection.
+    patched_user_kerberos_source_connection_request = authentik_openapi.PatchedUserKerberosSourceConnectionRequest() # PatchedUserKerberosSourceConnectionRequest |  (optional)
+
+    try:
+        api_response = await api_instance.sources_user_connections_kerberos_partial_update(id, patched_user_kerberos_source_connection_request=patched_user_kerberos_source_connection_request)
+        print("The response of SourcesApi->sources_user_connections_kerberos_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_kerberos_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User Kerberos Source Connection. | 
+ **patched_user_kerberos_source_connection_request** | [**PatchedUserKerberosSourceConnectionRequest**](PatchedUserKerberosSourceConnectionRequest.md)|  | [optional] 
+
+### Return type
+
+[**UserKerberosSourceConnection**](UserKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_kerberos_retrieve**
+> UserKerberosSourceConnection sources_user_connections_kerberos_retrieve(id)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.user_kerberos_source_connection import UserKerberosSourceConnection
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User Kerberos Source Connection.
+
+    try:
+        api_response = await api_instance.sources_user_connections_kerberos_retrieve(id)
+        print("The response of SourcesApi->sources_user_connections_kerberos_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_kerberos_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User Kerberos Source Connection. | 
+
+### Return type
+
+[**UserKerberosSourceConnection**](UserKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_kerberos_update**
+> UserKerberosSourceConnection sources_user_connections_kerberos_update(id, user_kerberos_source_connection_request)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.user_kerberos_source_connection import UserKerberosSourceConnection
+from authentik_openapi.models.user_kerberos_source_connection_request import UserKerberosSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User Kerberos Source Connection.
+    user_kerberos_source_connection_request = authentik_openapi.UserKerberosSourceConnectionRequest() # UserKerberosSourceConnectionRequest | 
+
+    try:
+        api_response = await api_instance.sources_user_connections_kerberos_update(id, user_kerberos_source_connection_request)
+        print("The response of SourcesApi->sources_user_connections_kerberos_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_kerberos_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User Kerberos Source Connection. | 
+ **user_kerberos_source_connection_request** | [**UserKerberosSourceConnectionRequest**](UserKerberosSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**UserKerberosSourceConnection**](UserKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_kerberos_used_by_list**
+> List[UsedBy] sources_user_connections_kerberos_used_by_list(id)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.used_by import UsedBy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User Kerberos Source Connection.
+
+    try:
+        api_response = await api_instance.sources_user_connections_kerberos_used_by_list(id)
+        print("The response of SourcesApi->sources_user_connections_kerberos_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_kerberos_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User Kerberos Source Connection. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_ldap_create**
+> UserLDAPSourceConnection sources_user_connections_ldap_create(user_ldap_source_connection_request)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.user_ldap_source_connection import UserLDAPSourceConnection
+from authentik_openapi.models.user_ldap_source_connection_request import UserLDAPSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    user_ldap_source_connection_request = authentik_openapi.UserLDAPSourceConnectionRequest() # UserLDAPSourceConnectionRequest | 
+
+    try:
+        api_response = await api_instance.sources_user_connections_ldap_create(user_ldap_source_connection_request)
+        print("The response of SourcesApi->sources_user_connections_ldap_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_ldap_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_ldap_source_connection_request** | [**UserLDAPSourceConnectionRequest**](UserLDAPSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**UserLDAPSourceConnection**](UserLDAPSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_ldap_destroy**
+> sources_user_connections_ldap_destroy(id)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User LDAP Source Connection.
+
+    try:
+        await api_instance.sources_user_connections_ldap_destroy(id)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_ldap_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User LDAP Source Connection. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_ldap_list**
+> PaginatedUserLDAPSourceConnectionList sources_user_connections_ldap_list(ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug, user=user)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_user_ldap_source_connection_list import PaginatedUserLDAPSourceConnectionList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+    source__slug = 'source__slug_example' # str |  (optional)
+    user = 56 # int |  (optional)
+
+    try:
+        api_response = await api_instance.sources_user_connections_ldap_list(ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug, user=user)
+        print("The response of SourcesApi->sources_user_connections_ldap_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_ldap_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **source__slug** | **str**|  | [optional] 
+ **user** | **int**|  | [optional] 
+
+### Return type
+
+[**PaginatedUserLDAPSourceConnectionList**](PaginatedUserLDAPSourceConnectionList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_ldap_partial_update**
+> UserLDAPSourceConnection sources_user_connections_ldap_partial_update(id, patched_user_ldap_source_connection_request=patched_user_ldap_source_connection_request)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.patched_user_ldap_source_connection_request import PatchedUserLDAPSourceConnectionRequest
+from authentik_openapi.models.user_ldap_source_connection import UserLDAPSourceConnection
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User LDAP Source Connection.
+    patched_user_ldap_source_connection_request = authentik_openapi.PatchedUserLDAPSourceConnectionRequest() # PatchedUserLDAPSourceConnectionRequest |  (optional)
+
+    try:
+        api_response = await api_instance.sources_user_connections_ldap_partial_update(id, patched_user_ldap_source_connection_request=patched_user_ldap_source_connection_request)
+        print("The response of SourcesApi->sources_user_connections_ldap_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_ldap_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User LDAP Source Connection. | 
+ **patched_user_ldap_source_connection_request** | [**PatchedUserLDAPSourceConnectionRequest**](PatchedUserLDAPSourceConnectionRequest.md)|  | [optional] 
+
+### Return type
+
+[**UserLDAPSourceConnection**](UserLDAPSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_ldap_retrieve**
+> UserLDAPSourceConnection sources_user_connections_ldap_retrieve(id)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.user_ldap_source_connection import UserLDAPSourceConnection
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User LDAP Source Connection.
+
+    try:
+        api_response = await api_instance.sources_user_connections_ldap_retrieve(id)
+        print("The response of SourcesApi->sources_user_connections_ldap_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_ldap_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User LDAP Source Connection. | 
+
+### Return type
+
+[**UserLDAPSourceConnection**](UserLDAPSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_ldap_update**
+> UserLDAPSourceConnection sources_user_connections_ldap_update(id, user_ldap_source_connection_request)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.user_ldap_source_connection import UserLDAPSourceConnection
+from authentik_openapi.models.user_ldap_source_connection_request import UserLDAPSourceConnectionRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User LDAP Source Connection.
+    user_ldap_source_connection_request = authentik_openapi.UserLDAPSourceConnectionRequest() # UserLDAPSourceConnectionRequest | 
+
+    try:
+        api_response = await api_instance.sources_user_connections_ldap_update(id, user_ldap_source_connection_request)
+        print("The response of SourcesApi->sources_user_connections_ldap_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_ldap_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User LDAP Source Connection. | 
+ **user_ldap_source_connection_request** | [**UserLDAPSourceConnectionRequest**](UserLDAPSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**UserLDAPSourceConnection**](UserLDAPSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_ldap_used_by_list**
+> List[UsedBy] sources_user_connections_ldap_used_by_list(id)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.used_by import UsedBy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User LDAP Source Connection.
+
+    try:
+        api_response = await api_instance.sources_user_connections_ldap_used_by_list(id)
+        print("The response of SourcesApi->sources_user_connections_ldap_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_ldap_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User LDAP Source Connection. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **sources_user_connections_oauth_create**
 > UserOAuthSourceConnection sources_user_connections_oauth_create(user_o_auth_source_connection_request)
 
-
-
-Source Viewset
+User-source connection Viewset
 
 ### Example
 
@@ -7479,9 +10809,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_oauth_destroy**
 > sources_user_connections_oauth_destroy(id)
 
-
-
-Source Viewset
+User-source connection Viewset
 
 ### Example
 
@@ -7555,9 +10883,7 @@ void (empty response body)
 # **sources_user_connections_oauth_list**
 > PaginatedUserOAuthSourceConnectionList sources_user_connections_oauth_list(ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug, user=user)
 
-
-
-Source Viewset
+User-source connection Viewset
 
 ### Example
 
@@ -7644,9 +10970,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_oauth_partial_update**
 > UserOAuthSourceConnection sources_user_connections_oauth_partial_update(id, patched_user_o_auth_source_connection_request=patched_user_o_auth_source_connection_request)
 
-
-
-Source Viewset
+User-source connection Viewset
 
 ### Example
 
@@ -7726,9 +11050,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_oauth_retrieve**
 > UserOAuthSourceConnection sources_user_connections_oauth_retrieve(id)
 
-
-
-Source Viewset
+User-source connection Viewset
 
 ### Example
 
@@ -7805,9 +11127,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_oauth_update**
 > UserOAuthSourceConnection sources_user_connections_oauth_update(id, user_o_auth_source_connection_request)
 
-
-
-Source Viewset
+User-source connection Viewset
 
 ### Example
 
@@ -7887,8 +11207,6 @@ Name | Type | Description  | Notes
 # **sources_user_connections_oauth_used_by_list**
 > List[UsedBy] sources_user_connections_oauth_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -7966,9 +11284,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_plex_create**
 > UserPlexSourceConnection sources_user_connections_plex_create(user_plex_source_connection_request)
 
-
-
-Plex Source connection Serializer
+User-source connection Viewset
 
 ### Example
 
@@ -8046,9 +11362,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_plex_destroy**
 > sources_user_connections_plex_destroy(id)
 
-
-
-Plex Source connection Serializer
+User-source connection Viewset
 
 ### Example
 
@@ -8122,9 +11436,7 @@ void (empty response body)
 # **sources_user_connections_plex_list**
 > PaginatedUserPlexSourceConnectionList sources_user_connections_plex_list(ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug, user=user)
 
-
-
-Plex Source connection Serializer
+User-source connection Viewset
 
 ### Example
 
@@ -8211,9 +11523,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_plex_partial_update**
 > UserPlexSourceConnection sources_user_connections_plex_partial_update(id, patched_user_plex_source_connection_request=patched_user_plex_source_connection_request)
 
-
-
-Plex Source connection Serializer
+User-source connection Viewset
 
 ### Example
 
@@ -8293,9 +11603,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_plex_retrieve**
 > UserPlexSourceConnection sources_user_connections_plex_retrieve(id)
 
-
-
-Plex Source connection Serializer
+User-source connection Viewset
 
 ### Example
 
@@ -8372,9 +11680,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_plex_update**
 > UserPlexSourceConnection sources_user_connections_plex_update(id, user_plex_source_connection_request)
 
-
-
-Plex Source connection Serializer
+User-source connection Viewset
 
 ### Example
 
@@ -8454,8 +11760,6 @@ Name | Type | Description  | Notes
 # **sources_user_connections_plex_used_by_list**
 > List[UsedBy] sources_user_connections_plex_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -8533,9 +11837,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_saml_create**
 > UserSAMLSourceConnection sources_user_connections_saml_create(user_saml_source_connection_request)
 
-
-
-Source Viewset
+User-source connection Viewset
 
 ### Example
 
@@ -8613,9 +11915,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_saml_destroy**
 > sources_user_connections_saml_destroy(id)
 
-
-
-Source Viewset
+User-source connection Viewset
 
 ### Example
 
@@ -8689,9 +11989,7 @@ void (empty response body)
 # **sources_user_connections_saml_list**
 > PaginatedUserSAMLSourceConnectionList sources_user_connections_saml_list(ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug, user=user)
 
-
-
-Source Viewset
+User-source connection Viewset
 
 ### Example
 
@@ -8778,9 +12076,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_saml_partial_update**
 > UserSAMLSourceConnection sources_user_connections_saml_partial_update(id, patched_user_saml_source_connection_request=patched_user_saml_source_connection_request)
 
-
-
-Source Viewset
+User-source connection Viewset
 
 ### Example
 
@@ -8860,9 +12156,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_saml_retrieve**
 > UserSAMLSourceConnection sources_user_connections_saml_retrieve(id)
 
-
-
-Source Viewset
+User-source connection Viewset
 
 ### Example
 
@@ -8939,9 +12233,7 @@ Name | Type | Description  | Notes
 # **sources_user_connections_saml_update**
 > UserSAMLSourceConnection sources_user_connections_saml_update(id, user_saml_source_connection_request)
 
-
-
-Source Viewset
+User-source connection Viewset
 
 ### Example
 
@@ -9020,8 +12312,6 @@ Name | Type | Description  | Notes
 
 # **sources_user_connections_saml_used_by_list**
 > List[UsedBy] sources_user_connections_saml_used_by_list(id)
-
-
 
 Get a list of all objects that use this object
 

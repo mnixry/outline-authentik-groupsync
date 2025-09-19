@@ -22,8 +22,6 @@ Method | HTTP request | Description
 # **rac_connection_tokens_destroy**
 > rac_connection_tokens_destroy(connection_token_uuid)
 
-
-
 ConnectionToken Viewset
 
 ### Example
@@ -97,8 +95,6 @@ void (empty response body)
 
 # **rac_connection_tokens_list**
 > PaginatedConnectionTokenList rac_connection_tokens_list(endpoint=endpoint, ordering=ordering, page=page, page_size=page_size, provider=provider, search=search, session__user=session__user)
-
-
 
 ConnectionToken Viewset
 
@@ -189,8 +185,6 @@ Name | Type | Description  | Notes
 # **rac_connection_tokens_partial_update**
 > ConnectionToken rac_connection_tokens_partial_update(connection_token_uuid, patched_connection_token_request=patched_connection_token_request)
 
-
-
 ConnectionToken Viewset
 
 ### Example
@@ -271,8 +265,6 @@ Name | Type | Description  | Notes
 # **rac_connection_tokens_retrieve**
 > ConnectionToken rac_connection_tokens_retrieve(connection_token_uuid)
 
-
-
 ConnectionToken Viewset
 
 ### Example
@@ -349,8 +341,6 @@ Name | Type | Description  | Notes
 
 # **rac_connection_tokens_update**
 > ConnectionToken rac_connection_tokens_update(connection_token_uuid, connection_token_request)
-
-
 
 ConnectionToken Viewset
 
@@ -432,8 +422,6 @@ Name | Type | Description  | Notes
 # **rac_connection_tokens_used_by_list**
 > List[UsedBy] rac_connection_tokens_used_by_list(connection_token_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -510,8 +498,6 @@ Name | Type | Description  | Notes
 
 # **rac_endpoints_create**
 > Endpoint rac_endpoints_create(endpoint_request)
-
-
 
 Endpoint Viewset
 
@@ -591,8 +577,6 @@ Name | Type | Description  | Notes
 # **rac_endpoints_destroy**
 > rac_endpoints_destroy(pbm_uuid)
 
-
-
 Endpoint Viewset
 
 ### Example
@@ -667,8 +651,6 @@ void (empty response body)
 # **rac_endpoints_list**
 > PaginatedEndpointList rac_endpoints_list(name=name, ordering=ordering, page=page, page_size=page_size, provider=provider, search=search, superuser_full_list=superuser_full_list)
 
-
-
 List accessible endpoints
 
 ### Example
@@ -706,7 +688,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     provider = 56 # int |  (optional)
-    search = 'search_example' # str |  (optional)
+    search = 'search_example' # str | A search term. (optional)
     superuser_full_list = True # bool |  (optional)
 
     try:
@@ -729,7 +711,7 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **provider** | **int**|  | [optional] 
- **search** | **str**|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
  **superuser_full_list** | **bool**|  | [optional] 
 
 ### Return type
@@ -757,8 +739,6 @@ Name | Type | Description  | Notes
 
 # **rac_endpoints_partial_update**
 > Endpoint rac_endpoints_partial_update(pbm_uuid, patched_endpoint_request=patched_endpoint_request)
-
-
 
 Endpoint Viewset
 
@@ -840,8 +820,6 @@ Name | Type | Description  | Notes
 # **rac_endpoints_retrieve**
 > Endpoint rac_endpoints_retrieve(pbm_uuid)
 
-
-
 Endpoint Viewset
 
 ### Example
@@ -918,8 +896,6 @@ Name | Type | Description  | Notes
 
 # **rac_endpoints_update**
 > Endpoint rac_endpoints_update(pbm_uuid, endpoint_request)
-
-
 
 Endpoint Viewset
 
@@ -1000,8 +976,6 @@ Name | Type | Description  | Notes
 
 # **rac_endpoints_used_by_list**
 > List[UsedBy] rac_endpoints_used_by_list(pbm_uuid)
-
-
 
 Get a list of all objects that use this object
 

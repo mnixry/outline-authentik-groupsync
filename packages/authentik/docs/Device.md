@@ -1,6 +1,6 @@
 # Device
 
-Serializer for Duo authenticator devices
+Serializer for authenticator devices
 
 ## Properties
 
@@ -9,13 +9,15 @@ Name | Type | Description | Notes
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
-**pk** | **int** |  | 
+**pk** | **str** |  | 
 **name** | **str** |  | 
 **type** | **str** | Get type of device | [readonly] 
 **confirmed** | **bool** |  | 
 **created** | **datetime** |  | [readonly] 
 **last_updated** | **datetime** |  | [readonly] 
 **last_used** | **datetime** |  | [readonly] 
+**extra_description** | **str** | Get extra description | [readonly] 
+**external_id** | **str** | Get external Device ID | [readonly] 
 
 ## Example
 

@@ -12,10 +12,10 @@ Name | Type | Description | Notes
 **geo_ip** | [**AuthenticatedSessionGeoIp**](AuthenticatedSessionGeoIp.md) |  | 
 **asn** | [**AuthenticatedSessionAsn**](AuthenticatedSessionAsn.md) |  | 
 **user** | **int** |  | 
-**last_ip** | **str** |  | 
-**last_user_agent** | **str** |  | [optional] 
+**last_ip** | **str** |  | [readonly] 
+**last_user_agent** | **str** |  | [readonly] 
 **last_used** | **datetime** |  | [readonly] 
-**expires** | **datetime** |  | [optional] 
+**expires** | **datetime** |  | [readonly] 
 
 ## Example
 

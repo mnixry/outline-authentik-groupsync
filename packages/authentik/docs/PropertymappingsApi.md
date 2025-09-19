@@ -66,6 +66,13 @@ Method | HTTP request | Description
 [**propertymappings_provider_scope_retrieve**](PropertymappingsApi.md#propertymappings_provider_scope_retrieve) | **GET** /propertymappings/provider/scope/{pm_uuid}/ | 
 [**propertymappings_provider_scope_update**](PropertymappingsApi.md#propertymappings_provider_scope_update) | **PUT** /propertymappings/provider/scope/{pm_uuid}/ | 
 [**propertymappings_provider_scope_used_by_list**](PropertymappingsApi.md#propertymappings_provider_scope_used_by_list) | **GET** /propertymappings/provider/scope/{pm_uuid}/used_by/ | 
+[**propertymappings_source_kerberos_create**](PropertymappingsApi.md#propertymappings_source_kerberos_create) | **POST** /propertymappings/source/kerberos/ | 
+[**propertymappings_source_kerberos_destroy**](PropertymappingsApi.md#propertymappings_source_kerberos_destroy) | **DELETE** /propertymappings/source/kerberos/{pm_uuid}/ | 
+[**propertymappings_source_kerberos_list**](PropertymappingsApi.md#propertymappings_source_kerberos_list) | **GET** /propertymappings/source/kerberos/ | 
+[**propertymappings_source_kerberos_partial_update**](PropertymappingsApi.md#propertymappings_source_kerberos_partial_update) | **PATCH** /propertymappings/source/kerberos/{pm_uuid}/ | 
+[**propertymappings_source_kerberos_retrieve**](PropertymappingsApi.md#propertymappings_source_kerberos_retrieve) | **GET** /propertymappings/source/kerberos/{pm_uuid}/ | 
+[**propertymappings_source_kerberos_update**](PropertymappingsApi.md#propertymappings_source_kerberos_update) | **PUT** /propertymappings/source/kerberos/{pm_uuid}/ | 
+[**propertymappings_source_kerberos_used_by_list**](PropertymappingsApi.md#propertymappings_source_kerberos_used_by_list) | **GET** /propertymappings/source/kerberos/{pm_uuid}/used_by/ | 
 [**propertymappings_source_ldap_create**](PropertymappingsApi.md#propertymappings_source_ldap_create) | **POST** /propertymappings/source/ldap/ | 
 [**propertymappings_source_ldap_destroy**](PropertymappingsApi.md#propertymappings_source_ldap_destroy) | **DELETE** /propertymappings/source/ldap/{pm_uuid}/ | 
 [**propertymappings_source_ldap_list**](PropertymappingsApi.md#propertymappings_source_ldap_list) | **GET** /propertymappings/source/ldap/ | 
@@ -105,8 +112,6 @@ Method | HTTP request | Description
 
 # **propertymappings_all_destroy**
 > propertymappings_all_destroy(pm_uuid)
-
-
 
 PropertyMapping Viewset
 
@@ -181,8 +186,6 @@ void (empty response body)
 
 # **propertymappings_all_list**
 > PaginatedPropertyMappingList propertymappings_all_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 PropertyMapping Viewset
 
@@ -273,8 +276,6 @@ Name | Type | Description  | Notes
 # **propertymappings_all_retrieve**
 > PropertyMapping propertymappings_all_retrieve(pm_uuid)
 
-
-
 PropertyMapping Viewset
 
 ### Example
@@ -351,8 +352,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_all_test_create**
 > PropertyMappingTestResult propertymappings_all_test_create(pm_uuid, format_result=format_result, property_mapping_test_request=property_mapping_test_request)
-
-
 
 Test Property Mapping
 
@@ -436,8 +435,6 @@ Name | Type | Description  | Notes
 # **propertymappings_all_types_list**
 > List[TypeCreate] propertymappings_all_types_list()
 
-
-
 Get all creatable types
 
 ### Example
@@ -510,8 +507,6 @@ This endpoint does not need any parameter.
 
 # **propertymappings_all_used_by_list**
 > List[UsedBy] propertymappings_all_used_by_list(pm_uuid)
-
-
 
 Get a list of all objects that use this object
 
@@ -589,8 +584,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_notification_create**
 > NotificationWebhookMapping propertymappings_notification_create(notification_webhook_mapping_request)
-
-
 
 NotificationWebhookMapping Viewset
 
@@ -670,8 +663,6 @@ Name | Type | Description  | Notes
 # **propertymappings_notification_destroy**
 > propertymappings_notification_destroy(pm_uuid)
 
-
-
 NotificationWebhookMapping Viewset
 
 ### Example
@@ -745,8 +736,6 @@ void (empty response body)
 
 # **propertymappings_notification_list**
 > PaginatedNotificationWebhookMappingList propertymappings_notification_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 NotificationWebhookMapping Viewset
 
@@ -833,8 +822,6 @@ Name | Type | Description  | Notes
 # **propertymappings_notification_partial_update**
 > NotificationWebhookMapping propertymappings_notification_partial_update(pm_uuid, patched_notification_webhook_mapping_request=patched_notification_webhook_mapping_request)
 
-
-
 NotificationWebhookMapping Viewset
 
 ### Example
@@ -915,8 +902,6 @@ Name | Type | Description  | Notes
 # **propertymappings_notification_retrieve**
 > NotificationWebhookMapping propertymappings_notification_retrieve(pm_uuid)
 
-
-
 NotificationWebhookMapping Viewset
 
 ### Example
@@ -993,8 +978,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_notification_update**
 > NotificationWebhookMapping propertymappings_notification_update(pm_uuid, notification_webhook_mapping_request)
-
-
 
 NotificationWebhookMapping Viewset
 
@@ -1076,8 +1059,6 @@ Name | Type | Description  | Notes
 # **propertymappings_notification_used_by_list**
 > List[UsedBy] propertymappings_notification_used_by_list(pm_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -1154,8 +1135,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_google_workspace_create**
 > GoogleWorkspaceProviderMapping propertymappings_provider_google_workspace_create(google_workspace_provider_mapping_request)
-
-
 
 GoogleWorkspaceProviderMapping Viewset
 
@@ -1235,8 +1214,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_google_workspace_destroy**
 > propertymappings_provider_google_workspace_destroy(pm_uuid)
 
-
-
 GoogleWorkspaceProviderMapping Viewset
 
 ### Example
@@ -1310,8 +1287,6 @@ void (empty response body)
 
 # **propertymappings_provider_google_workspace_list**
 > PaginatedGoogleWorkspaceProviderMappingList propertymappings_provider_google_workspace_list(expression=expression, managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, pm_uuid=pm_uuid, search=search)
-
-
 
 GoogleWorkspaceProviderMapping Viewset
 
@@ -1404,8 +1379,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_google_workspace_partial_update**
 > GoogleWorkspaceProviderMapping propertymappings_provider_google_workspace_partial_update(pm_uuid, patched_google_workspace_provider_mapping_request=patched_google_workspace_provider_mapping_request)
 
-
-
 GoogleWorkspaceProviderMapping Viewset
 
 ### Example
@@ -1486,8 +1459,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_google_workspace_retrieve**
 > GoogleWorkspaceProviderMapping propertymappings_provider_google_workspace_retrieve(pm_uuid)
 
-
-
 GoogleWorkspaceProviderMapping Viewset
 
 ### Example
@@ -1564,8 +1535,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_google_workspace_update**
 > GoogleWorkspaceProviderMapping propertymappings_provider_google_workspace_update(pm_uuid, google_workspace_provider_mapping_request)
-
-
 
 GoogleWorkspaceProviderMapping Viewset
 
@@ -1647,8 +1616,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_google_workspace_used_by_list**
 > List[UsedBy] propertymappings_provider_google_workspace_used_by_list(pm_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -1725,8 +1692,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_microsoft_entra_create**
 > MicrosoftEntraProviderMapping propertymappings_provider_microsoft_entra_create(microsoft_entra_provider_mapping_request)
-
-
 
 MicrosoftEntraProviderMapping Viewset
 
@@ -1806,8 +1771,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_microsoft_entra_destroy**
 > propertymappings_provider_microsoft_entra_destroy(pm_uuid)
 
-
-
 MicrosoftEntraProviderMapping Viewset
 
 ### Example
@@ -1881,8 +1844,6 @@ void (empty response body)
 
 # **propertymappings_provider_microsoft_entra_list**
 > PaginatedMicrosoftEntraProviderMappingList propertymappings_provider_microsoft_entra_list(expression=expression, managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, pm_uuid=pm_uuid, search=search)
-
-
 
 MicrosoftEntraProviderMapping Viewset
 
@@ -1975,8 +1936,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_microsoft_entra_partial_update**
 > MicrosoftEntraProviderMapping propertymappings_provider_microsoft_entra_partial_update(pm_uuid, patched_microsoft_entra_provider_mapping_request=patched_microsoft_entra_provider_mapping_request)
 
-
-
 MicrosoftEntraProviderMapping Viewset
 
 ### Example
@@ -2057,8 +2016,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_microsoft_entra_retrieve**
 > MicrosoftEntraProviderMapping propertymappings_provider_microsoft_entra_retrieve(pm_uuid)
 
-
-
 MicrosoftEntraProviderMapping Viewset
 
 ### Example
@@ -2135,8 +2092,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_microsoft_entra_update**
 > MicrosoftEntraProviderMapping propertymappings_provider_microsoft_entra_update(pm_uuid, microsoft_entra_provider_mapping_request)
-
-
 
 MicrosoftEntraProviderMapping Viewset
 
@@ -2218,8 +2173,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_microsoft_entra_used_by_list**
 > List[UsedBy] propertymappings_provider_microsoft_entra_used_by_list(pm_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -2296,8 +2249,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_rac_create**
 > RACPropertyMapping propertymappings_provider_rac_create(rac_property_mapping_request)
-
-
 
 RACPropertyMapping Viewset
 
@@ -2377,8 +2328,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_rac_destroy**
 > propertymappings_provider_rac_destroy(pm_uuid)
 
-
-
 RACPropertyMapping Viewset
 
 ### Example
@@ -2452,8 +2401,6 @@ void (empty response body)
 
 # **propertymappings_provider_rac_list**
 > PaginatedRACPropertyMappingList propertymappings_provider_rac_list(managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 RACPropertyMapping Viewset
 
@@ -2542,8 +2489,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_rac_partial_update**
 > RACPropertyMapping propertymappings_provider_rac_partial_update(pm_uuid, patched_rac_property_mapping_request=patched_rac_property_mapping_request)
 
-
-
 RACPropertyMapping Viewset
 
 ### Example
@@ -2624,8 +2569,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_rac_retrieve**
 > RACPropertyMapping propertymappings_provider_rac_retrieve(pm_uuid)
 
-
-
 RACPropertyMapping Viewset
 
 ### Example
@@ -2702,8 +2645,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_rac_update**
 > RACPropertyMapping propertymappings_provider_rac_update(pm_uuid, rac_property_mapping_request)
-
-
 
 RACPropertyMapping Viewset
 
@@ -2785,8 +2726,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_rac_used_by_list**
 > List[UsedBy] propertymappings_provider_rac_used_by_list(pm_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -2863,8 +2802,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_radius_create**
 > RadiusProviderPropertyMapping propertymappings_provider_radius_create(radius_provider_property_mapping_request)
-
-
 
 RadiusProviderPropertyMapping Viewset
 
@@ -2944,8 +2881,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_radius_destroy**
 > propertymappings_provider_radius_destroy(pm_uuid)
 
-
-
 RadiusProviderPropertyMapping Viewset
 
 ### Example
@@ -3019,8 +2954,6 @@ void (empty response body)
 
 # **propertymappings_provider_radius_list**
 > PaginatedRadiusProviderPropertyMappingList propertymappings_provider_radius_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 RadiusProviderPropertyMapping Viewset
 
@@ -3111,8 +3044,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_radius_partial_update**
 > RadiusProviderPropertyMapping propertymappings_provider_radius_partial_update(pm_uuid, patched_radius_provider_property_mapping_request=patched_radius_provider_property_mapping_request)
 
-
-
 RadiusProviderPropertyMapping Viewset
 
 ### Example
@@ -3193,8 +3124,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_radius_retrieve**
 > RadiusProviderPropertyMapping propertymappings_provider_radius_retrieve(pm_uuid)
 
-
-
 RadiusProviderPropertyMapping Viewset
 
 ### Example
@@ -3271,8 +3200,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_radius_update**
 > RadiusProviderPropertyMapping propertymappings_provider_radius_update(pm_uuid, radius_provider_property_mapping_request)
-
-
 
 RadiusProviderPropertyMapping Viewset
 
@@ -3354,8 +3281,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_radius_used_by_list**
 > List[UsedBy] propertymappings_provider_radius_used_by_list(pm_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -3432,8 +3357,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_saml_create**
 > SAMLPropertyMapping propertymappings_provider_saml_create(saml_property_mapping_request)
-
-
 
 SAMLPropertyMapping Viewset
 
@@ -3513,8 +3436,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_saml_destroy**
 > propertymappings_provider_saml_destroy(pm_uuid)
 
-
-
 SAMLPropertyMapping Viewset
 
 ### Example
@@ -3588,8 +3509,6 @@ void (empty response body)
 
 # **propertymappings_provider_saml_list**
 > PaginatedSAMLPropertyMappingList propertymappings_provider_saml_list(friendly_name=friendly_name, managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, saml_name=saml_name, search=search)
-
-
 
 SAMLPropertyMapping Viewset
 
@@ -3684,8 +3603,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_saml_partial_update**
 > SAMLPropertyMapping propertymappings_provider_saml_partial_update(pm_uuid, patched_saml_property_mapping_request=patched_saml_property_mapping_request)
 
-
-
 SAMLPropertyMapping Viewset
 
 ### Example
@@ -3766,8 +3683,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_saml_retrieve**
 > SAMLPropertyMapping propertymappings_provider_saml_retrieve(pm_uuid)
 
-
-
 SAMLPropertyMapping Viewset
 
 ### Example
@@ -3844,8 +3759,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_saml_update**
 > SAMLPropertyMapping propertymappings_provider_saml_update(pm_uuid, saml_property_mapping_request)
-
-
 
 SAMLPropertyMapping Viewset
 
@@ -3927,8 +3840,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_saml_used_by_list**
 > List[UsedBy] propertymappings_provider_saml_used_by_list(pm_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -4005,8 +3916,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_scim_create**
 > SCIMMapping propertymappings_provider_scim_create(scim_mapping_request)
-
-
 
 SCIMMapping Viewset
 
@@ -4086,8 +3995,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_scim_destroy**
 > propertymappings_provider_scim_destroy(pm_uuid)
 
-
-
 SCIMMapping Viewset
 
 ### Example
@@ -4161,8 +4068,6 @@ void (empty response body)
 
 # **propertymappings_provider_scim_list**
 > PaginatedSCIMMappingList propertymappings_provider_scim_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 SCIMMapping Viewset
 
@@ -4253,8 +4158,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_scim_partial_update**
 > SCIMMapping propertymappings_provider_scim_partial_update(pm_uuid, patched_scim_mapping_request=patched_scim_mapping_request)
 
-
-
 SCIMMapping Viewset
 
 ### Example
@@ -4335,8 +4238,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_scim_retrieve**
 > SCIMMapping propertymappings_provider_scim_retrieve(pm_uuid)
 
-
-
 SCIMMapping Viewset
 
 ### Example
@@ -4413,8 +4314,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_scim_update**
 > SCIMMapping propertymappings_provider_scim_update(pm_uuid, scim_mapping_request)
-
-
 
 SCIMMapping Viewset
 
@@ -4496,8 +4395,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_scim_used_by_list**
 > List[UsedBy] propertymappings_provider_scim_used_by_list(pm_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -4574,8 +4471,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_scope_create**
 > ScopeMapping propertymappings_provider_scope_create(scope_mapping_request)
-
-
 
 ScopeMapping Viewset
 
@@ -4655,8 +4550,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_scope_destroy**
 > propertymappings_provider_scope_destroy(pm_uuid)
 
-
-
 ScopeMapping Viewset
 
 ### Example
@@ -4730,8 +4623,6 @@ void (empty response body)
 
 # **propertymappings_provider_scope_list**
 > PaginatedScopeMappingList propertymappings_provider_scope_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, scope_name=scope_name, search=search)
-
-
 
 ScopeMapping Viewset
 
@@ -4824,8 +4715,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_scope_partial_update**
 > ScopeMapping propertymappings_provider_scope_partial_update(pm_uuid, patched_scope_mapping_request=patched_scope_mapping_request)
 
-
-
 ScopeMapping Viewset
 
 ### Example
@@ -4906,8 +4795,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_scope_retrieve**
 > ScopeMapping propertymappings_provider_scope_retrieve(pm_uuid)
 
-
-
 ScopeMapping Viewset
 
 ### Example
@@ -4984,8 +4871,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_provider_scope_update**
 > ScopeMapping propertymappings_provider_scope_update(pm_uuid, scope_mapping_request)
-
-
 
 ScopeMapping Viewset
 
@@ -5067,8 +4952,6 @@ Name | Type | Description  | Notes
 # **propertymappings_provider_scope_used_by_list**
 > List[UsedBy] propertymappings_provider_scope_used_by_list(pm_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -5143,10 +5026,563 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **propertymappings_source_kerberos_create**
+> KerberosSourcePropertyMapping propertymappings_source_kerberos_create(kerberos_source_property_mapping_request)
+
+KerberosSource PropertyMapping Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.kerberos_source_property_mapping import KerberosSourcePropertyMapping
+from authentik_openapi.models.kerberos_source_property_mapping_request import KerberosSourcePropertyMappingRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PropertymappingsApi(api_client)
+    kerberos_source_property_mapping_request = authentik_openapi.KerberosSourcePropertyMappingRequest() # KerberosSourcePropertyMappingRequest | 
+
+    try:
+        api_response = await api_instance.propertymappings_source_kerberos_create(kerberos_source_property_mapping_request)
+        print("The response of PropertymappingsApi->propertymappings_source_kerberos_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_kerberos_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kerberos_source_property_mapping_request** | [**KerberosSourcePropertyMappingRequest**](KerberosSourcePropertyMappingRequest.md)|  | 
+
+### Return type
+
+[**KerberosSourcePropertyMapping**](KerberosSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **propertymappings_source_kerberos_destroy**
+> propertymappings_source_kerberos_destroy(pm_uuid)
+
+KerberosSource PropertyMapping Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PropertymappingsApi(api_client)
+    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Kerberos Source Property Mapping.
+
+    try:
+        await api_instance.propertymappings_source_kerberos_destroy(pm_uuid)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_kerberos_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pm_uuid** | **str**| A UUID string identifying this Kerberos Source Property Mapping. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **propertymappings_source_kerberos_list**
+> PaginatedKerberosSourcePropertyMappingList propertymappings_source_kerberos_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+
+KerberosSource PropertyMapping Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_kerberos_source_property_mapping_list import PaginatedKerberosSourcePropertyMappingList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PropertymappingsApi(api_client)
+    managed = ['managed_example'] # List[str] |  (optional)
+    managed__isnull = True # bool |  (optional)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+
+    try:
+        api_response = await api_instance.propertymappings_source_kerberos_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        print("The response of PropertymappingsApi->propertymappings_source_kerberos_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_kerberos_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **managed** | [**List[str]**](str.md)|  | [optional] 
+ **managed__isnull** | **bool**|  | [optional] 
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedKerberosSourcePropertyMappingList**](PaginatedKerberosSourcePropertyMappingList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **propertymappings_source_kerberos_partial_update**
+> KerberosSourcePropertyMapping propertymappings_source_kerberos_partial_update(pm_uuid, patched_kerberos_source_property_mapping_request=patched_kerberos_source_property_mapping_request)
+
+KerberosSource PropertyMapping Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.kerberos_source_property_mapping import KerberosSourcePropertyMapping
+from authentik_openapi.models.patched_kerberos_source_property_mapping_request import PatchedKerberosSourcePropertyMappingRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PropertymappingsApi(api_client)
+    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Kerberos Source Property Mapping.
+    patched_kerberos_source_property_mapping_request = authentik_openapi.PatchedKerberosSourcePropertyMappingRequest() # PatchedKerberosSourcePropertyMappingRequest |  (optional)
+
+    try:
+        api_response = await api_instance.propertymappings_source_kerberos_partial_update(pm_uuid, patched_kerberos_source_property_mapping_request=patched_kerberos_source_property_mapping_request)
+        print("The response of PropertymappingsApi->propertymappings_source_kerberos_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_kerberos_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pm_uuid** | **str**| A UUID string identifying this Kerberos Source Property Mapping. | 
+ **patched_kerberos_source_property_mapping_request** | [**PatchedKerberosSourcePropertyMappingRequest**](PatchedKerberosSourcePropertyMappingRequest.md)|  | [optional] 
+
+### Return type
+
+[**KerberosSourcePropertyMapping**](KerberosSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **propertymappings_source_kerberos_retrieve**
+> KerberosSourcePropertyMapping propertymappings_source_kerberos_retrieve(pm_uuid)
+
+KerberosSource PropertyMapping Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.kerberos_source_property_mapping import KerberosSourcePropertyMapping
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PropertymappingsApi(api_client)
+    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Kerberos Source Property Mapping.
+
+    try:
+        api_response = await api_instance.propertymappings_source_kerberos_retrieve(pm_uuid)
+        print("The response of PropertymappingsApi->propertymappings_source_kerberos_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_kerberos_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pm_uuid** | **str**| A UUID string identifying this Kerberos Source Property Mapping. | 
+
+### Return type
+
+[**KerberosSourcePropertyMapping**](KerberosSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **propertymappings_source_kerberos_update**
+> KerberosSourcePropertyMapping propertymappings_source_kerberos_update(pm_uuid, kerberos_source_property_mapping_request)
+
+KerberosSource PropertyMapping Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.kerberos_source_property_mapping import KerberosSourcePropertyMapping
+from authentik_openapi.models.kerberos_source_property_mapping_request import KerberosSourcePropertyMappingRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PropertymappingsApi(api_client)
+    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Kerberos Source Property Mapping.
+    kerberos_source_property_mapping_request = authentik_openapi.KerberosSourcePropertyMappingRequest() # KerberosSourcePropertyMappingRequest | 
+
+    try:
+        api_response = await api_instance.propertymappings_source_kerberos_update(pm_uuid, kerberos_source_property_mapping_request)
+        print("The response of PropertymappingsApi->propertymappings_source_kerberos_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_kerberos_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pm_uuid** | **str**| A UUID string identifying this Kerberos Source Property Mapping. | 
+ **kerberos_source_property_mapping_request** | [**KerberosSourcePropertyMappingRequest**](KerberosSourcePropertyMappingRequest.md)|  | 
+
+### Return type
+
+[**KerberosSourcePropertyMapping**](KerberosSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **propertymappings_source_kerberos_used_by_list**
+> List[UsedBy] propertymappings_source_kerberos_used_by_list(pm_uuid)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.used_by import UsedBy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PropertymappingsApi(api_client)
+    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Kerberos Source Property Mapping.
+
+    try:
+        api_response = await api_instance.propertymappings_source_kerberos_used_by_list(pm_uuid)
+        print("The response of PropertymappingsApi->propertymappings_source_kerberos_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_kerberos_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pm_uuid** | **str**| A UUID string identifying this Kerberos Source Property Mapping. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **propertymappings_source_ldap_create**
 > LDAPSourcePropertyMapping propertymappings_source_ldap_create(ldap_source_property_mapping_request)
-
-
 
 LDAP PropertyMapping Viewset
 
@@ -5226,8 +5662,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_ldap_destroy**
 > propertymappings_source_ldap_destroy(pm_uuid)
 
-
-
 LDAP PropertyMapping Viewset
 
 ### Example
@@ -5301,8 +5735,6 @@ void (empty response body)
 
 # **propertymappings_source_ldap_list**
 > PaginatedLDAPSourcePropertyMappingList propertymappings_source_ldap_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 LDAP PropertyMapping Viewset
 
@@ -5393,8 +5825,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_ldap_partial_update**
 > LDAPSourcePropertyMapping propertymappings_source_ldap_partial_update(pm_uuid, patched_ldap_source_property_mapping_request=patched_ldap_source_property_mapping_request)
 
-
-
 LDAP PropertyMapping Viewset
 
 ### Example
@@ -5475,8 +5905,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_ldap_retrieve**
 > LDAPSourcePropertyMapping propertymappings_source_ldap_retrieve(pm_uuid)
 
-
-
 LDAP PropertyMapping Viewset
 
 ### Example
@@ -5553,8 +5981,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_source_ldap_update**
 > LDAPSourcePropertyMapping propertymappings_source_ldap_update(pm_uuid, ldap_source_property_mapping_request)
-
-
 
 LDAP PropertyMapping Viewset
 
@@ -5636,8 +6062,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_ldap_used_by_list**
 > List[UsedBy] propertymappings_source_ldap_used_by_list(pm_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -5714,8 +6138,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_source_oauth_create**
 > OAuthSourcePropertyMapping propertymappings_source_oauth_create(o_auth_source_property_mapping_request)
-
-
 
 OAuthSourcePropertyMapping Viewset
 
@@ -5795,8 +6217,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_oauth_destroy**
 > propertymappings_source_oauth_destroy(pm_uuid)
 
-
-
 OAuthSourcePropertyMapping Viewset
 
 ### Example
@@ -5870,8 +6290,6 @@ void (empty response body)
 
 # **propertymappings_source_oauth_list**
 > PaginatedOAuthSourcePropertyMappingList propertymappings_source_oauth_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 OAuthSourcePropertyMapping Viewset
 
@@ -5962,8 +6380,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_oauth_partial_update**
 > OAuthSourcePropertyMapping propertymappings_source_oauth_partial_update(pm_uuid, patched_o_auth_source_property_mapping_request=patched_o_auth_source_property_mapping_request)
 
-
-
 OAuthSourcePropertyMapping Viewset
 
 ### Example
@@ -6044,8 +6460,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_oauth_retrieve**
 > OAuthSourcePropertyMapping propertymappings_source_oauth_retrieve(pm_uuid)
 
-
-
 OAuthSourcePropertyMapping Viewset
 
 ### Example
@@ -6122,8 +6536,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_source_oauth_update**
 > OAuthSourcePropertyMapping propertymappings_source_oauth_update(pm_uuid, o_auth_source_property_mapping_request)
-
-
 
 OAuthSourcePropertyMapping Viewset
 
@@ -6205,8 +6617,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_oauth_used_by_list**
 > List[UsedBy] propertymappings_source_oauth_used_by_list(pm_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -6283,8 +6693,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_source_plex_create**
 > PlexSourcePropertyMapping propertymappings_source_plex_create(plex_source_property_mapping_request)
-
-
 
 PlexSourcePropertyMapping Viewset
 
@@ -6364,8 +6772,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_plex_destroy**
 > propertymappings_source_plex_destroy(pm_uuid)
 
-
-
 PlexSourcePropertyMapping Viewset
 
 ### Example
@@ -6439,8 +6845,6 @@ void (empty response body)
 
 # **propertymappings_source_plex_list**
 > PaginatedPlexSourcePropertyMappingList propertymappings_source_plex_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 PlexSourcePropertyMapping Viewset
 
@@ -6531,8 +6935,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_plex_partial_update**
 > PlexSourcePropertyMapping propertymappings_source_plex_partial_update(pm_uuid, patched_plex_source_property_mapping_request=patched_plex_source_property_mapping_request)
 
-
-
 PlexSourcePropertyMapping Viewset
 
 ### Example
@@ -6613,8 +7015,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_plex_retrieve**
 > PlexSourcePropertyMapping propertymappings_source_plex_retrieve(pm_uuid)
 
-
-
 PlexSourcePropertyMapping Viewset
 
 ### Example
@@ -6691,8 +7091,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_source_plex_update**
 > PlexSourcePropertyMapping propertymappings_source_plex_update(pm_uuid, plex_source_property_mapping_request)
-
-
 
 PlexSourcePropertyMapping Viewset
 
@@ -6774,8 +7172,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_plex_used_by_list**
 > List[UsedBy] propertymappings_source_plex_used_by_list(pm_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -6852,8 +7248,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_source_saml_create**
 > SAMLSourcePropertyMapping propertymappings_source_saml_create(saml_source_property_mapping_request)
-
-
 
 SAMLSourcePropertyMapping Viewset
 
@@ -6933,8 +7327,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_saml_destroy**
 > propertymappings_source_saml_destroy(pm_uuid)
 
-
-
 SAMLSourcePropertyMapping Viewset
 
 ### Example
@@ -7008,8 +7400,6 @@ void (empty response body)
 
 # **propertymappings_source_saml_list**
 > PaginatedSAMLSourcePropertyMappingList propertymappings_source_saml_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 SAMLSourcePropertyMapping Viewset
 
@@ -7100,8 +7490,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_saml_partial_update**
 > SAMLSourcePropertyMapping propertymappings_source_saml_partial_update(pm_uuid, patched_saml_source_property_mapping_request=patched_saml_source_property_mapping_request)
 
-
-
 SAMLSourcePropertyMapping Viewset
 
 ### Example
@@ -7182,8 +7570,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_saml_retrieve**
 > SAMLSourcePropertyMapping propertymappings_source_saml_retrieve(pm_uuid)
 
-
-
 SAMLSourcePropertyMapping Viewset
 
 ### Example
@@ -7260,8 +7646,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_source_saml_update**
 > SAMLSourcePropertyMapping propertymappings_source_saml_update(pm_uuid, saml_source_property_mapping_request)
-
-
 
 SAMLSourcePropertyMapping Viewset
 
@@ -7343,8 +7727,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_saml_used_by_list**
 > List[UsedBy] propertymappings_source_saml_used_by_list(pm_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -7421,8 +7803,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_source_scim_create**
 > SCIMSourcePropertyMapping propertymappings_source_scim_create(scim_source_property_mapping_request)
-
-
 
 SCIMSourcePropertyMapping Viewset
 
@@ -7502,8 +7882,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_scim_destroy**
 > propertymappings_source_scim_destroy(pm_uuid)
 
-
-
 SCIMSourcePropertyMapping Viewset
 
 ### Example
@@ -7577,8 +7955,6 @@ void (empty response body)
 
 # **propertymappings_source_scim_list**
 > PaginatedSCIMSourcePropertyMappingList propertymappings_source_scim_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 SCIMSourcePropertyMapping Viewset
 
@@ -7669,8 +8045,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_scim_partial_update**
 > SCIMSourcePropertyMapping propertymappings_source_scim_partial_update(pm_uuid, patched_scim_source_property_mapping_request=patched_scim_source_property_mapping_request)
 
-
-
 SCIMSourcePropertyMapping Viewset
 
 ### Example
@@ -7751,8 +8125,6 @@ Name | Type | Description  | Notes
 # **propertymappings_source_scim_retrieve**
 > SCIMSourcePropertyMapping propertymappings_source_scim_retrieve(pm_uuid)
 
-
-
 SCIMSourcePropertyMapping Viewset
 
 ### Example
@@ -7829,8 +8201,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_source_scim_update**
 > SCIMSourcePropertyMapping propertymappings_source_scim_update(pm_uuid, scim_source_property_mapping_request)
-
-
 
 SCIMSourcePropertyMapping Viewset
 
@@ -7911,8 +8281,6 @@ Name | Type | Description  | Notes
 
 # **propertymappings_source_scim_used_by_list**
 > List[UsedBy] propertymappings_source_scim_used_by_list(pm_uuid)
-
-
 
 Get a list of all objects that use this object
 

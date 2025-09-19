@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **authenticator_attachment** | [**AuthenticatorAttachmentEnum**](AuthenticatorAttachmentEnum.md) |  | [optional] 
 **resident_key_requirement** | [**ResidentKeyRequirementEnum**](ResidentKeyRequirementEnum.md) |  | [optional] 
 **device_type_restrictions** | **List[str]** |  | [optional] 
+**max_attempts** | **int** |  | [optional] 
 
 ## Example
 

@@ -7,7 +7,7 @@ Response that includes the user-entered device code
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **component** | **str** |  | [optional] [default to 'ak-provider-oauth2-device-code']
-**code** | **int** |  | 
+**code** | **str** |  | 
 
 ## Example
 

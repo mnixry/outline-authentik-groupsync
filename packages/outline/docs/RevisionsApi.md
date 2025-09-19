@@ -4,23 +4,26 @@ All URIs are relative to *https://app.getoutline.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**revisions_info_post**](RevisionsApi.md#revisions_info_post) | **POST** /revisions.info | Retrieve a revision
-[**revisions_list_post**](RevisionsApi.md#revisions_list_post) | **POST** /revisions.list | List all revisions
+[**revisions_info**](RevisionsApi.md#revisions_info) | **POST** /revisions.info | Retrieve a revision
+[**revisions_list**](RevisionsApi.md#revisions_list) | **POST** /revisions.list | List all revisions
 
 
-# **revisions_info_post**
-> RevisionsInfoPost200Response revisions_info_post(revisions_info_post_request=revisions_info_post_request)
+# **revisions_info**
+> RevisionsInfo200Response revisions_info(revisions_info_request=revisions_info_request)
 
 Retrieve a revision
 
+A revision is a snapshot of a document at a specific point in time. This endpoint allows you to retrieve a specific version of a document by its unique identifier.
+
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.revisions_info_post200_response import RevisionsInfoPost200Response
-from outline_openapi.models.revisions_info_post_request import RevisionsInfoPostRequest
+from outline_openapi.models.revisions_info200_response import RevisionsInfo200Response
+from outline_openapi.models.revisions_info_request import RevisionsInfoRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -35,7 +38,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -44,15 +49,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.RevisionsApi(api_client)
-    revisions_info_post_request = outline_openapi.RevisionsInfoPostRequest() # RevisionsInfoPostRequest |  (optional)
+    revisions_info_request = outline_openapi.RevisionsInfoRequest() # RevisionsInfoRequest |  (optional)
 
     try:
         # Retrieve a revision
-        api_response = await api_instance.revisions_info_post(revisions_info_post_request=revisions_info_post_request)
-        print("The response of RevisionsApi->revisions_info_post:\n")
+        api_response = await api_instance.revisions_info(revisions_info_request=revisions_info_request)
+        print("The response of RevisionsApi->revisions_info:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RevisionsApi->revisions_info_post: %s\n" % e)
+        print("Exception when calling RevisionsApi->revisions_info: %s\n" % e)
 ```
 
 
@@ -62,15 +67,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **revisions_info_post_request** | [**RevisionsInfoPostRequest**](RevisionsInfoPostRequest.md)|  | [optional] 
+ **revisions_info_request** | [**RevisionsInfoRequest**](RevisionsInfoRequest.md)|  | [optional] 
 
 ### Return type
 
-[**RevisionsInfoPost200Response**](RevisionsInfoPost200Response.md)
+[**RevisionsInfo200Response**](RevisionsInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -85,22 +90,24 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **revisions_list_post**
-> RevisionsListPost200Response revisions_list_post(documents_viewed_post_request=documents_viewed_post_request)
+# **revisions_list**
+> RevisionsList200Response revisions_list(revisions_list_request=revisions_list_request)
 
 List all revisions
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.documents_viewed_post_request import DocumentsViewedPostRequest
-from outline_openapi.models.revisions_list_post200_response import RevisionsListPost200Response
+from outline_openapi.models.revisions_list200_response import RevisionsList200Response
+from outline_openapi.models.revisions_list_request import RevisionsListRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -115,7 +122,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -124,15 +133,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.RevisionsApi(api_client)
-    documents_viewed_post_request = outline_openapi.DocumentsViewedPostRequest() # DocumentsViewedPostRequest |  (optional)
+    revisions_list_request = outline_openapi.RevisionsListRequest() # RevisionsListRequest |  (optional)
 
     try:
         # List all revisions
-        api_response = await api_instance.revisions_list_post(documents_viewed_post_request=documents_viewed_post_request)
-        print("The response of RevisionsApi->revisions_list_post:\n")
+        api_response = await api_instance.revisions_list(revisions_list_request=revisions_list_request)
+        print("The response of RevisionsApi->revisions_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RevisionsApi->revisions_list_post: %s\n" % e)
+        print("Exception when calling RevisionsApi->revisions_list: %s\n" % e)
 ```
 
 
@@ -142,15 +151,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_viewed_post_request** | [**DocumentsViewedPostRequest**](DocumentsViewedPostRequest.md)|  | [optional] 
+ **revisions_list_request** | [**RevisionsListRequest**](RevisionsListRequest.md)|  | [optional] 
 
 ### Return type
 
-[**RevisionsListPost200Response**](RevisionsListPost200Response.md)
+[**RevisionsList200Response**](RevisionsList200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -164,6 +173,7 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

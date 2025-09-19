@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | Unique identifier for the object this policy references. | [optional] [readonly] 
-**abilities** | [**PolicyAbilities**](PolicyAbilities.md) |  | [optional] 
+**abilities** | [**Dict[str, Ability]**](Ability.md) | The abilities that are allowed by this policy, if an array is returned then the individual ID&#39;s in the array represent the memberships that grant the ability. | [optional] 
 
 ## Example
 

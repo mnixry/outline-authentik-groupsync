@@ -19,8 +19,6 @@ Method | HTTP request | Description
 # **enterprise_license_create**
 > License enterprise_license_create(license_request)
 
-
-
 License Viewset
 
 ### Example
@@ -99,8 +97,6 @@ Name | Type | Description  | Notes
 # **enterprise_license_destroy**
 > enterprise_license_destroy(license_uuid)
 
-
-
 License Viewset
 
 ### Example
@@ -175,8 +171,6 @@ void (empty response body)
 # **enterprise_license_forecast_retrieve**
 > LicenseForecast enterprise_license_forecast_retrieve()
 
-
-
 Forecast how many users will be required in a year
 
 ### Example
@@ -250,8 +244,6 @@ This endpoint does not need any parameter.
 # **enterprise_license_install_id_retrieve**
 > InstallID enterprise_license_install_id_retrieve()
 
-
-
 Get install_id
 
 ### Example
@@ -324,8 +316,6 @@ This endpoint does not need any parameter.
 
 # **enterprise_license_list**
 > PaginatedLicenseList enterprise_license_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 License Viewset
 
@@ -412,8 +402,6 @@ Name | Type | Description  | Notes
 # **enterprise_license_partial_update**
 > License enterprise_license_partial_update(license_uuid, patched_license_request=patched_license_request)
 
-
-
 License Viewset
 
 ### Example
@@ -494,8 +482,6 @@ Name | Type | Description  | Notes
 # **enterprise_license_retrieve**
 > License enterprise_license_retrieve(license_uuid)
 
-
-
 License Viewset
 
 ### Example
@@ -573,8 +559,6 @@ Name | Type | Description  | Notes
 # **enterprise_license_summary_retrieve**
 > LicenseSummary enterprise_license_summary_retrieve(cached=cached)
 
-
-
 Get the total license status
 
 ### Example
@@ -651,8 +635,6 @@ Name | Type | Description  | Notes
 
 # **enterprise_license_update**
 > License enterprise_license_update(license_uuid, license_request)
-
-
 
 License Viewset
 
@@ -733,8 +715,6 @@ Name | Type | Description  | Notes
 
 # **enterprise_license_used_by_list**
 > List[UsedBy] enterprise_license_used_by_list(license_uuid)
-
-
 
 Get a list of all objects that use this object
 

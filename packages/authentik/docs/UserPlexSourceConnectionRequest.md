@@ -1,11 +1,13 @@
 # UserPlexSourceConnectionRequest
 
-Plex Source connection Serializer
+User source connection
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**user** | **int** |  | 
+**source** | **str** |  | 
 **identifier** | **str** |  | 
 **plex_token** | **str** |  | 
 

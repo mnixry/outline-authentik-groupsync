@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **attributes** | **Dict[str, object]** |  | [optional] 
 **roles** | **List[str]** |  | [optional] 
 **roles_obj** | [**List[Role]**](Role.md) |  | [readonly] 
+**children** | **List[str]** |  | [optional] 
+**children_obj** | [**List[GroupChild]**](GroupChild.md) |  | [readonly] 
 
 ## Example
 

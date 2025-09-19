@@ -73,12 +73,17 @@ Method | HTTP request | Description
 [**policies_reputation_scores_used_by_list**](PoliciesApi.md#policies_reputation_scores_used_by_list) | **GET** /policies/reputation/scores/{reputation_uuid}/used_by/ | 
 [**policies_reputation_update**](PoliciesApi.md#policies_reputation_update) | **PUT** /policies/reputation/{policy_uuid}/ | 
 [**policies_reputation_used_by_list**](PoliciesApi.md#policies_reputation_used_by_list) | **GET** /policies/reputation/{policy_uuid}/used_by/ | 
+[**policies_unique_password_create**](PoliciesApi.md#policies_unique_password_create) | **POST** /policies/unique_password/ | 
+[**policies_unique_password_destroy**](PoliciesApi.md#policies_unique_password_destroy) | **DELETE** /policies/unique_password/{policy_uuid}/ | 
+[**policies_unique_password_list**](PoliciesApi.md#policies_unique_password_list) | **GET** /policies/unique_password/ | 
+[**policies_unique_password_partial_update**](PoliciesApi.md#policies_unique_password_partial_update) | **PATCH** /policies/unique_password/{policy_uuid}/ | 
+[**policies_unique_password_retrieve**](PoliciesApi.md#policies_unique_password_retrieve) | **GET** /policies/unique_password/{policy_uuid}/ | 
+[**policies_unique_password_update**](PoliciesApi.md#policies_unique_password_update) | **PUT** /policies/unique_password/{policy_uuid}/ | 
+[**policies_unique_password_used_by_list**](PoliciesApi.md#policies_unique_password_used_by_list) | **GET** /policies/unique_password/{policy_uuid}/used_by/ | 
 
 
 # **policies_all_cache_clear_create**
 > policies_all_cache_clear_create()
-
-
 
 Clear policy cache
 
@@ -149,8 +154,6 @@ void (empty response body)
 
 # **policies_all_cache_info_retrieve**
 > Cache policies_all_cache_info_retrieve()
-
-
 
 Info about cached policies
 
@@ -225,8 +228,6 @@ This endpoint does not need any parameter.
 # **policies_all_destroy**
 > policies_all_destroy(policy_uuid)
 
-
-
 Policy Viewset
 
 ### Example
@@ -300,8 +301,6 @@ void (empty response body)
 
 # **policies_all_list**
 > PaginatedPolicyList policies_all_list(bindings__isnull=bindings__isnull, ordering=ordering, page=page, page_size=page_size, promptstage__isnull=promptstage__isnull, search=search)
-
-
 
 Policy Viewset
 
@@ -390,8 +389,6 @@ Name | Type | Description  | Notes
 # **policies_all_retrieve**
 > Policy policies_all_retrieve(policy_uuid)
 
-
-
 Policy Viewset
 
 ### Example
@@ -468,8 +465,6 @@ Name | Type | Description  | Notes
 
 # **policies_all_test_create**
 > PolicyTestResult policies_all_test_create(policy_uuid, policy_test_request)
-
-
 
 Test policy
 
@@ -551,8 +546,6 @@ Name | Type | Description  | Notes
 # **policies_all_types_list**
 > List[TypeCreate] policies_all_types_list()
 
-
-
 Get all creatable types
 
 ### Example
@@ -625,8 +618,6 @@ This endpoint does not need any parameter.
 
 # **policies_all_used_by_list**
 > List[UsedBy] policies_all_used_by_list(policy_uuid)
-
-
 
 Get a list of all objects that use this object
 
@@ -704,8 +695,6 @@ Name | Type | Description  | Notes
 
 # **policies_bindings_create**
 > PolicyBinding policies_bindings_create(policy_binding_request)
-
-
 
 PolicyBinding Viewset
 
@@ -785,8 +774,6 @@ Name | Type | Description  | Notes
 # **policies_bindings_destroy**
 > policies_bindings_destroy(policy_binding_uuid)
 
-
-
 PolicyBinding Viewset
 
 ### Example
@@ -860,8 +847,6 @@ void (empty response body)
 
 # **policies_bindings_list**
 > PaginatedPolicyBindingList policies_bindings_list(enabled=enabled, order=order, ordering=ordering, page=page, page_size=page_size, policy=policy, policy__isnull=policy__isnull, search=search, target=target, target_in=target_in, timeout=timeout)
-
-
 
 PolicyBinding Viewset
 
@@ -960,8 +945,6 @@ Name | Type | Description  | Notes
 # **policies_bindings_partial_update**
 > PolicyBinding policies_bindings_partial_update(policy_binding_uuid, patched_policy_binding_request=patched_policy_binding_request)
 
-
-
 PolicyBinding Viewset
 
 ### Example
@@ -1042,8 +1025,6 @@ Name | Type | Description  | Notes
 # **policies_bindings_retrieve**
 > PolicyBinding policies_bindings_retrieve(policy_binding_uuid)
 
-
-
 PolicyBinding Viewset
 
 ### Example
@@ -1120,8 +1101,6 @@ Name | Type | Description  | Notes
 
 # **policies_bindings_update**
 > PolicyBinding policies_bindings_update(policy_binding_uuid, policy_binding_request)
-
-
 
 PolicyBinding Viewset
 
@@ -1203,8 +1182,6 @@ Name | Type | Description  | Notes
 # **policies_bindings_used_by_list**
 > List[UsedBy] policies_bindings_used_by_list(policy_binding_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -1281,8 +1258,6 @@ Name | Type | Description  | Notes
 
 # **policies_dummy_create**
 > DummyPolicy policies_dummy_create(dummy_policy_request)
-
-
 
 Dummy Viewset
 
@@ -1362,8 +1337,6 @@ Name | Type | Description  | Notes
 # **policies_dummy_destroy**
 > policies_dummy_destroy(policy_uuid)
 
-
-
 Dummy Viewset
 
 ### Example
@@ -1437,8 +1410,6 @@ void (empty response body)
 
 # **policies_dummy_list**
 > PaginatedDummyPolicyList policies_dummy_list(created=created, execution_logging=execution_logging, last_updated=last_updated, name=name, ordering=ordering, page=page, page_size=page_size, policy_uuid=policy_uuid, result=result, search=search, wait_max=wait_max, wait_min=wait_min)
-
-
 
 Dummy Viewset
 
@@ -1539,8 +1510,6 @@ Name | Type | Description  | Notes
 # **policies_dummy_partial_update**
 > DummyPolicy policies_dummy_partial_update(policy_uuid, patched_dummy_policy_request=patched_dummy_policy_request)
 
-
-
 Dummy Viewset
 
 ### Example
@@ -1621,8 +1590,6 @@ Name | Type | Description  | Notes
 # **policies_dummy_retrieve**
 > DummyPolicy policies_dummy_retrieve(policy_uuid)
 
-
-
 Dummy Viewset
 
 ### Example
@@ -1699,8 +1666,6 @@ Name | Type | Description  | Notes
 
 # **policies_dummy_update**
 > DummyPolicy policies_dummy_update(policy_uuid, dummy_policy_request)
-
-
 
 Dummy Viewset
 
@@ -1782,8 +1747,6 @@ Name | Type | Description  | Notes
 # **policies_dummy_used_by_list**
 > List[UsedBy] policies_dummy_used_by_list(policy_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -1860,8 +1823,6 @@ Name | Type | Description  | Notes
 
 # **policies_event_matcher_create**
 > EventMatcherPolicy policies_event_matcher_create(event_matcher_policy_request)
-
-
 
 Event Matcher Policy Viewset
 
@@ -1941,8 +1902,6 @@ Name | Type | Description  | Notes
 # **policies_event_matcher_destroy**
 > policies_event_matcher_destroy(policy_uuid)
 
-
-
 Event Matcher Policy Viewset
 
 ### Example
@@ -2016,8 +1975,6 @@ void (empty response body)
 
 # **policies_event_matcher_list**
 > PaginatedEventMatcherPolicyList policies_event_matcher_list(action=action, app=app, client_ip=client_ip, created=created, execution_logging=execution_logging, last_updated=last_updated, model=model, name=name, ordering=ordering, page=page, page_size=page_size, policy_uuid=policy_uuid, search=search)
-
-
 
 Event Matcher Policy Viewset
 
@@ -2120,8 +2077,6 @@ Name | Type | Description  | Notes
 # **policies_event_matcher_partial_update**
 > EventMatcherPolicy policies_event_matcher_partial_update(policy_uuid, patched_event_matcher_policy_request=patched_event_matcher_policy_request)
 
-
-
 Event Matcher Policy Viewset
 
 ### Example
@@ -2202,8 +2157,6 @@ Name | Type | Description  | Notes
 # **policies_event_matcher_retrieve**
 > EventMatcherPolicy policies_event_matcher_retrieve(policy_uuid)
 
-
-
 Event Matcher Policy Viewset
 
 ### Example
@@ -2280,8 +2233,6 @@ Name | Type | Description  | Notes
 
 # **policies_event_matcher_update**
 > EventMatcherPolicy policies_event_matcher_update(policy_uuid, event_matcher_policy_request)
-
-
 
 Event Matcher Policy Viewset
 
@@ -2363,8 +2314,6 @@ Name | Type | Description  | Notes
 # **policies_event_matcher_used_by_list**
 > List[UsedBy] policies_event_matcher_used_by_list(policy_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -2441,8 +2390,6 @@ Name | Type | Description  | Notes
 
 # **policies_expression_create**
 > ExpressionPolicy policies_expression_create(expression_policy_request)
-
-
 
 Source Viewset
 
@@ -2522,8 +2469,6 @@ Name | Type | Description  | Notes
 # **policies_expression_destroy**
 > policies_expression_destroy(policy_uuid)
 
-
-
 Source Viewset
 
 ### Example
@@ -2597,8 +2542,6 @@ void (empty response body)
 
 # **policies_expression_list**
 > PaginatedExpressionPolicyList policies_expression_list(created=created, execution_logging=execution_logging, expression=expression, last_updated=last_updated, name=name, ordering=ordering, page=page, page_size=page_size, policy_uuid=policy_uuid, search=search)
-
-
 
 Source Viewset
 
@@ -2695,8 +2638,6 @@ Name | Type | Description  | Notes
 # **policies_expression_partial_update**
 > ExpressionPolicy policies_expression_partial_update(policy_uuid, patched_expression_policy_request=patched_expression_policy_request)
 
-
-
 Source Viewset
 
 ### Example
@@ -2777,8 +2718,6 @@ Name | Type | Description  | Notes
 # **policies_expression_retrieve**
 > ExpressionPolicy policies_expression_retrieve(policy_uuid)
 
-
-
 Source Viewset
 
 ### Example
@@ -2855,8 +2794,6 @@ Name | Type | Description  | Notes
 
 # **policies_expression_update**
 > ExpressionPolicy policies_expression_update(policy_uuid, expression_policy_request)
-
-
 
 Source Viewset
 
@@ -2938,8 +2875,6 @@ Name | Type | Description  | Notes
 # **policies_expression_used_by_list**
 > List[UsedBy] policies_expression_used_by_list(policy_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -3016,8 +2951,6 @@ Name | Type | Description  | Notes
 
 # **policies_geoip_create**
 > GeoIPPolicy policies_geoip_create(geo_ip_policy_request)
-
-
 
 GeoIP Viewset
 
@@ -3097,8 +3030,6 @@ Name | Type | Description  | Notes
 # **policies_geoip_destroy**
 > policies_geoip_destroy(policy_uuid)
 
-
-
 GeoIP Viewset
 
 ### Example
@@ -3173,8 +3104,6 @@ void (empty response body)
 # **policies_geoip_iso3166_list**
 > List[DetailedCountry] policies_geoip_iso3166_list()
 
-
-
 Get all countries in ISO-3166-1
 
 ### Example
@@ -3247,8 +3176,6 @@ This endpoint does not need any parameter.
 
 # **policies_geoip_list**
 > PaginatedGeoIPPolicyList policies_geoip_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 GeoIP Viewset
 
@@ -3335,8 +3262,6 @@ Name | Type | Description  | Notes
 # **policies_geoip_partial_update**
 > GeoIPPolicy policies_geoip_partial_update(policy_uuid, patched_geo_ip_policy_request=patched_geo_ip_policy_request)
 
-
-
 GeoIP Viewset
 
 ### Example
@@ -3417,8 +3342,6 @@ Name | Type | Description  | Notes
 # **policies_geoip_retrieve**
 > GeoIPPolicy policies_geoip_retrieve(policy_uuid)
 
-
-
 GeoIP Viewset
 
 ### Example
@@ -3495,8 +3418,6 @@ Name | Type | Description  | Notes
 
 # **policies_geoip_update**
 > GeoIPPolicy policies_geoip_update(policy_uuid, geo_ip_policy_request)
-
-
 
 GeoIP Viewset
 
@@ -3578,8 +3499,6 @@ Name | Type | Description  | Notes
 # **policies_geoip_used_by_list**
 > List[UsedBy] policies_geoip_used_by_list(policy_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -3656,8 +3575,6 @@ Name | Type | Description  | Notes
 
 # **policies_password_create**
 > PasswordPolicy policies_password_create(password_policy_request)
-
-
 
 Password Policy Viewset
 
@@ -3737,8 +3654,6 @@ Name | Type | Description  | Notes
 # **policies_password_destroy**
 > policies_password_destroy(policy_uuid)
 
-
-
 Password Policy Viewset
 
 ### Example
@@ -3812,8 +3727,6 @@ void (empty response body)
 
 # **policies_password_expiry_create**
 > PasswordExpiryPolicy policies_password_expiry_create(password_expiry_policy_request)
-
-
 
 Password Expiry Viewset
 
@@ -3893,8 +3806,6 @@ Name | Type | Description  | Notes
 # **policies_password_expiry_destroy**
 > policies_password_expiry_destroy(policy_uuid)
 
-
-
 Password Expiry Viewset
 
 ### Example
@@ -3968,8 +3879,6 @@ void (empty response body)
 
 # **policies_password_expiry_list**
 > PaginatedPasswordExpiryPolicyList policies_password_expiry_list(created=created, days=days, deny_only=deny_only, execution_logging=execution_logging, last_updated=last_updated, name=name, ordering=ordering, page=page, page_size=page_size, policy_uuid=policy_uuid, search=search)
-
-
 
 Password Expiry Viewset
 
@@ -4068,8 +3977,6 @@ Name | Type | Description  | Notes
 # **policies_password_expiry_partial_update**
 > PasswordExpiryPolicy policies_password_expiry_partial_update(policy_uuid, patched_password_expiry_policy_request=patched_password_expiry_policy_request)
 
-
-
 Password Expiry Viewset
 
 ### Example
@@ -4150,8 +4057,6 @@ Name | Type | Description  | Notes
 # **policies_password_expiry_retrieve**
 > PasswordExpiryPolicy policies_password_expiry_retrieve(policy_uuid)
 
-
-
 Password Expiry Viewset
 
 ### Example
@@ -4228,8 +4133,6 @@ Name | Type | Description  | Notes
 
 # **policies_password_expiry_update**
 > PasswordExpiryPolicy policies_password_expiry_update(policy_uuid, password_expiry_policy_request)
-
-
 
 Password Expiry Viewset
 
@@ -4311,8 +4214,6 @@ Name | Type | Description  | Notes
 # **policies_password_expiry_used_by_list**
 > List[UsedBy] policies_password_expiry_used_by_list(policy_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -4389,8 +4290,6 @@ Name | Type | Description  | Notes
 
 # **policies_password_list**
 > PaginatedPasswordPolicyList policies_password_list(amount_digits=amount_digits, amount_lowercase=amount_lowercase, amount_symbols=amount_symbols, amount_uppercase=amount_uppercase, check_have_i_been_pwned=check_have_i_been_pwned, check_static_rules=check_static_rules, check_zxcvbn=check_zxcvbn, created=created, error_message=error_message, execution_logging=execution_logging, hibp_allowed_count=hibp_allowed_count, last_updated=last_updated, length_min=length_min, name=name, ordering=ordering, page=page, page_size=page_size, password_field=password_field, policy_uuid=policy_uuid, search=search, symbol_charset=symbol_charset, zxcvbn_score_threshold=zxcvbn_score_threshold)
-
-
 
 Password Policy Viewset
 
@@ -4511,8 +4410,6 @@ Name | Type | Description  | Notes
 # **policies_password_partial_update**
 > PasswordPolicy policies_password_partial_update(policy_uuid, patched_password_policy_request=patched_password_policy_request)
 
-
-
 Password Policy Viewset
 
 ### Example
@@ -4593,8 +4490,6 @@ Name | Type | Description  | Notes
 # **policies_password_retrieve**
 > PasswordPolicy policies_password_retrieve(policy_uuid)
 
-
-
 Password Policy Viewset
 
 ### Example
@@ -4671,8 +4566,6 @@ Name | Type | Description  | Notes
 
 # **policies_password_update**
 > PasswordPolicy policies_password_update(policy_uuid, password_policy_request)
-
-
 
 Password Policy Viewset
 
@@ -4754,8 +4647,6 @@ Name | Type | Description  | Notes
 # **policies_password_used_by_list**
 > List[UsedBy] policies_password_used_by_list(policy_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -4832,8 +4723,6 @@ Name | Type | Description  | Notes
 
 # **policies_reputation_create**
 > ReputationPolicy policies_reputation_create(reputation_policy_request)
-
-
 
 Reputation Policy Viewset
 
@@ -4913,8 +4802,6 @@ Name | Type | Description  | Notes
 # **policies_reputation_destroy**
 > policies_reputation_destroy(policy_uuid)
 
-
-
 Reputation Policy Viewset
 
 ### Example
@@ -4988,8 +4875,6 @@ void (empty response body)
 
 # **policies_reputation_list**
 > PaginatedReputationPolicyList policies_reputation_list(check_ip=check_ip, check_username=check_username, created=created, execution_logging=execution_logging, last_updated=last_updated, name=name, ordering=ordering, page=page, page_size=page_size, policy_uuid=policy_uuid, search=search, threshold=threshold)
-
-
 
 Reputation Policy Viewset
 
@@ -5090,8 +4975,6 @@ Name | Type | Description  | Notes
 # **policies_reputation_partial_update**
 > ReputationPolicy policies_reputation_partial_update(policy_uuid, patched_reputation_policy_request=patched_reputation_policy_request)
 
-
-
 Reputation Policy Viewset
 
 ### Example
@@ -5172,8 +5055,6 @@ Name | Type | Description  | Notes
 # **policies_reputation_retrieve**
 > ReputationPolicy policies_reputation_retrieve(policy_uuid)
 
-
-
 Reputation Policy Viewset
 
 ### Example
@@ -5251,8 +5132,6 @@ Name | Type | Description  | Notes
 # **policies_reputation_scores_destroy**
 > policies_reputation_scores_destroy(reputation_uuid)
 
-
-
 Reputation Viewset
 
 ### Example
@@ -5326,8 +5205,6 @@ void (empty response body)
 
 # **policies_reputation_scores_list**
 > PaginatedReputationList policies_reputation_scores_list(identifier=identifier, identifier_in=identifier_in, ip=ip, ordering=ordering, page=page, page_size=page_size, score=score, search=search)
-
-
 
 Reputation Viewset
 
@@ -5420,8 +5297,6 @@ Name | Type | Description  | Notes
 # **policies_reputation_scores_retrieve**
 > Reputation policies_reputation_scores_retrieve(reputation_uuid)
 
-
-
 Reputation Viewset
 
 ### Example
@@ -5499,8 +5374,6 @@ Name | Type | Description  | Notes
 # **policies_reputation_scores_used_by_list**
 > List[UsedBy] policies_reputation_scores_used_by_list(reputation_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -5577,8 +5450,6 @@ Name | Type | Description  | Notes
 
 # **policies_reputation_update**
 > ReputationPolicy policies_reputation_update(policy_uuid, reputation_policy_request)
-
-
 
 Reputation Policy Viewset
 
@@ -5660,8 +5531,6 @@ Name | Type | Description  | Notes
 # **policies_reputation_used_by_list**
 > List[UsedBy] policies_reputation_used_by_list(policy_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -5712,6 +5581,569 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_uuid** | **str**| A UUID string identifying this Reputation Policy. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policies_unique_password_create**
+> UniquePasswordPolicy policies_unique_password_create(unique_password_policy_request)
+
+Password Uniqueness Policy Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.unique_password_policy import UniquePasswordPolicy
+from authentik_openapi.models.unique_password_policy_request import UniquePasswordPolicyRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PoliciesApi(api_client)
+    unique_password_policy_request = authentik_openapi.UniquePasswordPolicyRequest() # UniquePasswordPolicyRequest | 
+
+    try:
+        api_response = await api_instance.policies_unique_password_create(unique_password_policy_request)
+        print("The response of PoliciesApi->policies_unique_password_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PoliciesApi->policies_unique_password_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unique_password_policy_request** | [**UniquePasswordPolicyRequest**](UniquePasswordPolicyRequest.md)|  | 
+
+### Return type
+
+[**UniquePasswordPolicy**](UniquePasswordPolicy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policies_unique_password_destroy**
+> policies_unique_password_destroy(policy_uuid)
+
+Password Uniqueness Policy Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PoliciesApi(api_client)
+    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Uniqueness Policy.
+
+    try:
+        await api_instance.policies_unique_password_destroy(policy_uuid)
+    except Exception as e:
+        print("Exception when calling PoliciesApi->policies_unique_password_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policy_uuid** | **str**| A UUID string identifying this Password Uniqueness Policy. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policies_unique_password_list**
+> PaginatedUniquePasswordPolicyList policies_unique_password_list(created=created, execution_logging=execution_logging, last_updated=last_updated, name=name, num_historical_passwords=num_historical_passwords, ordering=ordering, page=page, page_size=page_size, password_field=password_field, policy_uuid=policy_uuid, search=search)
+
+Password Uniqueness Policy Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_unique_password_policy_list import PaginatedUniquePasswordPolicyList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PoliciesApi(api_client)
+    created = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    execution_logging = True # bool |  (optional)
+    last_updated = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    name = 'name_example' # str |  (optional)
+    num_historical_passwords = 56 # int |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    password_field = 'password_field_example' # str |  (optional)
+    policy_uuid = 'policy_uuid_example' # str |  (optional)
+    search = 'search_example' # str | A search term. (optional)
+
+    try:
+        api_response = await api_instance.policies_unique_password_list(created=created, execution_logging=execution_logging, last_updated=last_updated, name=name, num_historical_passwords=num_historical_passwords, ordering=ordering, page=page, page_size=page_size, password_field=password_field, policy_uuid=policy_uuid, search=search)
+        print("The response of PoliciesApi->policies_unique_password_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PoliciesApi->policies_unique_password_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **created** | **datetime**|  | [optional] 
+ **execution_logging** | **bool**|  | [optional] 
+ **last_updated** | **datetime**|  | [optional] 
+ **name** | **str**|  | [optional] 
+ **num_historical_passwords** | **int**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **password_field** | **str**|  | [optional] 
+ **policy_uuid** | **str**|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedUniquePasswordPolicyList**](PaginatedUniquePasswordPolicyList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policies_unique_password_partial_update**
+> UniquePasswordPolicy policies_unique_password_partial_update(policy_uuid, patched_unique_password_policy_request=patched_unique_password_policy_request)
+
+Password Uniqueness Policy Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.patched_unique_password_policy_request import PatchedUniquePasswordPolicyRequest
+from authentik_openapi.models.unique_password_policy import UniquePasswordPolicy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PoliciesApi(api_client)
+    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Uniqueness Policy.
+    patched_unique_password_policy_request = authentik_openapi.PatchedUniquePasswordPolicyRequest() # PatchedUniquePasswordPolicyRequest |  (optional)
+
+    try:
+        api_response = await api_instance.policies_unique_password_partial_update(policy_uuid, patched_unique_password_policy_request=patched_unique_password_policy_request)
+        print("The response of PoliciesApi->policies_unique_password_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PoliciesApi->policies_unique_password_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policy_uuid** | **str**| A UUID string identifying this Password Uniqueness Policy. | 
+ **patched_unique_password_policy_request** | [**PatchedUniquePasswordPolicyRequest**](PatchedUniquePasswordPolicyRequest.md)|  | [optional] 
+
+### Return type
+
+[**UniquePasswordPolicy**](UniquePasswordPolicy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policies_unique_password_retrieve**
+> UniquePasswordPolicy policies_unique_password_retrieve(policy_uuid)
+
+Password Uniqueness Policy Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.unique_password_policy import UniquePasswordPolicy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PoliciesApi(api_client)
+    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Uniqueness Policy.
+
+    try:
+        api_response = await api_instance.policies_unique_password_retrieve(policy_uuid)
+        print("The response of PoliciesApi->policies_unique_password_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PoliciesApi->policies_unique_password_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policy_uuid** | **str**| A UUID string identifying this Password Uniqueness Policy. | 
+
+### Return type
+
+[**UniquePasswordPolicy**](UniquePasswordPolicy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policies_unique_password_update**
+> UniquePasswordPolicy policies_unique_password_update(policy_uuid, unique_password_policy_request)
+
+Password Uniqueness Policy Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.unique_password_policy import UniquePasswordPolicy
+from authentik_openapi.models.unique_password_policy_request import UniquePasswordPolicyRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PoliciesApi(api_client)
+    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Uniqueness Policy.
+    unique_password_policy_request = authentik_openapi.UniquePasswordPolicyRequest() # UniquePasswordPolicyRequest | 
+
+    try:
+        api_response = await api_instance.policies_unique_password_update(policy_uuid, unique_password_policy_request)
+        print("The response of PoliciesApi->policies_unique_password_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PoliciesApi->policies_unique_password_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policy_uuid** | **str**| A UUID string identifying this Password Uniqueness Policy. | 
+ **unique_password_policy_request** | [**UniquePasswordPolicyRequest**](UniquePasswordPolicyRequest.md)|  | 
+
+### Return type
+
+[**UniquePasswordPolicy**](UniquePasswordPolicy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policies_unique_password_used_by_list**
+> List[UsedBy] policies_unique_password_used_by_list(policy_uuid)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.used_by import UsedBy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.PoliciesApi(api_client)
+    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Uniqueness Policy.
+
+    try:
+        api_response = await api_instance.policies_unique_password_used_by_list(policy_uuid)
+        print("The response of PoliciesApi->policies_unique_password_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PoliciesApi->policies_unique_password_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policy_uuid** | **str**| A UUID string identifying this Password Uniqueness Policy. | 
 
 ### Return type
 

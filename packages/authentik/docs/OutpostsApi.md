@@ -43,8 +43,6 @@ Method | HTTP request | Description
 # **outposts_instances_create**
 > Outpost outposts_instances_create(outpost_request)
 
-
-
 Outpost Viewset
 
 ### Example
@@ -123,8 +121,6 @@ Name | Type | Description  | Notes
 # **outposts_instances_default_settings_retrieve**
 > OutpostDefaultConfig outposts_instances_default_settings_retrieve()
 
-
-
 Global default outpost config
 
 ### Example
@@ -197,8 +193,6 @@ This endpoint does not need any parameter.
 
 # **outposts_instances_destroy**
 > outposts_instances_destroy(uuid)
-
-
 
 Outpost Viewset
 
@@ -273,8 +267,6 @@ void (empty response body)
 
 # **outposts_instances_health_list**
 > List[OutpostHealth] outposts_instances_health_list(uuid, managed__icontains=managed__icontains, managed__iexact=managed__iexact, name__icontains=name__icontains, name__iexact=name__iexact, ordering=ordering, providers__isnull=providers__isnull, providers_by_pk=providers_by_pk, search=search, service_connection__name__icontains=service_connection__name__icontains, service_connection__name__iexact=service_connection__name__iexact)
-
-
 
 Get outposts current health
 
@@ -372,8 +364,6 @@ Name | Type | Description  | Notes
 
 # **outposts_instances_list**
 > PaginatedOutpostList outposts_instances_list(managed__icontains=managed__icontains, managed__iexact=managed__iexact, name__icontains=name__icontains, name__iexact=name__iexact, ordering=ordering, page=page, page_size=page_size, providers__isnull=providers__isnull, providers_by_pk=providers_by_pk, search=search, service_connection__name__icontains=service_connection__name__icontains, service_connection__name__iexact=service_connection__name__iexact)
-
-
 
 Outpost Viewset
 
@@ -474,8 +464,6 @@ Name | Type | Description  | Notes
 # **outposts_instances_partial_update**
 > Outpost outposts_instances_partial_update(uuid, patched_outpost_request=patched_outpost_request)
 
-
-
 Outpost Viewset
 
 ### Example
@@ -556,8 +544,6 @@ Name | Type | Description  | Notes
 # **outposts_instances_retrieve**
 > Outpost outposts_instances_retrieve(uuid)
 
-
-
 Outpost Viewset
 
 ### Example
@@ -634,8 +620,6 @@ Name | Type | Description  | Notes
 
 # **outposts_instances_update**
 > Outpost outposts_instances_update(uuid, outpost_request)
-
-
 
 Outpost Viewset
 
@@ -717,8 +701,6 @@ Name | Type | Description  | Notes
 # **outposts_instances_used_by_list**
 > List[UsedBy] outposts_instances_used_by_list(uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -795,8 +777,6 @@ Name | Type | Description  | Notes
 
 # **outposts_ldap_access_check**
 > LDAPCheckAccess outposts_ldap_access_check(id, app_slug=app_slug)
-
-
 
 Check access to a single application by slug
 
@@ -876,8 +856,6 @@ Name | Type | Description  | Notes
 
 # **outposts_ldap_list**
 > PaginatedLDAPOutpostConfigList outposts_ldap_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 LDAPProvider Viewset
 
@@ -964,8 +942,6 @@ Name | Type | Description  | Notes
 # **outposts_proxy_list**
 > PaginatedProxyOutpostConfigList outposts_proxy_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
 
-
-
 ProxyProvider Viewset
 
 ### Example
@@ -1051,8 +1027,6 @@ Name | Type | Description  | Notes
 # **outposts_radius_access_check**
 > RadiusCheckAccess outposts_radius_access_check(id, app_slug=app_slug)
 
-
-
 Check access to a single application by slug
 
 ### Example
@@ -1131,8 +1105,6 @@ Name | Type | Description  | Notes
 
 # **outposts_radius_list**
 > PaginatedRadiusOutpostConfigList outposts_radius_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 RadiusProvider Viewset
 
@@ -1219,8 +1191,6 @@ Name | Type | Description  | Notes
 # **outposts_service_connections_all_destroy**
 > outposts_service_connections_all_destroy(uuid)
 
-
-
 ServiceConnection Viewset
 
 ### Example
@@ -1294,8 +1264,6 @@ void (empty response body)
 
 # **outposts_service_connections_all_list**
 > PaginatedServiceConnectionList outposts_service_connections_all_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 ServiceConnection Viewset
 
@@ -1382,8 +1350,6 @@ Name | Type | Description  | Notes
 # **outposts_service_connections_all_retrieve**
 > ServiceConnection outposts_service_connections_all_retrieve(uuid)
 
-
-
 ServiceConnection Viewset
 
 ### Example
@@ -1460,8 +1426,6 @@ Name | Type | Description  | Notes
 
 # **outposts_service_connections_all_state_retrieve**
 > ServiceConnectionState outposts_service_connections_all_state_retrieve(uuid)
-
-
 
 Get the service connection's state
 
@@ -1540,8 +1504,6 @@ Name | Type | Description  | Notes
 # **outposts_service_connections_all_types_list**
 > List[TypeCreate] outposts_service_connections_all_types_list()
 
-
-
 Get all creatable types
 
 ### Example
@@ -1614,8 +1576,6 @@ This endpoint does not need any parameter.
 
 # **outposts_service_connections_all_used_by_list**
 > List[UsedBy] outposts_service_connections_all_used_by_list(uuid)
-
-
 
 Get a list of all objects that use this object
 
@@ -1693,8 +1653,6 @@ Name | Type | Description  | Notes
 
 # **outposts_service_connections_docker_create**
 > DockerServiceConnection outposts_service_connections_docker_create(docker_service_connection_request)
-
-
 
 DockerServiceConnection Viewset
 
@@ -1774,8 +1732,6 @@ Name | Type | Description  | Notes
 # **outposts_service_connections_docker_destroy**
 > outposts_service_connections_docker_destroy(uuid)
 
-
-
 DockerServiceConnection Viewset
 
 ### Example
@@ -1849,8 +1805,6 @@ void (empty response body)
 
 # **outposts_service_connections_docker_list**
 > PaginatedDockerServiceConnectionList outposts_service_connections_docker_list(local=local, name=name, ordering=ordering, page=page, page_size=page_size, search=search, tls_authentication=tls_authentication, tls_verification=tls_verification, url=url)
-
-
 
 DockerServiceConnection Viewset
 
@@ -1945,8 +1899,6 @@ Name | Type | Description  | Notes
 # **outposts_service_connections_docker_partial_update**
 > DockerServiceConnection outposts_service_connections_docker_partial_update(uuid, patched_docker_service_connection_request=patched_docker_service_connection_request)
 
-
-
 DockerServiceConnection Viewset
 
 ### Example
@@ -2027,8 +1979,6 @@ Name | Type | Description  | Notes
 # **outposts_service_connections_docker_retrieve**
 > DockerServiceConnection outposts_service_connections_docker_retrieve(uuid)
 
-
-
 DockerServiceConnection Viewset
 
 ### Example
@@ -2105,8 +2055,6 @@ Name | Type | Description  | Notes
 
 # **outposts_service_connections_docker_update**
 > DockerServiceConnection outposts_service_connections_docker_update(uuid, docker_service_connection_request)
-
-
 
 DockerServiceConnection Viewset
 
@@ -2188,8 +2136,6 @@ Name | Type | Description  | Notes
 # **outposts_service_connections_docker_used_by_list**
 > List[UsedBy] outposts_service_connections_docker_used_by_list(uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -2266,8 +2212,6 @@ Name | Type | Description  | Notes
 
 # **outposts_service_connections_kubernetes_create**
 > KubernetesServiceConnection outposts_service_connections_kubernetes_create(kubernetes_service_connection_request)
-
-
 
 KubernetesServiceConnection Viewset
 
@@ -2347,8 +2291,6 @@ Name | Type | Description  | Notes
 # **outposts_service_connections_kubernetes_destroy**
 > outposts_service_connections_kubernetes_destroy(uuid)
 
-
-
 KubernetesServiceConnection Viewset
 
 ### Example
@@ -2422,8 +2364,6 @@ void (empty response body)
 
 # **outposts_service_connections_kubernetes_list**
 > PaginatedKubernetesServiceConnectionList outposts_service_connections_kubernetes_list(local=local, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 KubernetesServiceConnection Viewset
 
@@ -2512,8 +2452,6 @@ Name | Type | Description  | Notes
 # **outposts_service_connections_kubernetes_partial_update**
 > KubernetesServiceConnection outposts_service_connections_kubernetes_partial_update(uuid, patched_kubernetes_service_connection_request=patched_kubernetes_service_connection_request)
 
-
-
 KubernetesServiceConnection Viewset
 
 ### Example
@@ -2594,8 +2532,6 @@ Name | Type | Description  | Notes
 # **outposts_service_connections_kubernetes_retrieve**
 > KubernetesServiceConnection outposts_service_connections_kubernetes_retrieve(uuid)
 
-
-
 KubernetesServiceConnection Viewset
 
 ### Example
@@ -2672,8 +2608,6 @@ Name | Type | Description  | Notes
 
 # **outposts_service_connections_kubernetes_update**
 > KubernetesServiceConnection outposts_service_connections_kubernetes_update(uuid, kubernetes_service_connection_request)
-
-
 
 KubernetesServiceConnection Viewset
 
@@ -2754,8 +2688,6 @@ Name | Type | Description  | Notes
 
 # **outposts_service_connections_kubernetes_used_by_list**
 > List[UsedBy] outposts_service_connections_kubernetes_used_by_list(uuid)
-
-
 
 Get a list of all objects that use this object
 

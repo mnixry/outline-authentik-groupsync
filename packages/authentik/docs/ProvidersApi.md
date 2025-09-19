@@ -113,12 +113,17 @@ Method | HTTP request | Description
 [**providers_scim_users_list**](ProvidersApi.md#providers_scim_users_list) | **GET** /providers/scim_users/ | 
 [**providers_scim_users_retrieve**](ProvidersApi.md#providers_scim_users_retrieve) | **GET** /providers/scim_users/{id}/ | 
 [**providers_scim_users_used_by_list**](ProvidersApi.md#providers_scim_users_used_by_list) | **GET** /providers/scim_users/{id}/used_by/ | 
+[**providers_ssf_create**](ProvidersApi.md#providers_ssf_create) | **POST** /providers/ssf/ | 
+[**providers_ssf_destroy**](ProvidersApi.md#providers_ssf_destroy) | **DELETE** /providers/ssf/{id}/ | 
+[**providers_ssf_list**](ProvidersApi.md#providers_ssf_list) | **GET** /providers/ssf/ | 
+[**providers_ssf_partial_update**](ProvidersApi.md#providers_ssf_partial_update) | **PATCH** /providers/ssf/{id}/ | 
+[**providers_ssf_retrieve**](ProvidersApi.md#providers_ssf_retrieve) | **GET** /providers/ssf/{id}/ | 
+[**providers_ssf_update**](ProvidersApi.md#providers_ssf_update) | **PUT** /providers/ssf/{id}/ | 
+[**providers_ssf_used_by_list**](ProvidersApi.md#providers_ssf_used_by_list) | **GET** /providers/ssf/{id}/used_by/ | 
 
 
 # **providers_all_destroy**
 > providers_all_destroy(id)
-
-
 
 Provider Viewset
 
@@ -193,8 +198,6 @@ void (empty response body)
 
 # **providers_all_list**
 > PaginatedProviderList providers_all_list(application__isnull=application__isnull, backchannel=backchannel, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 Provider Viewset
 
@@ -283,8 +286,6 @@ Name | Type | Description  | Notes
 # **providers_all_retrieve**
 > Provider providers_all_retrieve(id)
 
-
-
 Provider Viewset
 
 ### Example
@@ -362,8 +363,6 @@ Name | Type | Description  | Notes
 # **providers_all_types_list**
 > List[TypeCreate] providers_all_types_list()
 
-
-
 Get all creatable types
 
 ### Example
@@ -436,8 +435,6 @@ This endpoint does not need any parameter.
 
 # **providers_all_used_by_list**
 > List[UsedBy] providers_all_used_by_list(id)
-
-
 
 Get a list of all objects that use this object
 
@@ -515,8 +512,6 @@ Name | Type | Description  | Notes
 
 # **providers_google_workspace_create**
 > GoogleWorkspaceProvider providers_google_workspace_create(google_workspace_provider_request)
-
-
 
 GoogleWorkspaceProvider Viewset
 
@@ -596,8 +591,6 @@ Name | Type | Description  | Notes
 # **providers_google_workspace_destroy**
 > providers_google_workspace_destroy(id)
 
-
-
 GoogleWorkspaceProvider Viewset
 
 ### Example
@@ -671,8 +664,6 @@ void (empty response body)
 
 # **providers_google_workspace_groups_create**
 > GoogleWorkspaceProviderGroup providers_google_workspace_groups_create(google_workspace_provider_group_request)
-
-
 
 GoogleWorkspaceProviderGroup Viewset
 
@@ -752,8 +743,6 @@ Name | Type | Description  | Notes
 # **providers_google_workspace_groups_destroy**
 > providers_google_workspace_groups_destroy(id)
 
-
-
 GoogleWorkspaceProviderGroup Viewset
 
 ### Example
@@ -827,8 +816,6 @@ void (empty response body)
 
 # **providers_google_workspace_groups_list**
 > PaginatedGoogleWorkspaceProviderGroupList providers_google_workspace_groups_list(group__group_uuid=group__group_uuid, group__name=group__name, ordering=ordering, page=page, page_size=page_size, provider__id=provider__id, search=search)
-
-
 
 GoogleWorkspaceProviderGroup Viewset
 
@@ -919,8 +906,6 @@ Name | Type | Description  | Notes
 # **providers_google_workspace_groups_retrieve**
 > GoogleWorkspaceProviderGroup providers_google_workspace_groups_retrieve(id)
 
-
-
 GoogleWorkspaceProviderGroup Viewset
 
 ### Example
@@ -998,8 +983,6 @@ Name | Type | Description  | Notes
 # **providers_google_workspace_groups_used_by_list**
 > List[UsedBy] providers_google_workspace_groups_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -1076,8 +1059,6 @@ Name | Type | Description  | Notes
 
 # **providers_google_workspace_list**
 > PaginatedGoogleWorkspaceProviderList providers_google_workspace_list(delegated_subject=delegated_subject, exclude_users_service_account=exclude_users_service_account, filter_group=filter_group, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 GoogleWorkspaceProvider Viewset
 
@@ -1170,8 +1151,6 @@ Name | Type | Description  | Notes
 # **providers_google_workspace_partial_update**
 > GoogleWorkspaceProvider providers_google_workspace_partial_update(id, patched_google_workspace_provider_request=patched_google_workspace_provider_request)
 
-
-
 GoogleWorkspaceProvider Viewset
 
 ### Example
@@ -1252,8 +1231,6 @@ Name | Type | Description  | Notes
 # **providers_google_workspace_retrieve**
 > GoogleWorkspaceProvider providers_google_workspace_retrieve(id)
 
-
-
 GoogleWorkspaceProvider Viewset
 
 ### Example
@@ -1330,8 +1307,6 @@ Name | Type | Description  | Notes
 
 # **providers_google_workspace_sync_object_create**
 > SyncObjectResult providers_google_workspace_sync_object_create(id, sync_object_request)
-
-
 
 Sync/Re-sync a single user/group object
 
@@ -1413,8 +1388,6 @@ Name | Type | Description  | Notes
 # **providers_google_workspace_sync_status_retrieve**
 > SyncStatus providers_google_workspace_sync_status_retrieve(id)
 
-
-
 Get provider's sync status
 
 ### Example
@@ -1484,7 +1457,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
-**404** | Task not found |  -  |
 **400** |  |  -  |
 **403** |  |  -  |
 
@@ -1492,8 +1464,6 @@ Name | Type | Description  | Notes
 
 # **providers_google_workspace_update**
 > GoogleWorkspaceProvider providers_google_workspace_update(id, google_workspace_provider_request)
-
-
 
 GoogleWorkspaceProvider Viewset
 
@@ -1575,8 +1545,6 @@ Name | Type | Description  | Notes
 # **providers_google_workspace_used_by_list**
 > List[UsedBy] providers_google_workspace_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -1653,8 +1621,6 @@ Name | Type | Description  | Notes
 
 # **providers_google_workspace_users_create**
 > GoogleWorkspaceProviderUser providers_google_workspace_users_create(google_workspace_provider_user_request)
-
-
 
 GoogleWorkspaceProviderUser Viewset
 
@@ -1734,8 +1700,6 @@ Name | Type | Description  | Notes
 # **providers_google_workspace_users_destroy**
 > providers_google_workspace_users_destroy(id)
 
-
-
 GoogleWorkspaceProviderUser Viewset
 
 ### Example
@@ -1809,8 +1773,6 @@ void (empty response body)
 
 # **providers_google_workspace_users_list**
 > PaginatedGoogleWorkspaceProviderUserList providers_google_workspace_users_list(ordering=ordering, page=page, page_size=page_size, provider__id=provider__id, search=search, user__id=user__id, user__username=user__username)
-
-
 
 GoogleWorkspaceProviderUser Viewset
 
@@ -1901,8 +1863,6 @@ Name | Type | Description  | Notes
 # **providers_google_workspace_users_retrieve**
 > GoogleWorkspaceProviderUser providers_google_workspace_users_retrieve(id)
 
-
-
 GoogleWorkspaceProviderUser Viewset
 
 ### Example
@@ -1980,8 +1940,6 @@ Name | Type | Description  | Notes
 # **providers_google_workspace_users_used_by_list**
 > List[UsedBy] providers_google_workspace_users_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -2058,8 +2016,6 @@ Name | Type | Description  | Notes
 
 # **providers_ldap_create**
 > LDAPProvider providers_ldap_create(ldap_provider_request)
-
-
 
 LDAPProvider Viewset
 
@@ -2139,8 +2095,6 @@ Name | Type | Description  | Notes
 # **providers_ldap_destroy**
 > providers_ldap_destroy(id)
 
-
-
 LDAPProvider Viewset
 
 ### Example
@@ -2214,8 +2168,6 @@ void (empty response body)
 
 # **providers_ldap_list**
 > PaginatedLDAPProviderList providers_ldap_list(application__isnull=application__isnull, authorization_flow__slug__iexact=authorization_flow__slug__iexact, base_dn__iexact=base_dn__iexact, certificate__kp_uuid__iexact=certificate__kp_uuid__iexact, certificate__name__iexact=certificate__name__iexact, gid_start_number__iexact=gid_start_number__iexact, name__iexact=name__iexact, ordering=ordering, page=page, page_size=page_size, search=search, tls_server_name__iexact=tls_server_name__iexact, uid_start_number__iexact=uid_start_number__iexact)
-
-
 
 LDAPProvider Viewset
 
@@ -2318,8 +2270,6 @@ Name | Type | Description  | Notes
 # **providers_ldap_partial_update**
 > LDAPProvider providers_ldap_partial_update(id, patched_ldap_provider_request=patched_ldap_provider_request)
 
-
-
 LDAPProvider Viewset
 
 ### Example
@@ -2400,8 +2350,6 @@ Name | Type | Description  | Notes
 # **providers_ldap_retrieve**
 > LDAPProvider providers_ldap_retrieve(id)
 
-
-
 LDAPProvider Viewset
 
 ### Example
@@ -2478,8 +2426,6 @@ Name | Type | Description  | Notes
 
 # **providers_ldap_update**
 > LDAPProvider providers_ldap_update(id, ldap_provider_request)
-
-
 
 LDAPProvider Viewset
 
@@ -2561,8 +2507,6 @@ Name | Type | Description  | Notes
 # **providers_ldap_used_by_list**
 > List[UsedBy] providers_ldap_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -2639,8 +2583,6 @@ Name | Type | Description  | Notes
 
 # **providers_microsoft_entra_create**
 > MicrosoftEntraProvider providers_microsoft_entra_create(microsoft_entra_provider_request)
-
-
 
 MicrosoftEntraProvider Viewset
 
@@ -2720,8 +2662,6 @@ Name | Type | Description  | Notes
 # **providers_microsoft_entra_destroy**
 > providers_microsoft_entra_destroy(id)
 
-
-
 MicrosoftEntraProvider Viewset
 
 ### Example
@@ -2795,8 +2735,6 @@ void (empty response body)
 
 # **providers_microsoft_entra_groups_create**
 > MicrosoftEntraProviderGroup providers_microsoft_entra_groups_create(microsoft_entra_provider_group_request)
-
-
 
 MicrosoftEntraProviderGroup Viewset
 
@@ -2876,8 +2814,6 @@ Name | Type | Description  | Notes
 # **providers_microsoft_entra_groups_destroy**
 > providers_microsoft_entra_groups_destroy(id)
 
-
-
 MicrosoftEntraProviderGroup Viewset
 
 ### Example
@@ -2951,8 +2887,6 @@ void (empty response body)
 
 # **providers_microsoft_entra_groups_list**
 > PaginatedMicrosoftEntraProviderGroupList providers_microsoft_entra_groups_list(group__group_uuid=group__group_uuid, group__name=group__name, ordering=ordering, page=page, page_size=page_size, provider__id=provider__id, search=search)
-
-
 
 MicrosoftEntraProviderGroup Viewset
 
@@ -3043,8 +2977,6 @@ Name | Type | Description  | Notes
 # **providers_microsoft_entra_groups_retrieve**
 > MicrosoftEntraProviderGroup providers_microsoft_entra_groups_retrieve(id)
 
-
-
 MicrosoftEntraProviderGroup Viewset
 
 ### Example
@@ -3122,8 +3054,6 @@ Name | Type | Description  | Notes
 # **providers_microsoft_entra_groups_used_by_list**
 > List[UsedBy] providers_microsoft_entra_groups_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -3200,8 +3130,6 @@ Name | Type | Description  | Notes
 
 # **providers_microsoft_entra_list**
 > PaginatedMicrosoftEntraProviderList providers_microsoft_entra_list(exclude_users_service_account=exclude_users_service_account, filter_group=filter_group, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 MicrosoftEntraProvider Viewset
 
@@ -3292,8 +3220,6 @@ Name | Type | Description  | Notes
 # **providers_microsoft_entra_partial_update**
 > MicrosoftEntraProvider providers_microsoft_entra_partial_update(id, patched_microsoft_entra_provider_request=patched_microsoft_entra_provider_request)
 
-
-
 MicrosoftEntraProvider Viewset
 
 ### Example
@@ -3374,8 +3300,6 @@ Name | Type | Description  | Notes
 # **providers_microsoft_entra_retrieve**
 > MicrosoftEntraProvider providers_microsoft_entra_retrieve(id)
 
-
-
 MicrosoftEntraProvider Viewset
 
 ### Example
@@ -3452,8 +3376,6 @@ Name | Type | Description  | Notes
 
 # **providers_microsoft_entra_sync_object_create**
 > SyncObjectResult providers_microsoft_entra_sync_object_create(id, sync_object_request)
-
-
 
 Sync/Re-sync a single user/group object
 
@@ -3535,8 +3457,6 @@ Name | Type | Description  | Notes
 # **providers_microsoft_entra_sync_status_retrieve**
 > SyncStatus providers_microsoft_entra_sync_status_retrieve(id)
 
-
-
 Get provider's sync status
 
 ### Example
@@ -3606,7 +3526,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
-**404** | Task not found |  -  |
 **400** |  |  -  |
 **403** |  |  -  |
 
@@ -3614,8 +3533,6 @@ Name | Type | Description  | Notes
 
 # **providers_microsoft_entra_update**
 > MicrosoftEntraProvider providers_microsoft_entra_update(id, microsoft_entra_provider_request)
-
-
 
 MicrosoftEntraProvider Viewset
 
@@ -3697,8 +3614,6 @@ Name | Type | Description  | Notes
 # **providers_microsoft_entra_used_by_list**
 > List[UsedBy] providers_microsoft_entra_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -3775,8 +3690,6 @@ Name | Type | Description  | Notes
 
 # **providers_microsoft_entra_users_create**
 > MicrosoftEntraProviderUser providers_microsoft_entra_users_create(microsoft_entra_provider_user_request)
-
-
 
 MicrosoftEntraProviderUser Viewset
 
@@ -3856,8 +3769,6 @@ Name | Type | Description  | Notes
 # **providers_microsoft_entra_users_destroy**
 > providers_microsoft_entra_users_destroy(id)
 
-
-
 MicrosoftEntraProviderUser Viewset
 
 ### Example
@@ -3931,8 +3842,6 @@ void (empty response body)
 
 # **providers_microsoft_entra_users_list**
 > PaginatedMicrosoftEntraProviderUserList providers_microsoft_entra_users_list(ordering=ordering, page=page, page_size=page_size, provider__id=provider__id, search=search, user__id=user__id, user__username=user__username)
-
-
 
 MicrosoftEntraProviderUser Viewset
 
@@ -4023,8 +3932,6 @@ Name | Type | Description  | Notes
 # **providers_microsoft_entra_users_retrieve**
 > MicrosoftEntraProviderUser providers_microsoft_entra_users_retrieve(id)
 
-
-
 MicrosoftEntraProviderUser Viewset
 
 ### Example
@@ -4102,8 +4009,6 @@ Name | Type | Description  | Notes
 # **providers_microsoft_entra_users_used_by_list**
 > List[UsedBy] providers_microsoft_entra_users_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -4180,8 +4085,6 @@ Name | Type | Description  | Notes
 
 # **providers_oauth2_create**
 > OAuth2Provider providers_oauth2_create(o_auth2_provider_request)
-
-
 
 OAuth2Provider Viewset
 
@@ -4261,8 +4164,6 @@ Name | Type | Description  | Notes
 # **providers_oauth2_destroy**
 > providers_oauth2_destroy(id)
 
-
-
 OAuth2Provider Viewset
 
 ### Example
@@ -4335,9 +4236,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **providers_oauth2_list**
-> PaginatedOAuth2ProviderList providers_oauth2_list(access_code_validity=access_code_validity, access_token_validity=access_token_validity, application=application, authorization_flow=authorization_flow, client_id=client_id, client_type=client_type, include_claims_in_id_token=include_claims_in_id_token, issuer_mode=issuer_mode, name=name, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, redirect_uris=redirect_uris, refresh_token_validity=refresh_token_validity, search=search, signing_key=signing_key, sub_mode=sub_mode)
-
-
+> PaginatedOAuth2ProviderList providers_oauth2_list(access_code_validity=access_code_validity, access_token_validity=access_token_validity, application=application, authorization_flow=authorization_flow, client_id=client_id, client_type=client_type, include_claims_in_id_token=include_claims_in_id_token, issuer_mode=issuer_mode, name=name, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, refresh_token_validity=refresh_token_validity, search=search, signing_key=signing_key, sub_mode=sub_mode)
 
 OAuth2Provider Viewset
 
@@ -4384,14 +4283,13 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     property_mappings = ['property_mappings_example'] # List[str] |  (optional)
-    redirect_uris = 'redirect_uris_example' # str |  (optional)
     refresh_token_validity = 'refresh_token_validity_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
     signing_key = 'signing_key_example' # str |  (optional)
     sub_mode = 'sub_mode_example' # str | Configure what data should be used as unique User Identifier. For most cases, the default should be fine.   (optional)
 
     try:
-        api_response = await api_instance.providers_oauth2_list(access_code_validity=access_code_validity, access_token_validity=access_token_validity, application=application, authorization_flow=authorization_flow, client_id=client_id, client_type=client_type, include_claims_in_id_token=include_claims_in_id_token, issuer_mode=issuer_mode, name=name, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, redirect_uris=redirect_uris, refresh_token_validity=refresh_token_validity, search=search, signing_key=signing_key, sub_mode=sub_mode)
+        api_response = await api_instance.providers_oauth2_list(access_code_validity=access_code_validity, access_token_validity=access_token_validity, application=application, authorization_flow=authorization_flow, client_id=client_id, client_type=client_type, include_claims_in_id_token=include_claims_in_id_token, issuer_mode=issuer_mode, name=name, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, refresh_token_validity=refresh_token_validity, search=search, signing_key=signing_key, sub_mode=sub_mode)
         print("The response of ProvidersApi->providers_oauth2_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -4418,7 +4316,6 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **property_mappings** | [**List[str]**](str.md)|  | [optional] 
- **redirect_uris** | **str**|  | [optional] 
  **refresh_token_validity** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **signing_key** | **str**|  | [optional] 
@@ -4449,8 +4346,6 @@ Name | Type | Description  | Notes
 
 # **providers_oauth2_partial_update**
 > OAuth2Provider providers_oauth2_partial_update(id, patched_o_auth2_provider_request=patched_o_auth2_provider_request)
-
-
 
 OAuth2Provider Viewset
 
@@ -4532,8 +4427,6 @@ Name | Type | Description  | Notes
 # **providers_oauth2_preview_user_retrieve**
 > PropertyMappingPreview providers_oauth2_preview_user_retrieve(id, for_user=for_user)
 
-
-
 Preview user data for provider
 
 ### Example
@@ -4613,8 +4506,6 @@ Name | Type | Description  | Notes
 # **providers_oauth2_retrieve**
 > OAuth2Provider providers_oauth2_retrieve(id)
 
-
-
 OAuth2Provider Viewset
 
 ### Example
@@ -4691,8 +4582,6 @@ Name | Type | Description  | Notes
 
 # **providers_oauth2_setup_urls_retrieve**
 > OAuth2ProviderSetupURLs providers_oauth2_setup_urls_retrieve(id)
-
-
 
 Get Providers setup URLs
 
@@ -4771,8 +4660,6 @@ Name | Type | Description  | Notes
 
 # **providers_oauth2_update**
 > OAuth2Provider providers_oauth2_update(id, o_auth2_provider_request)
-
-
 
 OAuth2Provider Viewset
 
@@ -4854,8 +4741,6 @@ Name | Type | Description  | Notes
 # **providers_oauth2_used_by_list**
 > List[UsedBy] providers_oauth2_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -4932,8 +4817,6 @@ Name | Type | Description  | Notes
 
 # **providers_proxy_create**
 > ProxyProvider providers_proxy_create(proxy_provider_request)
-
-
 
 ProxyProvider Viewset
 
@@ -5013,8 +4896,6 @@ Name | Type | Description  | Notes
 # **providers_proxy_destroy**
 > providers_proxy_destroy(id)
 
-
-
 ProxyProvider Viewset
 
 ### Example
@@ -5087,9 +4968,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **providers_proxy_list**
-> PaginatedProxyProviderList providers_proxy_list(application__isnull=application__isnull, authorization_flow__slug__iexact=authorization_flow__slug__iexact, basic_auth_enabled__iexact=basic_auth_enabled__iexact, basic_auth_password_attribute__iexact=basic_auth_password_attribute__iexact, basic_auth_user_attribute__iexact=basic_auth_user_attribute__iexact, certificate__kp_uuid__iexact=certificate__kp_uuid__iexact, certificate__name__iexact=certificate__name__iexact, cookie_domain__iexact=cookie_domain__iexact, external_host__iexact=external_host__iexact, internal_host__iexact=internal_host__iexact, internal_host_ssl_validation__iexact=internal_host_ssl_validation__iexact, mode__iexact=mode__iexact, name__iexact=name__iexact, ordering=ordering, page=page, page_size=page_size, property_mappings__iexact=property_mappings__iexact, redirect_uris__iexact=redirect_uris__iexact, search=search, skip_path_regex__iexact=skip_path_regex__iexact)
-
-
+> PaginatedProxyProviderList providers_proxy_list(application__isnull=application__isnull, authorization_flow__slug__iexact=authorization_flow__slug__iexact, basic_auth_enabled__iexact=basic_auth_enabled__iexact, basic_auth_password_attribute__iexact=basic_auth_password_attribute__iexact, basic_auth_user_attribute__iexact=basic_auth_user_attribute__iexact, certificate__kp_uuid__iexact=certificate__kp_uuid__iexact, certificate__name__iexact=certificate__name__iexact, cookie_domain__iexact=cookie_domain__iexact, external_host__iexact=external_host__iexact, internal_host__iexact=internal_host__iexact, internal_host_ssl_validation__iexact=internal_host_ssl_validation__iexact, mode__iexact=mode__iexact, name__iexact=name__iexact, ordering=ordering, page=page, page_size=page_size, property_mappings__iexact=property_mappings__iexact, search=search, skip_path_regex__iexact=skip_path_regex__iexact)
 
 ProxyProvider Viewset
 
@@ -5140,12 +5019,11 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     property_mappings__iexact = ['property_mappings__iexact_example'] # List[str] |  (optional)
-    redirect_uris__iexact = 'redirect_uris__iexact_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
     skip_path_regex__iexact = 'skip_path_regex__iexact_example' # str |  (optional)
 
     try:
-        api_response = await api_instance.providers_proxy_list(application__isnull=application__isnull, authorization_flow__slug__iexact=authorization_flow__slug__iexact, basic_auth_enabled__iexact=basic_auth_enabled__iexact, basic_auth_password_attribute__iexact=basic_auth_password_attribute__iexact, basic_auth_user_attribute__iexact=basic_auth_user_attribute__iexact, certificate__kp_uuid__iexact=certificate__kp_uuid__iexact, certificate__name__iexact=certificate__name__iexact, cookie_domain__iexact=cookie_domain__iexact, external_host__iexact=external_host__iexact, internal_host__iexact=internal_host__iexact, internal_host_ssl_validation__iexact=internal_host_ssl_validation__iexact, mode__iexact=mode__iexact, name__iexact=name__iexact, ordering=ordering, page=page, page_size=page_size, property_mappings__iexact=property_mappings__iexact, redirect_uris__iexact=redirect_uris__iexact, search=search, skip_path_regex__iexact=skip_path_regex__iexact)
+        api_response = await api_instance.providers_proxy_list(application__isnull=application__isnull, authorization_flow__slug__iexact=authorization_flow__slug__iexact, basic_auth_enabled__iexact=basic_auth_enabled__iexact, basic_auth_password_attribute__iexact=basic_auth_password_attribute__iexact, basic_auth_user_attribute__iexact=basic_auth_user_attribute__iexact, certificate__kp_uuid__iexact=certificate__kp_uuid__iexact, certificate__name__iexact=certificate__name__iexact, cookie_domain__iexact=cookie_domain__iexact, external_host__iexact=external_host__iexact, internal_host__iexact=internal_host__iexact, internal_host_ssl_validation__iexact=internal_host_ssl_validation__iexact, mode__iexact=mode__iexact, name__iexact=name__iexact, ordering=ordering, page=page, page_size=page_size, property_mappings__iexact=property_mappings__iexact, search=search, skip_path_regex__iexact=skip_path_regex__iexact)
         print("The response of ProvidersApi->providers_proxy_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -5176,7 +5054,6 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **property_mappings__iexact** | [**List[str]**](str.md)|  | [optional] 
- **redirect_uris__iexact** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **skip_path_regex__iexact** | **str**|  | [optional] 
 
@@ -5205,8 +5082,6 @@ Name | Type | Description  | Notes
 
 # **providers_proxy_partial_update**
 > ProxyProvider providers_proxy_partial_update(id, patched_proxy_provider_request=patched_proxy_provider_request)
-
-
 
 ProxyProvider Viewset
 
@@ -5288,8 +5163,6 @@ Name | Type | Description  | Notes
 # **providers_proxy_retrieve**
 > ProxyProvider providers_proxy_retrieve(id)
 
-
-
 ProxyProvider Viewset
 
 ### Example
@@ -5366,8 +5239,6 @@ Name | Type | Description  | Notes
 
 # **providers_proxy_update**
 > ProxyProvider providers_proxy_update(id, proxy_provider_request)
-
-
 
 ProxyProvider Viewset
 
@@ -5449,8 +5320,6 @@ Name | Type | Description  | Notes
 # **providers_proxy_used_by_list**
 > List[UsedBy] providers_proxy_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -5527,8 +5396,6 @@ Name | Type | Description  | Notes
 
 # **providers_rac_create**
 > RACProvider providers_rac_create(rac_provider_request)
-
-
 
 RACProvider Viewset
 
@@ -5608,8 +5475,6 @@ Name | Type | Description  | Notes
 # **providers_rac_destroy**
 > providers_rac_destroy(id)
 
-
-
 RACProvider Viewset
 
 ### Example
@@ -5683,8 +5548,6 @@ void (empty response body)
 
 # **providers_rac_list**
 > PaginatedRACProviderList providers_rac_list(application__isnull=application__isnull, name__iexact=name__iexact, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 RACProvider Viewset
 
@@ -5773,8 +5636,6 @@ Name | Type | Description  | Notes
 # **providers_rac_partial_update**
 > RACProvider providers_rac_partial_update(id, patched_rac_provider_request=patched_rac_provider_request)
 
-
-
 RACProvider Viewset
 
 ### Example
@@ -5855,8 +5716,6 @@ Name | Type | Description  | Notes
 # **providers_rac_retrieve**
 > RACProvider providers_rac_retrieve(id)
 
-
-
 RACProvider Viewset
 
 ### Example
@@ -5933,8 +5792,6 @@ Name | Type | Description  | Notes
 
 # **providers_rac_update**
 > RACProvider providers_rac_update(id, rac_provider_request)
-
-
 
 RACProvider Viewset
 
@@ -6016,8 +5873,6 @@ Name | Type | Description  | Notes
 # **providers_rac_used_by_list**
 > List[UsedBy] providers_rac_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -6094,8 +5949,6 @@ Name | Type | Description  | Notes
 
 # **providers_radius_create**
 > RadiusProvider providers_radius_create(radius_provider_request)
-
-
 
 RadiusProvider Viewset
 
@@ -6175,8 +6028,6 @@ Name | Type | Description  | Notes
 # **providers_radius_destroy**
 > providers_radius_destroy(id)
 
-
-
 RadiusProvider Viewset
 
 ### Example
@@ -6250,8 +6101,6 @@ void (empty response body)
 
 # **providers_radius_list**
 > PaginatedRadiusProviderList providers_radius_list(application__isnull=application__isnull, authorization_flow__slug__iexact=authorization_flow__slug__iexact, client_networks__iexact=client_networks__iexact, name__iexact=name__iexact, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 RadiusProvider Viewset
 
@@ -6344,8 +6193,6 @@ Name | Type | Description  | Notes
 # **providers_radius_partial_update**
 > RadiusProvider providers_radius_partial_update(id, patched_radius_provider_request=patched_radius_provider_request)
 
-
-
 RadiusProvider Viewset
 
 ### Example
@@ -6426,8 +6273,6 @@ Name | Type | Description  | Notes
 # **providers_radius_retrieve**
 > RadiusProvider providers_radius_retrieve(id)
 
-
-
 RadiusProvider Viewset
 
 ### Example
@@ -6504,8 +6349,6 @@ Name | Type | Description  | Notes
 
 # **providers_radius_update**
 > RadiusProvider providers_radius_update(id, radius_provider_request)
-
-
 
 RadiusProvider Viewset
 
@@ -6587,8 +6430,6 @@ Name | Type | Description  | Notes
 # **providers_radius_used_by_list**
 > List[UsedBy] providers_radius_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -6665,8 +6506,6 @@ Name | Type | Description  | Notes
 
 # **providers_saml_create**
 > SAMLProvider providers_saml_create(saml_provider_request)
-
-
 
 SAMLProvider Viewset
 
@@ -6746,8 +6585,6 @@ Name | Type | Description  | Notes
 # **providers_saml_destroy**
 > providers_saml_destroy(id)
 
-
-
 SAMLProvider Viewset
 
 ### Example
@@ -6821,8 +6658,6 @@ void (empty response body)
 
 # **providers_saml_import_metadata_create**
 > providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
-
-
 
 Create provider from SAML Metadata
 
@@ -6902,9 +6737,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **providers_saml_list**
-> PaginatedSAMLProviderList providers_saml_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sp_binding=sp_binding, verification_kp=verification_kp)
-
-
+> PaginatedSAMLProviderList providers_saml_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authn_context_class_ref_mapping=authn_context_class_ref_mapping, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_name_id_policy=default_name_id_policy, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sp_binding=sp_binding, verification_kp=verification_kp)
 
 SAMLProvider Viewset
 
@@ -6943,8 +6776,10 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     assertion_valid_not_on_or_after = 'assertion_valid_not_on_or_after_example' # str |  (optional)
     audience = 'audience_example' # str |  (optional)
     authentication_flow = 'authentication_flow_example' # str |  (optional)
+    authn_context_class_ref_mapping = 'authn_context_class_ref_mapping_example' # str |  (optional)
     authorization_flow = 'authorization_flow_example' # str |  (optional)
     backchannel_application = 'backchannel_application_example' # str |  (optional)
+    default_name_id_policy = 'default_name_id_policy_example' # str |  (optional)
     default_relay_state = 'default_relay_state_example' # str |  (optional)
     digest_algorithm = 'digest_algorithm_example' # str |  (optional)
     encryption_kp = 'encryption_kp_example' # str |  (optional)
@@ -6967,7 +6802,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     verification_kp = 'verification_kp_example' # str |  (optional)
 
     try:
-        api_response = await api_instance.providers_saml_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sp_binding=sp_binding, verification_kp=verification_kp)
+        api_response = await api_instance.providers_saml_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authn_context_class_ref_mapping=authn_context_class_ref_mapping, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_name_id_policy=default_name_id_policy, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sp_binding=sp_binding, verification_kp=verification_kp)
         print("The response of ProvidersApi->providers_saml_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -6986,8 +6821,10 @@ Name | Type | Description  | Notes
  **assertion_valid_not_on_or_after** | **str**|  | [optional] 
  **audience** | **str**|  | [optional] 
  **authentication_flow** | **str**|  | [optional] 
+ **authn_context_class_ref_mapping** | **str**|  | [optional] 
  **authorization_flow** | **str**|  | [optional] 
  **backchannel_application** | **str**|  | [optional] 
+ **default_name_id_policy** | **str**|  | [optional] 
  **default_relay_state** | **str**|  | [optional] 
  **digest_algorithm** | **str**|  | [optional] 
  **encryption_kp** | **str**|  | [optional] 
@@ -7034,8 +6871,6 @@ Name | Type | Description  | Notes
 
 # **providers_saml_metadata_retrieve**
 > SAMLMetadata providers_saml_metadata_retrieve(id, download=download, force_binding=force_binding)
-
-
 
 Return metadata as XML string
 
@@ -7103,7 +6938,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/xml
 
 ### HTTP response details
 
@@ -7118,8 +6953,6 @@ Name | Type | Description  | Notes
 
 # **providers_saml_partial_update**
 > SAMLProvider providers_saml_partial_update(id, patched_saml_provider_request=patched_saml_provider_request)
-
-
 
 SAMLProvider Viewset
 
@@ -7201,8 +7034,6 @@ Name | Type | Description  | Notes
 # **providers_saml_preview_user_retrieve**
 > PropertyMappingPreview providers_saml_preview_user_retrieve(id, for_user=for_user)
 
-
-
 Preview user data for provider
 
 ### Example
@@ -7282,8 +7113,6 @@ Name | Type | Description  | Notes
 # **providers_saml_retrieve**
 > SAMLProvider providers_saml_retrieve(id)
 
-
-
 SAMLProvider Viewset
 
 ### Example
@@ -7360,8 +7189,6 @@ Name | Type | Description  | Notes
 
 # **providers_saml_update**
 > SAMLProvider providers_saml_update(id, saml_provider_request)
-
-
 
 SAMLProvider Viewset
 
@@ -7443,8 +7270,6 @@ Name | Type | Description  | Notes
 # **providers_saml_used_by_list**
 > List[UsedBy] providers_saml_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -7521,8 +7346,6 @@ Name | Type | Description  | Notes
 
 # **providers_scim_create**
 > SCIMProvider providers_scim_create(scim_provider_request)
-
-
 
 SCIMProvider Viewset
 
@@ -7602,8 +7425,6 @@ Name | Type | Description  | Notes
 # **providers_scim_destroy**
 > providers_scim_destroy(id)
 
-
-
 SCIMProvider Viewset
 
 ### Example
@@ -7677,8 +7498,6 @@ void (empty response body)
 
 # **providers_scim_groups_create**
 > SCIMProviderGroup providers_scim_groups_create(scim_provider_group_request)
-
-
 
 SCIMProviderGroup Viewset
 
@@ -7758,8 +7577,6 @@ Name | Type | Description  | Notes
 # **providers_scim_groups_destroy**
 > providers_scim_groups_destroy(id)
 
-
-
 SCIMProviderGroup Viewset
 
 ### Example
@@ -7833,8 +7650,6 @@ void (empty response body)
 
 # **providers_scim_groups_list**
 > PaginatedSCIMProviderGroupList providers_scim_groups_list(group__group_uuid=group__group_uuid, group__name=group__name, ordering=ordering, page=page, page_size=page_size, provider__id=provider__id, search=search)
-
-
 
 SCIMProviderGroup Viewset
 
@@ -7925,8 +7740,6 @@ Name | Type | Description  | Notes
 # **providers_scim_groups_retrieve**
 > SCIMProviderGroup providers_scim_groups_retrieve(id)
 
-
-
 SCIMProviderGroup Viewset
 
 ### Example
@@ -8004,8 +7817,6 @@ Name | Type | Description  | Notes
 # **providers_scim_groups_used_by_list**
 > List[UsedBy] providers_scim_groups_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -8082,8 +7893,6 @@ Name | Type | Description  | Notes
 
 # **providers_scim_list**
 > PaginatedSCIMProviderList providers_scim_list(exclude_users_service_account=exclude_users_service_account, filter_group=filter_group, name=name, ordering=ordering, page=page, page_size=page_size, search=search, url=url)
-
-
 
 SCIMProvider Viewset
 
@@ -8176,8 +7985,6 @@ Name | Type | Description  | Notes
 # **providers_scim_partial_update**
 > SCIMProvider providers_scim_partial_update(id, patched_scim_provider_request=patched_scim_provider_request)
 
-
-
 SCIMProvider Viewset
 
 ### Example
@@ -8258,8 +8065,6 @@ Name | Type | Description  | Notes
 # **providers_scim_retrieve**
 > SCIMProvider providers_scim_retrieve(id)
 
-
-
 SCIMProvider Viewset
 
 ### Example
@@ -8336,8 +8141,6 @@ Name | Type | Description  | Notes
 
 # **providers_scim_sync_object_create**
 > SyncObjectResult providers_scim_sync_object_create(id, sync_object_request)
-
-
 
 Sync/Re-sync a single user/group object
 
@@ -8419,8 +8222,6 @@ Name | Type | Description  | Notes
 # **providers_scim_sync_status_retrieve**
 > SyncStatus providers_scim_sync_status_retrieve(id)
 
-
-
 Get provider's sync status
 
 ### Example
@@ -8490,7 +8291,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
-**404** | Task not found |  -  |
 **400** |  |  -  |
 **403** |  |  -  |
 
@@ -8498,8 +8298,6 @@ Name | Type | Description  | Notes
 
 # **providers_scim_update**
 > SCIMProvider providers_scim_update(id, scim_provider_request)
-
-
 
 SCIMProvider Viewset
 
@@ -8581,8 +8379,6 @@ Name | Type | Description  | Notes
 # **providers_scim_used_by_list**
 > List[UsedBy] providers_scim_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -8659,8 +8455,6 @@ Name | Type | Description  | Notes
 
 # **providers_scim_users_create**
 > SCIMProviderUser providers_scim_users_create(scim_provider_user_request)
-
-
 
 SCIMProviderUser Viewset
 
@@ -8740,8 +8534,6 @@ Name | Type | Description  | Notes
 # **providers_scim_users_destroy**
 > providers_scim_users_destroy(id)
 
-
-
 SCIMProviderUser Viewset
 
 ### Example
@@ -8815,8 +8607,6 @@ void (empty response body)
 
 # **providers_scim_users_list**
 > PaginatedSCIMProviderUserList providers_scim_users_list(ordering=ordering, page=page, page_size=page_size, provider__id=provider__id, search=search, user__id=user__id, user__username=user__username)
-
-
 
 SCIMProviderUser Viewset
 
@@ -8907,8 +8697,6 @@ Name | Type | Description  | Notes
 # **providers_scim_users_retrieve**
 > SCIMProviderUser providers_scim_users_retrieve(id)
 
-
-
 SCIMProviderUser Viewset
 
 ### Example
@@ -8986,8 +8774,6 @@ Name | Type | Description  | Notes
 # **providers_scim_users_used_by_list**
 > List[UsedBy] providers_scim_users_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -9038,6 +8824,559 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| A UUID string identifying this scim provider user. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_ssf_create**
+> SSFProvider providers_ssf_create(ssf_provider_request)
+
+SSFProvider Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.ssf_provider import SSFProvider
+from authentik_openapi.models.ssf_provider_request import SSFProviderRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.ProvidersApi(api_client)
+    ssf_provider_request = authentik_openapi.SSFProviderRequest() # SSFProviderRequest | 
+
+    try:
+        api_response = await api_instance.providers_ssf_create(ssf_provider_request)
+        print("The response of ProvidersApi->providers_ssf_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_ssf_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ssf_provider_request** | [**SSFProviderRequest**](SSFProviderRequest.md)|  | 
+
+### Return type
+
+[**SSFProvider**](SSFProvider.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_ssf_destroy**
+> providers_ssf_destroy(id)
+
+SSFProvider Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.ProvidersApi(api_client)
+    id = 56 # int | A unique integer value identifying this Shared Signals Framework Provider.
+
+    try:
+        await api_instance.providers_ssf_destroy(id)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_ssf_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Shared Signals Framework Provider. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_ssf_list**
+> PaginatedSSFProviderList providers_ssf_list(application__isnull=application__isnull, name__iexact=name__iexact, ordering=ordering, page=page, page_size=page_size, search=search)
+
+SSFProvider Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_ssf_provider_list import PaginatedSSFProviderList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.ProvidersApi(api_client)
+    application__isnull = True # bool |  (optional)
+    name__iexact = 'name__iexact_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+
+    try:
+        api_response = await api_instance.providers_ssf_list(application__isnull=application__isnull, name__iexact=name__iexact, ordering=ordering, page=page, page_size=page_size, search=search)
+        print("The response of ProvidersApi->providers_ssf_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_ssf_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application__isnull** | **bool**|  | [optional] 
+ **name__iexact** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedSSFProviderList**](PaginatedSSFProviderList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_ssf_partial_update**
+> SSFProvider providers_ssf_partial_update(id, patched_ssf_provider_request=patched_ssf_provider_request)
+
+SSFProvider Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.patched_ssf_provider_request import PatchedSSFProviderRequest
+from authentik_openapi.models.ssf_provider import SSFProvider
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.ProvidersApi(api_client)
+    id = 56 # int | A unique integer value identifying this Shared Signals Framework Provider.
+    patched_ssf_provider_request = authentik_openapi.PatchedSSFProviderRequest() # PatchedSSFProviderRequest |  (optional)
+
+    try:
+        api_response = await api_instance.providers_ssf_partial_update(id, patched_ssf_provider_request=patched_ssf_provider_request)
+        print("The response of ProvidersApi->providers_ssf_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_ssf_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Shared Signals Framework Provider. | 
+ **patched_ssf_provider_request** | [**PatchedSSFProviderRequest**](PatchedSSFProviderRequest.md)|  | [optional] 
+
+### Return type
+
+[**SSFProvider**](SSFProvider.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_ssf_retrieve**
+> SSFProvider providers_ssf_retrieve(id)
+
+SSFProvider Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.ssf_provider import SSFProvider
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.ProvidersApi(api_client)
+    id = 56 # int | A unique integer value identifying this Shared Signals Framework Provider.
+
+    try:
+        api_response = await api_instance.providers_ssf_retrieve(id)
+        print("The response of ProvidersApi->providers_ssf_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_ssf_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Shared Signals Framework Provider. | 
+
+### Return type
+
+[**SSFProvider**](SSFProvider.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_ssf_update**
+> SSFProvider providers_ssf_update(id, ssf_provider_request)
+
+SSFProvider Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.ssf_provider import SSFProvider
+from authentik_openapi.models.ssf_provider_request import SSFProviderRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.ProvidersApi(api_client)
+    id = 56 # int | A unique integer value identifying this Shared Signals Framework Provider.
+    ssf_provider_request = authentik_openapi.SSFProviderRequest() # SSFProviderRequest | 
+
+    try:
+        api_response = await api_instance.providers_ssf_update(id, ssf_provider_request)
+        print("The response of ProvidersApi->providers_ssf_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_ssf_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Shared Signals Framework Provider. | 
+ **ssf_provider_request** | [**SSFProviderRequest**](SSFProviderRequest.md)|  | 
+
+### Return type
+
+[**SSFProvider**](SSFProvider.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_ssf_used_by_list**
+> List[UsedBy] providers_ssf_used_by_list(id)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.used_by import UsedBy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.ProvidersApi(api_client)
+    id = 56 # int | A unique integer value identifying this Shared Signals Framework Provider.
+
+    try:
+        api_response = await api_instance.providers_ssf_used_by_list(id)
+        print("The response of ProvidersApi->providers_ssf_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_ssf_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Shared Signals Framework Provider. | 
 
 ### Return type
 

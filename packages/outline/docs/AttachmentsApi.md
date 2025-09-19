@@ -4,13 +4,13 @@ All URIs are relative to *https://app.getoutline.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attachments_create_post**](AttachmentsApi.md#attachments_create_post) | **POST** /attachments.create | Create an attachment
-[**attachments_delete_post**](AttachmentsApi.md#attachments_delete_post) | **POST** /attachments.delete | Delete an attachment
-[**attachments_redirect_post**](AttachmentsApi.md#attachments_redirect_post) | **POST** /attachments.redirect | Retrieve an attachment
+[**attachments_create**](AttachmentsApi.md#attachments_create) | **POST** /attachments.create | Create an attachment
+[**attachments_delete**](AttachmentsApi.md#attachments_delete) | **POST** /attachments.delete | Delete an attachment
+[**attachments_redirect**](AttachmentsApi.md#attachments_redirect) | **POST** /attachments.redirect | Retrieve an attachment
 
 
-# **attachments_create_post**
-> AttachmentsCreatePost200Response attachments_create_post(attachments_create_post_request=attachments_create_post_request)
+# **attachments_create**
+> AttachmentsCreate200Response attachments_create(attachments_create_request=attachments_create_request)
 
 Create an attachment
 
@@ -18,12 +18,13 @@ Creating an attachment object creates a database record and returns the inputs n
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.attachments_create_post200_response import AttachmentsCreatePost200Response
-from outline_openapi.models.attachments_create_post_request import AttachmentsCreatePostRequest
+from outline_openapi.models.attachments_create200_response import AttachmentsCreate200Response
+from outline_openapi.models.attachments_create_request import AttachmentsCreateRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -38,7 +39,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -47,15 +50,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.AttachmentsApi(api_client)
-    attachments_create_post_request = outline_openapi.AttachmentsCreatePostRequest() # AttachmentsCreatePostRequest |  (optional)
+    attachments_create_request = outline_openapi.AttachmentsCreateRequest() # AttachmentsCreateRequest |  (optional)
 
     try:
         # Create an attachment
-        api_response = await api_instance.attachments_create_post(attachments_create_post_request=attachments_create_post_request)
-        print("The response of AttachmentsApi->attachments_create_post:\n")
+        api_response = await api_instance.attachments_create(attachments_create_request=attachments_create_request)
+        print("The response of AttachmentsApi->attachments_create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AttachmentsApi->attachments_create_post: %s\n" % e)
+        print("Exception when calling AttachmentsApi->attachments_create: %s\n" % e)
 ```
 
 
@@ -65,15 +68,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attachments_create_post_request** | [**AttachmentsCreatePostRequest**](AttachmentsCreatePostRequest.md)|  | [optional] 
+ **attachments_create_request** | [**AttachmentsCreateRequest**](AttachmentsCreateRequest.md)|  | [optional] 
 
 ### Return type
 
-[**AttachmentsCreatePost200Response**](AttachmentsCreatePost200Response.md)
+[**AttachmentsCreate200Response**](AttachmentsCreate200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -88,11 +91,12 @@ Name | Type | Description  | Notes
 **400** | The request failed one or more validations. |  -  |
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **attachments_delete_post**
-> AttachmentsDeletePost200Response attachments_delete_post(attachments_redirect_post_request=attachments_redirect_post_request)
+# **attachments_delete**
+> AttachmentsDelete200Response attachments_delete(attachments_redirect_request=attachments_redirect_request)
 
 Delete an attachment
 
@@ -100,12 +104,13 @@ Deleting an attachment is permanant. It will not delete references or links to t
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.attachments_delete_post200_response import AttachmentsDeletePost200Response
-from outline_openapi.models.attachments_redirect_post_request import AttachmentsRedirectPostRequest
+from outline_openapi.models.attachments_delete200_response import AttachmentsDelete200Response
+from outline_openapi.models.attachments_redirect_request import AttachmentsRedirectRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -120,7 +125,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -129,15 +136,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.AttachmentsApi(api_client)
-    attachments_redirect_post_request = outline_openapi.AttachmentsRedirectPostRequest() # AttachmentsRedirectPostRequest |  (optional)
+    attachments_redirect_request = outline_openapi.AttachmentsRedirectRequest() # AttachmentsRedirectRequest |  (optional)
 
     try:
         # Delete an attachment
-        api_response = await api_instance.attachments_delete_post(attachments_redirect_post_request=attachments_redirect_post_request)
-        print("The response of AttachmentsApi->attachments_delete_post:\n")
+        api_response = await api_instance.attachments_delete(attachments_redirect_request=attachments_redirect_request)
+        print("The response of AttachmentsApi->attachments_delete:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AttachmentsApi->attachments_delete_post: %s\n" % e)
+        print("Exception when calling AttachmentsApi->attachments_delete: %s\n" % e)
 ```
 
 
@@ -147,15 +154,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attachments_redirect_post_request** | [**AttachmentsRedirectPostRequest**](AttachmentsRedirectPostRequest.md)|  | [optional] 
+ **attachments_redirect_request** | [**AttachmentsRedirectRequest**](AttachmentsRedirectRequest.md)|  | [optional] 
 
 ### Return type
 
-[**AttachmentsDeletePost200Response**](AttachmentsDeletePost200Response.md)
+[**AttachmentsDelete200Response**](AttachmentsDelete200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -171,11 +178,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **attachments_redirect_post**
-> attachments_redirect_post(attachments_redirect_post_request=attachments_redirect_post_request)
+# **attachments_redirect**
+> attachments_redirect(attachments_redirect_request=attachments_redirect_request)
 
 Retrieve an attachment
 
@@ -183,11 +191,12 @@ Load an attachment from where it is stored based on the id. If the attachment is
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.attachments_redirect_post_request import AttachmentsRedirectPostRequest
+from outline_openapi.models.attachments_redirect_request import AttachmentsRedirectRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -202,7 +211,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -211,13 +222,13 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.AttachmentsApi(api_client)
-    attachments_redirect_post_request = outline_openapi.AttachmentsRedirectPostRequest() # AttachmentsRedirectPostRequest |  (optional)
+    attachments_redirect_request = outline_openapi.AttachmentsRedirectRequest() # AttachmentsRedirectRequest |  (optional)
 
     try:
         # Retrieve an attachment
-        await api_instance.attachments_redirect_post(attachments_redirect_post_request=attachments_redirect_post_request)
+        await api_instance.attachments_redirect(attachments_redirect_request=attachments_redirect_request)
     except Exception as e:
-        print("Exception when calling AttachmentsApi->attachments_redirect_post: %s\n" % e)
+        print("Exception when calling AttachmentsApi->attachments_redirect: %s\n" % e)
 ```
 
 
@@ -227,7 +238,7 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attachments_redirect_post_request** | [**AttachmentsRedirectPostRequest**](AttachmentsRedirectPostRequest.md)|  | [optional] 
+ **attachments_redirect_request** | [**AttachmentsRedirectRequest**](AttachmentsRedirectRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -235,7 +246,7 @@ void (empty response body)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 

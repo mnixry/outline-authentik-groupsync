@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](Pagination.md) |  | 
 **results** | [**List[Brand]**](Brand.md) |  | 
+**autocomplete** | **Dict[str, object]** |  | 
 
 ## Example
 

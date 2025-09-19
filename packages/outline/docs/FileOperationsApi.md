@@ -4,25 +4,26 @@ All URIs are relative to *https://app.getoutline.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**file_operations_delete_post**](FileOperationsApi.md#file_operations_delete_post) | **POST** /fileOperations.delete | Delete a file operation
-[**file_operations_info_post**](FileOperationsApi.md#file_operations_info_post) | **POST** /fileOperations.info | Retrieve a file operation
-[**file_operations_list_post**](FileOperationsApi.md#file_operations_list_post) | **POST** /fileOperations.list | List all file operations
-[**file_operations_redirect_post**](FileOperationsApi.md#file_operations_redirect_post) | **POST** /fileOperations.redirect | Retrieve the file
+[**fileoperations_delete**](FileOperationsApi.md#fileoperations_delete) | **POST** /fileOperations.delete | Delete a file operation
+[**fileoperations_info**](FileOperationsApi.md#fileoperations_info) | **POST** /fileOperations.info | Retrieve a file operation
+[**fileoperations_list**](FileOperationsApi.md#fileoperations_list) | **POST** /fileOperations.list | List all file operations
+[**fileoperations_redirect**](FileOperationsApi.md#fileoperations_redirect) | **POST** /fileOperations.redirect | Retrieve the file
 
 
-# **file_operations_delete_post**
-> AttachmentsDeletePost200Response file_operations_delete_post(file_operations_info_post_request=file_operations_info_post_request)
+# **fileoperations_delete**
+> AttachmentsDelete200Response fileoperations_delete(fileoperations_info_request=fileoperations_info_request)
 
 Delete a file operation
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.attachments_delete_post200_response import AttachmentsDeletePost200Response
-from outline_openapi.models.file_operations_info_post_request import FileOperationsInfoPostRequest
+from outline_openapi.models.attachments_delete200_response import AttachmentsDelete200Response
+from outline_openapi.models.fileoperations_info_request import FileoperationsInfoRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -37,7 +38,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -46,15 +49,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.FileOperationsApi(api_client)
-    file_operations_info_post_request = outline_openapi.FileOperationsInfoPostRequest() # FileOperationsInfoPostRequest |  (optional)
+    fileoperations_info_request = outline_openapi.FileoperationsInfoRequest() # FileoperationsInfoRequest |  (optional)
 
     try:
         # Delete a file operation
-        api_response = await api_instance.file_operations_delete_post(file_operations_info_post_request=file_operations_info_post_request)
-        print("The response of FileOperationsApi->file_operations_delete_post:\n")
+        api_response = await api_instance.fileoperations_delete(fileoperations_info_request=fileoperations_info_request)
+        print("The response of FileOperationsApi->fileoperations_delete:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FileOperationsApi->file_operations_delete_post: %s\n" % e)
+        print("Exception when calling FileOperationsApi->fileoperations_delete: %s\n" % e)
 ```
 
 
@@ -64,15 +67,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_operations_info_post_request** | [**FileOperationsInfoPostRequest**](FileOperationsInfoPostRequest.md)|  | [optional] 
+ **fileoperations_info_request** | [**FileoperationsInfoRequest**](FileoperationsInfoRequest.md)|  | [optional] 
 
 ### Return type
 
-[**AttachmentsDeletePost200Response**](AttachmentsDeletePost200Response.md)
+[**AttachmentsDelete200Response**](AttachmentsDelete200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -87,22 +90,24 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **file_operations_info_post**
-> FileOperationsInfoPost200Response file_operations_info_post(file_operations_info_post_request=file_operations_info_post_request)
+# **fileoperations_info**
+> FileoperationsInfo200Response fileoperations_info(fileoperations_info_request=fileoperations_info_request)
 
 Retrieve a file operation
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.file_operations_info_post200_response import FileOperationsInfoPost200Response
-from outline_openapi.models.file_operations_info_post_request import FileOperationsInfoPostRequest
+from outline_openapi.models.fileoperations_info200_response import FileoperationsInfo200Response
+from outline_openapi.models.fileoperations_info_request import FileoperationsInfoRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -117,7 +122,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -126,15 +133,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.FileOperationsApi(api_client)
-    file_operations_info_post_request = outline_openapi.FileOperationsInfoPostRequest() # FileOperationsInfoPostRequest |  (optional)
+    fileoperations_info_request = outline_openapi.FileoperationsInfoRequest() # FileoperationsInfoRequest |  (optional)
 
     try:
         # Retrieve a file operation
-        api_response = await api_instance.file_operations_info_post(file_operations_info_post_request=file_operations_info_post_request)
-        print("The response of FileOperationsApi->file_operations_info_post:\n")
+        api_response = await api_instance.fileoperations_info(fileoperations_info_request=fileoperations_info_request)
+        print("The response of FileOperationsApi->fileoperations_info:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FileOperationsApi->file_operations_info_post: %s\n" % e)
+        print("Exception when calling FileOperationsApi->fileoperations_info: %s\n" % e)
 ```
 
 
@@ -144,15 +151,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_operations_info_post_request** | [**FileOperationsInfoPostRequest**](FileOperationsInfoPostRequest.md)|  | [optional] 
+ **fileoperations_info_request** | [**FileoperationsInfoRequest**](FileoperationsInfoRequest.md)|  | [optional] 
 
 ### Return type
 
-[**FileOperationsInfoPost200Response**](FileOperationsInfoPost200Response.md)
+[**FileoperationsInfo200Response**](FileoperationsInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -167,22 +174,24 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **file_operations_list_post**
-> FileOperationsListPost200Response file_operations_list_post(file_operations_list_post_request=file_operations_list_post_request)
+# **fileoperations_list**
+> FileoperationsList200Response fileoperations_list(fileoperations_list_request=fileoperations_list_request)
 
 List all file operations
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.file_operations_list_post200_response import FileOperationsListPost200Response
-from outline_openapi.models.file_operations_list_post_request import FileOperationsListPostRequest
+from outline_openapi.models.fileoperations_list200_response import FileoperationsList200Response
+from outline_openapi.models.fileoperations_list_request import FileoperationsListRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -197,7 +206,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -206,15 +217,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.FileOperationsApi(api_client)
-    file_operations_list_post_request = outline_openapi.FileOperationsListPostRequest() # FileOperationsListPostRequest |  (optional)
+    fileoperations_list_request = outline_openapi.FileoperationsListRequest() # FileoperationsListRequest |  (optional)
 
     try:
         # List all file operations
-        api_response = await api_instance.file_operations_list_post(file_operations_list_post_request=file_operations_list_post_request)
-        print("The response of FileOperationsApi->file_operations_list_post:\n")
+        api_response = await api_instance.fileoperations_list(fileoperations_list_request=fileoperations_list_request)
+        print("The response of FileOperationsApi->fileoperations_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FileOperationsApi->file_operations_list_post: %s\n" % e)
+        print("Exception when calling FileOperationsApi->fileoperations_list: %s\n" % e)
 ```
 
 
@@ -224,15 +235,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_operations_list_post_request** | [**FileOperationsListPostRequest**](FileOperationsListPostRequest.md)|  | [optional] 
+ **fileoperations_list_request** | [**FileoperationsListRequest**](FileoperationsListRequest.md)|  | [optional] 
 
 ### Return type
 
-[**FileOperationsListPost200Response**](FileOperationsListPost200Response.md)
+[**FileoperationsList200Response**](FileoperationsList200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -246,11 +257,12 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **file_operations_redirect_post**
-> bytearray file_operations_redirect_post(file_operations_info_post_request=file_operations_info_post_request)
+# **fileoperations_redirect**
+> bytearray fileoperations_redirect(fileoperations_info_request=fileoperations_info_request)
 
 Retrieve the file
 
@@ -258,11 +270,12 @@ Load the resulting file from where it is stored based on the id. A temporary, si
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.file_operations_info_post_request import FileOperationsInfoPostRequest
+from outline_openapi.models.fileoperations_info_request import FileoperationsInfoRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -277,7 +290,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -286,15 +301,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.FileOperationsApi(api_client)
-    file_operations_info_post_request = outline_openapi.FileOperationsInfoPostRequest() # FileOperationsInfoPostRequest |  (optional)
+    fileoperations_info_request = outline_openapi.FileoperationsInfoRequest() # FileoperationsInfoRequest |  (optional)
 
     try:
         # Retrieve the file
-        api_response = await api_instance.file_operations_redirect_post(file_operations_info_post_request=file_operations_info_post_request)
-        print("The response of FileOperationsApi->file_operations_redirect_post:\n")
+        api_response = await api_instance.fileoperations_redirect(fileoperations_info_request=fileoperations_info_request)
+        print("The response of FileOperationsApi->fileoperations_redirect:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FileOperationsApi->file_operations_redirect_post: %s\n" % e)
+        print("Exception when calling FileOperationsApi->fileoperations_redirect: %s\n" % e)
 ```
 
 
@@ -304,7 +319,7 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_operations_info_post_request** | [**FileOperationsInfoPostRequest**](FileOperationsInfoPostRequest.md)|  | [optional] 
+ **fileoperations_info_request** | [**FileoperationsInfoRequest**](FileoperationsInfoRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -312,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -327,6 +342,7 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

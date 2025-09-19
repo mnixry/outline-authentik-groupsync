@@ -9,13 +9,13 @@ Name | Type | Description | Notes
 **pk** | **str** |  | [readonly] 
 **name** | **str** |  | 
 **path** | **str** |  | [optional] [default to '']
-**context** | **object** |  | [optional] 
+**context** | **Dict[str, object]** |  | [optional] 
 **last_applied** | **datetime** |  | [readonly] 
 **last_applied_hash** | **str** |  | [readonly] 
 **status** | [**BlueprintInstanceStatusEnum**](BlueprintInstanceStatusEnum.md) |  | [readonly] 
 **enabled** | **bool** |  | [optional] 
 **managed_models** | **List[str]** |  | [readonly] 
-**metadata** | **object** |  | [readonly] 
+**metadata** | **Dict[str, object]** |  | [readonly] 
 **content** | **str** |  | [optional] 
 
 ## Example

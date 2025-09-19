@@ -6,13 +6,13 @@ Event Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user** | **object** |  | [optional] 
+**user** | **Dict[str, object]** |  | [optional] 
 **action** | [**EventActions**](EventActions.md) |  | 
 **app** | **str** |  | 
-**context** | **object** |  | [optional] 
+**context** | **Dict[str, object]** |  | [optional] 
 **client_ip** | **str** |  | [optional] 
 **expires** | **datetime** |  | [optional] 
-**brand** | **object** |  | [optional] 
+**brand** | **Dict[str, object]** |  | [optional] 
 
 ## Example
 

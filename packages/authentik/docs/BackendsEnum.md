@@ -9,6 +9,8 @@
 
 * `AUTHENTIK_DOT_SOURCES_DOT_LDAP_DOT_AUTH_DOT_LDAP_BACKEND` (value: `'authentik.sources.ldap.auth.LDAPBackend'`)
 
+* `AUTHENTIK_DOT_SOURCES_DOT_KERBEROS_DOT_AUTH_DOT_KERBEROS_BACKEND` (value: `'authentik.sources.kerberos.auth.KerberosBackend'`)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

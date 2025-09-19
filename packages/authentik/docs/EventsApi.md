@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**events_events_destroy**](EventsApi.md#events_events_destroy) | **DELETE** /events/events/{event_uuid}/ | 
 [**events_events_list**](EventsApi.md#events_events_list) | **GET** /events/events/ | 
 [**events_events_partial_update**](EventsApi.md#events_events_partial_update) | **PATCH** /events/events/{event_uuid}/ | 
-[**events_events_per_month_list**](EventsApi.md#events_events_per_month_list) | **GET** /events/events/per_month/ | 
 [**events_events_retrieve**](EventsApi.md#events_events_retrieve) | **GET** /events/events/{event_uuid}/ | 
 [**events_events_top_per_user_list**](EventsApi.md#events_events_top_per_user_list) | **GET** /events/events/top_per_user/ | 
 [**events_events_update**](EventsApi.md#events_events_update) | **PUT** /events/events/{event_uuid}/ | 
@@ -28,9 +27,6 @@ Method | HTTP request | Description
 [**events_rules_retrieve**](EventsApi.md#events_rules_retrieve) | **GET** /events/rules/{pbm_uuid}/ | 
 [**events_rules_update**](EventsApi.md#events_rules_update) | **PUT** /events/rules/{pbm_uuid}/ | 
 [**events_rules_used_by_list**](EventsApi.md#events_rules_used_by_list) | **GET** /events/rules/{pbm_uuid}/used_by/ | 
-[**events_system_tasks_list**](EventsApi.md#events_system_tasks_list) | **GET** /events/system_tasks/ | 
-[**events_system_tasks_retrieve**](EventsApi.md#events_system_tasks_retrieve) | **GET** /events/system_tasks/{uuid}/ | 
-[**events_system_tasks_run_create**](EventsApi.md#events_system_tasks_run_create) | **POST** /events/system_tasks/{uuid}/run/ | 
 [**events_transports_create**](EventsApi.md#events_transports_create) | **POST** /events/transports/ | 
 [**events_transports_destroy**](EventsApi.md#events_transports_destroy) | **DELETE** /events/transports/{uuid}/ | 
 [**events_transports_list**](EventsApi.md#events_transports_list) | **GET** /events/transports/ | 
@@ -43,8 +39,6 @@ Method | HTTP request | Description
 
 # **events_events_actions_list**
 > List[TypeCreate] events_events_actions_list()
-
-
 
 Get all actions
 
@@ -118,8 +112,6 @@ This endpoint does not need any parameter.
 
 # **events_events_create**
 > Event events_events_create(event_request)
-
-
 
 Event Read-Only Viewset
 
@@ -199,8 +191,6 @@ Name | Type | Description  | Notes
 # **events_events_destroy**
 > events_events_destroy(event_uuid)
 
-
-
 Event Read-Only Viewset
 
 ### Example
@@ -273,9 +263,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **events_events_list**
-> PaginatedEventList events_events_list(action=action, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, page=page, page_size=page_size, search=search, username=username)
-
-
+> PaginatedEventList events_events_list(action=action, actions=actions, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, page=page, page_size=page_size, search=search, username=username)
 
 Event Read-Only Viewset
 
@@ -310,6 +298,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.EventsApi(api_client)
     action = 'action_example' # str |  (optional)
+    actions = ['actions_example'] # List[str] |  (optional)
     brand_name = 'brand_name_example' # str | Brand name (optional)
     client_ip = 'client_ip_example' # str |  (optional)
     context_authorized_app = 'context_authorized_app_example' # str | Context Authorized application (optional)
@@ -323,7 +312,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     username = 'username_example' # str | Username (optional)
 
     try:
-        api_response = await api_instance.events_events_list(action=action, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, page=page, page_size=page_size, search=search, username=username)
+        api_response = await api_instance.events_events_list(action=action, actions=actions, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, page=page, page_size=page_size, search=search, username=username)
         print("The response of EventsApi->events_events_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -338,6 +327,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **action** | **str**|  | [optional] 
+ **actions** | [**List[str]**](str.md)|  | [optional] 
  **brand_name** | **str**| Brand name | [optional] 
  **client_ip** | **str**|  | [optional] 
  **context_authorized_app** | **str**| Context Authorized application | [optional] 
@@ -375,8 +365,6 @@ Name | Type | Description  | Notes
 
 # **events_events_partial_update**
 > Event events_events_partial_update(event_uuid, patched_event_request=patched_event_request)
-
-
 
 Event Read-Only Viewset
 
@@ -455,91 +443,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **events_events_per_month_list**
-> List[Coordinate] events_events_per_month_list(action=action, query=query)
-
-
-
-Get the count of events per month
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_openapi
-from authentik_openapi.models.coordinate import Coordinate
-from authentik_openapi.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://github.com/api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_openapi.Configuration(
-    host = "https://github.com/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_openapi.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-async with authentik_openapi.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_openapi.EventsApi(api_client)
-    action = 'action_example' # str |  (optional)
-    query = 'query_example' # str |  (optional)
-
-    try:
-        api_response = await api_instance.events_events_per_month_list(action=action, query=query)
-        print("The response of EventsApi->events_events_per_month_list:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EventsApi->events_events_per_month_list: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **action** | **str**|  | [optional] 
- **query** | **str**|  | [optional] 
-
-### Return type
-
-[**List[Coordinate]**](Coordinate.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-**400** |  |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **events_events_retrieve**
 > Event events_events_retrieve(event_uuid)
-
-
 
 Event Read-Only Viewset
 
@@ -617,8 +522,6 @@ Name | Type | Description  | Notes
 
 # **events_events_top_per_user_list**
 > List[EventTopPerUser] events_events_top_per_user_list(action=action, top_n=top_n)
-
-
 
 Get the top_n events grouped by user count
 
@@ -699,8 +602,6 @@ Name | Type | Description  | Notes
 # **events_events_update**
 > Event events_events_update(event_uuid, event_request)
 
-
-
 Event Read-Only Viewset
 
 ### Example
@@ -779,9 +680,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **events_events_volume_list**
-> List[Coordinate] events_events_volume_list(action=action, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, search=search, username=username)
-
-
+> List[EventVolume] events_events_volume_list(action=action, actions=actions, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, history_days=history_days, ordering=ordering, search=search, username=username)
 
 Get event volume for specified filters and timeframe
 
@@ -791,7 +690,7 @@ Get event volume for specified filters and timeframe
 
 ```python
 import authentik_openapi
-from authentik_openapi.models.coordinate import Coordinate
+from authentik_openapi.models.event_volume import EventVolume
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
@@ -816,18 +715,20 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.EventsApi(api_client)
     action = 'action_example' # str |  (optional)
+    actions = ['actions_example'] # List[str] |  (optional)
     brand_name = 'brand_name_example' # str | Brand name (optional)
     client_ip = 'client_ip_example' # str |  (optional)
     context_authorized_app = 'context_authorized_app_example' # str | Context Authorized application (optional)
     context_model_app = 'context_model_app_example' # str | Context Model App (optional)
     context_model_name = 'context_model_name_example' # str | Context Model Name (optional)
     context_model_pk = 'context_model_pk_example' # str | Context Model Primary Key (optional)
+    history_days = 7 # float |  (optional) (default to 7)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     search = 'search_example' # str | A search term. (optional)
     username = 'username_example' # str | Username (optional)
 
     try:
-        api_response = await api_instance.events_events_volume_list(action=action, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, search=search, username=username)
+        api_response = await api_instance.events_events_volume_list(action=action, actions=actions, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, history_days=history_days, ordering=ordering, search=search, username=username)
         print("The response of EventsApi->events_events_volume_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -842,19 +743,21 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **action** | **str**|  | [optional] 
+ **actions** | [**List[str]**](str.md)|  | [optional] 
  **brand_name** | **str**| Brand name | [optional] 
  **client_ip** | **str**|  | [optional] 
  **context_authorized_app** | **str**| Context Authorized application | [optional] 
  **context_model_app** | **str**| Context Model App | [optional] 
  **context_model_name** | **str**| Context Model Name | [optional] 
  **context_model_pk** | **str**| Context Model Primary Key | [optional] 
+ **history_days** | **float**|  | [optional] [default to 7]
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **search** | **str**| A search term. | [optional] 
  **username** | **str**| Username | [optional] 
 
 ### Return type
 
-[**List[Coordinate]**](Coordinate.md)
+[**List[EventVolume]**](EventVolume.md)
 
 ### Authorization
 
@@ -877,8 +780,6 @@ Name | Type | Description  | Notes
 
 # **events_notifications_destroy**
 > events_notifications_destroy(uuid)
-
-
 
 Notification Viewset
 
@@ -953,8 +854,6 @@ void (empty response body)
 
 # **events_notifications_list**
 > PaginatedNotificationList events_notifications_list(body=body, created=created, event=event, ordering=ordering, page=page, page_size=page_size, search=search, seen=seen, severity=severity, user=user)
-
-
 
 Notification Viewset
 
@@ -1051,8 +950,6 @@ Name | Type | Description  | Notes
 # **events_notifications_mark_all_seen_create**
 > events_notifications_mark_all_seen_create()
 
-
-
 Mark all the user's notifications as seen
 
 ### Example
@@ -1122,8 +1019,6 @@ void (empty response body)
 
 # **events_notifications_partial_update**
 > Notification events_notifications_partial_update(uuid, patched_notification_request=patched_notification_request)
-
-
 
 Notification Viewset
 
@@ -1205,8 +1100,6 @@ Name | Type | Description  | Notes
 # **events_notifications_retrieve**
 > Notification events_notifications_retrieve(uuid)
 
-
-
 Notification Viewset
 
 ### Example
@@ -1283,8 +1176,6 @@ Name | Type | Description  | Notes
 
 # **events_notifications_update**
 > Notification events_notifications_update(uuid, notification_request=notification_request)
-
-
 
 Notification Viewset
 
@@ -1366,8 +1257,6 @@ Name | Type | Description  | Notes
 # **events_notifications_used_by_list**
 > List[UsedBy] events_notifications_used_by_list(uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -1444,8 +1333,6 @@ Name | Type | Description  | Notes
 
 # **events_rules_create**
 > NotificationRule events_rules_create(notification_rule_request)
-
-
 
 NotificationRule Viewset
 
@@ -1525,8 +1412,6 @@ Name | Type | Description  | Notes
 # **events_rules_destroy**
 > events_rules_destroy(pbm_uuid)
 
-
-
 NotificationRule Viewset
 
 ### Example
@@ -1599,9 +1484,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **events_rules_list**
-> PaginatedNotificationRuleList events_rules_list(group__name=group__name, name=name, ordering=ordering, page=page, page_size=page_size, search=search, severity=severity)
-
-
+> PaginatedNotificationRuleList events_rules_list(destination_group__name=destination_group__name, name=name, ordering=ordering, page=page, page_size=page_size, search=search, severity=severity)
 
 NotificationRule Viewset
 
@@ -1635,7 +1518,7 @@ configuration = authentik_openapi.Configuration(
 async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.EventsApi(api_client)
-    group__name = 'group__name_example' # str |  (optional)
+    destination_group__name = 'destination_group__name_example' # str |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
@@ -1644,7 +1527,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     severity = 'severity_example' # str | Controls which severity level the created notifications will have.   (optional)
 
     try:
-        api_response = await api_instance.events_rules_list(group__name=group__name, name=name, ordering=ordering, page=page, page_size=page_size, search=search, severity=severity)
+        api_response = await api_instance.events_rules_list(destination_group__name=destination_group__name, name=name, ordering=ordering, page=page, page_size=page_size, search=search, severity=severity)
         print("The response of EventsApi->events_rules_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -1658,7 +1541,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group__name** | **str**|  | [optional] 
+ **destination_group__name** | **str**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
@@ -1691,8 +1574,6 @@ Name | Type | Description  | Notes
 
 # **events_rules_partial_update**
 > NotificationRule events_rules_partial_update(pbm_uuid, patched_notification_rule_request=patched_notification_rule_request)
-
-
 
 NotificationRule Viewset
 
@@ -1774,8 +1655,6 @@ Name | Type | Description  | Notes
 # **events_rules_retrieve**
 > NotificationRule events_rules_retrieve(pbm_uuid)
 
-
-
 NotificationRule Viewset
 
 ### Example
@@ -1852,8 +1731,6 @@ Name | Type | Description  | Notes
 
 # **events_rules_update**
 > NotificationRule events_rules_update(pbm_uuid, notification_rule_request)
-
-
 
 NotificationRule Viewset
 
@@ -1935,8 +1812,6 @@ Name | Type | Description  | Notes
 # **events_rules_used_by_list**
 > List[UsedBy] events_rules_used_by_list(pbm_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -2011,258 +1886,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **events_system_tasks_list**
-> PaginatedSystemTaskList events_system_tasks_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search, status=status, uid=uid)
-
-
-
-Read-only view set that returns all background tasks
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_openapi
-from authentik_openapi.models.paginated_system_task_list import PaginatedSystemTaskList
-from authentik_openapi.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://github.com/api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_openapi.Configuration(
-    host = "https://github.com/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_openapi.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-async with authentik_openapi.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_openapi.EventsApi(api_client)
-    name = 'name_example' # str |  (optional)
-    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
-    page = 56 # int | A page number within the paginated result set. (optional)
-    page_size = 56 # int | Number of results to return per page. (optional)
-    search = 'search_example' # str | A search term. (optional)
-    status = 'status_example' # str |  (optional)
-    uid = 'uid_example' # str |  (optional)
-
-    try:
-        api_response = await api_instance.events_system_tasks_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search, status=status, uid=uid)
-        print("The response of EventsApi->events_system_tasks_list:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EventsApi->events_system_tasks_list: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **str**|  | [optional] 
- **ordering** | **str**| Which field to use when ordering the results. | [optional] 
- **page** | **int**| A page number within the paginated result set. | [optional] 
- **page_size** | **int**| Number of results to return per page. | [optional] 
- **search** | **str**| A search term. | [optional] 
- **status** | **str**|  | [optional] 
- **uid** | **str**|  | [optional] 
-
-### Return type
-
-[**PaginatedSystemTaskList**](PaginatedSystemTaskList.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-**400** |  |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **events_system_tasks_retrieve**
-> SystemTask events_system_tasks_retrieve(uuid)
-
-
-
-Read-only view set that returns all background tasks
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_openapi
-from authentik_openapi.models.system_task import SystemTask
-from authentik_openapi.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://github.com/api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_openapi.Configuration(
-    host = "https://github.com/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_openapi.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-async with authentik_openapi.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_openapi.EventsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this System Task.
-
-    try:
-        api_response = await api_instance.events_system_tasks_retrieve(uuid)
-        print("The response of EventsApi->events_system_tasks_retrieve:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EventsApi->events_system_tasks_retrieve: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this System Task. | 
-
-### Return type
-
-[**SystemTask**](SystemTask.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-**400** |  |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **events_system_tasks_run_create**
-> events_system_tasks_run_create(uuid)
-
-
-
-Run task
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_openapi
-from authentik_openapi.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://github.com/api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_openapi.Configuration(
-    host = "https://github.com/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_openapi.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-async with authentik_openapi.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_openapi.EventsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this System Task.
-
-    try:
-        await api_instance.events_system_tasks_run_create(uuid)
-    except Exception as e:
-        print("Exception when calling EventsApi->events_system_tasks_run_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this System Task. | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | Task retried successfully |  -  |
-**404** | Task not found |  -  |
-**500** | Failed to retry task |  -  |
-**400** |  |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **events_transports_create**
 > NotificationTransport events_transports_create(notification_transport_request)
-
-
 
 NotificationTransport Viewset
 
@@ -2342,8 +1967,6 @@ Name | Type | Description  | Notes
 # **events_transports_destroy**
 > events_transports_destroy(uuid)
 
-
-
 NotificationTransport Viewset
 
 ### Example
@@ -2417,8 +2040,6 @@ void (empty response body)
 
 # **events_transports_list**
 > PaginatedNotificationTransportList events_transports_list(mode=mode, name=name, ordering=ordering, page=page, page_size=page_size, search=search, send_once=send_once, webhook_url=webhook_url)
-
-
 
 NotificationTransport Viewset
 
@@ -2511,8 +2132,6 @@ Name | Type | Description  | Notes
 # **events_transports_partial_update**
 > NotificationTransport events_transports_partial_update(uuid, patched_notification_transport_request=patched_notification_transport_request)
 
-
-
 NotificationTransport Viewset
 
 ### Example
@@ -2593,8 +2212,6 @@ Name | Type | Description  | Notes
 # **events_transports_retrieve**
 > NotificationTransport events_transports_retrieve(uuid)
 
-
-
 NotificationTransport Viewset
 
 ### Example
@@ -2672,9 +2289,8 @@ Name | Type | Description  | Notes
 # **events_transports_test_create**
 > NotificationTransportTest events_transports_test_create(uuid)
 
-
-
-Send example notification using selected transport. Requires Modify permissions.
+Send example notification using selected transport. Requires
+Modify permissions.
 
 ### Example
 
@@ -2751,8 +2367,6 @@ Name | Type | Description  | Notes
 
 # **events_transports_update**
 > NotificationTransport events_transports_update(uuid, notification_transport_request)
-
-
 
 NotificationTransport Viewset
 
@@ -2833,8 +2447,6 @@ Name | Type | Description  | Notes
 
 # **events_transports_used_by_list**
 > List[UsedBy] events_transports_used_by_list(uuid)
-
-
 
 Get a list of all objects that use this object
 

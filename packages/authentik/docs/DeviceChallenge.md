@@ -6,9 +6,10 @@ Single device challenge
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**device_class** | **str** |  | 
+**device_class** | [**DeviceClassesEnum**](DeviceClassesEnum.md) |  | 
 **device_uid** | **str** |  | 
 **challenge** | **Dict[str, object]** |  | 
+**last_used** | **datetime** |  | 
 
 ## Example
 

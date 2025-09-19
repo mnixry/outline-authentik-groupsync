@@ -4,32 +4,30 @@ All URIs are relative to *https://app.getoutline.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**documents_add_user_post**](DocumentsApi.md#documents_add_user_post) | **POST** /documents.add_user | Add a document user
-[**documents_answer_question_post**](DocumentsApi.md#documents_answer_question_post) | **POST** /documents.answerQuestion | Query documents with natural language
-[**documents_archive_post**](DocumentsApi.md#documents_archive_post) | **POST** /documents.archive | Archive a document
-[**documents_create_post**](DocumentsApi.md#documents_create_post) | **POST** /documents.create | Create a document
-[**documents_delete_post**](DocumentsApi.md#documents_delete_post) | **POST** /documents.delete | Delete a document
-[**documents_drafts_post**](DocumentsApi.md#documents_drafts_post) | **POST** /documents.drafts | List all draft documents
-[**documents_export_post**](DocumentsApi.md#documents_export_post) | **POST** /documents.export | Export a document as markdown
-[**documents_import_post**](DocumentsApi.md#documents_import_post) | **POST** /documents.import | Import a file as a document
-[**documents_info_post**](DocumentsApi.md#documents_info_post) | **POST** /documents.info | Retrieve a document
-[**documents_list_post**](DocumentsApi.md#documents_list_post) | **POST** /documents.list | List all documents
-[**documents_memberships_post**](DocumentsApi.md#documents_memberships_post) | **POST** /documents.memberships | List document memberships
-[**documents_move_post**](DocumentsApi.md#documents_move_post) | **POST** /documents.move | Move a document
-[**documents_remove_user_post**](DocumentsApi.md#documents_remove_user_post) | **POST** /documents.remove_user | Remove a document user
-[**documents_restore_post**](DocumentsApi.md#documents_restore_post) | **POST** /documents.restore | Restore a document
-[**documents_search_post**](DocumentsApi.md#documents_search_post) | **POST** /documents.search | Search all documents
-[**documents_star_post**](DocumentsApi.md#documents_star_post) | **POST** /documents.star | Star a document
-[**documents_templatize_post**](DocumentsApi.md#documents_templatize_post) | **POST** /documents.templatize | Create a template from a document
-[**documents_unpublish_post**](DocumentsApi.md#documents_unpublish_post) | **POST** /documents.unpublish | Unpublish a document
-[**documents_unstar_post**](DocumentsApi.md#documents_unstar_post) | **POST** /documents.unstar | Unstar a document
-[**documents_update_post**](DocumentsApi.md#documents_update_post) | **POST** /documents.update | Update a document
-[**documents_users_post**](DocumentsApi.md#documents_users_post) | **POST** /documents.users | List document users
-[**documents_viewed_post**](DocumentsApi.md#documents_viewed_post) | **POST** /documents.viewed | List all recently viewed documents
+[**documents_add_user**](DocumentsApi.md#documents_add_user) | **POST** /documents.add_user | Add a document user
+[**documents_answerquestion**](DocumentsApi.md#documents_answerquestion) | **POST** /documents.answerQuestion | Query documents with natural language
+[**documents_archive**](DocumentsApi.md#documents_archive) | **POST** /documents.archive | Archive a document
+[**documents_create**](DocumentsApi.md#documents_create) | **POST** /documents.create | Create a document
+[**documents_delete**](DocumentsApi.md#documents_delete) | **POST** /documents.delete | Delete a document
+[**documents_drafts**](DocumentsApi.md#documents_drafts) | **POST** /documents.drafts | List all draft documents
+[**documents_export**](DocumentsApi.md#documents_export) | **POST** /documents.export | Export a document as markdown
+[**documents_import**](DocumentsApi.md#documents_import) | **POST** /documents.import | Import a file as a document
+[**documents_info**](DocumentsApi.md#documents_info) | **POST** /documents.info | Retrieve a document
+[**documents_list**](DocumentsApi.md#documents_list) | **POST** /documents.list | List all documents
+[**documents_memberships**](DocumentsApi.md#documents_memberships) | **POST** /documents.memberships | List document memberships
+[**documents_move**](DocumentsApi.md#documents_move) | **POST** /documents.move | Move a document
+[**documents_remove_user**](DocumentsApi.md#documents_remove_user) | **POST** /documents.remove_user | Remove a document user
+[**documents_restore**](DocumentsApi.md#documents_restore) | **POST** /documents.restore | Restore a document
+[**documents_search**](DocumentsApi.md#documents_search) | **POST** /documents.search | Search all documents
+[**documents_templatize**](DocumentsApi.md#documents_templatize) | **POST** /documents.templatize | Create a template from a document
+[**documents_unpublish**](DocumentsApi.md#documents_unpublish) | **POST** /documents.unpublish | Unpublish a document
+[**documents_update**](DocumentsApi.md#documents_update) | **POST** /documents.update | Update a document
+[**documents_users**](DocumentsApi.md#documents_users) | **POST** /documents.users | List document users
+[**documents_viewed**](DocumentsApi.md#documents_viewed) | **POST** /documents.viewed | List all recently viewed documents
 
 
-# **documents_add_user_post**
-> CollectionsAddUserPost200Response documents_add_user_post(documents_add_user_post_request=documents_add_user_post_request)
+# **documents_add_user**
+> CollectionsAddUser200Response documents_add_user(documents_add_user_request=documents_add_user_request)
 
 Add a document user
 
@@ -37,12 +35,13 @@ This method allows you to add a user membership to the specified document.
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.collections_add_user_post200_response import CollectionsAddUserPost200Response
-from outline_openapi.models.documents_add_user_post_request import DocumentsAddUserPostRequest
+from outline_openapi.models.collections_add_user200_response import CollectionsAddUser200Response
+from outline_openapi.models.documents_add_user_request import DocumentsAddUserRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -57,7 +56,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -66,15 +67,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_add_user_post_request = outline_openapi.DocumentsAddUserPostRequest() # DocumentsAddUserPostRequest |  (optional)
+    documents_add_user_request = outline_openapi.DocumentsAddUserRequest() # DocumentsAddUserRequest |  (optional)
 
     try:
         # Add a document user
-        api_response = await api_instance.documents_add_user_post(documents_add_user_post_request=documents_add_user_post_request)
-        print("The response of DocumentsApi->documents_add_user_post:\n")
+        api_response = await api_instance.documents_add_user(documents_add_user_request=documents_add_user_request)
+        print("The response of DocumentsApi->documents_add_user:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_add_user_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_add_user: %s\n" % e)
 ```
 
 
@@ -84,15 +85,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_add_user_post_request** | [**DocumentsAddUserPostRequest**](DocumentsAddUserPostRequest.md)|  | [optional] 
+ **documents_add_user_request** | [**DocumentsAddUserRequest**](DocumentsAddUserRequest.md)|  | [optional] 
 
 ### Return type
 
-[**CollectionsAddUserPost200Response**](CollectionsAddUserPost200Response.md)
+[**CollectionsAddUser200Response**](CollectionsAddUser200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -104,24 +105,30 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | The request failed one or more validations. |  -  |
+**401** | The API key is missing or otherwise invalid. |  -  |
+**403** | The current API key is not authorized to perform this action. |  -  |
+**404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_answer_question_post**
-> DocumentsAnswerQuestionPost200Response documents_answer_question_post(documents_answer_question_post_request=documents_answer_question_post_request)
+# **documents_answerquestion**
+> DocumentsAnswerquestion200Response documents_answerquestion(documents_answerquestion_request=documents_answerquestion_request)
 
 Query documents with natural language
 
-This method allows asking direct questions of your documents – where possible an answer will be provided. Search results will be restricted to those accessible by the current access token. Note that \"AI answers\" must be enabled for the workspace.
+This method allows asking direct questions of your documents – where possible an answer will be provided. Search results will be restricted to those accessible by the current access token. Note that "AI answers" must be enabled for the workspace.
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.documents_answer_question_post200_response import DocumentsAnswerQuestionPost200Response
-from outline_openapi.models.documents_answer_question_post_request import DocumentsAnswerQuestionPostRequest
+from outline_openapi.models.documents_answerquestion200_response import DocumentsAnswerquestion200Response
+from outline_openapi.models.documents_answerquestion_request import DocumentsAnswerquestionRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -136,7 +143,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -145,15 +154,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_answer_question_post_request = outline_openapi.DocumentsAnswerQuestionPostRequest() # DocumentsAnswerQuestionPostRequest |  (optional)
+    documents_answerquestion_request = outline_openapi.DocumentsAnswerquestionRequest() # DocumentsAnswerquestionRequest |  (optional)
 
     try:
         # Query documents with natural language
-        api_response = await api_instance.documents_answer_question_post(documents_answer_question_post_request=documents_answer_question_post_request)
-        print("The response of DocumentsApi->documents_answer_question_post:\n")
+        api_response = await api_instance.documents_answerquestion(documents_answerquestion_request=documents_answerquestion_request)
+        print("The response of DocumentsApi->documents_answerquestion:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_answer_question_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_answerquestion: %s\n" % e)
 ```
 
 
@@ -163,15 +172,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_answer_question_post_request** | [**DocumentsAnswerQuestionPostRequest**](DocumentsAnswerQuestionPostRequest.md)|  | [optional] 
+ **documents_answerquestion_request** | [**DocumentsAnswerquestionRequest**](DocumentsAnswerquestionRequest.md)|  | [optional] 
 
 ### Return type
 
-[**DocumentsAnswerQuestionPost200Response**](DocumentsAnswerQuestionPost200Response.md)
+[**DocumentsAnswerquestion200Response**](DocumentsAnswerquestion200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -185,11 +194,12 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_archive_post**
-> DocumentsCreatePost200Response documents_archive_post(documents_star_post_request=documents_star_post_request)
+# **documents_archive**
+> DocumentsInfo200Response documents_archive(documents_unpublish_request=documents_unpublish_request)
 
 Archive a document
 
@@ -197,12 +207,13 @@ Archiving a document allows outdated information to be moved out of sight whilst
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.documents_create_post200_response import DocumentsCreatePost200Response
-from outline_openapi.models.documents_star_post_request import DocumentsStarPostRequest
+from outline_openapi.models.documents_info200_response import DocumentsInfo200Response
+from outline_openapi.models.documents_unpublish_request import DocumentsUnpublishRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -217,7 +228,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -226,15 +239,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_star_post_request = outline_openapi.DocumentsStarPostRequest() # DocumentsStarPostRequest |  (optional)
+    documents_unpublish_request = outline_openapi.DocumentsUnpublishRequest() # DocumentsUnpublishRequest |  (optional)
 
     try:
         # Archive a document
-        api_response = await api_instance.documents_archive_post(documents_star_post_request=documents_star_post_request)
-        print("The response of DocumentsApi->documents_archive_post:\n")
+        api_response = await api_instance.documents_archive(documents_unpublish_request=documents_unpublish_request)
+        print("The response of DocumentsApi->documents_archive:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_archive_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_archive: %s\n" % e)
 ```
 
 
@@ -244,15 +257,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_star_post_request** | [**DocumentsStarPostRequest**](DocumentsStarPostRequest.md)|  | [optional] 
+ **documents_unpublish_request** | [**DocumentsUnpublishRequest**](DocumentsUnpublishRequest.md)|  | [optional] 
 
 ### Return type
 
-[**DocumentsCreatePost200Response**](DocumentsCreatePost200Response.md)
+[**DocumentsInfo200Response**](DocumentsInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -268,11 +281,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_create_post**
-> DocumentsCreatePost200Response documents_create_post(documents_create_post_request=documents_create_post_request)
+# **documents_create**
+> DocumentsInfo200Response documents_create(documents_create_request=documents_create_request)
 
 Create a document
 
@@ -280,12 +294,13 @@ This method allows you to create or publish a new document. By default a documen
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.documents_create_post200_response import DocumentsCreatePost200Response
-from outline_openapi.models.documents_create_post_request import DocumentsCreatePostRequest
+from outline_openapi.models.documents_create_request import DocumentsCreateRequest
+from outline_openapi.models.documents_info200_response import DocumentsInfo200Response
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -300,7 +315,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -309,15 +326,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_create_post_request = outline_openapi.DocumentsCreatePostRequest() # DocumentsCreatePostRequest |  (optional)
+    documents_create_request = outline_openapi.DocumentsCreateRequest() # DocumentsCreateRequest |  (optional)
 
     try:
         # Create a document
-        api_response = await api_instance.documents_create_post(documents_create_post_request=documents_create_post_request)
-        print("The response of DocumentsApi->documents_create_post:\n")
+        api_response = await api_instance.documents_create(documents_create_request=documents_create_request)
+        print("The response of DocumentsApi->documents_create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_create_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_create: %s\n" % e)
 ```
 
 
@@ -327,15 +344,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_create_post_request** | [**DocumentsCreatePostRequest**](DocumentsCreatePostRequest.md)|  | [optional] 
+ **documents_create_request** | [**DocumentsCreateRequest**](DocumentsCreateRequest.md)|  | [optional] 
 
 ### Return type
 
-[**DocumentsCreatePost200Response**](DocumentsCreatePost200Response.md)
+[**DocumentsInfo200Response**](DocumentsInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -350,11 +367,12 @@ Name | Type | Description  | Notes
 **400** | The request failed one or more validations. |  -  |
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_delete_post**
-> AttachmentsDeletePost200Response documents_delete_post(documents_delete_post_request=documents_delete_post_request)
+# **documents_delete**
+> AttachmentsDelete200Response documents_delete(documents_delete_request=documents_delete_request)
 
 Delete a document
 
@@ -362,12 +380,13 @@ Deleting a document moves it to the trash. If not restored within 30 days it is 
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.attachments_delete_post200_response import AttachmentsDeletePost200Response
-from outline_openapi.models.documents_delete_post_request import DocumentsDeletePostRequest
+from outline_openapi.models.attachments_delete200_response import AttachmentsDelete200Response
+from outline_openapi.models.documents_delete_request import DocumentsDeleteRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -382,7 +401,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -391,15 +412,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_delete_post_request = outline_openapi.DocumentsDeletePostRequest() # DocumentsDeletePostRequest |  (optional)
+    documents_delete_request = outline_openapi.DocumentsDeleteRequest() # DocumentsDeleteRequest |  (optional)
 
     try:
         # Delete a document
-        api_response = await api_instance.documents_delete_post(documents_delete_post_request=documents_delete_post_request)
-        print("The response of DocumentsApi->documents_delete_post:\n")
+        api_response = await api_instance.documents_delete(documents_delete_request=documents_delete_request)
+        print("The response of DocumentsApi->documents_delete:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_delete_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_delete: %s\n" % e)
 ```
 
 
@@ -409,15 +430,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_delete_post_request** | [**DocumentsDeletePostRequest**](DocumentsDeletePostRequest.md)|  | [optional] 
+ **documents_delete_request** | [**DocumentsDeleteRequest**](DocumentsDeleteRequest.md)|  | [optional] 
 
 ### Return type
 
-[**AttachmentsDeletePost200Response**](AttachmentsDeletePost200Response.md)
+[**AttachmentsDelete200Response**](AttachmentsDelete200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -433,11 +454,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_drafts_post**
-> CommentsListPost200Response documents_drafts_post(documents_drafts_post_request=documents_drafts_post_request)
+# **documents_drafts**
+> DocumentsList200Response documents_drafts(documents_drafts_request=documents_drafts_request)
 
 List all draft documents
 
@@ -445,12 +467,13 @@ This method will list all draft documents belonging to the current user.
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.comments_list_post200_response import CommentsListPost200Response
-from outline_openapi.models.documents_drafts_post_request import DocumentsDraftsPostRequest
+from outline_openapi.models.documents_drafts_request import DocumentsDraftsRequest
+from outline_openapi.models.documents_list200_response import DocumentsList200Response
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -465,7 +488,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -474,15 +499,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_drafts_post_request = outline_openapi.DocumentsDraftsPostRequest() # DocumentsDraftsPostRequest |  (optional)
+    documents_drafts_request = outline_openapi.DocumentsDraftsRequest() # DocumentsDraftsRequest |  (optional)
 
     try:
         # List all draft documents
-        api_response = await api_instance.documents_drafts_post(documents_drafts_post_request=documents_drafts_post_request)
-        print("The response of DocumentsApi->documents_drafts_post:\n")
+        api_response = await api_instance.documents_drafts(documents_drafts_request=documents_drafts_request)
+        print("The response of DocumentsApi->documents_drafts:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_drafts_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_drafts: %s\n" % e)
 ```
 
 
@@ -492,15 +517,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_drafts_post_request** | [**DocumentsDraftsPostRequest**](DocumentsDraftsPostRequest.md)|  | [optional] 
+ **documents_drafts_request** | [**DocumentsDraftsRequest**](DocumentsDraftsRequest.md)|  | [optional] 
 
 ### Return type
 
-[**CommentsListPost200Response**](CommentsListPost200Response.md)
+[**DocumentsList200Response**](DocumentsList200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -514,22 +539,24 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_export_post**
-> DocumentsExportPost200Response documents_export_post(documents_export_post_request=documents_export_post_request)
+# **documents_export**
+> DocumentsExport200Response documents_export(documents_export_request=documents_export_request)
 
 Export a document as markdown
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.documents_export_post200_response import DocumentsExportPost200Response
-from outline_openapi.models.documents_export_post_request import DocumentsExportPostRequest
+from outline_openapi.models.documents_export200_response import DocumentsExport200Response
+from outline_openapi.models.documents_export_request import DocumentsExportRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -544,7 +571,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -553,15 +582,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_export_post_request = outline_openapi.DocumentsExportPostRequest() # DocumentsExportPostRequest |  (optional)
+    documents_export_request = outline_openapi.DocumentsExportRequest() # DocumentsExportRequest |  (optional)
 
     try:
         # Export a document as markdown
-        api_response = await api_instance.documents_export_post(documents_export_post_request=documents_export_post_request)
-        print("The response of DocumentsApi->documents_export_post:\n")
+        api_response = await api_instance.documents_export(documents_export_request=documents_export_request)
+        print("The response of DocumentsApi->documents_export:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_export_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_export: %s\n" % e)
 ```
 
 
@@ -571,15 +600,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_export_post_request** | [**DocumentsExportPostRequest**](DocumentsExportPostRequest.md)|  | [optional] 
+ **documents_export_request** | [**DocumentsExportRequest**](DocumentsExportRequest.md)|  | [optional] 
 
 ### Return type
 
-[**DocumentsExportPost200Response**](DocumentsExportPost200Response.md)
+[**DocumentsExport200Response**](DocumentsExport200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -594,11 +623,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_import_post**
-> DocumentsInfoPost200Response documents_import_post(file=file, collection_id=collection_id, parent_document_id=parent_document_id, template=template, publish=publish)
+# **documents_import**
+> DocumentsInfo200Response documents_import(file, collection_id=collection_id, parent_document_id=parent_document_id, template=template, publish=publish)
 
 Import a file as a document
 
@@ -606,11 +636,12 @@ This method allows you to create a new document by importing an existing file. B
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.documents_info_post200_response import DocumentsInfoPost200Response
+from outline_openapi.models.documents_info200_response import DocumentsInfo200Response
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -625,7 +656,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -634,7 +667,7 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    file = None # object | Only plain text, markdown, docx, and html format are supported. (optional)
+    file = None # object | Plain text, markdown, docx, csv, tsv, and html format are supported.
     collection_id = 'collection_id_example' # str |  (optional)
     parent_document_id = 'parent_document_id_example' # str |  (optional)
     template = True # bool |  (optional)
@@ -642,11 +675,11 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
     try:
         # Import a file as a document
-        api_response = await api_instance.documents_import_post(file=file, collection_id=collection_id, parent_document_id=parent_document_id, template=template, publish=publish)
-        print("The response of DocumentsApi->documents_import_post:\n")
+        api_response = await api_instance.documents_import(file, collection_id=collection_id, parent_document_id=parent_document_id, template=template, publish=publish)
+        print("The response of DocumentsApi->documents_import:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_import_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_import: %s\n" % e)
 ```
 
 
@@ -656,7 +689,7 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | [**object**](object.md)| Only plain text, markdown, docx, and html format are supported. | [optional] 
+ **file** | [**object**](object.md)| Plain text, markdown, docx, csv, tsv, and html format are supported. | 
  **collection_id** | **str**|  | [optional] 
  **parent_document_id** | **str**|  | [optional] 
  **template** | **bool**|  | [optional] 
@@ -664,11 +697,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DocumentsInfoPost200Response**](DocumentsInfoPost200Response.md)
+[**DocumentsInfo200Response**](DocumentsInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -683,22 +716,26 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_info_post**
-> DocumentsInfoPost200Response documents_info_post(documents_info_post_request=documents_info_post_request)
+# **documents_info**
+> DocumentsInfo200Response documents_info(documents_info_request=documents_info_request)
 
 Retrieve a document
 
+Retrieve a document by its `UUID`, `urlId`, or `shareId`. At least one of these parameters must be provided.
+
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.documents_info_post200_response import DocumentsInfoPost200Response
-from outline_openapi.models.documents_info_post_request import DocumentsInfoPostRequest
+from outline_openapi.models.documents_info200_response import DocumentsInfo200Response
+from outline_openapi.models.documents_info_request import DocumentsInfoRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -713,7 +750,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -722,15 +761,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_info_post_request = outline_openapi.DocumentsInfoPostRequest() # DocumentsInfoPostRequest |  (optional)
+    documents_info_request = outline_openapi.DocumentsInfoRequest() # DocumentsInfoRequest |  (optional)
 
     try:
         # Retrieve a document
-        api_response = await api_instance.documents_info_post(documents_info_post_request=documents_info_post_request)
-        print("The response of DocumentsApi->documents_info_post:\n")
+        api_response = await api_instance.documents_info(documents_info_request=documents_info_request)
+        print("The response of DocumentsApi->documents_info:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_info_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_info: %s\n" % e)
 ```
 
 
@@ -740,15 +779,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_info_post_request** | [**DocumentsInfoPostRequest**](DocumentsInfoPostRequest.md)|  | [optional] 
+ **documents_info_request** | [**DocumentsInfoRequest**](DocumentsInfoRequest.md)|  | [optional] 
 
 ### Return type
 
-[**DocumentsInfoPost200Response**](DocumentsInfoPost200Response.md)
+[**DocumentsInfo200Response**](DocumentsInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -763,11 +802,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_list_post**
-> CommentsListPost200Response documents_list_post(documents_list_post_request=documents_list_post_request)
+# **documents_list**
+> DocumentsList200Response documents_list(documents_list_request=documents_list_request)
 
 List all documents
 
@@ -775,12 +815,13 @@ This method will list all published documents and draft documents belonging to t
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.comments_list_post200_response import CommentsListPost200Response
-from outline_openapi.models.documents_list_post_request import DocumentsListPostRequest
+from outline_openapi.models.documents_list200_response import DocumentsList200Response
+from outline_openapi.models.documents_list_request import DocumentsListRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -795,7 +836,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -804,15 +847,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_list_post_request = outline_openapi.DocumentsListPostRequest() # DocumentsListPostRequest |  (optional)
+    documents_list_request = outline_openapi.DocumentsListRequest() # DocumentsListRequest |  (optional)
 
     try:
         # List all documents
-        api_response = await api_instance.documents_list_post(documents_list_post_request=documents_list_post_request)
-        print("The response of DocumentsApi->documents_list_post:\n")
+        api_response = await api_instance.documents_list(documents_list_request=documents_list_request)
+        print("The response of DocumentsApi->documents_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_list_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_list: %s\n" % e)
 ```
 
 
@@ -822,15 +865,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_list_post_request** | [**DocumentsListPostRequest**](DocumentsListPostRequest.md)|  | [optional] 
+ **documents_list_request** | [**DocumentsListRequest**](DocumentsListRequest.md)|  | [optional] 
 
 ### Return type
 
-[**CommentsListPost200Response**](CommentsListPost200Response.md)
+[**DocumentsList200Response**](DocumentsList200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -844,11 +887,12 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_memberships_post**
-> CollectionsMembershipsPost200Response documents_memberships_post(documents_memberships_post_request=documents_memberships_post_request)
+# **documents_memberships**
+> CollectionsMemberships200Response documents_memberships(documents_memberships_request=documents_memberships_request)
 
 List document memberships
 
@@ -856,12 +900,13 @@ Users with direct membership to a document. To list all users with access to a d
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.collections_memberships_post200_response import CollectionsMembershipsPost200Response
-from outline_openapi.models.documents_memberships_post_request import DocumentsMembershipsPostRequest
+from outline_openapi.models.collections_memberships200_response import CollectionsMemberships200Response
+from outline_openapi.models.documents_memberships_request import DocumentsMembershipsRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -876,7 +921,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -885,15 +932,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_memberships_post_request = outline_openapi.DocumentsMembershipsPostRequest() # DocumentsMembershipsPostRequest |  (optional)
+    documents_memberships_request = outline_openapi.DocumentsMembershipsRequest() # DocumentsMembershipsRequest |  (optional)
 
     try:
         # List document memberships
-        api_response = await api_instance.documents_memberships_post(documents_memberships_post_request=documents_memberships_post_request)
-        print("The response of DocumentsApi->documents_memberships_post:\n")
+        api_response = await api_instance.documents_memberships(documents_memberships_request=documents_memberships_request)
+        print("The response of DocumentsApi->documents_memberships:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_memberships_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_memberships: %s\n" % e)
 ```
 
 
@@ -903,15 +950,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_memberships_post_request** | [**DocumentsMembershipsPostRequest**](DocumentsMembershipsPostRequest.md)|  | [optional] 
+ **documents_memberships_request** | [**DocumentsMembershipsRequest**](DocumentsMembershipsRequest.md)|  | [optional] 
 
 ### Return type
 
-[**CollectionsMembershipsPost200Response**](CollectionsMembershipsPost200Response.md)
+[**CollectionsMemberships200Response**](CollectionsMemberships200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -927,11 +974,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_move_post**
-> DocumentsMovePost200Response documents_move_post(documents_move_post_request=documents_move_post_request)
+# **documents_move**
+> DocumentsMove200Response documents_move(documents_move_request=documents_move_request)
 
 Move a document
 
@@ -939,12 +987,13 @@ Move a document to a new location or collection. If no parent document is provid
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.documents_move_post200_response import DocumentsMovePost200Response
-from outline_openapi.models.documents_move_post_request import DocumentsMovePostRequest
+from outline_openapi.models.documents_move200_response import DocumentsMove200Response
+from outline_openapi.models.documents_move_request import DocumentsMoveRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -959,7 +1008,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -968,15 +1019,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_move_post_request = outline_openapi.DocumentsMovePostRequest() # DocumentsMovePostRequest |  (optional)
+    documents_move_request = outline_openapi.DocumentsMoveRequest() # DocumentsMoveRequest |  (optional)
 
     try:
         # Move a document
-        api_response = await api_instance.documents_move_post(documents_move_post_request=documents_move_post_request)
-        print("The response of DocumentsApi->documents_move_post:\n")
+        api_response = await api_instance.documents_move(documents_move_request=documents_move_request)
+        print("The response of DocumentsApi->documents_move:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_move_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_move: %s\n" % e)
 ```
 
 
@@ -986,15 +1037,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_move_post_request** | [**DocumentsMovePostRequest**](DocumentsMovePostRequest.md)|  | [optional] 
+ **documents_move_request** | [**DocumentsMoveRequest**](DocumentsMoveRequest.md)|  | [optional] 
 
 ### Return type
 
-[**DocumentsMovePost200Response**](DocumentsMovePost200Response.md)
+[**DocumentsMove200Response**](DocumentsMove200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1010,11 +1061,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_remove_user_post**
-> AttachmentsDeletePost200Response documents_remove_user_post(documents_remove_user_post_request=documents_remove_user_post_request)
+# **documents_remove_user**
+> AttachmentsDelete200Response documents_remove_user(documents_remove_user_request=documents_remove_user_request)
 
 Remove a document user
 
@@ -1022,12 +1074,13 @@ This method allows you to remove a user membership from the specified document.
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.attachments_delete_post200_response import AttachmentsDeletePost200Response
-from outline_openapi.models.documents_remove_user_post_request import DocumentsRemoveUserPostRequest
+from outline_openapi.models.attachments_delete200_response import AttachmentsDelete200Response
+from outline_openapi.models.documents_remove_user_request import DocumentsRemoveUserRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -1042,7 +1095,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -1051,15 +1106,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_remove_user_post_request = outline_openapi.DocumentsRemoveUserPostRequest() # DocumentsRemoveUserPostRequest |  (optional)
+    documents_remove_user_request = outline_openapi.DocumentsRemoveUserRequest() # DocumentsRemoveUserRequest |  (optional)
 
     try:
         # Remove a document user
-        api_response = await api_instance.documents_remove_user_post(documents_remove_user_post_request=documents_remove_user_post_request)
-        print("The response of DocumentsApi->documents_remove_user_post:\n")
+        api_response = await api_instance.documents_remove_user(documents_remove_user_request=documents_remove_user_request)
+        print("The response of DocumentsApi->documents_remove_user:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_remove_user_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_remove_user: %s\n" % e)
 ```
 
 
@@ -1069,15 +1124,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_remove_user_post_request** | [**DocumentsRemoveUserPostRequest**](DocumentsRemoveUserPostRequest.md)|  | [optional] 
+ **documents_remove_user_request** | [**DocumentsRemoveUserRequest**](DocumentsRemoveUserRequest.md)|  | [optional] 
 
 ### Return type
 
-[**AttachmentsDeletePost200Response**](AttachmentsDeletePost200Response.md)
+[**AttachmentsDelete200Response**](AttachmentsDelete200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1093,11 +1148,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_restore_post**
-> DocumentsCreatePost200Response documents_restore_post(documents_restore_post_request=documents_restore_post_request)
+# **documents_restore**
+> DocumentsInfo200Response documents_restore(documents_restore_request=documents_restore_request)
 
 Restore a document
 
@@ -1105,12 +1161,13 @@ If a document has been archived or deleted, it can be restored. Optionally a rev
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.documents_create_post200_response import DocumentsCreatePost200Response
-from outline_openapi.models.documents_restore_post_request import DocumentsRestorePostRequest
+from outline_openapi.models.documents_info200_response import DocumentsInfo200Response
+from outline_openapi.models.documents_restore_request import DocumentsRestoreRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -1125,7 +1182,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -1134,15 +1193,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_restore_post_request = outline_openapi.DocumentsRestorePostRequest() # DocumentsRestorePostRequest |  (optional)
+    documents_restore_request = outline_openapi.DocumentsRestoreRequest() # DocumentsRestoreRequest |  (optional)
 
     try:
         # Restore a document
-        api_response = await api_instance.documents_restore_post(documents_restore_post_request=documents_restore_post_request)
-        print("The response of DocumentsApi->documents_restore_post:\n")
+        api_response = await api_instance.documents_restore(documents_restore_request=documents_restore_request)
+        print("The response of DocumentsApi->documents_restore:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_restore_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_restore: %s\n" % e)
 ```
 
 
@@ -1152,15 +1211,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_restore_post_request** | [**DocumentsRestorePostRequest**](DocumentsRestorePostRequest.md)|  | [optional] 
+ **documents_restore_request** | [**DocumentsRestoreRequest**](DocumentsRestoreRequest.md)|  | [optional] 
 
 ### Return type
 
-[**DocumentsCreatePost200Response**](DocumentsCreatePost200Response.md)
+[**DocumentsInfo200Response**](DocumentsInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1176,11 +1235,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_search_post**
-> DocumentsSearchPost200Response documents_search_post(documents_search_post_request=documents_search_post_request)
+# **documents_search**
+> DocumentsSearch200Response documents_search(documents_search_request=documents_search_request)
 
 Search all documents
 
@@ -1188,12 +1248,13 @@ This methods allows you to search your teams documents with keywords. Note that 
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.documents_search_post200_response import DocumentsSearchPost200Response
-from outline_openapi.models.documents_search_post_request import DocumentsSearchPostRequest
+from outline_openapi.models.documents_search200_response import DocumentsSearch200Response
+from outline_openapi.models.documents_search_request import DocumentsSearchRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -1208,7 +1269,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -1217,15 +1280,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_search_post_request = outline_openapi.DocumentsSearchPostRequest() # DocumentsSearchPostRequest |  (optional)
+    documents_search_request = outline_openapi.DocumentsSearchRequest() # DocumentsSearchRequest |  (optional)
 
     try:
         # Search all documents
-        api_response = await api_instance.documents_search_post(documents_search_post_request=documents_search_post_request)
-        print("The response of DocumentsApi->documents_search_post:\n")
+        api_response = await api_instance.documents_search(documents_search_request=documents_search_request)
+        print("The response of DocumentsApi->documents_search:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_search_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_search: %s\n" % e)
 ```
 
 
@@ -1235,15 +1298,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_search_post_request** | [**DocumentsSearchPostRequest**](DocumentsSearchPostRequest.md)|  | [optional] 
+ **documents_search_request** | [**DocumentsSearchRequest**](DocumentsSearchRequest.md)|  | [optional] 
 
 ### Return type
 
-[**DocumentsSearchPost200Response**](DocumentsSearchPost200Response.md)
+[**DocumentsSearch200Response**](DocumentsSearch200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1257,94 +1320,12 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_star_post**
-> DocumentsStarPost200Response documents_star_post(documents_star_post_request=documents_star_post_request)
-
-Star a document
-
-Starring a document gives it extra priority in the UI and makes it easier to find important information later.
-
-### Example
-
-* Bearer (JWT) Authentication (http):
-
-```python
-import outline_openapi
-from outline_openapi.models.documents_star_post200_response import DocumentsStarPost200Response
-from outline_openapi.models.documents_star_post_request import DocumentsStarPostRequest
-from outline_openapi.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://app.getoutline.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = outline_openapi.Configuration(
-    host = "https://app.getoutline.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization (JWT): http
-configuration = outline_openapi.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-async with outline_openapi.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_star_post_request = outline_openapi.DocumentsStarPostRequest() # DocumentsStarPostRequest |  (optional)
-
-    try:
-        # Star a document
-        api_response = await api_instance.documents_star_post(documents_star_post_request=documents_star_post_request)
-        print("The response of DocumentsApi->documents_star_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DocumentsApi->documents_star_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **documents_star_post_request** | [**DocumentsStarPostRequest**](DocumentsStarPostRequest.md)|  | [optional] 
-
-### Return type
-
-[**DocumentsStarPost200Response**](DocumentsStarPost200Response.md)
-
-### Authorization
-
-[http](../README.md#http)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | The request failed one or more validations. |  -  |
-**401** | The API key is missing or otherwise invalid. |  -  |
-**403** | The current API key is not authorized to perform this action. |  -  |
-**404** | The specified resource was not found. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **documents_templatize_post**
-> DocumentsCreatePost200Response documents_templatize_post(collections_delete_post_request=collections_delete_post_request)
+# **documents_templatize**
+> DocumentsInfo200Response documents_templatize(collections_delete_request=collections_delete_request)
 
 Create a template from a document
 
@@ -1352,12 +1333,13 @@ This method allows you to createa new template using an existing document as the
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.collections_delete_post_request import CollectionsDeletePostRequest
-from outline_openapi.models.documents_create_post200_response import DocumentsCreatePost200Response
+from outline_openapi.models.collections_delete_request import CollectionsDeleteRequest
+from outline_openapi.models.documents_info200_response import DocumentsInfo200Response
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -1372,7 +1354,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -1381,15 +1365,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    collections_delete_post_request = outline_openapi.CollectionsDeletePostRequest() # CollectionsDeletePostRequest |  (optional)
+    collections_delete_request = outline_openapi.CollectionsDeleteRequest() # CollectionsDeleteRequest |  (optional)
 
     try:
         # Create a template from a document
-        api_response = await api_instance.documents_templatize_post(collections_delete_post_request=collections_delete_post_request)
-        print("The response of DocumentsApi->documents_templatize_post:\n")
+        api_response = await api_instance.documents_templatize(collections_delete_request=collections_delete_request)
+        print("The response of DocumentsApi->documents_templatize:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_templatize_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_templatize: %s\n" % e)
 ```
 
 
@@ -1399,15 +1383,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collections_delete_post_request** | [**CollectionsDeletePostRequest**](CollectionsDeletePostRequest.md)|  | [optional] 
+ **collections_delete_request** | [**CollectionsDeleteRequest**](CollectionsDeleteRequest.md)|  | [optional] 
 
 ### Return type
 
-[**DocumentsCreatePost200Response**](DocumentsCreatePost200Response.md)
+[**DocumentsInfo200Response**](DocumentsInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1422,11 +1406,12 @@ Name | Type | Description  | Notes
 **400** | The request failed one or more validations. |  -  |
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_unpublish_post**
-> DocumentsCreatePost200Response documents_unpublish_post(documents_star_post_request=documents_star_post_request)
+# **documents_unpublish**
+> DocumentsInfo200Response documents_unpublish(documents_unpublish_request=documents_unpublish_request)
 
 Unpublish a document
 
@@ -1434,12 +1419,13 @@ Unpublishing a document moves it back to a draft status and out of the collectio
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.documents_create_post200_response import DocumentsCreatePost200Response
-from outline_openapi.models.documents_star_post_request import DocumentsStarPostRequest
+from outline_openapi.models.documents_info200_response import DocumentsInfo200Response
+from outline_openapi.models.documents_unpublish_request import DocumentsUnpublishRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -1454,7 +1440,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -1463,15 +1451,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_star_post_request = outline_openapi.DocumentsStarPostRequest() # DocumentsStarPostRequest |  (optional)
+    documents_unpublish_request = outline_openapi.DocumentsUnpublishRequest() # DocumentsUnpublishRequest |  (optional)
 
     try:
         # Unpublish a document
-        api_response = await api_instance.documents_unpublish_post(documents_star_post_request=documents_star_post_request)
-        print("The response of DocumentsApi->documents_unpublish_post:\n")
+        api_response = await api_instance.documents_unpublish(documents_unpublish_request=documents_unpublish_request)
+        print("The response of DocumentsApi->documents_unpublish:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_unpublish_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_unpublish: %s\n" % e)
 ```
 
 
@@ -1481,15 +1469,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_star_post_request** | [**DocumentsStarPostRequest**](DocumentsStarPostRequest.md)|  | [optional] 
+ **documents_unpublish_request** | [**DocumentsUnpublishRequest**](DocumentsUnpublishRequest.md)|  | [optional] 
 
 ### Return type
 
-[**DocumentsCreatePost200Response**](DocumentsCreatePost200Response.md)
+[**DocumentsInfo200Response**](DocumentsInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1505,94 +1493,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_unstar_post**
-> DocumentsStarPost200Response documents_unstar_post(documents_star_post_request=documents_star_post_request)
-
-Unstar a document
-
-Starring a document gives it extra priority in the UI and makes it easier to find important information later.
-
-### Example
-
-* Bearer (JWT) Authentication (http):
-
-```python
-import outline_openapi
-from outline_openapi.models.documents_star_post200_response import DocumentsStarPost200Response
-from outline_openapi.models.documents_star_post_request import DocumentsStarPostRequest
-from outline_openapi.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://app.getoutline.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = outline_openapi.Configuration(
-    host = "https://app.getoutline.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization (JWT): http
-configuration = outline_openapi.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-async with outline_openapi.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_star_post_request = outline_openapi.DocumentsStarPostRequest() # DocumentsStarPostRequest |  (optional)
-
-    try:
-        # Unstar a document
-        api_response = await api_instance.documents_unstar_post(documents_star_post_request=documents_star_post_request)
-        print("The response of DocumentsApi->documents_unstar_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DocumentsApi->documents_unstar_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **documents_star_post_request** | [**DocumentsStarPostRequest**](DocumentsStarPostRequest.md)|  | [optional] 
-
-### Return type
-
-[**DocumentsStarPost200Response**](DocumentsStarPost200Response.md)
-
-### Authorization
-
-[http](../README.md#http)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | The request failed one or more validations. |  -  |
-**401** | The API key is missing or otherwise invalid. |  -  |
-**403** | The current API key is not authorized to perform this action. |  -  |
-**404** | The specified resource was not found. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **documents_update_post**
-> DocumentsCreatePost200Response documents_update_post(documents_update_post_request=documents_update_post_request)
+# **documents_update**
+> DocumentsInfo200Response documents_update(documents_update_request=documents_update_request)
 
 Update a document
 
@@ -1600,12 +1506,13 @@ This method allows you to modify an already created document
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.documents_create_post200_response import DocumentsCreatePost200Response
-from outline_openapi.models.documents_update_post_request import DocumentsUpdatePostRequest
+from outline_openapi.models.documents_info200_response import DocumentsInfo200Response
+from outline_openapi.models.documents_update_request import DocumentsUpdateRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -1620,7 +1527,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -1629,15 +1538,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_update_post_request = outline_openapi.DocumentsUpdatePostRequest() # DocumentsUpdatePostRequest |  (optional)
+    documents_update_request = outline_openapi.DocumentsUpdateRequest() # DocumentsUpdateRequest |  (optional)
 
     try:
         # Update a document
-        api_response = await api_instance.documents_update_post(documents_update_post_request=documents_update_post_request)
-        print("The response of DocumentsApi->documents_update_post:\n")
+        api_response = await api_instance.documents_update(documents_update_request=documents_update_request)
+        print("The response of DocumentsApi->documents_update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_update_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_update: %s\n" % e)
 ```
 
 
@@ -1647,15 +1556,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_update_post_request** | [**DocumentsUpdatePostRequest**](DocumentsUpdatePostRequest.md)|  | [optional] 
+ **documents_update_request** | [**DocumentsUpdateRequest**](DocumentsUpdateRequest.md)|  | [optional] 
 
 ### Return type
 
-[**DocumentsCreatePost200Response**](DocumentsCreatePost200Response.md)
+[**DocumentsInfo200Response**](DocumentsInfo200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1671,11 +1580,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_users_post**
-> DocumentsUsersPost200Response documents_users_post(documents_users_post_request=documents_users_post_request)
+# **documents_users**
+> DocumentsUsers200Response documents_users(documents_users_request=documents_users_request)
 
 List document users
 
@@ -1683,12 +1593,13 @@ All users with access to a document. To list only users with direct membership t
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.documents_users_post200_response import DocumentsUsersPost200Response
-from outline_openapi.models.documents_users_post_request import DocumentsUsersPostRequest
+from outline_openapi.models.documents_users200_response import DocumentsUsers200Response
+from outline_openapi.models.documents_users_request import DocumentsUsersRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -1703,7 +1614,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -1712,15 +1625,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_users_post_request = outline_openapi.DocumentsUsersPostRequest() # DocumentsUsersPostRequest |  (optional)
+    documents_users_request = outline_openapi.DocumentsUsersRequest() # DocumentsUsersRequest |  (optional)
 
     try:
         # List document users
-        api_response = await api_instance.documents_users_post(documents_users_post_request=documents_users_post_request)
-        print("The response of DocumentsApi->documents_users_post:\n")
+        api_response = await api_instance.documents_users(documents_users_request=documents_users_request)
+        print("The response of DocumentsApi->documents_users:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_users_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_users: %s\n" % e)
 ```
 
 
@@ -1730,15 +1643,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_users_post_request** | [**DocumentsUsersPostRequest**](DocumentsUsersPostRequest.md)|  | [optional] 
+ **documents_users_request** | [**DocumentsUsersRequest**](DocumentsUsersRequest.md)|  | [optional] 
 
 ### Return type
 
-[**DocumentsUsersPost200Response**](DocumentsUsersPost200Response.md)
+[**DocumentsUsers200Response**](DocumentsUsers200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1754,11 +1667,12 @@ Name | Type | Description  | Notes
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
 **404** | The specified resource was not found. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **documents_viewed_post**
-> CommentsListPost200Response documents_viewed_post(documents_viewed_post_request=documents_viewed_post_request)
+# **documents_viewed**
+> DocumentsList200Response documents_viewed(documents_viewed_request=documents_viewed_request)
 
 List all recently viewed documents
 
@@ -1766,12 +1680,13 @@ This method will list all documents recently viewed by the current user.
 
 ### Example
 
-* Bearer (JWT) Authentication (http):
+* OAuth Authentication (OAuth2):
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import outline_openapi
-from outline_openapi.models.comments_list_post200_response import CommentsListPost200Response
-from outline_openapi.models.documents_viewed_post_request import DocumentsViewedPostRequest
+from outline_openapi.models.documents_list200_response import DocumentsList200Response
+from outline_openapi.models.documents_viewed_request import DocumentsViewedRequest
 from outline_openapi.rest import ApiException
 from pprint import pprint
 
@@ -1786,7 +1701,9 @@ configuration = outline_openapi.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Bearer authorization (JWT): http
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization (JWT): BearerAuth
 configuration = outline_openapi.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
@@ -1795,15 +1712,15 @@ configuration = outline_openapi.Configuration(
 async with outline_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = outline_openapi.DocumentsApi(api_client)
-    documents_viewed_post_request = outline_openapi.DocumentsViewedPostRequest() # DocumentsViewedPostRequest |  (optional)
+    documents_viewed_request = outline_openapi.DocumentsViewedRequest() # DocumentsViewedRequest |  (optional)
 
     try:
         # List all recently viewed documents
-        api_response = await api_instance.documents_viewed_post(documents_viewed_post_request=documents_viewed_post_request)
-        print("The response of DocumentsApi->documents_viewed_post:\n")
+        api_response = await api_instance.documents_viewed(documents_viewed_request=documents_viewed_request)
+        print("The response of DocumentsApi->documents_viewed:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DocumentsApi->documents_viewed_post: %s\n" % e)
+        print("Exception when calling DocumentsApi->documents_viewed: %s\n" % e)
 ```
 
 
@@ -1813,15 +1730,15 @@ async with outline_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documents_viewed_post_request** | [**DocumentsViewedPostRequest**](DocumentsViewedPostRequest.md)|  | [optional] 
+ **documents_viewed_request** | [**DocumentsViewedRequest**](DocumentsViewedRequest.md)|  | [optional] 
 
 ### Return type
 
-[**CommentsListPost200Response**](CommentsListPost200Response.md)
+[**DocumentsList200Response**](DocumentsList200Response.md)
 
 ### Authorization
 
-[http](../README.md#http)
+[OAuth2](../README.md#OAuth2), [BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1835,6 +1752,7 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **401** | The API key is missing or otherwise invalid. |  -  |
 **403** | The current API key is not authorized to perform this action. |  -  |
+**429** | The request was rate limited. |  * Retry-After -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

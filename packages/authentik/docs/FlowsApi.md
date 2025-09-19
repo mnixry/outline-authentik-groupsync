@@ -34,8 +34,6 @@ Method | HTTP request | Description
 # **flows_bindings_create**
 > FlowStageBinding flows_bindings_create(flow_stage_binding_request)
 
-
-
 FlowStageBinding Viewset
 
 ### Example
@@ -114,8 +112,6 @@ Name | Type | Description  | Notes
 # **flows_bindings_destroy**
 > flows_bindings_destroy(fsb_uuid)
 
-
-
 FlowStageBinding Viewset
 
 ### Example
@@ -189,8 +185,6 @@ void (empty response body)
 
 # **flows_bindings_list**
 > PaginatedFlowStageBindingList flows_bindings_list(evaluate_on_plan=evaluate_on_plan, fsb_uuid=fsb_uuid, invalid_response_action=invalid_response_action, order=order, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policies=policies, policy_engine_mode=policy_engine_mode, re_evaluate_policies=re_evaluate_policies, search=search, stage=stage, target=target)
-
-
 
 FlowStageBinding Viewset
 
@@ -295,8 +289,6 @@ Name | Type | Description  | Notes
 # **flows_bindings_partial_update**
 > FlowStageBinding flows_bindings_partial_update(fsb_uuid, patched_flow_stage_binding_request=patched_flow_stage_binding_request)
 
-
-
 FlowStageBinding Viewset
 
 ### Example
@@ -377,8 +369,6 @@ Name | Type | Description  | Notes
 # **flows_bindings_retrieve**
 > FlowStageBinding flows_bindings_retrieve(fsb_uuid)
 
-
-
 FlowStageBinding Viewset
 
 ### Example
@@ -455,8 +445,6 @@ Name | Type | Description  | Notes
 
 # **flows_bindings_update**
 > FlowStageBinding flows_bindings_update(fsb_uuid, flow_stage_binding_request)
-
-
 
 FlowStageBinding Viewset
 
@@ -538,8 +526,6 @@ Name | Type | Description  | Notes
 # **flows_bindings_used_by_list**
 > List[UsedBy] flows_bindings_used_by_list(fsb_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -616,8 +602,6 @@ Name | Type | Description  | Notes
 
 # **flows_executor_get**
 > ChallengeTypes flows_executor_get(flow_slug, query)
-
-
 
 Get the next pending challenge from the currently active flow.
 
@@ -697,8 +681,6 @@ Name | Type | Description  | Notes
 
 # **flows_executor_solve**
 > ChallengeTypes flows_executor_solve(flow_slug, query, flow_challenge_response_request=flow_challenge_response_request)
-
-
 
 Solve the previously retrieved challenge and advanced to the next stage.
 
@@ -782,8 +764,6 @@ Name | Type | Description  | Notes
 # **flows_inspector_get**
 > FlowInspection flows_inspector_get(flow_slug)
 
-
-
 Get current flow state and record it
 
 ### Example
@@ -861,8 +841,6 @@ Name | Type | Description  | Notes
 # **flows_instances_cache_clear_create**
 > flows_instances_cache_clear_create()
 
-
-
 Clear flow cache
 
 ### Example
@@ -932,8 +910,6 @@ void (empty response body)
 
 # **flows_instances_cache_info_retrieve**
 > Cache flows_instances_cache_info_retrieve()
-
-
 
 Info about cached flows
 
@@ -1007,8 +983,6 @@ This endpoint does not need any parameter.
 
 # **flows_instances_create**
 > Flow flows_instances_create(flow_request)
-
-
 
 Flow Viewset
 
@@ -1088,8 +1062,6 @@ Name | Type | Description  | Notes
 # **flows_instances_destroy**
 > flows_instances_destroy(slug)
 
-
-
 Flow Viewset
 
 ### Example
@@ -1163,8 +1135,6 @@ void (empty response body)
 
 # **flows_instances_diagram_retrieve**
 > FlowDiagram flows_instances_diagram_retrieve(slug)
-
-
 
 Return diagram for flow with slug `slug`, in the format used by flowchart.js
 
@@ -1243,8 +1213,6 @@ Name | Type | Description  | Notes
 # **flows_instances_execute_retrieve**
 > Link flows_instances_execute_retrieve(slug)
 
-
-
 Execute flow for current user
 
 ### Example
@@ -1322,8 +1290,6 @@ Name | Type | Description  | Notes
 # **flows_instances_export_retrieve**
 > bytearray flows_instances_export_retrieve(slug)
 
-
-
 Export flow to .yaml file
 
 ### Example
@@ -1399,8 +1365,6 @@ Name | Type | Description  | Notes
 
 # **flows_instances_import_create**
 > FlowImportResult flows_instances_import_create(file=file, clear=clear)
-
-
 
 Import flow from .yaml file
 
@@ -1480,8 +1444,6 @@ Name | Type | Description  | Notes
 
 # **flows_instances_list**
 > PaginatedFlowList flows_instances_list(denied_action=denied_action, designation=designation, flow_uuid=flow_uuid, name=name, ordering=ordering, page=page, page_size=page_size, search=search, slug=slug)
-
-
 
 Flow Viewset
 
@@ -1576,8 +1538,6 @@ Name | Type | Description  | Notes
 # **flows_instances_partial_update**
 > Flow flows_instances_partial_update(slug, patched_flow_request=patched_flow_request)
 
-
-
 Flow Viewset
 
 ### Example
@@ -1658,8 +1618,6 @@ Name | Type | Description  | Notes
 # **flows_instances_retrieve**
 > Flow flows_instances_retrieve(slug)
 
-
-
 Flow Viewset
 
 ### Example
@@ -1736,8 +1694,6 @@ Name | Type | Description  | Notes
 
 # **flows_instances_set_background_create**
 > flows_instances_set_background_create(slug, file=file, clear=clear)
-
-
 
 Set Flow background
 
@@ -1817,8 +1773,6 @@ void (empty response body)
 # **flows_instances_set_background_url_create**
 > flows_instances_set_background_url_create(slug, file_path_request)
 
-
-
 Set Flow background (as URL)
 
 ### Example
@@ -1895,8 +1849,6 @@ void (empty response body)
 
 # **flows_instances_update**
 > Flow flows_instances_update(slug, flow_request)
-
-
 
 Flow Viewset
 
@@ -1977,8 +1929,6 @@ Name | Type | Description  | Notes
 
 # **flows_instances_used_by_list**
 > List[UsedBy] flows_instances_used_by_list(slug)
-
-
 
 Get a list of all objects that use this object
 

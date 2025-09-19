@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **user** | **int** |  | 
 **user_obj** | [**GroupMember**](GroupMember.md) |  | [readonly] 
 **provider** | **int** |  | 
-**attributes** | **object** |  | [readonly] 
+**attributes** | **Dict[str, object]** |  | [readonly] 
 
 ## Example
 

@@ -6,7 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **component** | **str** |  | [optional] [default to 'ak-stage-user-login']
-**code** | **int** |  | 
+**code** | **str** |  | 
+**email** | **str** |  | [optional] 
 **phone_number** | **str** |  | [optional] 
 **selected_challenge** | [**DeviceChallengeRequest**](DeviceChallengeRequest.md) |  | [optional] 
 **selected_stage** | **str** |  | [optional] 
@@ -16,6 +17,8 @@ Name | Type | Description | Notes
 **token** | **str** |  | 
 **uid_field** | **str** |  | 
 **password** | **str** |  | 
+**captcha_token** | **str** |  | [optional] 
+**to** | **str** |  | 
 **remember_me** | **bool** |  | 
 
 ## Example

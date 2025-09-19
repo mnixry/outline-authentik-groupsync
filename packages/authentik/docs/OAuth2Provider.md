@@ -27,11 +27,14 @@ Name | Type | Description | Notes
 **access_token_validity** | **str** | Tokens not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **refresh_token_validity** | **str** | Tokens not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **include_claims_in_id_token** | **bool** | Include User claims from scopes in the id_token, for applications that don&#39;t access the userinfo endpoint. | [optional] 
-**signing_key** | **str** | Key used to sign the tokens. Only required when JWT Algorithm is set to RS256. | [optional] 
-**redirect_uris** | **str** | Enter each URI on a new line. | [optional] 
+**signing_key** | **str** | Key used to sign the tokens. | [optional] 
+**encryption_key** | **str** | Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs. | [optional] 
+**redirect_uris** | [**List[RedirectURI]**](RedirectURI.md) |  | 
+**backchannel_logout_uri** | **str** |  | [optional] 
 **sub_mode** | [**SubModeEnum**](SubModeEnum.md) | Configure what data should be used as unique User Identifier. For most cases, the default should be fine. | [optional] 
 **issuer_mode** | [**IssuerModeEnum**](IssuerModeEnum.md) | Configure how the issuer field of the ID Token should be filled. | [optional] 
-**jwks_sources** | **List[str]** |  | [optional] 
+**jwt_federation_sources** | **List[str]** |  | [optional] 
+**jwt_federation_providers** | **List[int]** |  | [optional] 
 
 ## Example
 

@@ -1,11 +1,13 @@
 # PatchedUserPlexSourceConnectionRequest
 
-Plex Source connection Serializer
+User source connection
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**user** | **int** |  | [optional] 
+**source** | **str** |  | [optional] 
 **identifier** | **str** |  | [optional] 
 **plex_token** | **str** |  | [optional] 
 

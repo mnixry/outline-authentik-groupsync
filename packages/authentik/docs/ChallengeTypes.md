@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **activation_barcode** | **str** |  | 
 **activation_code** | **str** |  | 
 **stage_uuid** | **str** |  | 
+**email** | **str** |  | [optional] 
+**email_required** | **bool** |  | [optional] [default to True]
 **phone_number_required** | **bool** |  | [optional] [default to True]
 **codes** | **List[str]** |  | 
 **config_url** | **str** |  | 
@@ -29,6 +31,7 @@ Name | Type | Description | Notes
 **title** | **str** |  | [optional] 
 **site_key** | **str** |  | 
 **js_url** | **str** |  | 
+**interactive** | **bool** |  | 
 **header_text** | **str** |  | [optional] 
 **permissions** | [**List[ConsentPermission]**](ConsentPermission.md) |  | 
 **additional_permissions** | [**List[ConsentPermission]**](ConsentPermission.md) |  | 
@@ -37,17 +40,21 @@ Name | Type | Description | Notes
 **request_id** | **str** |  | 
 **error** | **str** |  | [optional] 
 **traceback** | **str** |  | [optional] 
+**loading_overlay** | **bool** |  | [optional] [default to False]
+**loading_text** | **str** |  | 
 **user_fields** | **List[str]** |  | 
 **password_fields** | **bool** |  | 
 **allow_show_password** | **bool** |  | [optional] [default to False]
 **application_pre** | **str** |  | [optional] 
 **flow_designation** | [**FlowDesignationEnum**](FlowDesignationEnum.md) |  | 
+**captcha_stage** | [**CaptchaChallenge**](CaptchaChallenge.md) |  | [optional] 
 **enroll_url** | **str** |  | [optional] 
 **recovery_url** | **str** |  | [optional] 
 **passwordless_url** | **str** |  | [optional] 
 **primary_action** | **str** |  | 
 **sources** | [**List[LoginSource]**](LoginSource.md) |  | [optional] 
 **show_source_labels** | **bool** |  | 
+**enable_remember_me** | **bool** |  | [optional] [default to True]
 **slug** | **str** |  | 
 **fields** | [**List[StagePrompt]**](StagePrompt.md) |  | 
 **to** | **str** |  | 

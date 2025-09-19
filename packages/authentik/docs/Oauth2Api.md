@@ -21,8 +21,6 @@ Method | HTTP request | Description
 # **oauth2_access_tokens_destroy**
 > oauth2_access_tokens_destroy(id)
 
-
-
 AccessToken Viewset
 
 ### Example
@@ -96,8 +94,6 @@ void (empty response body)
 
 # **oauth2_access_tokens_list**
 > PaginatedTokenModelList oauth2_access_tokens_list(ordering=ordering, page=page, page_size=page_size, provider=provider, search=search, user=user)
-
-
 
 AccessToken Viewset
 
@@ -186,8 +182,6 @@ Name | Type | Description  | Notes
 # **oauth2_access_tokens_retrieve**
 > TokenModel oauth2_access_tokens_retrieve(id)
 
-
-
 AccessToken Viewset
 
 ### Example
@@ -264,8 +258,6 @@ Name | Type | Description  | Notes
 
 # **oauth2_access_tokens_used_by_list**
 > List[UsedBy] oauth2_access_tokens_used_by_list(id)
-
-
 
 Get a list of all objects that use this object
 
@@ -344,8 +336,6 @@ Name | Type | Description  | Notes
 # **oauth2_authorization_codes_destroy**
 > oauth2_authorization_codes_destroy(id)
 
-
-
 AuthorizationCode Viewset
 
 ### Example
@@ -419,8 +409,6 @@ void (empty response body)
 
 # **oauth2_authorization_codes_list**
 > PaginatedExpiringBaseGrantModelList oauth2_authorization_codes_list(ordering=ordering, page=page, page_size=page_size, provider=provider, search=search, user=user)
-
-
 
 AuthorizationCode Viewset
 
@@ -509,8 +497,6 @@ Name | Type | Description  | Notes
 # **oauth2_authorization_codes_retrieve**
 > ExpiringBaseGrantModel oauth2_authorization_codes_retrieve(id)
 
-
-
 AuthorizationCode Viewset
 
 ### Example
@@ -587,8 +573,6 @@ Name | Type | Description  | Notes
 
 # **oauth2_authorization_codes_used_by_list**
 > List[UsedBy] oauth2_authorization_codes_used_by_list(id)
-
-
 
 Get a list of all objects that use this object
 
@@ -667,8 +651,6 @@ Name | Type | Description  | Notes
 # **oauth2_refresh_tokens_destroy**
 > oauth2_refresh_tokens_destroy(id)
 
-
-
 RefreshToken Viewset
 
 ### Example
@@ -742,8 +724,6 @@ void (empty response body)
 
 # **oauth2_refresh_tokens_list**
 > PaginatedTokenModelList oauth2_refresh_tokens_list(ordering=ordering, page=page, page_size=page_size, provider=provider, search=search, user=user)
-
-
 
 RefreshToken Viewset
 
@@ -832,8 +812,6 @@ Name | Type | Description  | Notes
 # **oauth2_refresh_tokens_retrieve**
 > TokenModel oauth2_refresh_tokens_retrieve(id)
 
-
-
 RefreshToken Viewset
 
 ### Example
@@ -910,8 +888,6 @@ Name | Type | Description  | Notes
 
 # **oauth2_refresh_tokens_used_by_list**
 > List[UsedBy] oauth2_refresh_tokens_used_by_list(id)
-
-
 
 Get a list of all objects that use this object
 

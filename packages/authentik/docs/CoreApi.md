@@ -4,11 +4,17 @@ All URIs are relative to *https://github.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**core_application_entitlements_create**](CoreApi.md#core_application_entitlements_create) | **POST** /core/application_entitlements/ | 
+[**core_application_entitlements_destroy**](CoreApi.md#core_application_entitlements_destroy) | **DELETE** /core/application_entitlements/{pbm_uuid}/ | 
+[**core_application_entitlements_list**](CoreApi.md#core_application_entitlements_list) | **GET** /core/application_entitlements/ | 
+[**core_application_entitlements_partial_update**](CoreApi.md#core_application_entitlements_partial_update) | **PATCH** /core/application_entitlements/{pbm_uuid}/ | 
+[**core_application_entitlements_retrieve**](CoreApi.md#core_application_entitlements_retrieve) | **GET** /core/application_entitlements/{pbm_uuid}/ | 
+[**core_application_entitlements_update**](CoreApi.md#core_application_entitlements_update) | **PUT** /core/application_entitlements/{pbm_uuid}/ | 
+[**core_application_entitlements_used_by_list**](CoreApi.md#core_application_entitlements_used_by_list) | **GET** /core/application_entitlements/{pbm_uuid}/used_by/ | 
 [**core_applications_check_access_retrieve**](CoreApi.md#core_applications_check_access_retrieve) | **GET** /core/applications/{slug}/check_access/ | 
 [**core_applications_create**](CoreApi.md#core_applications_create) | **POST** /core/applications/ | 
 [**core_applications_destroy**](CoreApi.md#core_applications_destroy) | **DELETE** /core/applications/{slug}/ | 
 [**core_applications_list**](CoreApi.md#core_applications_list) | **GET** /core/applications/ | 
-[**core_applications_metrics_list**](CoreApi.md#core_applications_metrics_list) | **GET** /core/applications/{slug}/metrics/ | 
 [**core_applications_partial_update**](CoreApi.md#core_applications_partial_update) | **PATCH** /core/applications/{slug}/ | 
 [**core_applications_retrieve**](CoreApi.md#core_applications_retrieve) | **GET** /core/applications/{slug}/ | 
 [**core_applications_set_icon_create**](CoreApi.md#core_applications_set_icon_create) | **POST** /core/applications/{slug}/set_icon/ | 
@@ -56,7 +62,6 @@ Method | HTTP request | Description
 [**core_users_impersonate_end_retrieve**](CoreApi.md#core_users_impersonate_end_retrieve) | **GET** /core/users/impersonate_end/ | 
 [**core_users_list**](CoreApi.md#core_users_list) | **GET** /core/users/ | 
 [**core_users_me_retrieve**](CoreApi.md#core_users_me_retrieve) | **GET** /core/users/me/ | 
-[**core_users_metrics_retrieve**](CoreApi.md#core_users_metrics_retrieve) | **GET** /core/users/{id}/metrics/ | 
 [**core_users_partial_update**](CoreApi.md#core_users_partial_update) | **PATCH** /core/users/{id}/ | 
 [**core_users_paths_retrieve**](CoreApi.md#core_users_paths_retrieve) | **GET** /core/users/paths/ | 
 [**core_users_recovery_create**](CoreApi.md#core_users_recovery_create) | **POST** /core/users/{id}/recovery/ | 
@@ -68,10 +73,563 @@ Method | HTTP request | Description
 [**core_users_used_by_list**](CoreApi.md#core_users_used_by_list) | **GET** /core/users/{id}/used_by/ | 
 
 
+# **core_application_entitlements_create**
+> ApplicationEntitlement core_application_entitlements_create(application_entitlement_request)
+
+ApplicationEntitlement Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.application_entitlement import ApplicationEntitlement
+from authentik_openapi.models.application_entitlement_request import ApplicationEntitlementRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.CoreApi(api_client)
+    application_entitlement_request = authentik_openapi.ApplicationEntitlementRequest() # ApplicationEntitlementRequest | 
+
+    try:
+        api_response = await api_instance.core_application_entitlements_create(application_entitlement_request)
+        print("The response of CoreApi->core_application_entitlements_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CoreApi->core_application_entitlements_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_entitlement_request** | [**ApplicationEntitlementRequest**](ApplicationEntitlementRequest.md)|  | 
+
+### Return type
+
+[**ApplicationEntitlement**](ApplicationEntitlement.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **core_application_entitlements_destroy**
+> core_application_entitlements_destroy(pbm_uuid)
+
+ApplicationEntitlement Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.CoreApi(api_client)
+    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Application Entitlement.
+
+    try:
+        await api_instance.core_application_entitlements_destroy(pbm_uuid)
+    except Exception as e:
+        print("Exception when calling CoreApi->core_application_entitlements_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pbm_uuid** | **str**| A UUID string identifying this Application Entitlement. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **core_application_entitlements_list**
+> PaginatedApplicationEntitlementList core_application_entitlements_list(app=app, name=name, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, search=search)
+
+ApplicationEntitlement Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.paginated_application_entitlement_list import PaginatedApplicationEntitlementList
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.CoreApi(api_client)
+    app = 'app_example' # str |  (optional)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
+    search = 'search_example' # str | A search term. (optional)
+
+    try:
+        api_response = await api_instance.core_application_entitlements_list(app=app, name=name, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, search=search)
+        print("The response of CoreApi->core_application_entitlements_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CoreApi->core_application_entitlements_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **app** | **str**|  | [optional] 
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **pbm_uuid** | **str**|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedApplicationEntitlementList**](PaginatedApplicationEntitlementList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **core_application_entitlements_partial_update**
+> ApplicationEntitlement core_application_entitlements_partial_update(pbm_uuid, patched_application_entitlement_request=patched_application_entitlement_request)
+
+ApplicationEntitlement Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.application_entitlement import ApplicationEntitlement
+from authentik_openapi.models.patched_application_entitlement_request import PatchedApplicationEntitlementRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.CoreApi(api_client)
+    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Application Entitlement.
+    patched_application_entitlement_request = authentik_openapi.PatchedApplicationEntitlementRequest() # PatchedApplicationEntitlementRequest |  (optional)
+
+    try:
+        api_response = await api_instance.core_application_entitlements_partial_update(pbm_uuid, patched_application_entitlement_request=patched_application_entitlement_request)
+        print("The response of CoreApi->core_application_entitlements_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CoreApi->core_application_entitlements_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pbm_uuid** | **str**| A UUID string identifying this Application Entitlement. | 
+ **patched_application_entitlement_request** | [**PatchedApplicationEntitlementRequest**](PatchedApplicationEntitlementRequest.md)|  | [optional] 
+
+### Return type
+
+[**ApplicationEntitlement**](ApplicationEntitlement.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **core_application_entitlements_retrieve**
+> ApplicationEntitlement core_application_entitlements_retrieve(pbm_uuid)
+
+ApplicationEntitlement Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.application_entitlement import ApplicationEntitlement
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.CoreApi(api_client)
+    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Application Entitlement.
+
+    try:
+        api_response = await api_instance.core_application_entitlements_retrieve(pbm_uuid)
+        print("The response of CoreApi->core_application_entitlements_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CoreApi->core_application_entitlements_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pbm_uuid** | **str**| A UUID string identifying this Application Entitlement. | 
+
+### Return type
+
+[**ApplicationEntitlement**](ApplicationEntitlement.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **core_application_entitlements_update**
+> ApplicationEntitlement core_application_entitlements_update(pbm_uuid, application_entitlement_request)
+
+ApplicationEntitlement Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.application_entitlement import ApplicationEntitlement
+from authentik_openapi.models.application_entitlement_request import ApplicationEntitlementRequest
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.CoreApi(api_client)
+    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Application Entitlement.
+    application_entitlement_request = authentik_openapi.ApplicationEntitlementRequest() # ApplicationEntitlementRequest | 
+
+    try:
+        api_response = await api_instance.core_application_entitlements_update(pbm_uuid, application_entitlement_request)
+        print("The response of CoreApi->core_application_entitlements_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CoreApi->core_application_entitlements_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pbm_uuid** | **str**| A UUID string identifying this Application Entitlement. | 
+ **application_entitlement_request** | [**ApplicationEntitlementRequest**](ApplicationEntitlementRequest.md)|  | 
+
+### Return type
+
+[**ApplicationEntitlement**](ApplicationEntitlement.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **core_application_entitlements_used_by_list**
+> List[UsedBy] core_application_entitlements_used_by_list(pbm_uuid)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_openapi
+from authentik_openapi.models.used_by import UsedBy
+from authentik_openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://github.com/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_openapi.Configuration(
+    host = "https://github.com/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_openapi.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+async with authentik_openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_openapi.CoreApi(api_client)
+    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Application Entitlement.
+
+    try:
+        api_response = await api_instance.core_application_entitlements_used_by_list(pbm_uuid)
+        print("The response of CoreApi->core_application_entitlements_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CoreApi->core_application_entitlements_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pbm_uuid** | **str**| A UUID string identifying this Application Entitlement. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **core_applications_check_access_retrieve**
 > PolicyTestResult core_applications_check_access_retrieve(slug, for_user=for_user)
-
-
 
 Check access to a single application by slug
 
@@ -152,8 +710,6 @@ Name | Type | Description  | Notes
 # **core_applications_create**
 > Application core_applications_create(application_request)
 
-
-
 Application Viewset
 
 ### Example
@@ -232,8 +788,6 @@ Name | Type | Description  | Notes
 # **core_applications_destroy**
 > core_applications_destroy(slug)
 
-
-
 Application Viewset
 
 ### Example
@@ -307,8 +861,6 @@ void (empty response body)
 
 # **core_applications_list**
 > PaginatedApplicationList core_applications_list(for_user=for_user, group=group, meta_description=meta_description, meta_launch_url=meta_launch_url, meta_publisher=meta_publisher, name=name, only_with_launch_url=only_with_launch_url, ordering=ordering, page=page, page_size=page_size, search=search, slug=slug, superuser_full_list=superuser_full_list)
-
-
 
 Custom list method that checks Policy based access instead of guardian
 
@@ -408,89 +960,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **core_applications_metrics_list**
-> List[Coordinate] core_applications_metrics_list(slug)
-
-
-
-Metrics for application logins
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_openapi
-from authentik_openapi.models.coordinate import Coordinate
-from authentik_openapi.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://github.com/api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_openapi.Configuration(
-    host = "https://github.com/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_openapi.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-async with authentik_openapi.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_openapi.CoreApi(api_client)
-    slug = 'slug_example' # str | 
-
-    try:
-        api_response = await api_instance.core_applications_metrics_list(slug)
-        print("The response of CoreApi->core_applications_metrics_list:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CoreApi->core_applications_metrics_list: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slug** | **str**|  | 
-
-### Return type
-
-[**List[Coordinate]**](Coordinate.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-**400** |  |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **core_applications_partial_update**
 > Application core_applications_partial_update(slug, patched_application_request=patched_application_request)
-
-
 
 Application Viewset
 
@@ -572,8 +1043,6 @@ Name | Type | Description  | Notes
 # **core_applications_retrieve**
 > Application core_applications_retrieve(slug)
 
-
-
 Application Viewset
 
 ### Example
@@ -650,8 +1119,6 @@ Name | Type | Description  | Notes
 
 # **core_applications_set_icon_create**
 > core_applications_set_icon_create(slug, file=file, clear=clear)
-
-
 
 Set application icon
 
@@ -731,8 +1198,6 @@ void (empty response body)
 # **core_applications_set_icon_url_create**
 > core_applications_set_icon_url_create(slug, file_path_request)
 
-
-
 Set application icon (as URL)
 
 ### Example
@@ -809,8 +1274,6 @@ void (empty response body)
 
 # **core_applications_update**
 > Application core_applications_update(slug, application_request)
-
-
 
 Application Viewset
 
@@ -892,8 +1355,6 @@ Name | Type | Description  | Notes
 # **core_applications_used_by_list**
 > List[UsedBy] core_applications_used_by_list(slug)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -971,8 +1432,6 @@ Name | Type | Description  | Notes
 # **core_authenticated_sessions_destroy**
 > core_authenticated_sessions_destroy(uuid)
 
-
-
 AuthenticatedSession Viewset
 
 ### Example
@@ -1004,7 +1463,7 @@ configuration = authentik_openapi.Configuration(
 async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.CoreApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Authenticated Session.
+    uuid = 'uuid_example' # str | 
 
     try:
         await api_instance.core_authenticated_sessions_destroy(uuid)
@@ -1019,7 +1478,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Authenticated Session. | 
+ **uuid** | **str**|  | 
 
 ### Return type
 
@@ -1045,9 +1504,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_authenticated_sessions_list**
-> PaginatedAuthenticatedSessionList core_authenticated_sessions_list(last_ip=last_ip, last_user_agent=last_user_agent, ordering=ordering, page=page, page_size=page_size, search=search, user__username=user__username)
-
-
+> PaginatedAuthenticatedSessionList core_authenticated_sessions_list(ordering=ordering, page=page, page_size=page_size, search=search, session__last_ip=session__last_ip, session__last_user_agent=session__last_user_agent, user__username=user__username)
 
 AuthenticatedSession Viewset
 
@@ -1081,16 +1538,16 @@ configuration = authentik_openapi.Configuration(
 async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.CoreApi(api_client)
-    last_ip = 'last_ip_example' # str |  (optional)
-    last_user_agent = 'last_user_agent_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
+    session__last_ip = 'session__last_ip_example' # str |  (optional)
+    session__last_user_agent = 'session__last_user_agent_example' # str |  (optional)
     user__username = 'user__username_example' # str |  (optional)
 
     try:
-        api_response = await api_instance.core_authenticated_sessions_list(last_ip=last_ip, last_user_agent=last_user_agent, ordering=ordering, page=page, page_size=page_size, search=search, user__username=user__username)
+        api_response = await api_instance.core_authenticated_sessions_list(ordering=ordering, page=page, page_size=page_size, search=search, session__last_ip=session__last_ip, session__last_user_agent=session__last_user_agent, user__username=user__username)
         print("The response of CoreApi->core_authenticated_sessions_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -1104,12 +1561,12 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **last_ip** | **str**|  | [optional] 
- **last_user_agent** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
+ **session__last_ip** | **str**|  | [optional] 
+ **session__last_user_agent** | **str**|  | [optional] 
  **user__username** | **str**|  | [optional] 
 
 ### Return type
@@ -1137,8 +1594,6 @@ Name | Type | Description  | Notes
 
 # **core_authenticated_sessions_retrieve**
 > AuthenticatedSession core_authenticated_sessions_retrieve(uuid)
-
-
 
 AuthenticatedSession Viewset
 
@@ -1172,7 +1627,7 @@ configuration = authentik_openapi.Configuration(
 async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.CoreApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Authenticated Session.
+    uuid = 'uuid_example' # str | 
 
     try:
         api_response = await api_instance.core_authenticated_sessions_retrieve(uuid)
@@ -1189,7 +1644,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Authenticated Session. | 
+ **uuid** | **str**|  | 
 
 ### Return type
 
@@ -1216,8 +1671,6 @@ Name | Type | Description  | Notes
 
 # **core_authenticated_sessions_used_by_list**
 > List[UsedBy] core_authenticated_sessions_used_by_list(uuid)
-
-
 
 Get a list of all objects that use this object
 
@@ -1251,7 +1704,7 @@ configuration = authentik_openapi.Configuration(
 async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.CoreApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Authenticated Session.
+    uuid = 'uuid_example' # str | 
 
     try:
         api_response = await api_instance.core_authenticated_sessions_used_by_list(uuid)
@@ -1268,7 +1721,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Authenticated Session. | 
+ **uuid** | **str**|  | 
 
 ### Return type
 
@@ -1295,8 +1748,6 @@ Name | Type | Description  | Notes
 
 # **core_brands_create**
 > Brand core_brands_create(brand_request)
-
-
 
 Brand Viewset
 
@@ -1376,8 +1827,6 @@ Name | Type | Description  | Notes
 # **core_brands_current_retrieve**
 > CurrentBrand core_brands_current_retrieve()
 
-
-
 Get current brand
 
 ### Example
@@ -1451,8 +1900,6 @@ This endpoint does not need any parameter.
 # **core_brands_destroy**
 > core_brands_destroy(brand_uuid)
 
-
-
 Brand Viewset
 
 ### Example
@@ -1525,9 +1972,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_brands_list**
-> PaginatedBrandList core_brands_list(brand_uuid=brand_uuid, branding_favicon=branding_favicon, branding_logo=branding_logo, branding_title=branding_title, default=default, domain=domain, flow_authentication=flow_authentication, flow_device_code=flow_device_code, flow_invalidation=flow_invalidation, flow_recovery=flow_recovery, flow_unenrollment=flow_unenrollment, flow_user_settings=flow_user_settings, ordering=ordering, page=page, page_size=page_size, search=search, web_certificate=web_certificate)
-
-
+> PaginatedBrandList core_brands_list(brand_uuid=brand_uuid, branding_default_flow_background=branding_default_flow_background, branding_favicon=branding_favicon, branding_logo=branding_logo, branding_title=branding_title, client_certificates=client_certificates, default=default, domain=domain, flow_authentication=flow_authentication, flow_device_code=flow_device_code, flow_invalidation=flow_invalidation, flow_recovery=flow_recovery, flow_unenrollment=flow_unenrollment, flow_user_settings=flow_user_settings, ordering=ordering, page=page, page_size=page_size, search=search, web_certificate=web_certificate)
 
 Brand Viewset
 
@@ -1562,9 +2007,11 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.CoreApi(api_client)
     brand_uuid = 'brand_uuid_example' # str |  (optional)
+    branding_default_flow_background = 'branding_default_flow_background_example' # str |  (optional)
     branding_favicon = 'branding_favicon_example' # str |  (optional)
     branding_logo = 'branding_logo_example' # str |  (optional)
     branding_title = 'branding_title_example' # str |  (optional)
+    client_certificates = ['client_certificates_example'] # List[str] |  (optional)
     default = True # bool |  (optional)
     domain = 'domain_example' # str |  (optional)
     flow_authentication = 'flow_authentication_example' # str |  (optional)
@@ -1580,7 +2027,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     web_certificate = 'web_certificate_example' # str |  (optional)
 
     try:
-        api_response = await api_instance.core_brands_list(brand_uuid=brand_uuid, branding_favicon=branding_favicon, branding_logo=branding_logo, branding_title=branding_title, default=default, domain=domain, flow_authentication=flow_authentication, flow_device_code=flow_device_code, flow_invalidation=flow_invalidation, flow_recovery=flow_recovery, flow_unenrollment=flow_unenrollment, flow_user_settings=flow_user_settings, ordering=ordering, page=page, page_size=page_size, search=search, web_certificate=web_certificate)
+        api_response = await api_instance.core_brands_list(brand_uuid=brand_uuid, branding_default_flow_background=branding_default_flow_background, branding_favicon=branding_favicon, branding_logo=branding_logo, branding_title=branding_title, client_certificates=client_certificates, default=default, domain=domain, flow_authentication=flow_authentication, flow_device_code=flow_device_code, flow_invalidation=flow_invalidation, flow_recovery=flow_recovery, flow_unenrollment=flow_unenrollment, flow_user_settings=flow_user_settings, ordering=ordering, page=page, page_size=page_size, search=search, web_certificate=web_certificate)
         print("The response of CoreApi->core_brands_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -1595,9 +2042,11 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **brand_uuid** | **str**|  | [optional] 
+ **branding_default_flow_background** | **str**|  | [optional] 
  **branding_favicon** | **str**|  | [optional] 
  **branding_logo** | **str**|  | [optional] 
  **branding_title** | **str**|  | [optional] 
+ **client_certificates** | [**List[str]**](str.md)|  | [optional] 
  **default** | **bool**|  | [optional] 
  **domain** | **str**|  | [optional] 
  **flow_authentication** | **str**|  | [optional] 
@@ -1637,8 +2086,6 @@ Name | Type | Description  | Notes
 
 # **core_brands_partial_update**
 > Brand core_brands_partial_update(brand_uuid, patched_brand_request=patched_brand_request)
-
-
 
 Brand Viewset
 
@@ -1720,8 +2167,6 @@ Name | Type | Description  | Notes
 # **core_brands_retrieve**
 > Brand core_brands_retrieve(brand_uuid)
 
-
-
 Brand Viewset
 
 ### Example
@@ -1798,8 +2243,6 @@ Name | Type | Description  | Notes
 
 # **core_brands_update**
 > Brand core_brands_update(brand_uuid, brand_request)
-
-
 
 Brand Viewset
 
@@ -1881,8 +2324,6 @@ Name | Type | Description  | Notes
 # **core_brands_used_by_list**
 > List[UsedBy] core_brands_used_by_list(brand_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -1959,8 +2400,6 @@ Name | Type | Description  | Notes
 
 # **core_groups_add_user_create**
 > core_groups_add_user_create(group_uuid, user_account_request)
-
-
 
 Add user to group
 
@@ -2040,8 +2479,6 @@ void (empty response body)
 # **core_groups_create**
 > Group core_groups_create(group_request)
 
-
-
 Group Viewset
 
 ### Example
@@ -2120,8 +2557,6 @@ Name | Type | Description  | Notes
 # **core_groups_destroy**
 > core_groups_destroy(group_uuid)
 
-
-
 Group Viewset
 
 ### Example
@@ -2194,9 +2629,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_groups_list**
-> PaginatedGroupList core_groups_list(attributes=attributes, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
-
-
+> PaginatedGroupList core_groups_list(attributes=attributes, include_children=include_children, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
 
 Group Viewset
 
@@ -2231,6 +2664,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.CoreApi(api_client)
     attributes = 'attributes_example' # str | Attributes (optional)
+    include_children = False # bool |  (optional) (default to False)
     include_users = True # bool |  (optional) (default to True)
     is_superuser = True # bool |  (optional)
     members_by_pk = [56] # List[int] |  (optional)
@@ -2242,7 +2676,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     search = 'search_example' # str | A search term. (optional)
 
     try:
-        api_response = await api_instance.core_groups_list(attributes=attributes, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        api_response = await api_instance.core_groups_list(attributes=attributes, include_children=include_children, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
         print("The response of CoreApi->core_groups_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -2257,6 +2691,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **attributes** | **str**| Attributes | [optional] 
+ **include_children** | **bool**|  | [optional] [default to False]
  **include_users** | **bool**|  | [optional] [default to True]
  **is_superuser** | **bool**|  | [optional] 
  **members_by_pk** | [**List[int]**](int.md)|  | [optional] 
@@ -2292,8 +2727,6 @@ Name | Type | Description  | Notes
 
 # **core_groups_partial_update**
 > Group core_groups_partial_update(group_uuid, patched_group_request=patched_group_request)
-
-
 
 Group Viewset
 
@@ -2375,9 +2808,7 @@ Name | Type | Description  | Notes
 # **core_groups_remove_user_create**
 > core_groups_remove_user_create(group_uuid, user_account_request)
 
-
-
-Add user to group
+Remove user from group
 
 ### Example
 
@@ -2445,7 +2876,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | User added |  -  |
+**204** | User removed |  -  |
 **404** | User not found |  -  |
 **400** |  |  -  |
 **403** |  |  -  |
@@ -2453,9 +2884,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_groups_retrieve**
-> Group core_groups_retrieve(group_uuid, include_users=include_users)
-
-
+> Group core_groups_retrieve(group_uuid, include_children=include_children, include_users=include_users)
 
 Group Viewset
 
@@ -2490,10 +2919,11 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.CoreApi(api_client)
     group_uuid = 'group_uuid_example' # str | A UUID string identifying this Group.
+    include_children = False # bool |  (optional) (default to False)
     include_users = True # bool |  (optional) (default to True)
 
     try:
-        api_response = await api_instance.core_groups_retrieve(group_uuid, include_users=include_users)
+        api_response = await api_instance.core_groups_retrieve(group_uuid, include_children=include_children, include_users=include_users)
         print("The response of CoreApi->core_groups_retrieve:\n")
         pprint(api_response)
     except Exception as e:
@@ -2508,6 +2938,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_uuid** | **str**| A UUID string identifying this Group. | 
+ **include_children** | **bool**|  | [optional] [default to False]
  **include_users** | **bool**|  | [optional] [default to True]
 
 ### Return type
@@ -2535,8 +2966,6 @@ Name | Type | Description  | Notes
 
 # **core_groups_update**
 > Group core_groups_update(group_uuid, group_request)
-
-
 
 Group Viewset
 
@@ -2618,8 +3047,6 @@ Name | Type | Description  | Notes
 # **core_groups_used_by_list**
 > List[UsedBy] core_groups_used_by_list(group_uuid)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -2696,8 +3123,6 @@ Name | Type | Description  | Notes
 
 # **core_tokens_create**
 > Token core_tokens_create(token_request)
-
-
 
 Token Viewset
 
@@ -2777,8 +3202,6 @@ Name | Type | Description  | Notes
 # **core_tokens_destroy**
 > core_tokens_destroy(identifier)
 
-
-
 Token Viewset
 
 ### Example
@@ -2852,8 +3275,6 @@ void (empty response body)
 
 # **core_tokens_list**
 > PaginatedTokenList core_tokens_list(description=description, expires=expires, expiring=expiring, identifier=identifier, intent=intent, managed=managed, ordering=ordering, page=page, page_size=page_size, search=search, user__username=user__username)
-
-
 
 Token Viewset
 
@@ -2952,8 +3373,6 @@ Name | Type | Description  | Notes
 # **core_tokens_partial_update**
 > Token core_tokens_partial_update(identifier, patched_token_request=patched_token_request)
 
-
-
 Token Viewset
 
 ### Example
@@ -3034,8 +3453,6 @@ Name | Type | Description  | Notes
 # **core_tokens_retrieve**
 > Token core_tokens_retrieve(identifier)
 
-
-
 Token Viewset
 
 ### Example
@@ -3113,9 +3530,8 @@ Name | Type | Description  | Notes
 # **core_tokens_set_key_create**
 > core_tokens_set_key_create(identifier, token_set_key_request)
 
-
-
-Set token key. Action is logged as event. `authentik_core.set_token_key` permission is required.
+Set token key. Action is logged as event. `authentik_core.set_token_key` permission
+is required.
 
 ### Example
 
@@ -3192,8 +3608,6 @@ void (empty response body)
 
 # **core_tokens_update**
 > Token core_tokens_update(identifier, token_request)
-
-
 
 Token Viewset
 
@@ -3275,8 +3689,6 @@ Name | Type | Description  | Notes
 # **core_tokens_used_by_list**
 > List[UsedBy] core_tokens_used_by_list(identifier)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -3353,8 +3765,6 @@ Name | Type | Description  | Notes
 
 # **core_tokens_view_key_retrieve**
 > TokenView core_tokens_view_key_retrieve(identifier)
-
-
 
 Return token key and log access
 
@@ -3434,8 +3844,6 @@ Name | Type | Description  | Notes
 # **core_transactional_applications_update**
 > TransactionApplicationResponse core_transactional_applications_update(transaction_application_request)
 
-
-
 Convert data into a blueprint, validate it and apply it
 
 ### Example
@@ -3514,8 +3922,6 @@ Name | Type | Description  | Notes
 # **core_user_consent_destroy**
 > core_user_consent_destroy(id)
 
-
-
 UserConsent Viewset
 
 ### Example
@@ -3589,8 +3995,6 @@ void (empty response body)
 
 # **core_user_consent_list**
 > PaginatedUserConsentList core_user_consent_list(application=application, ordering=ordering, page=page, page_size=page_size, search=search, user=user)
-
-
 
 UserConsent Viewset
 
@@ -3679,8 +4083,6 @@ Name | Type | Description  | Notes
 # **core_user_consent_retrieve**
 > UserConsent core_user_consent_retrieve(id)
 
-
-
 UserConsent Viewset
 
 ### Example
@@ -3758,8 +4160,6 @@ Name | Type | Description  | Notes
 # **core_user_consent_used_by_list**
 > List[UsedBy] core_user_consent_used_by_list(id)
 
-
-
 Get a list of all objects that use this object
 
 ### Example
@@ -3836,8 +4236,6 @@ Name | Type | Description  | Notes
 
 # **core_users_create**
 > User core_users_create(user_request)
-
-
 
 User Viewset
 
@@ -3917,8 +4315,6 @@ Name | Type | Description  | Notes
 # **core_users_destroy**
 > core_users_destroy(id)
 
-
-
 User Viewset
 
 ### Example
@@ -3991,9 +4387,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_users_impersonate_create**
-> core_users_impersonate_create(id)
-
-
+> core_users_impersonate_create(id, impersonation_request)
 
 Impersonate a user
 
@@ -4003,6 +4397,7 @@ Impersonate a user
 
 ```python
 import authentik_openapi
+from authentik_openapi.models.impersonation_request import ImpersonationRequest
 from authentik_openapi.rest import ApiException
 from pprint import pprint
 
@@ -4027,9 +4422,10 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.CoreApi(api_client)
     id = 56 # int | A unique integer value identifying this User.
+    impersonation_request = authentik_openapi.ImpersonationRequest() # ImpersonationRequest | 
 
     try:
-        await api_instance.core_users_impersonate_create(id)
+        await api_instance.core_users_impersonate_create(id, impersonation_request)
     except Exception as e:
         print("Exception when calling CoreApi->core_users_impersonate_create: %s\n" % e)
 ```
@@ -4042,6 +4438,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this User. | 
+ **impersonation_request** | [**ImpersonationRequest**](ImpersonationRequest.md)|  | 
 
 ### Return type
 
@@ -4053,7 +4450,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -4061,7 +4458,6 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Successfully started impersonation |  -  |
-**401** | Access denied |  -  |
 **400** |  |  -  |
 **403** |  |  -  |
 
@@ -4069,8 +4465,6 @@ void (empty response body)
 
 # **core_users_impersonate_end_retrieve**
 > core_users_impersonate_end_retrieve()
-
-
 
 End Impersonation a user
 
@@ -4133,16 +4527,14 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Successfully started impersonation |  -  |
+**204** | Successfully ended impersonation |  -  |
 **400** |  |  -  |
 **403** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_users_list**
-> PaginatedUserList core_users_list(attributes=attributes, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, include_groups=include_groups, is_active=is_active, is_superuser=is_superuser, name=name, ordering=ordering, page=page, page_size=page_size, path=path, path_startswith=path_startswith, search=search, type=type, username=username, uuid=uuid)
-
-
+> PaginatedUserList core_users_list(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, include_groups=include_groups, is_active=is_active, is_superuser=is_superuser, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, page=page, page_size=page_size, path=path, path_startswith=path_startswith, search=search, type=type, username=username, uuid=uuid)
 
 User Viewset
 
@@ -4177,12 +4569,18 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.CoreApi(api_client)
     attributes = 'attributes_example' # str | Attributes (optional)
+    date_joined = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    date_joined__gt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    date_joined__lt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     email = 'email_example' # str |  (optional)
     groups_by_name = ['groups_by_name_example'] # List[str] |  (optional)
     groups_by_pk = ['groups_by_pk_example'] # List[str] |  (optional)
     include_groups = True # bool |  (optional) (default to True)
     is_active = True # bool |  (optional)
     is_superuser = True # bool |  (optional)
+    last_updated = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    last_updated__gt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    last_updated__lt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
@@ -4195,7 +4593,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str |  (optional)
 
     try:
-        api_response = await api_instance.core_users_list(attributes=attributes, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, include_groups=include_groups, is_active=is_active, is_superuser=is_superuser, name=name, ordering=ordering, page=page, page_size=page_size, path=path, path_startswith=path_startswith, search=search, type=type, username=username, uuid=uuid)
+        api_response = await api_instance.core_users_list(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, include_groups=include_groups, is_active=is_active, is_superuser=is_superuser, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, page=page, page_size=page_size, path=path, path_startswith=path_startswith, search=search, type=type, username=username, uuid=uuid)
         print("The response of CoreApi->core_users_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -4210,12 +4608,18 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **attributes** | **str**| Attributes | [optional] 
+ **date_joined** | **datetime**|  | [optional] 
+ **date_joined__gt** | **datetime**|  | [optional] 
+ **date_joined__lt** | **datetime**|  | [optional] 
  **email** | **str**|  | [optional] 
  **groups_by_name** | [**List[str]**](str.md)|  | [optional] 
  **groups_by_pk** | [**List[str]**](str.md)|  | [optional] 
  **include_groups** | **bool**|  | [optional] [default to True]
  **is_active** | **bool**|  | [optional] 
  **is_superuser** | **bool**|  | [optional] 
+ **last_updated** | **datetime**|  | [optional] 
+ **last_updated__gt** | **datetime**|  | [optional] 
+ **last_updated__lt** | **datetime**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
@@ -4252,8 +4656,6 @@ Name | Type | Description  | Notes
 
 # **core_users_me_retrieve**
 > SessionUser core_users_me_retrieve()
-
-
 
 Get information about current user
 
@@ -4325,89 +4727,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **core_users_metrics_retrieve**
-> UserMetrics core_users_metrics_retrieve(id)
-
-
-
-User metrics per 1h
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_openapi
-from authentik_openapi.models.user_metrics import UserMetrics
-from authentik_openapi.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://github.com/api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_openapi.Configuration(
-    host = "https://github.com/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_openapi.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-async with authentik_openapi.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_openapi.CoreApi(api_client)
-    id = 56 # int | A unique integer value identifying this User.
-
-    try:
-        api_response = await api_instance.core_users_metrics_retrieve(id)
-        print("The response of CoreApi->core_users_metrics_retrieve:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CoreApi->core_users_metrics_retrieve: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this User. | 
-
-### Return type
-
-[**UserMetrics**](UserMetrics.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-**400** |  |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **core_users_partial_update**
 > User core_users_partial_update(id, patched_user_request=patched_user_request)
-
-
 
 User Viewset
 
@@ -4489,8 +4810,6 @@ Name | Type | Description  | Notes
 # **core_users_paths_retrieve**
 > UserPath core_users_paths_retrieve(search=search)
 
-
-
 Get all user paths
 
 ### Example
@@ -4523,7 +4842,7 @@ configuration = authentik_openapi.Configuration(
 async with authentik_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_openapi.CoreApi(api_client)
-    search = 'search_example' # str |  (optional)
+    search = 'search_example' # str | A search term. (optional)
 
     try:
         api_response = await api_instance.core_users_paths_retrieve(search=search)
@@ -4540,7 +4859,7 @@ async with authentik_openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **search** | **str**|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
 
 ### Return type
 
@@ -4568,9 +4887,7 @@ Name | Type | Description  | Notes
 # **core_users_recovery_create**
 > Link core_users_recovery_create(id)
 
-
-
-Create a temporary link that a user can use to recover their accounts
+Create a temporary link that a user can use to recover their account
 
 ### Example
 
@@ -4647,9 +4964,7 @@ Name | Type | Description  | Notes
 # **core_users_recovery_email_create**
 > core_users_recovery_email_create(email_stage, id)
 
-
-
-Create a temporary link that a user can use to recover their accounts
+Send an email with a temporary link that a user can use to recover their account
 
 ### Example
 
@@ -4724,8 +5039,6 @@ void (empty response body)
 
 # **core_users_retrieve**
 > User core_users_retrieve(id)
-
-
 
 User Viewset
 
@@ -4803,8 +5116,6 @@ Name | Type | Description  | Notes
 
 # **core_users_service_account_create**
 > UserServiceAccountResponse core_users_service_account_create(user_service_account_request)
-
-
 
 Create a new user account that is marked as a service account
 
@@ -4884,8 +5195,6 @@ Name | Type | Description  | Notes
 # **core_users_set_password_create**
 > core_users_set_password_create(id, user_password_set_request)
 
-
-
 Set password for user
 
 ### Example
@@ -4962,8 +5271,6 @@ void (empty response body)
 
 # **core_users_update**
 > User core_users_update(id, user_request)
-
-
 
 User Viewset
 
@@ -5044,8 +5351,6 @@ Name | Type | Description  | Notes
 
 # **core_users_used_by_list**
 > List[UsedBy] core_users_used_by_list(id)
-
-
 
 Get a list of all objects that use this object
 

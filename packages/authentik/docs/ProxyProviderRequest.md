@@ -22,7 +22,8 @@ Name | Type | Description | Notes
 **mode** | [**ProxyMode**](ProxyMode.md) | Enable support for forwardAuth in traefik and nginx auth_request. Exclusive with internal_host. | [optional] 
 **intercept_header_auth** | **bool** | When enabled, this provider will intercept the authorization header and authenticate requests based on its value. | [optional] 
 **cookie_domain** | **str** |  | [optional] 
-**jwks_sources** | **List[str]** |  | [optional] 
+**jwt_federation_sources** | **List[str]** |  | [optional] 
+**jwt_federation_providers** | **List[int]** |  | [optional] 
 **access_token_validity** | **str** | Tokens not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **refresh_token_validity** | **str** | Tokens not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 

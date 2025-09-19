@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **pending_user_avatar** | **str** |  | 
 **site_key** | **str** |  | 
 **js_url** | **str** |  | 
+**interactive** | **bool** |  | 
 
 ## Example
 

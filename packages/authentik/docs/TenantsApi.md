@@ -23,8 +23,6 @@ Method | HTTP request | Description
 # **tenants_domains_create**
 > Domain tenants_domains_create(domain_request)
 
-
-
 Domain ViewSet
 
 ### Example
@@ -93,8 +91,6 @@ No authorization required
 # **tenants_domains_destroy**
 > tenants_domains_destroy(id)
 
-
-
 Domain ViewSet
 
 ### Example
@@ -158,8 +154,6 @@ No authorization required
 
 # **tenants_domains_list**
 > PaginatedDomainList tenants_domains_list(ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 Domain ViewSet
 
@@ -234,8 +228,6 @@ No authorization required
 # **tenants_domains_partial_update**
 > Domain tenants_domains_partial_update(id, patched_domain_request=patched_domain_request)
 
-
-
 Domain ViewSet
 
 ### Example
@@ -306,8 +298,6 @@ No authorization required
 # **tenants_domains_retrieve**
 > Domain tenants_domains_retrieve(id)
 
-
-
 Domain ViewSet
 
 ### Example
@@ -374,8 +364,6 @@ No authorization required
 
 # **tenants_domains_update**
 > Domain tenants_domains_update(id, domain_request)
-
-
 
 Domain ViewSet
 
@@ -447,8 +435,6 @@ No authorization required
 # **tenants_tenants_create**
 > Tenant tenants_tenants_create(tenant_request)
 
-
-
 Tenant Viewset
 
 ### Example
@@ -517,8 +503,6 @@ No authorization required
 # **tenants_tenants_create_admin_group_create**
 > tenants_tenants_create_admin_group_create(tenant_uuid, tenant_admin_group_request_request)
 
-
-
 Create admin group and add user to it.
 
 ### Example
@@ -586,8 +570,6 @@ No authorization required
 
 # **tenants_tenants_create_recovery_key_create**
 > TenantRecoveryKeyResponse tenants_tenants_create_recovery_key_create(tenant_uuid, tenant_recovery_key_request_request)
-
-
 
 Create recovery key for user.
 
@@ -660,8 +642,6 @@ No authorization required
 # **tenants_tenants_destroy**
 > tenants_tenants_destroy(tenant_uuid)
 
-
-
 Tenant Viewset
 
 ### Example
@@ -725,8 +705,6 @@ No authorization required
 
 # **tenants_tenants_list**
 > PaginatedTenantList tenants_tenants_list(ordering=ordering, page=page, page_size=page_size, search=search)
-
-
 
 Tenant Viewset
 
@@ -801,8 +779,6 @@ No authorization required
 # **tenants_tenants_partial_update**
 > Tenant tenants_tenants_partial_update(tenant_uuid, patched_tenant_request=patched_tenant_request)
 
-
-
 Tenant Viewset
 
 ### Example
@@ -873,8 +849,6 @@ No authorization required
 # **tenants_tenants_retrieve**
 > Tenant tenants_tenants_retrieve(tenant_uuid)
 
-
-
 Tenant Viewset
 
 ### Example
@@ -941,8 +915,6 @@ No authorization required
 
 # **tenants_tenants_update**
 > Tenant tenants_tenants_update(tenant_uuid, tenant_request)
-
-
 
 Tenant Viewset
 

@@ -10,8 +10,6 @@ Method | HTTP request | Description
 # **root_config_retrieve**
 > Config root_config_retrieve()
 
-
-
 Retrieve public configuration options
 
 ### Example
