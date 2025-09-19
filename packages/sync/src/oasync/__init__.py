@@ -92,7 +92,7 @@ async def ping():
 
 
 @app.post("/webhook", dependencies=[Depends(check_webhook_signature)])
-async def webhook(
+async def webhook(  # noqa: C901
     event: OutlineSignInEvent,
     settings: SettingsDepend,
     outline_client: OutlineClientDepend,
@@ -101,8 +101,8 @@ async def webhook(
     logger.info("Received event: %s, start processing", event)
 
     users_api = outline_openapi.UsersApi(outline_client)
-    user_info = await users_api.users_info_post(
-        outline_openapi.UsersInfoPostRequest(id=str(event.payload.id))
+    user_info = await users_api.users_info(
+        outline_openapi.UsersInfoRequest(id=str(event.payload.id))
     )
     assert user_info.data
 
@@ -132,19 +132,17 @@ async def webhook(
             should_be_admin
             and user_info.data.role is not outline_openapi.UserRole.ADMIN
         )
-        or (
-            # User is an admin in Outline but not assigned to admin group in Authentik
-            user_info.data.role is outline_openapi.UserRole.ADMIN
-            and not should_be_admin
-        )
+    ) or (
+        # User is an admin in Outline but not assigned to admin group in Authentik
+        user_info.data.role is outline_openapi.UserRole.ADMIN and not should_be_admin
     ):
         updated_role = (
             outline_openapi.UserRole.ADMIN
             if should_be_admin
             else settings.outline_default_role
         )
-        result = await users_api.users_update_role_post(
-            outline_openapi.UsersUpdateRolePostRequest(
+        result = await users_api.users_update_role(
+            outline_openapi.UsersUpdateRoleRequest(
                 id=str(user_info.data.id), role=updated_role
             )
         )
@@ -155,8 +153,8 @@ async def webhook(
     groups_api = outline_openapi.GroupsApi(outline_client)
     all_outline_groups: list[outline_openapi.Group] = []
     for offset in count(0, settings.outline_pagination_limit):
-        result = await groups_api.groups_list_post(
-            outline_openapi.DocumentsViewedPostRequest(
+        result = await groups_api.groups_list(
+            outline_openapi.GroupsListRequest(
                 limit=settings.outline_pagination_limit, offset=offset
             )
         )
@@ -192,8 +190,8 @@ async def webhook(
     if not_exist_groups:
         created_groups = await asyncio.gather(
             *(
-                groups_api.groups_create_post(
-                    outline_openapi.GroupsCreatePostRequest(name=group.name)
+                groups_api.groups_create(
+                    outline_openapi.GroupsCreateRequest(name=group.name)
                 )
                 for group in not_exist_groups
             )
@@ -231,15 +229,15 @@ async def webhook(
             assert outline_group.id
             if outline_group.id in group_mapping:
                 # user in group that should be in, add user to group
-                coro = groups_api.groups_add_user_post(
-                    outline_openapi.GroupsAddUserPostRequest(
+                coro = groups_api.groups_add_user(
+                    outline_openapi.GroupsAddUserRequest(
                         id=outline_group.id, userId=user_info.data.id
                     )
                 )
             else:
                 # user in group that should not be in, remove user from group
-                coro = groups_api.groups_remove_user_post(
-                    outline_openapi.CollectionsRemoveUserPostRequest(
+                coro = groups_api.groups_remove_user(
+                    outline_openapi.CollectionsRemoveUserRequest(
                         id=outline_group.id, userId=user_info.data.id
                     )
                 )
