@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **users** | [**List[User]**](User.md) |  | [optional] 
 **groups** | [**List[Group]**](Group.md) |  | [optional] 
-**group_memberships** | [**List[Membership]**](Membership.md) |  | [optional] 
+**group_memberships** | [**List[GroupMembership]**](GroupMembership.md) |  | [optional] 
 
 ## Example
 

@@ -21,7 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from outline_openapi.models.group import Group
-from outline_openapi.models.membership import Membership
+from outline_openapi.models.group_membership import GroupMembership
 from outline_openapi.models.user import User
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,7 +32,7 @@ class GroupsAddUser200ResponseData(BaseModel):
     """ # noqa: E501
     users: Optional[List[User]] = None
     groups: Optional[List[Group]] = None
-    group_memberships: Optional[List[Membership]] = Field(default=None, alias="groupMemberships")
+    group_memberships: Optional[List[GroupMembership]] = Field(default=None, alias="groupMemberships")
     __properties: ClassVar[List[str]] = ["users", "groups", "groupMemberships"]
 
     model_config = ConfigDict(
@@ -109,7 +109,7 @@ class GroupsAddUser200ResponseData(BaseModel):
         _obj = cls.model_validate({
             "users": [User.from_dict(_item) for _item in obj["users"]] if obj.get("users") is not None else None,
             "groups": [Group.from_dict(_item) for _item in obj["groups"]] if obj.get("groups") is not None else None,
-            "groupMemberships": [Membership.from_dict(_item) for _item in obj["groupMemberships"]] if obj.get("groupMemberships") is not None else None
+            "groupMemberships": [GroupMembership.from_dict(_item) for _item in obj["groupMemberships"]] if obj.get("groupMemberships") is not None else None
         })
         return _obj
 
