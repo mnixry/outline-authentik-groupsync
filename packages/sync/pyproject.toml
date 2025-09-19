@@ -4,9 +4,9 @@ version = "0.1.0"
 description = "Synchronize group assignments between an Outline document and Authentik using Outline webhooks."
 authors = [{ name = "Mix", email = "32300164+mnixry@users.noreply.github.com" }]
 dependencies = [
-    "fastapi[standard]>=0.115.2",
-    "pydantic-settings>=2.5.2",
-    "aiohttp[speedup]>=3.10.10",
+    "fastapi[standard]>=0.116.2",
+    "pydantic-settings>=2.10.1",
+    "aiohttp[speedup]>=3.12.15",
     "outline-openapi",
     "authentik-openapi",
 ]

@@ -3,9 +3,9 @@ name = "authentik_openapi"
 version = "1.0.0"
 description = "authentik"
 authors = [
-  {name = "OpenAPI Generator Community",email = "hello@goauthentik.io"},
+  { name = "OpenAPI Generator Community", email = "hello@goauthentik.io" },
 ]
-license = "MIT"
+license = "AGPL-3.0-only"
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "authentik"]
 requires-python = ">=3.9"
@@ -16,11 +16,11 @@ dependencies = [
   "aiohttp (>=3.8.4)",
   "aiohttp-retry (>=2.8.3)",
   "pydantic (>=2)",
-  "typing-extensions (>=4.7.1)"
+  "typing-extensions (>=4.7.1)",
 ]
 
 [project.urls]
-Repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
+Repository = "https://github.com/mnixry/outline-authentik-groupsync"
 
 [tool.poetry]
 requires-poetry = ">=2.0"
@@ -80,9 +80,7 @@ disallow_any_generics = true
 #warn_return_any = true
 
 [[tool.mypy.overrides]]
-module = [
-  "authentik_openapi.configuration",
-]
+module = ["authentik_openapi.configuration"]
 warn_unused_ignores = true
 strict_equality = true
 extra_checks = true

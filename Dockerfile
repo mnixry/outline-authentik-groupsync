@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.13-slim
 
 RUN useradd -Ms /sbin/nologin -u 1000 app
 
